@@ -1,6 +1,6 @@
 {
-  "name": "boilerplate12345",
-  "description": "Boilerplate12345",
+  "name": "steroids-site",
+  "description": "steroids-site",
   "version": "1.0.0",
   "main": "src/index.ts",
   "license": "MIT",
@@ -13,14 +13,13 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@sentry/browser": "^5.27.3",
-    "@steroidsjs/bootstrap": "^2.1.18",
+    "@steroidsjs/bootstrap": "^3.0 || >=3.0.0-beta.1",
     "@steroidsjs/core": "^3.0.0-beta.2",
-    "@steroidsjs/eslint-config": "^2.0.0-beta.4",
-    "@steroidsjs/webpack": "^2.2.1",
+    "@steroidsjs/webpack": "^3.0 || >=3.0.0-beta.1",
     "@storybook/react": "~6.3.13",
     "@types/webpack-env": "^1.15.1",
     "connected-react-router": "^6.9.1",
-    "react": "^18.1.0",
+    "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
