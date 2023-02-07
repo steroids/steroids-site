@@ -8,3 +8,5 @@ public/index-lang.json
 node_modules
 !.gitempty
 /.env
+/.yarn
+/.yarnrc.yml
