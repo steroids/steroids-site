@@ -12,10 +12,7 @@ import {ROUTE_ROOT} from '../../routes';
 export default function Layout(props: React.PropsWithChildren<any>) {
     const bem = useBem('Layout');
 
-    //const components = useComponents();
-    const {status} = useLayout(/*() => components.http.post('/api/v1/init', {
-        timestamp: Date.now(),
-    })*/);
+    const {status} = useLayout();
 
     if (status !== STATUS_OK) {
         return status !== STATUS_LOADING ? status : null;

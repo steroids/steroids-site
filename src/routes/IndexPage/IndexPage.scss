@@ -1,5 +1,15 @@
-@import 'style/variables';
+@import "style/variables";
 
 .IndexPage {
-  padding: 10px;
+    display: flex;
+    &__tree {
+        flex-grow: 0;
+        flex-basis: 350px;
+    }
+    &__content {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
