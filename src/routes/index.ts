@@ -9,6 +9,7 @@ export default {
     id: ROUTE_ROOT,
     exact: true,
     path: '/',
+    title: 'HOME',
     component: IndexPage,
     roles,
 } as IRouteItem;

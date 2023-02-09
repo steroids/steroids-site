@@ -1,9 +1,9 @@
 {
-  "compilerOptions": {
-    "jsx": "react",
-    "experimentalDecorators": true,
-    "esModuleInterop": true,
-    "baseUrl": "./src/",
-    "allowSyntheticDefaultImports": true
-  }
+    "compilerOptions": {
+        "jsx": "react",
+        "experimentalDecorators": true,
+        "esModuleInterop": true,
+        "baseUrl": "./src/",
+        "allowSyntheticDefaultImports": true,
+    },
 }
