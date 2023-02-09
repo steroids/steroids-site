@@ -6,7 +6,4 @@
         "baseUrl": "./src/",
         "allowSyntheticDefaultImports": true,
     },
-    "include": [
-        "src/**/*"
-    ],
 }
