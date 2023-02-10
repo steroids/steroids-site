@@ -20,6 +20,6 @@ export default {
             path: '/docs/:category?/:path?',
             component: DocsPage,
             roles,
-        }
-    }
+        },
+    },
 } as IRouteItem;
