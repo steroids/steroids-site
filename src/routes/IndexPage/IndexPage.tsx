@@ -2,14 +2,13 @@
 import * as React from 'react';
 import {useBem} from '@steroidsjs/core/hooks';
 import Tree from '@steroidsjs/core/ui/nav/Tree';
-import {useTreeItems} from '../../hooks/useTreeItems';
-import AllSizes from 'ui/content/Avatar/demo/all-sizes';
+import {useDocsPageData} from '../../hooks/useDocsPageData';
 
 import './IndexPage.scss';
 
 export default function IndexPage() {
     const bem = useBem('IndexPage');
-    const treeItems = useTreeItems();
+    const {treeItems, demosComponents} = useDocsPageData();
 
     return (
 
@@ -18,7 +17,7 @@ export default function IndexPage() {
                 <Tree items={treeItems} />
             </div>
             <div className={bem.element('content')}>
-                <AllSizes />
+                Some components
             </div>
         </div>
     );
