@@ -5,6 +5,7 @@ import {useBem} from '@steroidsjs/core/hooks';
 import {useDocsPageData} from 'hooks/useDocsPageData';
 
 import './DocsPage.scss';
+import Demos from './views/Demos';
 
 export default function DocsPage() {
     const bem = useBem('DocsPage');
@@ -16,7 +17,7 @@ export default function DocsPage() {
                 <Tree items={treeItems} />
             </div>
             <div className={bem.element('content')}>
-                Some components
+                <Demos demosComponents={demosComponents} />
             </div>
         </div>
     );
