@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Alert} from '@steroidsjs/core/ui/content/';
+import {Alert} from '@steroidsjs/core/ui/content';
 
 /**
  * Header+text with icon

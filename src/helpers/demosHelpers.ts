@@ -1,8 +1,8 @@
-import {ROUTE_ROOT} from 'routes';
 import _upperFirst from 'lodash-es/upperFirst';
 import _set from 'lodash-es/set';
 import _get from 'lodash-es/get';
 import { CATEGORY_UI } from 'constants/category';
+import {ROUTE_DOCS} from 'constants/routes';
 
 const addToDemosTree = (demosContext: any, demosTree: Record<string, any>) => (fileName: string) => {
     const matches = fileName.match(/^\.\/(.*)\/demo\/([^^/]+)\.(js|ts)x?$/);
@@ -48,7 +48,7 @@ export const getDemosAndTreeItems = (demosTree: Record<string, any>) => {
                 id: demosTreeItemId,
                 label: _upperFirst(demosTreeItemId),
                 items: demosToItems(item.items),
-                toRoute: !item.items ? ROUTE_ROOT : null,
+                toRoute: !item.items ? ROUTE_DOCS : null,
                 toRouteParams: !item.items ? {category: CATEGORY_UI, path} : null,
             };
         });

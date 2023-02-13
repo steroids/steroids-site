@@ -1,7 +1,7 @@
 import {IRouteItem} from '@steroidsjs/core/ui/nav/Router/Router';
+import {ROUTE_DOCS, ROUTE_ROOT} from 'constants/routes';
+import DocsPage from './DocsPage';
 import IndexPage from './IndexPage';
-
-export const ROUTE_ROOT = 'root';
 
 const roles = [null];
 
@@ -9,7 +9,15 @@ export default {
     id: ROUTE_ROOT,
     exact: true,
     path: '/',
-    title: 'HOME',
+    title: 'Home',
     component: IndexPage,
     roles,
+    items: {
+        [ROUTE_DOCS]: {
+            label: 'Documentation',
+            path: '/docs/:category?/:path?',
+            component: DocsPage,
+            roles,
+        },
+    },
 } as IRouteItem;
