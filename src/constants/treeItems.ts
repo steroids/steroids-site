@@ -1,6 +1,6 @@
-import { INavItem } from '@steroidsjs/core/ui/nav/Nav/Nav';
-import {ROUTE_DOCS} from 'routes';
+import {INavItem} from '@steroidsjs/core/ui/nav/Nav/Nav';
 import { CATEGORY_UI } from './category';
+import {ROUTE_DOCS} from './routes';
 
 export const getUiComponentTreeItem = (items: INavItem) => ({
     id: CATEGORY_UI,

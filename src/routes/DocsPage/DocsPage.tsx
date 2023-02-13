@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import * as React from 'react';
 import Tree from '@steroidsjs/core/ui/nav/Tree';
 import {useBem} from '@steroidsjs/core/hooks';
