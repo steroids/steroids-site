@@ -1,9 +1,7 @@
 import {IRouteItem} from '@steroidsjs/core/ui/nav/Router/Router';
+import {ROUTE_DOCS, ROUTE_ROOT} from 'constants/routes';
 import DocsPage from './DocsPage';
 import IndexPage from './IndexPage';
-
-export const ROUTE_ROOT = 'root';
-export const ROUTE_DOCS = 'docs';
 
 const roles = [null];
 

@@ -9,6 +9,7 @@
     padding: 50px;
     height: calc(100vh - 56px);
   }
+
   &__title {
     display: flex;
     flex-direction: row;
@@ -21,6 +22,7 @@
     font-size: 3rem;
     margin-right: 20px;
   }
+  
   &__image {
     img {
       width: 100%;

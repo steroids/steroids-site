@@ -7,7 +7,7 @@ import {Notifications} from '@steroidsjs/core/ui/layout';
 import Header from '@steroidsjs/core/ui/layout/Header';
 
 import './Layout.scss';
-import {ROUTE_ROOT} from '../../routes';
+import {ROUTE_ROOT} from 'constants/routes';
 
 export default function Layout(props: React.PropsWithChildren<any>) {
     const bem = useBem('Layout');

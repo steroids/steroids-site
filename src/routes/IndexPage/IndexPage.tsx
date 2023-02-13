@@ -11,12 +11,12 @@ export default function IndexPage() {
         <div className={bem.block()}>
             <div className={bem.element('centered')}>
                 <div className={bem.element('title')}>
-                    Steroids — фреймворк для создания сложных и расширяемых веб-приложений
+                    {__('Steroids — фреймворк для создания сложных и расширяемых веб-приложений')}
                 </div>
                 <div className={bem.element('image')}>
                     <img
                         src='/images/index-app-illustration.png'
-                        alt='Steroids — фреймворк для создания сложных и расширяемых веб-приложений'
+                        alt={__('Steroids — фреймворк для создания сложных и расширяемых веб-приложений')}
                     />
                 </div>
             </div>
