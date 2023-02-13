@@ -33,6 +33,12 @@ export default function () {
                     message='Error'
                     description='This is an error message about copywriting.'
                 />
+                <Alert
+                    type="default"
+                    message="Default"
+                    description="Detailed description and advice about successful copywriting.Detailed description and advice about successful copywriting.Detailed description and advice about successful"
+                    showClose
+                />
             </div>
             <div style={{display: 'grid', gridGap: '20px'}}>
                 <Alert
@@ -59,6 +65,13 @@ export default function () {
                     type='error'
                     message='Error'
                     description='This is an error message about copywriting.'
+                />
+                <Alert
+                    showIcon={false}
+                    type="default"
+                    message="Default"
+                    description="Detailed description and advice about successful copywriting.Detailed description and advice about successful copywriting.Detailed description and advice about successful "
+                    showClose
                 />
             </div>
         </div>

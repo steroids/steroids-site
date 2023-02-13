@@ -10,4 +10,11 @@ export default {
     back: require('@fortawesome/fontawesome-free/svgs/solid/arrow-left.svg'),
     securityEye: require('@fortawesome/fontawesome-free/svgs/solid/eye.svg'),
     securityEyeSlash: require('@fortawesome/fontawesome-free/svgs/solid/eye-slash.svg'),
+    success: require('./svgs/success.svg'),
+    info: require('./svgs/info.svg'),
+    times: require('@fortawesome/fontawesome-free/svgs/solid/times-circle.svg'),
+    warning: require('./svgs/warning.svg'),
+    error: require('./svgs/error.svg'),
+    close: require('./svgs/close.svg'),
+    default: require('./svgs/default.svg'),
 };

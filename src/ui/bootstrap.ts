@@ -6,7 +6,9 @@ export default {
 
     'crud.CrudView': {lazy: () => require('@steroidsjs/bootstrap/crud/Crud/CrudView').default},
     'content.DropDownView': {lazy: () => require('@steroidsjs/bootstrap/content/DropDown/DropDownView').default},
+
     'content.AvatarView': {lazy: () => require('@steroidsjs/bootstrap/content/Avatar/AvatarView').default},
+    'content.AlertView': {lazy: () => require('@steroidsjs/bootstrap/content/Alert/AlertView').default},
     'content.AvatarGroupView': {lazy: () => require('@steroidsjs/bootstrap/content/Avatar/AvatarGroupView').default},
     'content.CalendarView': {lazy: () => require('@steroidsjs/bootstrap/content/Calendar/CalendarView').default},
     // 'crud.CrudView': {lazy: () => require('@steroidsjs/bootstrap/crud/Crud/CrudView').default},
