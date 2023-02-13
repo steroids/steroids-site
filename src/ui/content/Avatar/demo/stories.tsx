@@ -9,6 +9,10 @@ export default function () {
     return (
         <div style={{display: 'grid', gridGap: '20px'}}>
             <div style={{display: 'flex', gridGap: '20px'}}>
+                <Avatar size={100} src='https://i.ibb.co/1fWbXCt/F-1.png' status story />
+                <Avatar size={100} shape='square' title='Kozhin Dev' />
+            </div>
+            <div style={{display: 'flex', gridGap: '20px'}}>
                 <Avatar size='small' title='Kozhin Dev' status story />
                 <Avatar size='small' src='https://i.ibb.co/1fWbXCt/F-1.png' status story />
             </div>
