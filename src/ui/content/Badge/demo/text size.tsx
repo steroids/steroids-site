@@ -9,7 +9,7 @@ export default function () {
     return (
         <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '20px'}}>
             <div style={{display: 'grid', gridGap: '20px'}}>
-                <Badge type="secondary" borderType="squarer" message="Badge" />
+                <Badge type="secondary" roundingStyle="squarer" message="Badge" />
             </div>
 
         </div>
