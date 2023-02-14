@@ -1,7 +1,7 @@
 import _upperFirst from 'lodash-es/upperFirst';
 import _set from 'lodash-es/set';
 import _get from 'lodash-es/get';
-import { CATEGORY_UI } from 'constants/category';
+import {CATEGORY_UI} from 'constants/category';
 import {ROUTE_DOCS} from 'constants/routes';
 
 const addToDemosTree = (demosContext: any, demosTree: Record<string, any>) => (fileName: string) => {

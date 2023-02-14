@@ -1,5 +1,5 @@
 import {INavItem} from '@steroidsjs/core/ui/nav/Nav/Nav';
-import { CATEGORY_UI } from './category';
+import {CATEGORY_UI} from './category';
 import {ROUTE_DOCS} from './routes';
 
 export const getUiComponentTreeItem = (items: INavItem) => ({
