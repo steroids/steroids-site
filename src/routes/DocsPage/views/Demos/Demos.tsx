@@ -1,8 +1,9 @@
-import React, {useEffect, useState, ReactElement} from 'react';
-import {useBem, useSelector} from '@steroidsjs/core/hooks';
-import {getRouteParams} from '@steroidsjs/core/reducers/router';
+import React from 'react';
 import _upperFirst from 'lodash-es/upperFirst';
-import DemoCard from './DemoCard';
+import {useBem, useSelector} from '@steroidsjs/core/hooks';
+import {getRouteParam} from '@steroidsjs/core/reducers/router';
+import {PATH_ROUTE_PARAM} from 'constants/routeParams';
+import DemoCard from '../DemoCard';
 
 import './Demos.scss';
 
@@ -10,32 +11,41 @@ interface IDemosProps {
     demosComponents: any;
 }
 
-function Demos({demosComponents}: IDemosProps) {
+const toDemoFormat = ([title, component]) => ({
+    title: _upperFirst(title),
+    component,
+});
+
+const getDemosByRouteParam = (
+    demos: Record<string, any>,
+    routeParam: string,
+) => Object
+    .entries(demos[routeParam] || {})
+    .map(toDemoFormat);
+
+function Demos(props: IDemosProps) {
     const bem = useBem('Demos');
-    const state = useSelector(stateSelector => stateSelector);
-    const [currentMatchParams, setCurrentMatchParams] = useState<Record<'category' | 'path', string>>(getRouteParams(state));
+    const routeParam = useSelector(state => getRouteParam(state, PATH_ROUTE_PARAM));
 
-    useEffect(() => {
-        if (!currentMatchParams) return;
-        setCurrentMatchParams(getRouteParams(state));
-    }, [state.router, currentMatchParams, state]);
+    const demos = React.useMemo(
+        () => getDemosByRouteParam(props.demosComponents, routeParam),
+        [props, routeParam],
+    );
 
-    const renderDemos = (): ReactElement => {
-        const currentDemosKey = currentMatchParams.path;
-        const demos: (() => React.ReactElement)[] = Object.values(demosComponents[currentDemosKey]);
-        const titles = Object.keys(demosComponents[currentDemosKey]);
-
-        return (
-            <>
-                {demos.map((demo, i) => demo
-                    && <DemoCard key={i} demo={demo} title={_upperFirst(titles[i])} description='description' />)}
-            </>
-        );
-    };
+    if (!routeParam) {
+        return null;
+    }
 
     return (
         <div className={bem.block()}>
-            {currentMatchParams.category && currentMatchParams.path && renderDemos()}
+            {demos.map((demo, demoIndex) => (
+                <DemoCard
+                    key={demoIndex}
+                    Demo={demo.component}
+                    title={demo.title}
+                    description="description"
+                />
+            ))}
         </div>
     );
 }

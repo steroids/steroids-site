@@ -4,22 +4,32 @@ import './DemoCard.scss';
 
 interface IDemoCardProps {
     title: string,
-    description: string;
-    demo: () => React.ReactElement;
+    description: string,
+    Demo: React.FC,
 }
 
-function DemoCard({demo, title, description}: IDemoCardProps) {
+function DemoCard(props: IDemoCardProps) {
     const bem = useBem('DemoCard');
 
+    const {Demo} = props;
+
     return (
-        <article className={bem.block()}>
-            <header>
-                <h1 className={bem.element('title')}>{title}</h1>
-                <a href="#">Source</a>
-            </header>
-            <main className={bem.element('description')}>{description}</main>
-            <footer className={bem.element('content')}>{demo()}</footer>
-        </article>
+        <div className={bem.block()}>
+            <div className={bem.element('header')}>
+                <h3 className={bem.element('title')}>
+                    {__(props.title)}
+                </h3>
+                <a href="#">
+                    {__('Source')}
+                </a>
+            </div>
+            <div className={bem.element('description')}>
+                {__(props.description)}
+            </div>
+            <div className={bem.element('content')}>
+                <Demo />
+            </div>
+        </div>
     );
 }
 

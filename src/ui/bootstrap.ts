@@ -3,10 +3,8 @@
 
 export default {
     // TODO fix errors in views
-
     'crud.CrudView': {lazy: () => require('@steroidsjs/bootstrap/crud/Crud/CrudView').default},
     'content.DropDownView': {lazy: () => require('@steroidsjs/bootstrap/content/DropDown/DropDownView').default},
-
     'content.AvatarView': {lazy: () => require('@steroidsjs/bootstrap/content/Avatar/AvatarView').default},
     'content.AlertView': {lazy: () => require('@steroidsjs/bootstrap/content/Alert/AlertView').default},
     'content.AvatarGroupView': {lazy: () => require('@steroidsjs/bootstrap/content/Avatar/AvatarGroupView').default},
