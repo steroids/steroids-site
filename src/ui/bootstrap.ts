@@ -41,7 +41,7 @@ export default {
     'format.BooleanFormatterView': {lazy: () => require('@steroidsjs/bootstrap/format/BooleanFormatter/BooleanFormatterView').default},
     'format.DefaultFormatterView': {lazy: () => require('@steroidsjs/bootstrap/format/DefaultFormatter/DefaultFormatterView').default},
     // 'format.PhotosFormatterView': {lazy: () => require('@steroidsjs/bootstrap/format/PhotosFormatter/PhotosFormatterView').default},
-    'icon.IconView': {lazy: () => require('@steroidsjs/bootstrap/icon/Icon/IconView').default},
+    'icon.IconView': {lazy: () => require('@steroidsjs/bootstrap/content/Icon/IconView').default},
     'layout.HeaderView': {lazy: () => require('@steroidsjs/bootstrap/layout/Header/HeaderView').default},
     'layout.LoaderView': {lazy: () => require('@steroidsjs/bootstrap/layout/Loader/LoaderView').default},
     'layout.NotificationsView': {lazy: () => require('@steroidsjs/bootstrap/layout/Notifications/NotificationsView').default},
