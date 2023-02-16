@@ -1,0 +1,18 @@
+.DemoCard {
+    margin: 2em;
+    padding: 2em;
+    min-width: 30%;
+
+    border: 2px dashed #7B61FF;
+    border-radius: 30px;
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__description {
+        margin-bottom: 3em;
+    }
+}

@@ -28,6 +28,10 @@ export default function () {
                     type='error'
                     description='This is an error message about copywriting.'
                 />
+                <Alert
+                    type='default'
+                    description='This is an error message about copywriting.'
+                />
             </div>
             <div style={{display: 'grid', gridGap: '20px'}}>
                 <Alert
@@ -50,6 +54,12 @@ export default function () {
                     showIcon={false}
                     type='error'
                     description='This is an error message about copywriting.'
+                />
+                <Alert
+                    showIcon={false}
+                    type='default'
+                    description='This is an error message about copywriting.'
+                    showClose
                 />
             </div>
         </div>

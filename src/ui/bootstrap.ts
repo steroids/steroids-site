@@ -3,12 +3,13 @@
 
 export default {
     // TODO fix errors in views
-
     'crud.CrudView': {lazy: () => require('@steroidsjs/bootstrap/crud/Crud/CrudView').default},
     'content.DropDownView': {lazy: () => require('@steroidsjs/bootstrap/content/DropDown/DropDownView').default},
     'content.AvatarView': {lazy: () => require('@steroidsjs/bootstrap/content/Avatar/AvatarView').default},
+    'content.AlertView': {lazy: () => require('@steroidsjs/bootstrap/content/Alert/AlertView').default},
     'content.AvatarGroupView': {lazy: () => require('@steroidsjs/bootstrap/content/Avatar/AvatarGroupView').default},
     'content.CalendarView': {lazy: () => require('@steroidsjs/bootstrap/content/Calendar/CalendarView').default},
+    'content.IconView': {lazy: () => require('@steroidsjs/bootstrap/content/Icon/IconView').default},
     // 'crud.CrudView': {lazy: () => require('@steroidsjs/bootstrap/crud/Crud/CrudView').default},
     'form.AutoCompleteFieldView': {lazy: () => require('@steroidsjs/bootstrap/form/AutoCompleteField/AutoCompleteFieldView').default},
     'form.ButtonView': {lazy: () => require('@steroidsjs/bootstrap/form/Button/ButtonView').default},
@@ -41,7 +42,6 @@ export default {
     'format.BooleanFormatterView': {lazy: () => require('@steroidsjs/bootstrap/format/BooleanFormatter/BooleanFormatterView').default},
     'format.DefaultFormatterView': {lazy: () => require('@steroidsjs/bootstrap/format/DefaultFormatter/DefaultFormatterView').default},
     // 'format.PhotosFormatterView': {lazy: () => require('@steroidsjs/bootstrap/format/PhotosFormatter/PhotosFormatterView').default},
-    'icon.IconView': {lazy: () => require('@steroidsjs/bootstrap/icon/Icon/IconView').default},
     'layout.HeaderView': {lazy: () => require('@steroidsjs/bootstrap/layout/Header/HeaderView').default},
     'layout.LoaderView': {lazy: () => require('@steroidsjs/bootstrap/layout/Loader/LoaderView').default},
     'layout.NotificationsView': {lazy: () => require('@steroidsjs/bootstrap/layout/Notifications/NotificationsView').default},
