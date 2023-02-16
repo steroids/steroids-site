@@ -20,8 +20,9 @@ export default function DocsPage() {
                 <Tree items={treeItems} />
             </div>
             <div className={bem.element('content')}>
-                {category === CATEGORY_UI
-                    && <Demos demosComponents={demosComponents} />}
+                {category === CATEGORY_UI && (
+                    <Demos demosComponents={demosComponents} />
+                )}
             </div>
         </div>
     );

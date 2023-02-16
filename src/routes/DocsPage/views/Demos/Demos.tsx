@@ -41,7 +41,7 @@ function Demos(props: IDemosProps) {
             {demos.map((demo, demoIndex) => (
                 <DemoCard
                     key={demoIndex}
-                    Demo={demo.component}
+                    demo={demo.component}
                     title={demo.title}
                     description="description"
                 />
