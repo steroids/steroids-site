@@ -2135,10 +2135,10 @@
     "@sentry/types" "5.30.0"
     tslib "^1.9.3"
 
-"@steroidsjs/bootstrap@^3.0 || >=3.0.0-beta.1":
-  version "3.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.2.tgz#d4935bc29872f75f71422dced0799ee11c38e856"
-  integrity sha512-Yd4NnO4OcxUQ8zrVyXaJLE5Cpr6P/jqsDeaTIRVGbZlWY0DNDTKYD5s7aME9Ly9owRoJM8YpMkVaFpMAKtEjJg==
+"@steroidsjs/bootstrap@^3.0 || >=3.0.0-beta.3":
+  version "3.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.3.tgz#bdec22cef441a6492393a548b228fb089d80576d"
+  integrity sha512-UAdn7hd3HwmwX7UmJ591PNDH9qZxAuEuIdHWPgJLC8FTQB2RsU5uFBHfYKCZbcNAYFbTDYqUHR8Z2/ZFcrLeDA==
   dependencies:
     "@ckeditor/ckeditor5-react" "^3.0.2"
     "@steroidsjs/ckeditor5" "^27.0.2-rc.2"
@@ -2154,6 +2154,7 @@
     react-image-crop "^9.0.2"
     react-modal "^3.11.2"
     react-transition-group "^2.9.0"
+    react-use "^17.4.0"
 
 "@steroidsjs/ckeditor5@^27.0.2-rc.2":
   version "27.0.2-rc.2"
@@ -2215,13 +2216,13 @@
     "@ckeditor/ckeditor5-widget" "^27.0.0"
     "@ckeditor/ckeditor5-word-count" "^27.0.0"
 
-"@steroidsjs/core@^3.0.0-beta.2":
-  version "3.0.0-beta.4"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.0-beta.4.tgz#23217c34c1cc3812926b8b7cdfacb42adfac9a01"
-  integrity sha512-82m5IaGRRnlbtJ5dZS3Y9QQ3EDX7Ka0Ym+sUfu43TNdpED1U8BnMi55+osMxMygcgjTnrG2RpXB8mQO99z57vQ==
+"@steroidsjs/core@^3.0.0-beta.6":
+  version "3.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.0-beta.6.tgz#603ef6b3351e211596c30a756fdb151d0cc5f857"
+  integrity sha512-t2RFdCCf3k1954GgkBn5togpElumlM4mopgc18t0LkGemhSbGsyvdb894HtRlwi0Mx0U60imcxxXQkxDBoyJYQ==
   dependencies:
     axios "^0.21.1"
-    connected-react-router "^6.9.1"
+    connected-react-router "^6.9.3"
     domready "^1.0.8"
     dot-prop-immutable "^2.1.0"
     fileup-core "^1.2.7"
@@ -5096,7 +5097,7 @@ connect-history-api-fallback@^1.6.0:
   resolved "https://registry.yarnpkg.com/connect-history-api-fallback/-/connect-history-api-fallback-1.6.0.tgz#8b32089359308d111115d81cad3fceab888f97bc"
   integrity sha512-e54B99q/OUoH64zYYRf3HBP5z24G38h5D3qXu23JGRoigpX5Ss4r9ZnDk3g0Z8uQC2x2lPaJ+UlWBc1ZWBWdLg==
 
-connected-react-router@^6.9.1:
+connected-react-router@^6.9.1, connected-react-router@^6.9.3:
   version "6.9.3"
   resolved "https://registry.yarnpkg.com/connected-react-router/-/connected-react-router-6.9.3.tgz#72300aca9f9d6f38e1f4a2901572faa02adec972"
   integrity sha512-4ThxysOiv/R2Dc4Cke1eJwjKwH1Y51VDwlOrOfs1LjpdYOVvCNjNkZDayo7+sx42EeGJPQUNchWkjAIJdXGIOQ==
