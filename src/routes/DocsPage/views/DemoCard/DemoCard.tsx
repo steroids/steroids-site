@@ -1,5 +1,6 @@
 import React, {memo} from 'react';
 import {useBem} from '@steroidsjs/core/hooks';
+
 import './DemoCard.scss';
 
 interface IDemoCardProps {
