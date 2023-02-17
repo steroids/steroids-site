@@ -9,7 +9,7 @@ export default function Application() {
         reducers: require('@steroidsjs/core/reducers').default,
         routes: () => require('routes').default,
         layoutView: () => require('shared/Layout').default,
-        screen: true,
+        screen: {},
         components: {
             locale: LocaleComponent,
             http: HttpComponent,
