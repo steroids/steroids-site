@@ -13,7 +13,7 @@ export default function () {
                 <Badge type='secondary' roundingStyle="rounder" message="Secondary" size='large' showClose />
                 <Badge type='success' roundingStyle="squarer" message="Success" size='medium' />
                 <Badge type='danger' roundingStyle="rounder" message="Danger" size='medium' showClose />
-                <Badge type='warning' roundingStyle="squarer" message="Warning" size='small' />
+                <Badge type='warning' roundingStyle="squarer" message="Warning" size='small' showClose />
                 <Badge type='info' roundingStyle="rounder" message="Info" size='small' showClose />
             </div>
         </div>

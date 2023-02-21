@@ -21,6 +21,18 @@ const buttonsProperties = [
 
     },
     {
+        isLoading: true,
+        // disabled: true,
+        size: 'sm',
+
+    },
+    {
+        isLoading: true,
+        outline: true,
+        size: 'sm',
+
+    },
+    {
         outline: true,
         size: 'sm',
 
@@ -42,8 +54,8 @@ const buttonsProperties = [
 export default () => (
     <>
         <div style={{display: 'flex', gridGap: '30px', flexDirection: 'column', flexWrap: 'wrap'}}>
-            {Object.keys(buttonColors).map(color => (
-                <div style={{display: 'flex', columnGap: '10px'}}>
+            {Object.keys(buttonColors).map((color, colorsIndex) => (
+                <div key={colorsIndex} style={{display: 'flex', columnGap: '20px'}}>
                     {buttonsProperties.map((properties, index) => (
                         <Button
                             {...properties}
