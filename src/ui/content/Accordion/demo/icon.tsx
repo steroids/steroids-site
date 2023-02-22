@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import * as React from 'react';
-import {Collapse, CollapseItem} from '@steroidsjs/core/ui/content';
+import {Accordion, AccordionItem} from '@steroidsjs/core/ui/content';
 
 /**
  * Custom icon
@@ -10,7 +10,7 @@ import {Collapse, CollapseItem} from '@steroidsjs/core/ui/content';
 
 export default () => (
     <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '15px', minHeight: '255px'}}>
-        <Collapse
+        <Accordion
             icon={(
                 <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M28 16.5C28 23.1274 22.6274 28.5 16 28.5C9.37258 28.5 4 23.1274 4 16.5C4 9.87258 9.37258 4.5 16 4.5C22.6274 4.5 28 9.87258 28 16.5Z" stroke="#39BBD8" strokeWidth="2" />
@@ -20,12 +20,12 @@ export default () => (
             )}
             activeKey={1}
         >
-            <CollapseItem>Custom icon</CollapseItem>
-            <CollapseItem>Custom icon</CollapseItem>
-            <CollapseItem>Custom icon</CollapseItem>
-        </Collapse>
-        <Collapse activeKey={2}>
-            <CollapseItem icon={(
+            <AccordionItem>Custom icon</AccordionItem>
+            <AccordionItem>Custom icon</AccordionItem>
+            <AccordionItem>Custom icon</AccordionItem>
+        </Accordion>
+        <Accordion activeKey={2}>
+            <AccordionItem icon={(
                 <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M28 16.5C28 23.1274 22.6274 28.5 16 28.5C9.37258 28.5 4 23.1274 4 16.5C4 9.87258 9.37258 4.5 16 4.5C22.6274 4.5 28 9.87258 28 16.5Z" stroke="#64D03E" strokeWidth="2" />
                     <path d="M21 12.5L14.3333 20.5L11 17.3" stroke="#64D03E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -33,8 +33,8 @@ export default () => (
             )}
             >
                 Custom icon
-            </CollapseItem>
-            <CollapseItem icon={(
+            </AccordionItem>
+            <AccordionItem icon={(
                 <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M28 16.5C28 23.1274 22.6274 28.5 16 28.5C9.37258 28.5 4 23.1274 4 16.5C4 9.87258 9.37258 4.5 16 4.5C22.6274 4.5 28 9.87258 28 16.5Z" stroke="#39BBD8" strokeWidth="2" />
                     <path d="M16 13.5L16 23.5" stroke="#39BBD8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -43,8 +43,8 @@ export default () => (
             )}
             >
                 Custom icon
-            </CollapseItem>
-            <CollapseItem icon={(
+            </AccordionItem>
+            <AccordionItem icon={(
                 <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M28 16.5C28 23.1274 22.6274 28.5 16 28.5C9.37258 28.5 4 23.1274 4 16.5C4 9.87258 9.37258 4.5 16 4.5C22.6274 4.5 28 9.87258 28 16.5Z" stroke="#FFE457" strokeWidth="2" />
                     <path d="M16 19.5L16 9.5" stroke="#FFE457" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -53,7 +53,7 @@ export default () => (
             )}
             >
                 Custom icon
-            </CollapseItem>
-        </Collapse>
+            </AccordionItem>
+        </Accordion>
     </div>
 );

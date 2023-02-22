@@ -1,8 +1,8 @@
 import * as React from 'react';
-import {Collapse, CollapseItem} from '@steroidsjs/core/ui/content';
+import {Accordion, AccordionItem} from '@steroidsjs/core/ui/content';
 
 /**
- * Anonymous function every time you change state of Collapse
+ * Anonymous function every time you change state of Accordion
  * @order 8
  * @col 6
  */
@@ -11,17 +11,17 @@ export default () => {
     const [touches, setTouches] = React.useState<number>(-2);
     return (
         <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '15px', minHeight: '225px'}}>
-            <Collapse
-                style={{backgroundColor: 'lavender'}}
+            <Accordion
+
                 icon='plus'
                 onChange={() => setTouches(e => e + 1)}
             >
-                <CollapseItem>Custom icon</CollapseItem>
-                <CollapseItem>Custom icon</CollapseItem>
-                <CollapseItem>Custom icon</CollapseItem>
-            </Collapse>
+                <AccordionItem>Custom icon</AccordionItem>
+                <AccordionItem>Custom icon</AccordionItem>
+                <AccordionItem>Custom icon</AccordionItem>
+            </Accordion>
             <div>
-                <p style={{backgroundColor: 'lavender'}}>
+                <p>
                     You touched collapse
                     {' '}
                     {touches}
