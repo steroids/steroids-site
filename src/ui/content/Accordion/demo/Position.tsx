@@ -7,7 +7,7 @@ import {Accordion, AccordionItem} from '@steroidsjs/core/ui/content/Accordion';
 
 export default () => (
     <div style={{minHeight: '255px'}}>
-        <Accordion isAccordion activeKey={2}>
+        <Accordion activeKey={2}>
             <AccordionItem title='Top' position="top" theme="dark">Top content</AccordionItem>
             <AccordionItem title='Middle' position="middle" theme="intermediate">Middle content</AccordionItem>
             <AccordionItem title='Bottom' theme="light" position="bottom">Botoom content</AccordionItem>
