@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {CheckboxField} from '@steroidsjs/core/ui/form';
+import {CheckboxField, Form} from '@steroidsjs/core/ui/form';
 
 /**
  * Обработка ошибок.
@@ -13,6 +13,8 @@ export default () => (
             label='Errors'
             errors={['Error 1 text', 'Error 2 text']}
             layout
+            className='has-errors'
         />
+
     </>
 );
