@@ -10,6 +10,7 @@ export default {
     'content.AvatarGroupView': {lazy: () => require('@steroidsjs/bootstrap/content/Avatar/AvatarGroupView').default},
     'content.CalendarView': {lazy: () => require('@steroidsjs/bootstrap/content/Calendar/CalendarView').default},
     'content.IconView': {lazy: () => require('@steroidsjs/bootstrap/content/Icon/IconView').default},
+    'content.BadgeView': {lazy: () => require('@steroidsjs/bootstrap/content/Badge/BadgeView').default},
     // 'crud.CrudView': {lazy: () => require('@steroidsjs/bootstrap/crud/Crud/CrudView').default},
     'form.AutoCompleteFieldView': {lazy: () => require('@steroidsjs/bootstrap/form/AutoCompleteField/AutoCompleteFieldView').default},
     'form.ButtonView': {lazy: () => require('@steroidsjs/bootstrap/form/Button/ButtonView').default},
