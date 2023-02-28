@@ -1,26 +1,65 @@
 import React from 'react';
 import {DropDown} from '@steroidsjs/core/ui/content';
-import {useBem} from '@steroidsjs/core/hooks';
-import {Button} from '@steroidsjs/core/ui/form';
 
-export default function () {
+export default () => {
     const Content = () => (
-        <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-        </ul>
+        <div>
+            <p>Test data</p>
+            <p>Test data</p>
+            <p>Test data</p>
+        </div>
     );
 
     return (
-        <>
-            <DropDown
-                content={() => <Content />}
-                closeMode='click-away'
-                position='leftTop'
-            >
-                <Button />
-            </DropDown>
-        </>
+        <div style={{display: 'flex', rowGap: '10px', flexDirection: 'column'}}>
+            <div style={{display: 'flex', flexWrap: 'wrap', columnGap: '10px'}}>
+                <DropDown
+                    content={() => <Content />}
+                    closeMode='click-away'
+                    position='topLeft'
+                >
+                    <button>Popover Top Left</button>
+                </DropDown>
+                <DropDown
+                    content={() => <Content />}
+                    closeMode='click-away'
+                    position='top'
+                >
+                    <button>Popover Top Center</button>
+                </DropDown>
+                <DropDown
+                    content={() => <Content />}
+                    closeMode='click-away'
+                    position='topRight'
+                >
+                    <button>Popover Top Right</button>
+                </DropDown>
+            </div>
+
+            <div style={{display: 'flex', flexWrap: 'wrap', columnGap: '10px'}}>
+                <DropDown
+                    content={() => <Content />}
+                    closeMode='click-away'
+                    position='bottomLeft'
+                >
+                    <button>Popover Bottom Left</button>
+                </DropDown>
+                <DropDown
+                    content={() => <Content />}
+                    closeMode='click-away'
+                    position='bottom'
+                >
+                    <button>Popover Bottom Center</button>
+                </DropDown>
+                <DropDown
+                    content={() => <Content />}
+                    closeMode='click-away'
+                    position='bottomRight'
+                >
+                    <button>Popover Bottom Right</button>
+                </DropDown>
+            </div>
+
+        </div>
     );
-}
+};

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Button from '@steroidsjs/core/ui/form/Button/Button';
 
-
 /**
  * Кнопка с бэйджом к примеру с количеством уведомолений.
  * @order 3

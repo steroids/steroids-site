@@ -11,18 +11,16 @@ const buttonColors = {
     info: 'Info',
 };
 
-const buttonsProperties = [
+const buttonPropsList = [
     {
         size: 'sm',
     },
     {
         disabled: true,
         size: 'sm',
-
     },
     {
         isLoading: true,
-        // disabled: true,
         size: 'sm',
 
     },
@@ -30,12 +28,10 @@ const buttonsProperties = [
         isLoading: true,
         outline: true,
         size: 'sm',
-
     },
     {
         outline: true,
         size: 'sm',
-
     },
     {
         size: 'md',
@@ -54,14 +50,14 @@ const buttonsProperties = [
 export default () => (
     <>
         <div style={{display: 'flex', gridGap: '30px', flexDirection: 'column', flexWrap: 'wrap'}}>
-            {Object.keys(buttonColors).map((color, colorsIndex) => (
-                <div key={colorsIndex} style={{display: 'flex', columnGap: '20px'}}>
-                    {buttonsProperties.map((properties, index) => (
+            {Object.keys(buttonColors).map((buttonColor, buttonColorIndex) => (
+                <div key={buttonColorIndex} style={{display: 'flex', columnGap: '20px'}}>
+                    {buttonPropsList.map((buttonPropsItem, buttonPropsIndex) => (
                         <Button
-                            {...properties}
-                            color={color}
-                            key={index}
-                            label={buttonColors[color]}
+                            {...buttonPropsItem}
+                            color={buttonColor}
+                            key={buttonPropsIndex}
+                            label={buttonColors[buttonColor]}
                         />
                     ))}
                 </div>

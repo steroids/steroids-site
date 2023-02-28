@@ -33,4 +33,4 @@ function DemoCard(props: IDemoCardProps) {
     );
 }
 
-export default memo(DemoCard);
+export default DemoCard;

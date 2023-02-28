@@ -8,13 +8,12 @@ import {Accordion, AccordionItem} from '@steroidsjs/core/ui/content';
  */
 
 export default () => {
-    const [touches, setTouches] = React.useState<number>(-2);
+    const [touches, setTouches] = React.useState<number>(-1);
     return (
         <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '15px', minHeight: '225px'}}>
             <Accordion
-
                 icon='plus'
-                onChange={() => setTouches(e => e + 1)}
+                onChange={() => setTouches(prevTouches => prevTouches + 1)}
             >
                 <AccordionItem>Custom icon</AccordionItem>
                 <AccordionItem>Custom icon</AccordionItem>
@@ -22,11 +21,7 @@ export default () => {
             </Accordion>
             <div>
                 <p>
-                    You touched collapse
-                    {' '}
-                    {touches}
-                    {' '}
-                    time
+                    {`You touched collapse ${touches} time`}
                 </p>
             </div>
         </div>

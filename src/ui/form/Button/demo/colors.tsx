@@ -20,7 +20,7 @@ const colors = {
 
 export default () => (
     <>
-        <div style={{display: 'flex', gridGap: '10px'}}>
+        <div style={{display: 'flex', gridGap: '10px', marginBottom: '10px'}}>
             {Object.keys(colors).map(color => (
                 <Button
                     key={color}
@@ -29,7 +29,6 @@ export default () => (
                 />
             ))}
         </div>
-        <br />
         <div style={{display: 'flex', gridGap: '10px'}}>
             {Object.keys(colors).map(color => (
                 <Button

@@ -13,6 +13,7 @@ export default () => (
         <Button
             label={__('button')}
             tag='button'
+            style={{marginBottom: '30px'}}
         />
         <Button
             label={__('a')}

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { CheckboxField} from '@steroidsjs/core/ui/form';
+import {CheckboxField} from '@steroidsjs/core/ui/form';
 
 /**
  * Обычный пример использования CheckboxField.
