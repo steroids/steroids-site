@@ -21,9 +21,5 @@ export default () => (
             <Avatar size='large' shape='square' src='https://i.ibb.co/1fWbXCt/F-1.png' />
             <Avatar size='large' shape='square' title='Kozhin Dev' />
         </div>
-        <div style={{display: 'flex', gridGap: '10px'}}>
-            <Avatar size='x-large' shape='square' src='https://i.ibb.co/1fWbXCt/F-1.png' />
-            <Avatar size='x-large' shape='square' title='Kozhin Dev' />
-        </div>
     </div>
 );

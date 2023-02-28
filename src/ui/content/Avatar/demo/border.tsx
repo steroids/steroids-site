@@ -23,9 +23,5 @@ export default () => (
             <Avatar size='large' title='Kozhin Dev' status hasBorder />
             <Avatar size='large' src='https://i.ibb.co/1fWbXCt/F-1.png' status hasBorder />
         </div>
-        <div style={{display: 'flex', gridGap: '20px'}}>
-            <Avatar size='x-large' title='Kozhin Dev' status hasBorder />
-            <Avatar size='x-large' src='https://i.ibb.co/1fWbXCt/F-1.png' status hasBorder />
-        </div>
     </div>
 );

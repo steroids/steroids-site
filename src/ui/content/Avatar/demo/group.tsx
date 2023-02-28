@@ -27,11 +27,5 @@ export default () => (
             <Avatar size='large' src='https://i.ibb.co/1fWbXCt/F-1.png' status />
             <Avatar size='large' title='Kozhin Dev' status />
         </AvatarGroup>
-        <AvatarGroup maxCount={3}>
-            <Avatar size='x-large' src='https://i.ibb.co/1fWbXCt/F-1.png' />
-            <Avatar size='x-large' title='Kozhin Dev' />
-            <Avatar size='x-large' src='https://i.ibb.co/1fWbXCt/F-1.png' status />
-            <Avatar size='x-large' title='Kozhin Dev' status />
-        </AvatarGroup>
     </div>
 );

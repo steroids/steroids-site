@@ -21,9 +21,5 @@ export default () => (
             <Avatar size='large' title='Kozhin Dev' />
             <Avatar size='large' title='Kozhin Dev' status />
         </div>
-        <div style={{display: 'flex', gridGap: '10px'}}>
-            <Avatar size='x-large' title='Kozhin Dev' />
-            <Avatar size='x-large' title='Kozhin Dev' status />
-        </div>
     </div>
 );
