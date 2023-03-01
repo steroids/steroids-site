@@ -3,7 +3,7 @@ import * as React from 'react';
 import Button from '@steroidsjs/core/ui/form/Button/Button';
 
 /**
- * По-умлочанию Button имеет 3 заданных размера.
+ * По умолчанию Button имеет 3 заданных размера.
  * @order 10
  * @col 8
  */

@@ -7,11 +7,11 @@ import {CheckboxField, Form} from '@steroidsjs/core/ui/form';
  * @col 4
  */
 
-export default () => {
+export default () => (
     <CheckboxField
         label='Errors'
         errors={['Error 1 text', 'Error 2 text']}
         layout
         className='has-errors'
-    />;
-};
+    />
+);

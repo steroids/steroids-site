@@ -12,7 +12,7 @@ interface IDemosProps {
 }
 
 const toDemoFormat = ([title, component]) => ({
-    title: _upperFirst(title),
+    title: _upperFirst(title.replaceAll('-', ' ')),
     component,
 });
 
