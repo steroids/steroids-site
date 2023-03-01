@@ -8,13 +8,11 @@ import Button from '@steroidsjs/core/ui/form/Button/Button';
  * @col 4
  */
 
-export default () => (
-    <>
-        <Button
-            link
-            url='https://google.ru'
-            target='_blank'
-            label={__('Link')}
-        />
-    </>
-);
+export default () => {
+    <Button
+        link
+        url='https://google.ru'
+        target='_blank'
+        label={__('Link')}
+    />
+}
