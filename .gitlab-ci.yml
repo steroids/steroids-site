@@ -3,7 +3,7 @@ stages:
   - deploy
 
 variables:
-  DEV_DEPLOY_DIR: '/var/www/steroids.kozhindev.com/frontend'
+  DEV_DEPLOY_DIR: '/var/www/steroids.kozhin.dev/frontend'
 
 build:
   stage: build
