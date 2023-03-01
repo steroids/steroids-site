@@ -9,7 +9,7 @@ import Button from '@steroidsjs/core/ui/form/Button/Button';
  */
 
 export default () => (
-        <Button confirm='Are you sure?'>
-            Confirm
-        </Button>
+    <Button confirm='Are you sure?'>
+        Confirm
+    </Button>
 );

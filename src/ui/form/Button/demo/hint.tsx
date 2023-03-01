@@ -11,4 +11,4 @@ export default () => (
     <Button hint='Hint text'>
         Hint
     </Button>
-)
+);

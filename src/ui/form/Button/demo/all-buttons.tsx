@@ -46,21 +46,19 @@ const buttonPropsList = [
  * @order 4
  * @col 4
  */
-export default function () {
-    return (
-        <div style={{display: 'flex', gridGap: '30px', flexDirection: 'column', flexWrap: 'wrap'}}>
-            {Object.keys(buttonColors).map((buttonColor, buttonColorIndex) => (
-                <div key={buttonColorIndex} style={{display: 'flex', columnGap: '20px'}}>
-                    {buttonPropsList.map((buttonPropsItem, buttonPropsIndex) => (
-                        <Button
-                            {...buttonPropsItem}
-                            color={buttonColor}
-                            key={buttonPropsIndex}
-                            label={buttonColors[buttonColor]}
-                        />
-                    ))}
-                </div>
-            ))}
-        </div>
-    );
-}
+export default () => (
+    <div style={{display: 'flex', gridGap: '30px', flexDirection: 'column', flexWrap: 'wrap'}}>
+        {Object.keys(buttonColors).map((buttonColor, buttonColorIndex) => (
+            <div key={buttonColorIndex} style={{display: 'flex', columnGap: '20px'}}>
+                {buttonPropsList.map((buttonPropsItem, buttonPropsIndex) => (
+                    <Button
+                        {...buttonPropsItem}
+                        color={buttonColor}
+                        key={buttonPropsIndex}
+                        label={buttonColors[buttonColor]}
+                    />
+                ))}
+            </div>
+        ))}
+    </div>
+);
