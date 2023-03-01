@@ -32,6 +32,9 @@ function Demos(props: IDemosProps) {
         [props, routeParam],
     );
 
+    console.log(demos);
+    
+
     if (!routeParam) {
         return null;
     }
