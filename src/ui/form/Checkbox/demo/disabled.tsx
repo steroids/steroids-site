@@ -7,8 +7,6 @@ import {CheckboxField} from '@steroidsjs/core/ui/form';
  * @col 4
  */
 
-export default () => (
-    <>
-        <CheckboxField label='Disabled' disabled />
-    </>
-);
+export default () => {
+    <CheckboxField label='Disabled' disabled />;
+};

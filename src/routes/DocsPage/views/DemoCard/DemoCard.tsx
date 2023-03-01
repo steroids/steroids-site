@@ -9,7 +9,7 @@ interface IDemoCardProps {
     demo: React.FC,
 }
 
-function DemoCard(props: IDemoCardProps) {
+export default function DemoCard(props: IDemoCardProps) {
     const bem = useBem('DemoCard');
     const {demo: Demo} = props;
 
@@ -32,5 +32,3 @@ function DemoCard(props: IDemoCardProps) {
         </div>
     );
 }
-
-export default DemoCard;

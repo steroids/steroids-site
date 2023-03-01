@@ -8,11 +8,9 @@ import Button from '@steroidsjs/core/ui/form/Button/Button';
  * @col 4
  */
 
-export default () => (
-    <>
-        <Button
-            block
-            label={__('Block')}
-        />
-    </>
-);
+export default () => {
+    <Button
+        block
+        label={__('Block')}
+    />;
+};
