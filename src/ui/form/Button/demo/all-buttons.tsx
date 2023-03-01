@@ -37,7 +37,6 @@ const buttonPropsList = [
     },
     {
         size: 'lg',
-        fontThickness: 'bold',
     },
 ];
 
