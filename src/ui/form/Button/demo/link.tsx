@@ -3,16 +3,16 @@ import * as React from 'react';
 import Button from '@steroidsjs/core/ui/form/Button/Button';
 
 /**
- * Использвание кнопки в качестве ссылки.
+ * Использование кнопки в качестве ссылки.
  * @order 9
  * @col 4
  */
 
-export default () => {
+export default () => (
     <Button
         link
         url='https://google.ru'
         target='_blank'
         label={__('Link')}
     />
-}
+);

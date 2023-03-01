@@ -3,7 +3,7 @@ import * as React from 'react';
 import Button from '@steroidsjs/core/ui/form/Button/Button';
 
 /**
- * Простой пример использзования Button с заданным лейблом.
+ * Простой пример использования Button с заданным текстом.
  * @order 1
  * @col 4
  */

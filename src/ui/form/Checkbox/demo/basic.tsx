@@ -7,6 +7,6 @@ import {CheckboxField} from '@steroidsjs/core/ui/form';
  * @col 4
  */
 
-export default () => {
-    <CheckboxField label='Remember me' />;
-};
+export default () => (
+    <CheckboxField label='Remember me' />
+);
