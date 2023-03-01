@@ -18,14 +18,15 @@ const colors = {
  * @col 12
  */
 
-export default () => {
+export default () => (
     <>
         <div style={{display: 'flex', gridGap: '10px', marginBottom: '10px'}}>
             {Object.keys(colors).map(color => (
                 <Button
                     key={color}
                     color={color}
-                    label={colors[color]} />
+                    label={colors[color]}
+                />
             ))}
         </div>
         <div style={{display: 'flex', gridGap: '10px'}}>
@@ -34,8 +35,9 @@ export default () => {
                     key={color}
                     color={color}
                     label={colors[color]}
-                    outline />
+                    outline
+                />
             ))}
         </div>
     </>
-}
+);

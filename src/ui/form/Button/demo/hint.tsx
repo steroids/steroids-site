@@ -7,8 +7,8 @@ import Button from '@steroidsjs/core/ui/form/Button/Button';
  * @order 7
  * @col 4
  */
-export default () => {
+export default () => (
     <Button hint='Hint text'>
         Hint
     </Button>
-}
+)
