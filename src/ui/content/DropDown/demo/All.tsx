@@ -60,6 +60,53 @@ export default () => {
                 </DropDown>
             </div>
 
+            <div style={{display: 'flex', flexWrap: 'wrap', columnGap: '10px'}}>
+                <DropDown
+                    content={() => <Content />}
+                    closeMode='click-away'
+                    position='leftTop'
+                >
+                    <button>Popover Left Top</button>
+                </DropDown>
+                <DropDown
+                    content={() => <Content />}
+                    closeMode='click-away'
+                    position='left'
+                >
+                    <button>Popover Left</button>
+                </DropDown>
+                <DropDown
+                    content={() => <Content />}
+                    closeMode='click-away'
+                    position='leftBottom'
+                >
+                    <button>Popover Left Bottom</button>
+                </DropDown>
+            </div>
+
+            <div style={{display: 'flex', flexWrap: 'wrap', columnGap: '10px'}}>
+                <DropDown
+                    content={() => <Content />}
+                    closeMode='click-away'
+                    position='rightTop'
+                >
+                    <button>Popover Right Top</button>
+                </DropDown>
+                <DropDown
+                    content={() => <Content />}
+                    closeMode='click-away'
+                    position='right'
+                >
+                    <button>Popover Right</button>
+                </DropDown>
+                <DropDown
+                    content={() => <Content />}
+                    closeMode='click-away'
+                    position='rightBottom'
+                >
+                    <button>Popover Right Bottom</button>
+                </DropDown>
+            </div>
         </div>
     );
 };
