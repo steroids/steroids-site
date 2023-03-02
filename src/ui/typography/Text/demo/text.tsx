@@ -2,7 +2,7 @@ import React from 'react';
 import {Text} from '@steroidsjs/core/ui/typography';
 
 /**
- * Simple title
+ * Simple text
  */
 
 // eslint-disable-next-line max-len
