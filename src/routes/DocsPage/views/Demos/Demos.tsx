@@ -12,7 +12,7 @@ interface IDemosProps {
 }
 
 const toDemoFormat = ([title, component]) => ({
-    title: _upperFirst(title),
+    title: _upperFirst(title.replaceAll('-', ' ')),
     component,
 });
 
@@ -23,7 +23,7 @@ const getDemosByRouteParam = (
     .entries(demos[routeParam] || {})
     .map(toDemoFormat);
 
-function Demos(props: IDemosProps) {
+export default function Demos(props: IDemosProps) {
     const bem = useBem('Demos');
     const routeParam = useSelector(state => getRouteParam(state, PATH_ROUTE_PARAM));
 
@@ -52,5 +52,3 @@ function Demos(props: IDemosProps) {
         </div>
     );
 }
-
-export default Demos;
