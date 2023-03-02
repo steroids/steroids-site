@@ -10,8 +10,18 @@ const TEXT = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, 
 
 export default () => (
     <div>
-        <Text template='body1' content={TEXT} />
-        <Text template='span' content='Span' style={{marginRight: '10px'}} />
-        <Text template='boldSpan' content='Bold span' />
+        <Text
+            template='body'
+            content={TEXT}
+        />
+        <Text
+            template='span'
+            content='Span'
+            style={{marginRight: '10px'}}
+        />
+        <Text
+            template='boldSpan'
+            content='Bold span'
+        />
     </div>
 );
