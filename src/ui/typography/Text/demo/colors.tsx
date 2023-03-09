@@ -2,7 +2,7 @@ import React from 'react';
 import {Text} from '@steroidsjs/core/ui/typography';
 
 /**
- * Colors text
+ * Colors for text
  */
 
 export default () => (
