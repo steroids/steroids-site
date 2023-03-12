@@ -3,7 +3,7 @@ stages:
   - deploy
 
 variables:
-  DEV_DEPLOY_DIR: '/var/www/steroids.kozhin.dev/frontend'
+  DEV_DEPLOY_DIR: '/var/host/www/$CI_PROJECT_NAMESPACE-$CI_PROJECT_NAME/www-$CI_COMMIT_REF_NAME'
 
 build:
   stage: build
@@ -19,8 +19,6 @@ build:
     - yarn
     - env > .env
     - export APP_ENV="preview"
-    - export APP_BACKEND_URL="https://boilerplate12345.kozhin.dev"
-#    - export APP_SENTRY_DSN="REPLACE_WITH_REAL_SENTRY_DSN"
     - node webpack production
     - echo "$CI_COMMIT_REF_NAME-$CI_JOB_ID" > $CI_PROJECT_DIR/public/version.txt
 
