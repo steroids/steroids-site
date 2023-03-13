@@ -1,112 +1,60 @@
 import React from 'react';
 import {DropDown} from '@steroidsjs/core/ui/content';
 
-export default () => {
-    const Content = () => (
-        <div>
-            <p>Test data</p>
-            <p>Test data</p>
-            <p>Test data</p>
-        </div>
-    );
+import './All.scss';
 
-    return (
-        <div style={{display: 'flex', rowGap: '10px', flexDirection: 'column'}}>
-            <div style={{display: 'flex', flexWrap: 'wrap', columnGap: '10px'}}>
-                <DropDown
-                    content={() => <Content />}
-                    closeMode='click-away'
-                    position='topLeft'
-                >
-                    <button>Popover Top Left</button>
-                </DropDown>
-                <DropDown
-                    content={() => <Content />}
-                    closeMode='click-away'
-                    position='top'
-                >
-                    <button>Popover Top Center</button>
-                </DropDown>
-                <DropDown
-                    content={() => <Content />}
-                    closeMode='click-away'
-                    position='topRight'
-                >
-                    <button>Popover Top Right</button>
-                </DropDown>
-            </div>
+const examples = {
+    row1: {
+        topLeft: 'Popover Top Left',
+        top: 'Popover Top Center',
+        topRight: 'Popover Top Right',
+    },
+    row2: {
+        bottomLeft: 'Popover Bottom Left',
+        bottom: 'Popover Bottom Center',
+        bottomRight: 'Popover Bottom Right',
+    },
+    row3: {
+        leftTop: 'Popover Left Top',
+        left: 'Popover Left Center',
+        leftBottom: 'Popover Left Bottom',
+    },
+    row4: {
+        rightTop: 'Popover Right Top',
+        right: 'Popover Right Center',
+        rightBottom: 'Popover Right Bottom',
+    },
 
-            <div style={{display: 'flex', flexWrap: 'wrap', columnGap: '10px'}}>
-                <DropDown
-                    content={() => <Content />}
-                    closeMode='click-away'
-                    position='bottomLeft'
-                >
-                    <button>Popover Bottom Left</button>
-                </DropDown>
-                <DropDown
-                    content={() => <Content />}
-                    closeMode='click-away'
-                    position='bottom'
-                >
-                    <button>Popover Bottom Center</button>
-                </DropDown>
-                <DropDown
-                    content={() => <Content />}
-                    closeMode='click-away'
-                    position='bottomRight'
-                >
-                    <button>Popover Bottom Right</button>
-                </DropDown>
-            </div>
-
-            <div style={{display: 'flex', flexWrap: 'wrap', columnGap: '10px'}}>
-                <DropDown
-                    content={() => <Content />}
-                    closeMode='click-away'
-                    position='leftTop'
-                >
-                    <button>Popover Left Top</button>
-                </DropDown>
-                <DropDown
-                    content={() => <Content />}
-                    closeMode='click-away'
-                    position='left'
-                >
-                    <button>Popover Left</button>
-                </DropDown>
-                <DropDown
-                    content={() => <Content />}
-                    closeMode='click-away'
-                    position='leftBottom'
-                >
-                    <button>Popover Left Bottom</button>
-                </DropDown>
-            </div>
-
-            <div style={{display: 'flex', flexWrap: 'wrap', columnGap: '10px'}}>
-                <DropDown
-                    content={() => <Content />}
-                    closeMode='click-away'
-                    position='rightTop'
-                >
-                    <button>Popover Right Top</button>
-                </DropDown>
-                <DropDown
-                    content={() => <Content />}
-                    closeMode='click-away'
-                    position='right'
-                >
-                    <button>Popover Right</button>
-                </DropDown>
-                <DropDown
-                    content={() => <Content />}
-                    closeMode='click-away'
-                    position='rightBottom'
-                >
-                    <button>Popover Right Bottom</button>
-                </DropDown>
-            </div>
-        </div>
-    );
 };
+
+const Content = () => (
+    <div>
+        <p>Test data</p>
+        <p>Test data</p>
+        <p>Test data</p>
+    </div>
+);
+
+export default () => (
+    <div style={{display: 'flex', rowGap: '10px', flexDirection: 'column'}}>
+        {Object.entries(examples).map(([row, positions]) => (
+            <div
+                key={row}
+                style={{display: 'flex', flexWrap: 'wrap', columnGap: '10px'}}
+            >
+                {Object.entries(positions).map(([position, label]) => (
+                    <DropDown
+                        key={position}
+                        content={() => <Content />}
+                        closeMode='click-away'
+                        position={position}
+                    >
+                        <span className='example'>
+                            {label}
+                        </span>
+                    </DropDown>
+                ))}
+            </div>
+        ))}
+    </div>
+);
