@@ -17,7 +17,7 @@ export default () => (
     <div className='row'>
         {Object.keys(sizes).map(size => (
             <div className='col' key={size}>
-                <PasswordField label={sizes[size]} size={size} layout />
+                <PasswordField label={sizes[size]} placeholder={sizes[size]} size={size} layout showClear security />
             </div>
         ))}
     </div>
