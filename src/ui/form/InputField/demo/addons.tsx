@@ -7,9 +7,18 @@ import InputField from '@steroidsjs/core/ui/form/InputField/InputField';
  * @order 7
  * @col 3
  */
+const sizes = {
+    sm: 'Small',
+    md: 'Middle',
+    lg: 'Large',
+};
 
 export default () => (
-    <>
-        <InputField addonBefore='http://' addonAfter='.com' label='AddonBefore and AddonAfter' />
-    </>
+    <div className='row'>
+        {Object.keys(sizes).map(size => (
+            <div className='col' key={size}>
+                <InputField placeholder='Placeholder' addonBefore="https://" addonAfter=".com" showClear label={sizes[size]} size={size} layout />
+            </div>
+        ))}
+    </div>
 );
