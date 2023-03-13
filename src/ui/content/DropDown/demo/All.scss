@@ -1,0 +1,13 @@
+.example { 
+    display: block;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    transition: color 150ms ease-in-out;    
+
+    padding: 10px; 
+
+    &:hover { 
+        cursor: pointer;
+        color: #7b61ff;
+    }
+}
