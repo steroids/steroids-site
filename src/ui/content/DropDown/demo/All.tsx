@@ -3,7 +3,7 @@ import {DropDown} from '@steroidsjs/core/ui/content';
 
 import './All.scss';
 
-const Examples = {
+const examples = {
     row1: {
         topLeft: 'Popover Top Left',
         top: 'Popover Top Center',
@@ -37,16 +37,20 @@ const Content = () => (
 
 export default () => (
     <div style={{display: 'flex', rowGap: '10px', flexDirection: 'column'}}>
-        {Object.keys(Examples).map(key => (
-            <div style={{display: 'flex', flexWrap: 'wrap', columnGap: '10px'}}>
-                {Object.keys(Examples[key]).map(position => (
+        {Object.entries(examples).map(([row, positions]) => (
+            <div
+                key={row}
+                style={{display: 'flex', flexWrap: 'wrap', columnGap: '10px'}}
+            >
+                {Object.entries(positions).map(([position, label]) => (
                     <DropDown
+                        key={position}
                         content={() => <Content />}
                         closeMode='click-away'
                         position={position}
                     >
                         <span className='example'>
-                            {Examples[key][position]}
+                            {label}
                         </span>
                     </DropDown>
                 ))}
