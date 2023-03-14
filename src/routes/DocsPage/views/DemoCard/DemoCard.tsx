@@ -1,5 +1,6 @@
-import React, {memo} from 'react';
+import React from 'react';
 import {useBem} from '@steroidsjs/core/hooks';
+import {Title, Text} from '@steroidsjs/core/ui/typography';
 
 import './DemoCard.scss';
 
@@ -16,16 +17,15 @@ export default function DemoCard(props: IDemoCardProps) {
     return (
         <div className={bem.block()}>
             <div className={bem.element('header')}>
-                <h3 className={bem.element('title')}>
-                    {props.title}
-                </h3>
+                <Title content={props.title} />
                 <a href="#">
                     {__('Source')}
                 </a>
             </div>
-            <div className={bem.element('description')}>
-                {props.description}
-            </div>
+            <Text
+                className={bem.element('description')}
+                content={props.description}
+            />
             <div className={bem.element('content')}>
                 <Demo />
             </div>
