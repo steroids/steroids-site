@@ -2141,14 +2141,13 @@
     "@sentry/types" "5.30.0"
     tslib "^1.9.3"
 
-"@steroidsjs/bootstrap@^3.0.0-beta.20":
-  version "3.0.0-beta.20"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.20.tgz#b5a7c62557dee8a3bb7c47f3890120ff277ba4b3"
-  integrity sha512-tJjiXWgmBftdmfaTKoByql82R7r7OcOMJNh9WPecQIlE3/do0vOPsdPLbD3M1zHFN5+ioJaZHxRAqKr9hhB/jA==
+"@steroidsjs/bootstrap@^3.0.0-beta.22":
+  version "3.0.0-beta.22"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.22.tgz#71c9d3fa55c3d336785febdc8f053f1bacb99c17"
+  integrity sha512-ytZss/b/HburwtXz87snyjW5/HOt50OMOwEF/e9xeRHMmsZlQhG2/3ONP5fgyrwwBax//Zu8kDck9NL4D9fYUA==
   dependencies:
     "@ckeditor/ckeditor5-react" "^3.0.2"
     "@steroidsjs/ckeditor5" "^27.0.2-rc.2"
-    bootstrap "^4.5.2"
     date-fns "^2.29.3"
     lodash "^4.17.20"
     lodash-es "^4.17.20"
@@ -4388,11 +4387,6 @@ boolbase@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==
-
-bootstrap@^4.5.2:
-  version "4.6.2"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.6.2.tgz#8e0cd61611728a5bf65a3a2b8d6ff6c77d5d7479"
-  integrity sha512-51Bbp/Uxr9aTuy6ca/8FbFloBUJZLHwnhTcnjIeRn2suQWsWzcuJhGjKDB5eppVte/8oCdOL3VuwxvZDUggwGQ==
 
 bowser@^1.0.0:
   version "1.9.4"
