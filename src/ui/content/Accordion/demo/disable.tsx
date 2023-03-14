@@ -11,7 +11,12 @@ export default () => (
     <div style={{minHeight: '255px'}}>
         <Accordion activeKey={1}>
             <AccordionItem>1</AccordionItem>
-            <AccordionItem disabled title='Disabled'>2</AccordionItem>
+            <AccordionItem
+                disabled
+                title='Disabled'
+            >
+                2
+            </AccordionItem>
             <AccordionItem>3</AccordionItem>
         </Accordion>
     </div>

@@ -48,7 +48,10 @@ const buttonPropsList = [
 export default () => (
     <div style={{display: 'flex', gridGap: '30px', flexDirection: 'column', flexWrap: 'wrap'}}>
         {Object.keys(buttonColors).map((buttonColor, buttonColorIndex) => (
-            <div key={buttonColorIndex} style={{display: 'flex', columnGap: '20px'}}>
+            <div
+                key={buttonColorIndex}
+                style={{display: 'flex', columnGap: '20px'}}
+            >
                 {buttonPropsList.map((buttonPropsItem, buttonPropsIndex) => (
                     <Button
                         {...buttonPropsItem}
