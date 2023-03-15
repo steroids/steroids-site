@@ -10,16 +10,37 @@ import {Avatar} from '@steroidsjs/core/ui/content/';
 export default () => (
     <div style={{display: 'grid', gridGap: '20px'}}>
         <div style={{display: 'flex', gridGap: '10px'}}>
-            <Avatar size='small' src='https://i.ibb.co/1fWbXCt/F-1.png' />
-            <Avatar size='small' src='https://i.ibb.co/1fWbXCt/F-1.png' status />
+            <Avatar
+                size='small'
+                src='https://i.ibb.co/1fWbXCt/F-1.png'
+            />
+            <Avatar
+                size='small'
+                src='https://i.ibb.co/1fWbXCt/F-1.png'
+                status
+            />
         </div>
         <div style={{display: 'flex', gridGap: '10px'}}>
-            <Avatar size='middle' src='https://i.ibb.co/1fWbXCt/F-1.png' />
-            <Avatar size='middle' src='https://i.ibb.co/1fWbXCt/F-1.png' status />
+            <Avatar
+                size='middle'
+                src='https://i.ibb.co/1fWbXCt/F-1.png'
+            />
+            <Avatar
+                size='middle'
+                src='https://i.ibb.co/1fWbXCt/F-1.png'
+                status
+            />
         </div>
         <div style={{display: 'flex', gridGap: '10px'}}>
-            <Avatar size='large' src='https://i.ibb.co/1fWbXCt/F-1.png' />
-            <Avatar size='large' src='https://i.ibb.co/1fWbXCt/F-1.png' status />
+            <Avatar
+                size='large'
+                src='https://i.ibb.co/1fWbXCt/F-1.png'
+            />
+            <Avatar
+                size='large'
+                src='https://i.ibb.co/1fWbXCt/F-1.png'
+                status
+            />
         </div>
     </div>
 );

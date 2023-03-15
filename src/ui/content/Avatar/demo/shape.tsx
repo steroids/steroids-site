@@ -10,16 +10,40 @@ import {Avatar} from '@steroidsjs/core/ui/content/';
 export default () => (
     <div style={{display: 'grid', gridGap: '20px'}}>
         <div style={{display: 'flex', gridGap: '10px'}}>
-            <Avatar size='small' shape='square' src='https://i.ibb.co/1fWbXCt/F-1.png' />
-            <Avatar size='small' shape='square' title='Kozhin Dev' />
+            <Avatar
+                size='small'
+                shape='square'
+                src='https://i.ibb.co/1fWbXCt/F-1.png'
+            />
+            <Avatar
+                size='small'
+                shape='square'
+                title='Kozhin Dev'
+            />
         </div>
         <div style={{display: 'flex', gridGap: '10px'}}>
-            <Avatar size='middle' shape='square' src='https://i.ibb.co/1fWbXCt/F-1.png' />
-            <Avatar size='middle' shape='square' title='Kozhin Dev' />
+            <Avatar
+                size='middle'
+                shape='square'
+                src='https://i.ibb.co/1fWbXCt/F-1.png'
+            />
+            <Avatar
+                size='middle'
+                shape='square'
+                title='Kozhin Dev'
+            />
         </div>
         <div style={{display: 'flex', gridGap: '10px'}}>
-            <Avatar size='large' shape='square' src='https://i.ibb.co/1fWbXCt/F-1.png' />
-            <Avatar size='large' shape='square' title='Kozhin Dev' />
+            <Avatar
+                size='large'
+                shape='square'
+                src='https://i.ibb.co/1fWbXCt/F-1.png'
+            />
+            <Avatar
+                size='large'
+                shape='square'
+                title='Kozhin Dev'
+            />
         </div>
     </div>
 );
