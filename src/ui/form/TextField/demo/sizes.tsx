@@ -9,7 +9,7 @@ import TextField from '@steroidsjs/core/ui/form/TextField';
 
 export default () => (
     <>
-        <div className='row'>
+        <div style={{display: 'flex', flexFlow: 'row nowrap', columnGap: '30px'}}>
             <div className='col'>
                 <TextField label="Small" size='sm' layout placeholder='Small' showClose />
             </div>
