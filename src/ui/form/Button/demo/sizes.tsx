@@ -20,7 +20,7 @@ export default () => (
             <Button
                 key={size}
                 size={size}
-                className='float-left mr-2'
+                style={{marginBottom: '10px'}}
             >
                 {sizes[size]}
             </Button>

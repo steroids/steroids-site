@@ -9,8 +9,8 @@ import InputField from '@steroidsjs/core/ui/form/InputField/InputField';
  */
 
 export default () => (
-    <div className='row'>
-        <div className='col'>
+    <div>
+        <div>
             <InputField
                 placeholder='Placeholder'
                 addonBefore="https://"
