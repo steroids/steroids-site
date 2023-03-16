@@ -2141,16 +2141,17 @@
     "@sentry/types" "5.30.0"
     tslib "^1.9.3"
 
-"@steroidsjs/bootstrap@^3.0.0-beta.26":
-  version "3.0.0-beta.26"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.26.tgz#bee3eeeb0b2d6ec279433ecc77aa96b93ef76796"
-  integrity sha512-IaVgv0lrLaqbSORSy/RlgH4ECWtMuygqWNc5rwlZL6qVW+DDJ1Q+lYyuo0UazyAW1CsDJWGJG7kxn1yQ17pcYw==
+"@steroidsjs/bootstrap@^3.0.0-beta.27":
+  version "3.0.0-beta.27"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.27.tgz#018856134f649f1cad1a9aa2992b3678b2a33774"
+  integrity sha512-F2f8wE8tgWJCgofZ565G8FFGtbgB8/QgyZGCIWSvFtWVz8cMSi1q6+Gv3QKS7Fk95F2hQGOgTf9IMYhzW9dB6g==
   dependencies:
     "@ckeditor/ckeditor5-react" "^3.0.2"
     "@steroidsjs/ckeditor5" "^27.0.2-rc.2"
     date-fns "^2.29.3"
     lodash "^4.17.20"
     lodash-es "^4.17.20"
+    normalize.css "^8.0.1"
     rc-slider "^9.7.4"
     react "^18.2.0"
     react-collapse "^5.0.1"
@@ -2221,10 +2222,10 @@
     "@ckeditor/ckeditor5-widget" "^27.0.0"
     "@ckeditor/ckeditor5-word-count" "^27.0.0"
 
-"@steroidsjs/core@^3.0.0-beta.9":
-  version "3.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.0-beta.9.tgz#ce5227b4b53abdbecc0e701ad04b8292ba25a38e"
-  integrity sha512-hsZn5gJJHt3+ezNgBfMIm2McyeZ28YQD+KP+M6A4HAHuJfSmGoIMX3TRH29ZS+zvkETN2W6njI9pPh/fks75Mg==
+"@steroidsjs/core@^3.0.0-beta.13":
+  version "3.0.0-beta.13"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.0-beta.13.tgz#9953bef3344bb4126ac74667b0b20f25d69f1ae3"
+  integrity sha512-zV1H2zUMLxdM84ul509osbofQSUGZtvjOGm/tcUWJc8eD0LVhPJ7zD8rcSqwMIq+OyfqUfYLA72LVTKBUET56Q==
   dependencies:
     axios "^0.21.1"
     connected-react-router "^6.9.3"
@@ -9787,6 +9788,11 @@ normalize-url@1.9.1, normalize-url@^1.9.1:
     prepend-http "^1.0.0"
     query-string "^4.1.0"
     sort-keys "^1.0.0"
+
+normalize.css@^8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-8.0.1.tgz#9b98a208738b9cc2634caacbc42d131c97487bf3"
+  integrity sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==
 
 npm-run-path@^2.0.0:
   version "2.0.2"
