@@ -11,6 +11,7 @@ export default () => (
     <InputField
         label='Disabled'
         leadIcon="user"
+        layout
         placeholder='Placeholder'
         disabled
         showClear

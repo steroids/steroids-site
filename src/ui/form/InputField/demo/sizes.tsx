@@ -15,7 +15,7 @@ const sizes = {
 
 export default () => (
     <div style={{display: 'flex', flexFlow: 'row nowrap', columnGap: '30px'}}>
-        {Object.keys(sizes).map(size => (
+        {Object.entries(sizes).map(([size, label]) => (
             <div
                 className='col'
                 key={size}
@@ -24,8 +24,9 @@ export default () => (
                     placeholder='Placeholder'
                     leadIcon='user'
                     showClear
-                    label={size}
+                    label={label}
                     size={size}
+                    layout
                 />
             </div>
         ))}

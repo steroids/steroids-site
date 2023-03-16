@@ -22,10 +22,10 @@ export default () => (
                 className='col'
                 key={type}
             >
-                <p>{type}</p>
                 <InputField
                     label={type}
                     type={type}
+                    layout
                 />
             </div>
         ))}
