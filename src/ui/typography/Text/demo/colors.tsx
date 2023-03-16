@@ -6,7 +6,7 @@ import {Text} from '@steroidsjs/core/ui/typography';
  */
 
 export default () => (
-    <div>
+    <div style={{display: 'flex', flexDirection: 'column', rowGap: '8px'}}>
         <Text
             content='Text color'
             color='text-color'
