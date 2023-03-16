@@ -3,7 +3,7 @@ import {PasswordField} from '@steroidsjs/core/ui/form';
 
 const sizes = {
     sm: 'Small',
-    md: 'Middle',
+    md: 'Medium',
     lg: 'Large',
 };
 
@@ -14,7 +14,7 @@ const sizes = {
  */
 
 export default () => (
-    <div className='row'>
+    <div style={{display: 'flex', flexFlow: 'row nowrap', columnGap: '30px'}}>
         {Object.keys(sizes).map(size => (
             <div
                 className='col'

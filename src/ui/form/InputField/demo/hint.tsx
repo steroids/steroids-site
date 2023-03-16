@@ -9,19 +9,9 @@ import InputField from '@steroidsjs/core/ui/form/InputField/InputField';
  */
 
 export default () => (
-    <div style={{display: 'flex', flexFlow: 'row nowrap', columnGap: '30px'}}>
-        <InputField
-            label='Label'
-            layout
-            hint='Success message'
-            successful
-        />
-        <InputField
-            label='Label'
-            errors={['Error 1 text', 'Error 2 text']}
-            layout
-            className='InputFieldView_hasError'
-            hint='Error message'
-        />
-    </div>
+    <InputField
+        label='Label'
+        layout
+        hint='Your message'
+    />
 );
