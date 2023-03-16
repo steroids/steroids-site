@@ -17,19 +17,15 @@ const sizes = {
 
 export default () => (
     <>
-        <div className='row mb-4'>
+        <div style={{display: 'flex', flexFlow: 'row nowrap', columnGap: '30px'}}>
             {Object.keys(sizes)
                 .map(size => (
-                    <div
-                        className='col'
+                    <DropDownField
                         key={size}
-                    >
-                        <DropDownField
-                            label={size}
-                            size={size}
-                            items={items}
-                        />
-                    </div>
+                        label={size}
+                        size={size}
+                        items={items}
+                    />
                 ))}
         </div>
     </>
