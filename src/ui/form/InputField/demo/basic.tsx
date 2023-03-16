@@ -11,6 +11,7 @@ import InputField from '@steroidsjs/core/ui/form/InputField/InputField';
 export default () => (
     <InputField
         label='Basic input'
+        id="Basic"
         layout
     />
 );

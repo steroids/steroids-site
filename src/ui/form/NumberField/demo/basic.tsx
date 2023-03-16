@@ -10,6 +10,10 @@ import {NumberField} from '@steroidsjs/core/ui/form';
 
 export default () => (
     <>
-        <NumberField label='Amount' />
+        <NumberField
+            label='Basic'
+            id="Basic"
+            layout
+        />
     </>
 );
