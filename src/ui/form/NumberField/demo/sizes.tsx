@@ -17,8 +17,15 @@ const sizes = {
 export default () => (
     <div style={{display: 'flex', flexFlow: 'row nowrap', columnGap: '30px'}}>
         {Object.keys(sizes).map(size => (
-            <div className='col' key={size}>
-                <NumberField placeholder='Your number' label={size} size={size} />
+            <div
+                className='col'
+                key={size}
+            >
+                <NumberField
+                    placeholder='Your number'
+                    label={size}
+                    size={size}
+                />
             </div>
         ))}
     </div>

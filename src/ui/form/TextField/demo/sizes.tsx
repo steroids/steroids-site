@@ -11,13 +11,31 @@ export default () => (
     <>
         <div style={{display: 'flex', flexFlow: 'row nowrap', columnGap: '30px'}}>
             <div className='col'>
-                <TextField label="Small" size='sm' layout placeholder='Small' showClose />
+                <TextField
+                    label="Small"
+                    size='sm'
+                    layout
+                    placeholder='Small'
+                    showClose
+                />
             </div>
             <div className='col'>
-                <TextField label="Medium" size='md' layout placeholder='Medium' showClose />
+                <TextField
+                    label="Medium"
+                    size='md'
+                    layout
+                    placeholder='Medium'
+                    showClose
+                />
             </div>
             <div className='col'>
-                <TextField label="Large" size='lg' layout placeholder='Large' showClose />
+                <TextField
+                    label="Large"
+                    size='lg'
+                    layout
+                    placeholder='Large'
+                    showClose
+                />
             </div>
         </div>
     </>

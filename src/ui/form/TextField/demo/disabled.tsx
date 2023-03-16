@@ -8,6 +8,12 @@ import TextField from '@steroidsjs/core/ui/form/TextField';
  */
 export default () => (
     <>
-        <TextField label='Disabled' placeholder='Disabled' disabled layout showClose />
+        <TextField
+            label='Disabled'
+            placeholder='Disabled'
+            disabled
+            layout
+            showClose
+        />
     </>
 );

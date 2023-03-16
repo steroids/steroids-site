@@ -9,7 +9,20 @@ import TextField from '@steroidsjs/core/ui/form/TextField';
 
 export default () => (
     <>
-        <TextField label='Success' layout successful hint='Successful message' size='md' />
-        <TextField label='Errors' layout errors={['Error message']} className="TextFieldView_hasErrors" hint='Error message' size='md' />
+        <TextField
+            label='Success'
+            layout
+            successful
+            hint='Successful message'
+            size='md'
+        />
+        <TextField
+            label='Errors'
+            layout
+            errors={['Error message']}
+            className="TextFieldView_hasErrors"
+            hint='Error message'
+            size='md'
+        />
     </>
 );

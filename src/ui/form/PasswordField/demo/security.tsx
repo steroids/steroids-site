@@ -10,6 +10,12 @@ import {PasswordField} from '@steroidsjs/core/ui/form';
 
 export default () => (
     <>
-        <PasswordField label='Security' security showClear placeholder='Password' showSecurityBar />
+        <PasswordField
+            label='Security'
+            security
+            showClear
+            placeholder='Password'
+            showSecurityBar
+        />
     </>
 );

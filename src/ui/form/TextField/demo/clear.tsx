@@ -9,6 +9,10 @@ import TextField from '@steroidsjs/core/ui/form/TextField';
 
 export default () => (
     <>
-        <TextField label='Clear' layout showClear />
+        <TextField
+            label='Clear'
+            layout
+            showClear
+        />
     </>
 );

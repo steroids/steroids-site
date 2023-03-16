@@ -9,6 +9,9 @@ import {NumberField} from '@steroidsjs/core/ui/form';
 
 export default () => (
     <>
-        <NumberField label='Required' required />
+        <NumberField
+            label='Required'
+            required
+        />
     </>
 );

@@ -8,5 +8,11 @@ import InputField from '@steroidsjs/core/ui/form/InputField/InputField';
  */
 
 export default () => (
-    <InputField label='Disabled' leadIcon="user" placeholder='Placeholder' disabled showClear />
+    <InputField
+        label='Disabled'
+        leadIcon="user"
+        placeholder='Placeholder'
+        disabled
+        showClear
+    />
 );

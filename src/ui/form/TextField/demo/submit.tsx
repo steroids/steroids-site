@@ -9,6 +9,10 @@ import TextField from '@steroidsjs/core/ui/form/TextField';
 
 export default () => (
     <>
-        <TextField label='Submit On Enter' submitOnEnter layout />
+        <TextField
+            label='Submit On Enter'
+            submitOnEnter
+            layout
+        />
     </>
 );

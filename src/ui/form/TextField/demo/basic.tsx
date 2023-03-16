@@ -9,6 +9,9 @@ import TextField from '@steroidsjs/core/ui/form/TextField';
 
 export default () => (
     <>
-        <TextField label='Basic' layout />
+        <TextField
+            label='Basic'
+            layout
+        />
     </>
 );

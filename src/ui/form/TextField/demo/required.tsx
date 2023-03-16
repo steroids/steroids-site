@@ -9,6 +9,10 @@ import TextField from '@steroidsjs/core/ui/form/TextField';
 
 export default () => (
     <>
-        <TextField label='Required' required layout />
+        <TextField
+            label='Required'
+            required
+            layout
+        />
     </>
 );

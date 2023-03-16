@@ -9,6 +9,9 @@ import {PasswordField} from '@steroidsjs/core/ui/form';
 
 export default () => (
     <>
-        <PasswordField label='Required' required />
+        <PasswordField
+            label='Required'
+            required
+        />
     </>
 );

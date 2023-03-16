@@ -10,6 +10,10 @@ import {NumberField} from '@steroidsjs/core/ui/form';
 
 export default () => (
     <>
-        <NumberField label='Disabled' disabled value={3} />
+        <NumberField
+            label='Disabled'
+            disabled
+            value={3}
+        />
     </>
 );
