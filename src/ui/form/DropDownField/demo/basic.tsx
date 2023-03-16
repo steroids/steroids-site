@@ -1,0 +1,37 @@
+import * as React from 'react';
+import {DropDownField} from '@steroidsjs/core/ui/form';
+
+
+/**
+ * Обычный пример использования DropDownField.
+ * @order 1
+ * @col 6
+ */
+
+export const items = [
+    {
+        id: 1,
+        label: 'First',
+    },
+    {
+        id: 2,
+        label: 'Second',
+    },
+    {
+        id: 3,
+        label: 'Third',
+    },
+    {
+        id: 4,
+        label: 'Fourth',
+    },
+];
+
+export default () => (
+    <>
+        <DropDownField
+            label='Basic'
+            items={items}
+        />
+    </>
+);
