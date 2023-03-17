@@ -21,10 +21,10 @@ export default {
             roles,
         },
         [ROUTE_CHANGELOG]: {
-            label: 'Что нового в Steroids v3',
             path: '/changelog',
             component: ChangelogPage,
             roles,
+            isNavVisible: false,
         },
     },
 } as IRouteItem;
