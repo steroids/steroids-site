@@ -6,7 +6,7 @@ import {Title} from '@steroidsjs/core/ui/typography';
  */
 
 export default () => (
-    <div style={{display: 'flex', flexDirection: 'column', rowGap: '20px'}}>
+    <div>
         <Title
             type='h1'
             content='Text color'

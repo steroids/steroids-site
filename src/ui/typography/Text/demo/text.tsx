@@ -11,7 +11,6 @@ const TEXT = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, 
 export default () => (
     <div>
         <Text
-            style={{marginBottom: '8px'}}
             type='body'
             content={TEXT}
         />
