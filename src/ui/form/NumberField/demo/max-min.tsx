@@ -12,6 +12,7 @@ export default () => (
     <>
         <NumberField
             label='Amount'
+            layout
             min={0}
             max={3}
         />

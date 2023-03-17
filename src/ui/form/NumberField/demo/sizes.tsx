@@ -25,6 +25,7 @@ export default () => (
                     placeholder='Your number'
                     label={size}
                     size={size}
+                    layout
                 />
             </div>
         ))}
