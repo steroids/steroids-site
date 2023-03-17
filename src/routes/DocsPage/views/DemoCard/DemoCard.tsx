@@ -17,7 +17,10 @@ export default function DemoCard(props: IDemoCardProps) {
     return (
         <div className={bem.block()}>
             <div className={bem.element('header')}>
-                <Title content={props.title} />
+                <Title
+                    className={bem.element('title')}
+                    content={props.title}
+                />
                 <a href="#">
                     {__('Source')}
                 </a>
