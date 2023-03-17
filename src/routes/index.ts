@@ -1,5 +1,6 @@
 import {IRouteItem} from '@steroidsjs/core/ui/nav/Router/Router';
-import {ROUTE_DOCS, ROUTE_ROOT} from 'constants/routes';
+import {ROUTE_CHANGELOG, ROUTE_DOCS, ROUTE_ROOT} from 'constants/routes';
+import ChangelogPage from './ChangelogPage';
 import DocsPage from './DocsPage';
 import IndexPage from './IndexPage';
 
@@ -17,6 +18,12 @@ export default {
             label: 'Documentation',
             path: '/docs/:category?/:path?',
             component: DocsPage,
+            roles,
+        },
+        [ROUTE_CHANGELOG]: {
+            label: 'Что нового в Steroids v3',
+            path: '/changelog',
+            component: ChangelogPage,
             roles,
         },
     },
