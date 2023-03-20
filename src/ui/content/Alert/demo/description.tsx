@@ -14,7 +14,7 @@ export default () => (
             <Alert
                 type='success'
                 message='Success Tips'
-                description='Detailed description and advice about successful copywriting.'
+                description='Detailed'
             />
             <Alert
                 type='info'

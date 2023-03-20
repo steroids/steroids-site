@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {DropDownField} from '@steroidsjs/core/ui/form';
 
-
 /**
  * Обычный пример использования DropDownField.
  * @order 1
@@ -24,6 +23,26 @@ export const items = [
     {
         id: 4,
         label: 'Fourth',
+    },
+    {
+        id: 5,
+        label: 'Fifth',
+    },
+    {
+        id: 6,
+        label: 'Sixth',
+    },
+    {
+        id: 7,
+        label: 'Seventh',
+    },
+    {
+        id: 8,
+        label: 'Eighth',
+    },
+    {
+        id: 9,
+        label: 'Ninth',
     },
 ];
 

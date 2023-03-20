@@ -1,7 +1,9 @@
 import * as React from 'react';
 import {DropDownField} from '@steroidsjs/core/ui/form';
 import _upperFirst from 'lodash-es/upperFirst';
+import {useBem} from '@steroidsjs/core/hooks';
 import {items} from './basic';
+import './all-variants-of-colors.scss';
 
 /**
  * Использование свойства самозаполнения.
@@ -25,42 +27,50 @@ const sizes = [
     'lg',
 ];
 
-export default () => (
-    <div style={{display: 'flex', flexFlow: 'row wrap', columnGap: '40px', rowGap: '60px'}}>
-        {dropDownVariants.map(((colorVariant, keyIndex) => (
-            <div
-                key={keyIndex}
-                style={{display: 'flex', flexFlow: 'row nowrap', columnGap: '30px'}}
-            >
-                <div style={{display: 'flex', flexFlow: 'column nowrap', rowGap: '10px'}}>
-                    <h3>{_upperFirst(colorVariant)}</h3>
-                    {sizes.map(size => (
-                        <DropDownField
-                            key={size}
-                            color={colorVariant}
-                            size={size}
-                            items={items}
-                        />
-                    ))}
-                </div>
-                <div style={{display: 'flex', flexFlow: 'column nowrap', rowGap: '10px'}}>
-                    <h3>
-                        {_upperFirst(colorVariant)}
-                        {' '}
-                        outline
-                    </h3>
-                    {sizes.map(size => (
+export default () => {
+    const bem = useBem('DropDownFieldDemo');
 
-                        <DropDownField
-                            key={size}
+    return (
+        <div style={{display: 'flex', flexFlow: 'row wrap', columnGap: '40px', rowGap: '60px'}}>
+            {dropDownVariants.map(((colorVariant, keyIndex) => (
+                <div
+                    key={keyIndex}
+                    style={{display: 'flex', flexFlow: 'row nowrap', columnGap: '30px'}}
+                >
+                    <div style={{display: 'flex', flexFlow: 'column nowrap', rowGap: '10px'}}>
+                        <h3 className={bem.element('header')}>{_upperFirst(colorVariant)}</h3>
+                        {sizes.map(size => (
+                            <DropDownField
+                                key={size}
+                                color={colorVariant}
+                                size={size}
+                                items={items}
+                                icons="user"
+                                groupAttribute='items'
+                            />
+                        ))}
+                    </div>
+                    <div style={{display: 'flex', flexFlow: 'column nowrap', rowGap: '10px'}}>
+                        <h3 className={bem.element('header')}>
+                            {_upperFirst(colorVariant)}
+                            {' '}
                             outline
-                            color={colorVariant}
-                            size={size}
-                            items={items}
-                        />
-                    ))}
+                        </h3>
+                        {sizes.map(size => (
+
+                            <DropDownField
+                                key={size}
+                                outline
+                                color={colorVariant}
+                                size={size}
+                                items={items}
+                                groupAttribute='items'
+
+                            />
+                        ))}
+                    </div>
                 </div>
-            </div>
-        )))}
-    </div>
-);
+            )))}
+        </div>
+    );
+};
