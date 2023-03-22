@@ -50,6 +50,8 @@ export default () => (
     <>
         <DropDownField
             label='Basic'
+            layout
+            placeholder='Basic'
             items={items}
         />
     </>

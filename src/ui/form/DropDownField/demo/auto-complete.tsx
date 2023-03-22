@@ -12,7 +12,10 @@ export default () => (
     <>
         <DropDownField
             label='Auto Complete'
+            layout
             autoComplete
+            searchPlaceholder='Search'
+            placeholder='Auto Complete'
             items={items}
         />
     </>

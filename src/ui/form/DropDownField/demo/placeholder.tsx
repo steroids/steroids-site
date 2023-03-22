@@ -14,6 +14,7 @@ export default () => (
         <DropDownField
             label='Search Placeholder'
             autoComplete
+            placeholder='Placeholder'
             searchPlaceholder='Search...'
             items={items}
         />
