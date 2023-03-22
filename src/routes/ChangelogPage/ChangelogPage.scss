@@ -1,0 +1,10 @@
+@import 'style/variables';
+
+.ChangelogPage {
+  padding: 20px 60px;
+
+  &__list {
+    margin-left: 30px;
+    margin-bottom: 32px;
+  }
+}

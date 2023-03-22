@@ -15,4 +15,12 @@
   &__logo {
     margin-right: 50px;
   }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    color: $primary;
+    text-decoration: underline;
+  }
 }
