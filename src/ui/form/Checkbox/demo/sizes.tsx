@@ -8,7 +8,7 @@ const sizes = {
 };
 
 /**
- * Обычный пример использования CheckboxField.
+ * Размеры для CheckboxField
  * @order 1
  * @col 4
  */
