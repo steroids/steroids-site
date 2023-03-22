@@ -11,6 +11,24 @@ export const items = [
     {
         id: 1,
         label: 'First',
+        items: [
+            {
+                id: 32,
+                label: 'Inner Item 1',
+            },
+            {
+                id: 44,
+                label: 'Inner Item 2',
+            },
+            {
+                id: 55,
+                label: 'Inner Item 3',
+            },
+            {
+                id: 66,
+                label: 'Inner Item 4',
+            },
+        ],
     },
     {
         id: 2,
