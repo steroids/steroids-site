@@ -25,6 +25,12 @@ export default () => (
                         size={size}
                         items={items}
                         placeholder={label}
+                        autoComplete
+                        searchPlaceholder='Search...'
+                        multiple
+                        contentProperties={{
+                            type: 'checkbox',
+                        }}
                     />
                 ))}
         </div>
