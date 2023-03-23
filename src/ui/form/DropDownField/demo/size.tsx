@@ -28,7 +28,7 @@ export default () => (
                         autoComplete
                         searchPlaceholder='Search...'
                         multiple
-                        contentProperties={{
+                        itemsContent={{
                             type: 'checkbox',
                         }}
                     />

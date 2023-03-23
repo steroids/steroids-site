@@ -52,7 +52,7 @@ export default () => (
         <DropDownField
             label='Multiple with count'
             placeholder='Multiple with count'
-            contentProperties={{
+            itemsContent={{
                 type: 'radio',
             }}
             multiple
@@ -62,11 +62,12 @@ export default () => (
         <DropDownField
             label='Multiple with ellipses'
             placeholder='Multiple with ellipses'
-            contentProperties={{
+            itemsContent={{
                 type: 'radio',
             }}
             multiple
-            ellipses
+            showReset
+            showEllipses
             items={items}
             layout
         />

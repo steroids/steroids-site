@@ -84,7 +84,7 @@ export default () => {
                                 placeholder={_upperFirst(`${colorVariant}`)}
                                 size={size}
                                 items={items}
-                                contentProperties={{
+                                itemsContent={{
                                     type: 'checkbox',
                                 }}
                                 groupAttribute='items'
@@ -106,7 +106,7 @@ export default () => {
                                 placeholder={_upperFirst(`${colorVariant} outline`)}
                                 size={size}
                                 items={items}
-                                contentProperties={{
+                                itemsContent={{
                                     type: 'checkbox',
                                 }}
                                 groupAttribute='items'

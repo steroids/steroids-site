@@ -15,27 +15,27 @@ const types = [
         color: 'primary',
         type: 'radio',
         src: null,
-        ellipses: false,
+        showEllipses: false,
     },
     {
         color: 'secondary',
         type: 'checkbox',
         src: null,
-        ellipses: true,
+        showEllipses: true,
 
     },
     {
         color: 'success',
         type: 'img',
         src: 'https://i.ibb.co/nbmXwQz/image-11.png',
-        ellipses: false,
+        showEllipses: false,
 
     },
     {
         color: 'info',
         type: 'icon',
         src: 'user',
-        ellipses: true,
+        showEllipses: true,
     },
 ];
 
@@ -48,8 +48,8 @@ export default () => (
                 color={item.color}
                 placeholder={_upperFirst(item.type)}
                 multiple
-                ellipses={item.ellipses}
-                contentProperties={{
+                showEllipses={item.showEllipses}
+                itemsContent={{
                     type: item.type,
                     src: item.src,
                 }}

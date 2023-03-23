@@ -70,6 +70,11 @@ export default () => (
             label='Basic'
             layout
             placeholder='Basic'
+            multiple
+            showReset
+            itemsContent={{
+                type: 'checkbox',
+            }}
             groupAttribute='items'
             items={items}
         />
