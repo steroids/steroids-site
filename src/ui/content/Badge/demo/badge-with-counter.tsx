@@ -11,13 +11,13 @@ export default () => (
             <Badge
                 roundingStyle="squarer"
                 message="Badge with chip"
-                size='large'
+                size='lg'
                 counter={{isEnable: true, content: 5}}
             />
             <Badge
                 roundingStyle="rounder"
                 message="Badge with chip"
-                size='large'
+                size='lg'
                 counter={{isEnable: true, content: 5}}
                 showClose
             />

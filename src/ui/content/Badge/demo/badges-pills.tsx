@@ -1,53 +1,57 @@
 import * as React from 'react';
 import Badge from '@steroidsjs/core/ui/content/Badge';
+import _upperFirst from 'lodash-es/upperFirst';
+
+type colorType = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info';
+
+const sizes = {
+    sm: 'Small',
+    md: 'Medium',
+    lg: 'Large',
+};
+
+const colors = {
+    primary: {
+        roundingStyle: 'squarer',
+    },
+    secondary: {
+        roundingStyle: 'rounder',
+    },
+    success: {
+        roundingStyle: 'squarer',
+    },
+    danger: {
+        roundingStyle: 'rounder',
+    },
+    warning: {
+        roundingStyle: 'squarer',
+    },
+    info: {
+        roundingStyle: 'rounder',
+    },
+};
 
 /**
  * Badge component with different sizes of text inside
  */
 
 export default () => (
-    <div style={{display: 'grid', gridTemplateColumns: '1fr', gridGap: '20px'}}>
-        <div style={{display: 'grid', gridGap: '20px'}}>
-            <Badge
-                type='primary'
-                roundingStyle="squarer"
-                message="Primary"
-                size='large'
-            />
-            <Badge
-                type='secondary'
-                roundingStyle="rounder"
-                message="Secondary"
-                size='large'
-                showClose
-            />
-            <Badge
-                type='success'
-                roundingStyle="squarer"
-                message="Success"
-                size='medium'
-            />
-            <Badge
-                type='danger'
-                roundingStyle="rounder"
-                message="Danger"
-                size='medium'
-                showClose
-            />
-            <Badge
-                type='warning'
-                roundingStyle="squarer"
-                message="Warning"
-                size='small'
-                showClose
-            />
-            <Badge
-                type='info'
-                roundingStyle="rounder"
-                message="Info"
-                size='small'
-                showClose
-            />
-        </div>
+    <div style={{display: 'flex', flexFlow: 'column nowrap', rowGap: '30px'}}>
+        {Object.entries(colors).map(([color, properties]) => (
+            <div
+                key={color}
+                style={{display: 'flex', flexFlow: 'row nowrap', columnGap: '10px'}}
+            >
+                {Object.entries(sizes).map(([size, label]) => (
+                    <Badge
+                        key={`${color}${size}`}
+                        type={color as colorType}
+                        size={size}
+                        showClose
+                        message={`${_upperFirst(color)} ${label}`}
+                    />
+                ))}
+            </div>
+        ))}
     </div>
 );
