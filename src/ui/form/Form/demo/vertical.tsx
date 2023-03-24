@@ -4,7 +4,7 @@ import DateField from '@steroidsjs/core/ui/form/DateField';
 import InputField from '@steroidsjs/core/ui/form/InputField';
 
 /**
- * Обычный пример использования с прокидыванием свойства layout='horizontal'.
+ * Обычный пример использования с прокидыванием свойства layout='vertical'.
  * @order 2
  * @col 12
  */
@@ -16,7 +16,7 @@ export default () => (
             useRedux
             syncWithAddressBar
             autoFocus
-            layout='horizontal'
+            layout='vertical'
             size='large'
             fields={[
                 {
