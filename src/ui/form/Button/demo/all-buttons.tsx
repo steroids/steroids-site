@@ -54,6 +54,7 @@ export default () => (
             >
                 {buttonPropsList.map((buttonPropsItem, buttonPropsIndex) => (
                     <Button
+                        style={{width: '160px'}}
                         {...buttonPropsItem}
                         color={buttonColor}
                         key={buttonPropsIndex}

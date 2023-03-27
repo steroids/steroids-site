@@ -9,7 +9,7 @@ import Button from '@steroidsjs/core/ui/form/Button/Button';
  */
 
 export default () => (
-    <>
+    <div>
         <Button
             label={__('button')}
             tag='button'
@@ -19,5 +19,5 @@ export default () => (
             label={__('a')}
             tag='a'
         />
-    </>
+    </div>
 );
