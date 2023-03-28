@@ -11,7 +11,7 @@ export default () => (
     <>
         <TextField
             label='Placeholder'
-            placeholder='Your password...'
+            placeholder='Description...'
             layout
         />
     </>
