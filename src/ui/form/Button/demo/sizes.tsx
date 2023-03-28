@@ -20,7 +20,7 @@ export default () => (
             <Button
                 key={size}
                 size={size}
-                style={{marginBottom: '10px'}}
+                style={{marginBottom: '10px', width: '160px'}}
             >
                 {sizes[size]}
             </Button>
