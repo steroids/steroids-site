@@ -13,66 +13,163 @@ export default () => (
         <div
             style={{
                 display: 'flex',
-                flexFlow: 'column',
                 alignItems: 'center',
-                gridGap: '15px',
-                padding: '50px',
+                gridGap: '30px',
+                padding: '30px',
             }}
         >
             <Tooltip
                 defaultVisible
+                position='topLeft'
+                content='topLeft'
+            >
+                <div style={{width: 'fit-content'}}>
+                    <Button label='Show Tooltip' />
+                </div>
+            </Tooltip>
+
+            <Tooltip
+                defaultVisible
                 position='top'
-                content='Всплывающая подсказка сверху.'
+                content='top'
             >
-                <div
-                    className='mx-3'
-                    style={{width: 'max-content'}}
-                >
-                    <Button
-                        className='mx-3'
-                        label='Show Tooltip on Top'
-                    />
+                <div style={{width: 'fit-content'}}>
+                    <Button label='Show Tooltip' />
                 </div>
             </Tooltip>
+
             <Tooltip
                 defaultVisible
-                position='right'
-                content='Всплывающая подсказка справа.'
+                position='topRight'
+                content='topRight'
             >
-                <div
-                    className='mx-3'
-                    style={{width: 'max-content'}}
-                >
-                    <Button
-                        className='mx-3'
-                        label='Show Tooltip Right'
-                    />
+                <div style={{width: 'fit-content'}}>
+                    <Button label='Show Tooltip' />
                 </div>
             </Tooltip>
+        </div>
+
+        <div
+            style={{
+                display: 'flex',
+                alignItems: 'center',
+                gridGap: '30px',
+                padding: '30px',
+            }}
+        >
             <Tooltip
                 defaultVisible
-                position='left'
-                content='Всплывающая подсказка слева.'
+                position='bottomLeft'
+                content='bottomLeft'
             >
-                <div
-                    className='mx-3'
-                    style={{width: 'max-content'}}
-                >
-                    <Button label='Show Tooltip Left' />
+                <div style={{width: 'fit-content'}}>
+                    <Button label='Show Tooltip' />
                 </div>
             </Tooltip>
+
             <Tooltip
                 defaultVisible
                 position='bottom'
-                content='Всплывающая подсказка снизу.'
+                content='bottom'
             >
-                <div
-                    className='mx-3'
-                    style={{width: 'max-content'}}
-                >
-                    <Button label='Show Tooltip Bottom' />
+                <div style={{width: 'fit-content'}}>
+                    <Button label='Show Tooltip' />
                 </div>
             </Tooltip>
+
+            <Tooltip
+                defaultVisible
+                position='bottomRight'
+                content='bottomRight'
+            >
+                <div style={{width: 'fit-content'}}>
+                    <Button label='Show Tooltip' />
+                </div>
+            </Tooltip>
+        </div>
+
+        <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            paddingTop: '30px',
+        }}
+        >
+            <div
+                style={{
+                    display: 'flex',
+                    flexFlow: 'column',
+                    gridGap: '50px',
+                    padding: '30px',
+                }}
+            >
+                <Tooltip
+                    defaultVisible
+                    position='leftTop'
+                    content='leftTop'
+                >
+                    <div style={{width: 'fit-content'}}>
+                        <Button label='Show Tooltip' />
+                    </div>
+                </Tooltip>
+
+                <Tooltip
+                    defaultVisible
+                    position='left'
+                    content='left'
+                >
+                    <div style={{width: 'fit-content'}}>
+                        <Button label='Show Tooltip' />
+                    </div>
+                </Tooltip>
+
+                <Tooltip
+                    defaultVisible
+                    position='leftBottom'
+                    content='leftBottom'
+                >
+                    <div style={{width: 'fit-content'}}>
+                        <Button label='Show Tooltip' />
+                    </div>
+                </Tooltip>
+            </div>
+            <div
+                style={{
+                    display: 'flex',
+                    flexFlow: 'column',
+                    gridGap: '50px',
+                    padding: '30px',
+                }}
+            >
+                <Tooltip
+                    defaultVisible
+                    position='rightTop'
+                    content='rightTop'
+                >
+                    <div style={{width: 'fit-content'}}>
+                        <Button label='Show Tooltip' />
+                    </div>
+                </Tooltip>
+
+                <Tooltip
+                    defaultVisible
+                    position='right'
+                    content='right'
+                >
+                    <div style={{width: 'fit-content'}}>
+                        <Button label='Show Tooltip' />
+                    </div>
+                </Tooltip>
+
+                <Tooltip
+                    defaultVisible
+                    position='rightBottom'
+                    content='rightBottom'
+                >
+                    <div style={{width: 'fit-content'}}>
+                        <Button label='Show Tooltip' />
+                    </div>
+                </Tooltip>
+            </div>
         </div>
     </>
 );
