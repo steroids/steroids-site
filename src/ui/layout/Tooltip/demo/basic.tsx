@@ -9,29 +9,28 @@ import Tooltip from '@steroidsjs/core/ui/layout/Tooltip';
  */
 
 const examplesRows = {
-    row1: {
-        topLeft: 'topLeft',
-        top: 'top',
-        topRight: 'topRight',
-    },
-    row2: {
-        bottomLeft: 'bottomLeft',
-        bottom: 'bottom',
-        bottomRight: 'bottomRight',
-    },
+    row1: [
+        'topLeft',
+        'top',
+        'topRight',
+    ],
+    row2: [
+        'bottomLeft',
+        'bottom',
+        'bottomRight',
+    ],
 };
 
 const examplesColumns = {
-    column1: {
-        leftTop: 'leftTop',
-        left: 'left',
-        leftBottom: 'leftBottom',
-    },
-    column2: {
-        rightTop: 'rightTop',
-        right: 'right',
-        rightBottom: 'rightBottom',
-    },
+    column1: [
+        'leftTop',
+        'left',
+        'leftBottom',
+    ],
+    column2: [
+        'rightTop',
+        'right',
+        'rightBottom'],
 };
 
 export default () => (
@@ -46,7 +45,7 @@ export default () => (
                     padding: '30px',
                 }}
             >
-                {Object.entries(positions).map(([position]) => (
+                {positions.map((position) => (
                     <Tooltip
                         key={position}
                         defaultVisible
@@ -76,7 +75,7 @@ export default () => (
                         padding: '30px',
                     }}
                 >
-                    {Object.entries(positions).map(([position]) => (
+                    {positions.map((position) => (
                         <Tooltip
                             key={position}
                             defaultVisible
