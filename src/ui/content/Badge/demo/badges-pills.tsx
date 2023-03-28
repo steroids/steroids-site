@@ -40,7 +40,7 @@ export default () => (
         {Object.entries(colors).map(([color, properties]) => (
             <div
                 key={color}
-                style={{display: 'flex', flexFlow: 'row nowrap', columnGap: '10px'}}
+                style={{display: 'flex', flexFlow: 'row nowrap', alignItems: 'flex-start', columnGap: '10px'}}
             >
                 {Object.entries(sizes).map(([size, label]) => (
                     <Badge
