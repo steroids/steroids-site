@@ -51,7 +51,7 @@ const footer = {
     subhead: 'Subhead',
 };
 
-const variants: Record<string, ICardProps[]> = {
+const cardsRows: Record<string, ICardProps[]> = {
     row1: [
         {
             header,
@@ -148,12 +148,12 @@ const variants: Record<string, ICardProps[]> = {
 
 export default () => (
     <div style={{display: 'flex', flexFlow: 'column wrap', rowGap: '30px'}}>
-        {Object.entries(variants).map(([_, cards], rowIndex) => (
+        {Object.entries(cardsRows).map(([_, cardsRow], cardsRowIndex) => (
             <div
-                key={rowIndex}
+                key={cardsRowIndex}
                 style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', columnGap: '20px'}}
             >
-                {cards.map((card, cardIndex) => (
+                {cardsRow.map((card, cardIndex) => (
                     <Card
                         style={{width: '340px'}}
                         {...card}
