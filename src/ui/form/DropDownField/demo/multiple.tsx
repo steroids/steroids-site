@@ -5,7 +5,6 @@ export const items = [
     {
         id: 1,
         label: 'First',
-        contentType: 'checkbox',
     },
     {
         id: 2,
@@ -53,7 +52,7 @@ export default () => (
             label='Multiple with count'
             placeholder='Multiple with count'
             itemsContent={{
-                type: 'radio',
+                type: 'checkbox',
             }}
             multiple
             items={items}
@@ -63,7 +62,7 @@ export default () => (
             label='Multiple with ellipses'
             placeholder='Multiple with ellipses'
             itemsContent={{
-                type: 'radio',
+                type: 'checkbox',
             }}
             multiple
             showReset

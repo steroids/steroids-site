@@ -70,18 +70,18 @@ export default () => {
 
     return (
         <div style={{display: 'flex', flexFlow: 'row wrap', columnGap: '40px', rowGap: '60px'}}>
-            {dropDownVariants.map(((colorVariant, keyIndex) => (
+            {dropDownVariants.map(((dropDownVariant, keyIndex) => (
                 <div
                     key={keyIndex}
                     style={{display: 'flex', flexFlow: 'row nowrap', columnGap: '30px'}}
                 >
                     <div style={{display: 'flex', flexFlow: 'column nowrap', rowGap: '10px'}}>
-                        <h3 className={bem.element('header')}>{_upperFirst(colorVariant)}</h3>
+                        <h3 className={bem.element('header')}>{_upperFirst(dropDownVariant)}</h3>
                         {sizes.map(size => (
                             <DropDownField
                                 key={size}
-                                color={colorVariant}
-                                placeholder={_upperFirst(`${colorVariant}`)}
+                                color={dropDownVariant}
+                                placeholder={_upperFirst(`${dropDownVariant}`)}
                                 size={size}
                                 items={items}
                                 itemsContent={{
@@ -93,17 +93,15 @@ export default () => {
                     </div>
                     <div style={{display: 'flex', flexFlow: 'column nowrap', rowGap: '10px'}}>
                         <h3 className={bem.element('header')}>
-                            {_upperFirst(colorVariant)}
-                            {' '}
-                            outline
+                            {`${_upperFirst(dropDownVariant)} outline`}
                         </h3>
                         {sizes.map(size => (
 
                             <DropDownField
                                 key={size}
                                 outline
-                                color={colorVariant}
-                                placeholder={_upperFirst(`${colorVariant} outline`)}
+                                color={dropDownVariant}
+                                placeholder={_upperFirst(`${dropDownVariant} outline`)}
                                 size={size}
                                 items={items}
                                 itemsContent={{

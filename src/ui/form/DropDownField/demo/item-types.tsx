@@ -47,7 +47,7 @@ export default () => (
                 items={items}
                 color={item.color}
                 placeholder={_upperFirst(item.type)}
-                multiple
+                multiple={item.type !== 'radio'}
                 showEllipses={item.showEllipses}
                 itemsContent={{
                     type: item.type,

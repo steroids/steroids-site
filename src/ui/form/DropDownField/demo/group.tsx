@@ -85,9 +85,9 @@ export const items = [
 export default () => (
     <>
         <DropDownField
-            label='Basic'
+            label='Group'
             layout
-            placeholder='Basic'
+            placeholder='Group'
             multiple
             showReset
             itemsContent={{

@@ -29,7 +29,7 @@ export default () => (
                         searchPlaceholder='Search...'
                         multiple
                         itemsContent={{
-                            type: 'checkbox',
+                            type: 'radio',
                         }}
                     />
                 ))}
