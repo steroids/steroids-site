@@ -21,7 +21,10 @@ export default function DemoCard(props: IDemoCardProps) {
                     className={bem.element('title')}
                     content={props.title}
                 />
-                <a href="#">
+                <a
+                    className={bem.element('link')}
+                    href="#"
+                >
                     {__('Source')}
                 </a>
             </div>
