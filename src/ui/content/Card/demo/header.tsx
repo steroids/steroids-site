@@ -27,6 +27,7 @@ export default () => (
     <div style={{display: 'flex', flexFlow: 'column wrap', rowGap: '20px'}}>
         {cards.map((card, cardIndex) => (
             <Card
+                style={{width: '340px'}}
                 key={cardIndex}
                 {...card}
             />

@@ -3,6 +3,7 @@ import * as React from 'react';
 import Card from '@steroidsjs/core/ui/content/Card';
 import {ICardProps} from '@steroidsjs/core/ui/content/Card/Card';
 import {IButtonProps} from '@steroidsjs/core/ui/form/Button/Button';
+import {ILinkProps} from '@steroidsjs/core/ui/nav/Link/Link';
 
 const CARD_TITLE = 'Card Title';
 const CARD_DESCRIPTION = 'Some quick example text to build on the card title and make up the bulk of the cards content.';
@@ -19,7 +20,6 @@ const buttons = [
         color: 'primary',
         children: 'PRIMARY',
         size: 'sm',
-
     },
 ] as IButtonProps[];
 
@@ -28,13 +28,13 @@ const cover = 'https://i.ibb.co/1rTqmJD/image-1.jpg';
 const links = [
     {
         url: 'https://i.ibb.co/',
-        text: 'Link',
+        label: 'Link',
     },
     {
         url: 'https://i.ibb.co/',
-        text: 'Another link',
+        label: 'Another link',
     },
-];
+] as ILinkProps[];
 
 export const header = {
     avatar: {
@@ -79,7 +79,9 @@ const variants: Record<string, ICardProps[]> = {
             cover,
             title: CARD_TITLE,
             description: CARD_DESCRIPTION,
-            buttons,
+            buttons: [
+                buttons[0],
+            ],
             footer,
         },
         {
@@ -153,6 +155,7 @@ export default () => (
             >
                 {cards.map((card, cardIndex) => (
                     <Card
+                        style={{width: '340px'}}
                         {...card}
                         key={cardIndex}
                     />
