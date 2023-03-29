@@ -65,9 +65,8 @@ export default () => (
 
             return [];
         }}
-        className='list-group'
         itemView={(props: any) => (
-            <div className='list-group-item'>
+            <div style={{}}>
                 <div>{props.item.name}</div>
                 <div>{`Age: ${props.item.age}`}</div>
             </div>
