@@ -15,8 +15,8 @@ const circle = (
         width="24"
     >
         <circle
-            cx="10"
-            cy="10"
+            cx="12"
+            cy="12"
             r="10"
             fill="#000"
         />
