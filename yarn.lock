@@ -2141,10 +2141,10 @@
     "@sentry/types" "5.30.0"
     tslib "^1.9.3"
 
-"@steroidsjs/bootstrap@^3.0.0-beta.30":
-  version "3.0.0-beta.30"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.30.tgz#eb015709b4fc7bf6576d809ea6a69ccec8a2069a"
-  integrity sha512-Yrvw8R9uyBMeQD2kUf4SVThLQUXhfdvwKOoerFAEMnJjw/2rzCFN+xb6ZymVfeSwQFntkY7yRCWKe4/v5TPoFQ==
+"@steroidsjs/bootstrap@^3.0.0-beta.32":
+  version "3.0.0-beta.32"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.32.tgz#9ceb3f06e446263a269f781267c5f62411797577"
+  integrity sha512-yiO2i78UhvjzQz5yTOqVHJM32JYL5u+V2xgnMAUy/pNJAzXdKukNc0G5f5kAoRpZFB4vqsPq9ksX2SF+sNxa7w==
   dependencies:
     "@ckeditor/ckeditor5-react" "^3.0.2"
     "@steroidsjs/ckeditor5" "^27.0.2-rc.2"
