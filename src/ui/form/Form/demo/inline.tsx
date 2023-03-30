@@ -1,7 +1,5 @@
 import * as React from 'react';
-import {DropDownField} from '@steroidsjs/core/ui/form';
 import Form from '@steroidsjs/core/ui/form/Form/Form';
-import DateField from '@steroidsjs/core/ui/form/DateField';
 import InputField from '@steroidsjs/core/ui/form/InputField';
 
 /**
@@ -21,17 +19,17 @@ export default () => (
             size='large'
             fields={[
                 {
-                    component: DropDownField,
+                    component: InputField,
                     attribute: 'email',
-                    layout: true,
+                    label: 'Email',
                 },
                 {
                     component: InputField,
-                    attribute: 'message',
-                },
-                {
-                    component: DateField,
-                    attribute: 'date',
+                    attribute: 'phone',
+                    label: 'Phone',
+                    maskProps: {
+                        mask: '+7 (999) 999-99-99',
+                    },
                 },
             ]}
             submitLabel='Submit'

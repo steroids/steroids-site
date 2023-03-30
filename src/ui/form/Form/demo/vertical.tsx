@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Form from '@steroidsjs/core/ui/form/Form/Form';
-import DateField from '@steroidsjs/core/ui/form/DateField';
 import InputField from '@steroidsjs/core/ui/form/InputField';
 
 /**
@@ -25,14 +24,12 @@ export default () => (
                     label: 'Email',
                 },
                 {
-                    component: () => <InputField />,
-                    attribute: 'message',
-                    label: 'Message',
-                },
-                {
-                    component: DateField,
-                    attribute: 'date',
-                    label: 'Date',
+                    component: InputField,
+                    attribute: 'phone',
+                    label: 'Phone',
+                    maskProps: {
+                        mask: '+7 (999) 999-99-99',
+                    },
                 },
             ]}
             submitLabel='Submit'
