@@ -28,7 +28,7 @@ export default () => (
                     showEdgeSteps
                     list={{
                         total: 100,
-                        page: 2,
+                        page: 1,
                         pageSize: 20,
                     }}
                     size={size}
