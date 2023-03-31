@@ -28,7 +28,7 @@ export default () => (
             items={items}
             orientation="horizontal"
             size='large'
-            multiple
+            multiple={false}
         />
     </>
 );

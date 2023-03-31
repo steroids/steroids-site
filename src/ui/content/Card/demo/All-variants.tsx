@@ -51,94 +51,94 @@ const footer = {
     subhead: 'Subhead',
 };
 
-const cardsRows: Record<string, ICardProps[]> = {
-    row1: [
-        {
-            header,
-            cover,
-            title: CARD_TITLE,
-            description: CARD_DESCRIPTION,
-            buttons,
-        },
-        {
-            header,
-            cover,
-            title: CARD_TITLE,
-            description: CARD_DESCRIPTION,
-        },
-        {
-            header,
-            title: CARD_TITLE,
-            description: CARD_DESCRIPTION,
-            links,
-        },
-    ],
-    row2: [
-        {
-            header,
-            cover,
-            title: CARD_TITLE,
-            description: CARD_DESCRIPTION,
-            buttons: [
-                buttons[0],
-            ],
-            footer,
-        },
-        {
-            header,
-            cover,
-            title: CARD_TITLE,
-            description: CARD_DESCRIPTION,
-            footer,
-        },
-        {
-            header,
-            title: CARD_TITLE,
-            description: CARD_DESCRIPTION,
-            links,
-            footer,
-        },
-    ],
-    row3: [
-        {
-            cover,
-            title: CARD_TITLE,
-            description: CARD_DESCRIPTION,
-            buttons,
-        },
-        {
-            cover,
-            title: CARD_TITLE,
-            description: CARD_DESCRIPTION,
-        },
-        {
-            title: CARD_TITLE,
-            description: CARD_DESCRIPTION,
-            links,
-        },
-    ],
-    row4: [
-        {
-            cover,
-            title: CARD_TITLE,
-            description: CARD_DESCRIPTION,
-            footer,
-            buttons,
-        },
-        {
-            cover,
-            title: CARD_TITLE,
-            description: CARD_DESCRIPTION,
-            footer,
-        },
-        {
-            title: CARD_TITLE,
-            description: CARD_DESCRIPTION,
-            links,
-            footer,
-        },
-    ],
-};
+// const cardsRows: Record<string, ICardProps[]> = {
+//     row1: [
+//         {
+//             header,
+//             cover,
+//             title: CARD_TITLE,
+//             description: CARD_DESCRIPTION,
+//             buttons,
+//         },
+//         {
+//             header,
+//             cover,
+//             title: CARD_TITLE,
+//             description: CARD_DESCRIPTION,
+//         },
+//         {
+//             header,
+//             title: CARD_TITLE,
+//             description: CARD_DESCRIPTION,
+//             links,
+//         },
+//     ],
+//     row2: [
+//         {
+//             header,
+//             cover,
+//             title: CARD_TITLE,
+//             description: CARD_DESCRIPTION,
+//             buttons: [
+//                 buttons[0],
+//             ],
+//             footer,
+//         },
+//         {
+//             header,
+//             cover,
+//             title: CARD_TITLE,
+//             description: CARD_DESCRIPTION,
+//             footer,
+//         },
+//         {
+//             header,
+//             title: CARD_TITLE,
+//             description: CARD_DESCRIPTION,
+//             links,
+//             footer,
+//         },
+//     ],
+//     row3: [
+//         {
+//             cover,
+//             title: CARD_TITLE,
+//             description: CARD_DESCRIPTION,
+//             buttons,
+//         },
+//         {
+//             cover,
+//             title: CARD_TITLE,
+//             description: CARD_DESCRIPTION,
+//         },
+//         {
+//             title: CARD_TITLE,
+//             description: CARD_DESCRIPTION,
+//             links,
+//         },
+//     ],
+//     row4: [
+//         {
+//             cover,
+//             title: CARD_TITLE,
+//             description: CARD_DESCRIPTION,
+//             footer,
+//             buttons,
+//         },
+//         {
+//             cover,
+//             title: CARD_TITLE,
+//             description: CARD_DESCRIPTION,
+//             footer,
+//         },
+//         {
+//             title: CARD_TITLE,
+//             description: CARD_DESCRIPTION,
+//             links,
+//             footer,
+//         },
+//     ],
+// };
 
 /**
  * Body
@@ -148,7 +148,7 @@ const cardsRows: Record<string, ICardProps[]> = {
 
 export default () => (
     <div style={{display: 'flex', flexFlow: 'column wrap', rowGap: '30px'}}>
-        {Object.entries(cardsRows).map(([_, cardsRow], cardsRowIndex) => (
+        {/* {Object.entries(cardsRows).map(([_, cardsRow], cardsRowIndex) => (
             <div
                 key={cardsRowIndex}
                 style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', columnGap: '20px'}}
@@ -161,6 +161,6 @@ export default () => (
                     />
                 ))}
             </div>
-        ))}
+        ))} */}
     </div>
 );

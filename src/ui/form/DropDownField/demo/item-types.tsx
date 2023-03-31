@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {DropDownField} from '@steroidsjs/core/ui/form';
 import _upperFirst from 'lodash-es/upperFirst';
+import {ContentType} from '@steroidsjs/core/ui/form/DropDownField/DropDownField';
 import {items} from './basic';
 
 /**
@@ -50,8 +51,8 @@ export default () => (
                 multiple={item.type !== 'radio'}
                 showEllipses={item.showEllipses}
                 itemsContent={{
-                    type: item.type,
-                    src: item.src,
+                    type: item.type as ContentType,
+                    src: item.src as any,
                 }}
             />
         ))}
