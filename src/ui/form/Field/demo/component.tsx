@@ -11,7 +11,6 @@ export default () => (
     <>
         <Field
             component='PasswordField'
-            attribute='PasswordField'
         />
     </>
 );

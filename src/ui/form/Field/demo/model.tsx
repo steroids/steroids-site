@@ -14,7 +14,6 @@ export default () => (
                 attributes: [
                     {
                         field: 'PasswordField',
-                        attribute: 'PasswordField',
                     },
                 ],
             }}
