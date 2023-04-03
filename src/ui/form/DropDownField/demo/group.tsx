@@ -35,10 +35,6 @@ export const items = [
         label: 'Second',
     },
     {
-        id: 3,
-        label: 'Third',
-    },
-    {
         id: 4,
         label: 'Fourth',
         items: [
@@ -59,26 +55,6 @@ export const items = [
                 label: 'Inner Item 8',
             },
         ],
-    },
-    {
-        id: 5,
-        label: 'Fifth',
-    },
-    {
-        id: 6,
-        label: 'Sixth',
-    },
-    {
-        id: 7,
-        label: 'Seventh',
-    },
-    {
-        id: 8,
-        label: 'Eighth',
-    },
-    {
-        id: 9,
-        label: 'Ninth',
     },
 ];
 
