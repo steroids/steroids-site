@@ -41,7 +41,7 @@ const types = [
 ];
 
 export default () => (
-    <div style={{display: 'flex', flexFlow: 'row nowrap', columnGap: '20px'}}>
+    <div style={{display: 'flex', flexFlow: 'column nowrap', rowGap: '20px'}}>
         {types.map((item, itemIndex) => (
             <DropDownField
                 key={itemIndex}
