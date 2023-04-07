@@ -12,6 +12,6 @@ export default () => (
         label='Error'
         errors={['The field is filled incorrectly']}
     >
-        <InputField />
+        <InputField label='label' />
     </FieldLayout>
 );

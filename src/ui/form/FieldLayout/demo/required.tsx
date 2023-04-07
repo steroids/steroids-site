@@ -12,6 +12,6 @@ export default () => (
         label='Required'
         required
     >
-        <InputField />
+        <InputField label='label' />
     </FieldLayout>
 );
