@@ -9,6 +9,6 @@ import Field from '@steroidsjs/core/ui/form/Field';
 
 export default () => (
     <>
-        <Field />
+        <Field label='Basic field' />
     </>
 );
