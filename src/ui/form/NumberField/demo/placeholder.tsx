@@ -13,7 +13,6 @@ export default () => (
         <NumberField
             label='Placeholder'
             placeholder='Your number'
-            layout
         />
     </>
 );

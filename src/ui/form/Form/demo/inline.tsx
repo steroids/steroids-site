@@ -15,7 +15,6 @@ export default () => (
             useRedux
             syncWithAddressBar
             autoFocus
-            layout='inline'
             size='large'
             fields={[
                 {

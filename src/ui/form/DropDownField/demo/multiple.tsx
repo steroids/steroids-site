@@ -56,7 +56,6 @@ export default () => (
             }}
             multiple
             items={items}
-            layout
         />
         <DropDownField
             label='Multiple with ellipses'
@@ -68,7 +67,6 @@ export default () => (
             showReset
             showEllipses
             items={items}
-            layout
         />
     </div>
 );

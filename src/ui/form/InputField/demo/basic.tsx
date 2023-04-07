@@ -12,6 +12,5 @@ export default () => (
     <InputField
         label='Basic input'
         id="Basic"
-        layout
     />
 );

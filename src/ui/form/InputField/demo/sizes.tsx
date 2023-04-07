@@ -26,7 +26,6 @@ export default () => (
                     showClear
                     label={label}
                     size={size}
-                    layout
                 />
             </div>
         ))}

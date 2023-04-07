@@ -18,7 +18,6 @@ export default () => (
             label="Small disabled"
             size="sm"
             disabled
-            layout
         />
         <InputField
             placeholder='Placeholder'
@@ -27,7 +26,6 @@ export default () => (
             showClear
             label="Medium default"
             size="md"
-            layout
         />
         <InputField
             placeholder='Placeholder'
@@ -36,7 +34,6 @@ export default () => (
             showClear
             label='Large with errors'
             size="lg"
-            layout
             errors={['Error 1 text', 'Error 2 text']}
             className='InputFieldView_hasError'
         />

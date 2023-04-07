@@ -29,7 +29,7 @@ export default () => (
                     display: 'flex',
                     alignItems: 'center',
                     gridGap: '30px',
-                    padding: '10px 30px 30px 30px',
+                    padding: '0px 30px 60px 30px',
                 }}
             >
                 {positions.map((position) => (

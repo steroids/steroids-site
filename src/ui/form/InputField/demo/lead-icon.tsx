@@ -27,13 +27,11 @@ export default () => (
         <InputField
             label="Custom lead icon"
             showClear
-            layout
             leadIcon={circle}
         />
         <InputField
             label="Steroids lead icon"
             showClear
-            layout
             leadIcon='user'
         />
     </div>

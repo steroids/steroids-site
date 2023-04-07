@@ -12,7 +12,6 @@ export default () => (
         <NumberField
             label='Required'
             required
-            layout
         />
     </>
 );

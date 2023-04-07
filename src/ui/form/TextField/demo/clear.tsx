@@ -11,7 +11,6 @@ export default () => (
     <>
         <TextField
             label='Clear'
-            layout
             showClear
         />
     </>

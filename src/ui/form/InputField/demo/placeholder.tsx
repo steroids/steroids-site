@@ -12,7 +12,6 @@ export default () => (
     <>
         <InputField
             label='Placeholder'
-            layout
             placeholder='Your text...'
         />
     </>
