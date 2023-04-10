@@ -10,11 +10,11 @@ import Field from '@steroidsjs/core/ui/form/Field';
 export default () => (
     <>
         <Field
-            label='Password field'
+            label='Model field'
             model={{
                 attributes: [
                     {
-                        field: 'PasswordField',
+                        field: 'InputField',
                     },
                 ],
             }}
