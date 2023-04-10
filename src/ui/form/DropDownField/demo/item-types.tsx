@@ -10,7 +10,12 @@ import {items} from './basic';
  * @col 6
  */
 
-const types = [
+const types: {
+    color: string,
+    type: ContentType,
+    src: string | null,
+    showEllipses: boolean
+}[] = [
     {
 
         color: 'primary',
@@ -51,7 +56,7 @@ export default () => (
                 multiple={item.type !== 'radio'}
                 showEllipses={item.showEllipses}
                 itemsContent={{
-                    type: item.type as ContentType,
+                    type: item.type,
                     src: item.src as any,
                 }}
             />
