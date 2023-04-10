@@ -57,7 +57,7 @@ export default () => (
                 showEllipses={item.showEllipses}
                 itemsContent={{
                     type: item.type,
-                    src: item.src as any,
+                    src: item.src,
                 }}
             />
         ))}
