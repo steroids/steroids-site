@@ -9,9 +9,8 @@ import {FieldLayout, InputField} from '@steroidsjs/core/ui/form';
 
 export default () => (
     <FieldLayout
-        label='Error'
         errors={['The field is filled incorrectly']}
     >
-        <InputField label='label' />
+        <InputField label='Errors' />
     </FieldLayout>
 );

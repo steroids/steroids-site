@@ -9,9 +9,10 @@ import {FieldLayout, InputField} from '@steroidsjs/core/ui/form';
 
 export default () => (
     <FieldLayout
-        label='Required'
         required
+        label='Required'
+        size='md'
     >
-        <InputField label='label' />
+        <InputField />
     </FieldLayout>
 );
