@@ -51,7 +51,7 @@ const footer = {
     subhead: 'Subhead',
 };
 
-const cardsRows: Record<string, ICardProps[]> = {
+const cardsRows = {
     row1: [
         {
             header,

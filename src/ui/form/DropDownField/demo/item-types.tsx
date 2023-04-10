@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {DropDownField} from '@steroidsjs/core/ui/form';
 import _upperFirst from 'lodash-es/upperFirst';
+import {ContentType} from '@steroidsjs/core/ui/form/DropDownField/DropDownField';
 import {items} from './basic';
 
 /**
@@ -9,7 +10,12 @@ import {items} from './basic';
  * @col 6
  */
 
-const types = [
+const types: {
+    color: string,
+    type: ContentType,
+    src: string | null,
+    showEllipses: boolean
+}[] = [
     {
 
         color: 'primary',
@@ -40,7 +46,7 @@ const types = [
 ];
 
 export default () => (
-    <div style={{display: 'flex', flexFlow: 'row nowrap', columnGap: '20px'}}>
+    <div style={{display: 'flex', flexFlow: 'column nowrap', rowGap: '20px'}}>
         {types.map((item, itemIndex) => (
             <DropDownField
                 key={itemIndex}
