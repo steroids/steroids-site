@@ -15,7 +15,6 @@ export default () => (
             placeholder='Password'
             security
             showClear
-            layout
         />
     </>
 );

@@ -14,7 +14,6 @@ export default () => (
             label='Security'
             security
             showClear
-            layout
             placeholder='Password'
             showSecurityBar
         />

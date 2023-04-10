@@ -24,7 +24,6 @@ export default () => (
                     label={sizes[size]}
                     placeholder={sizes[size]}
                     size={size}
-                    layout
                     showSecurityBar
                 />
             </div>

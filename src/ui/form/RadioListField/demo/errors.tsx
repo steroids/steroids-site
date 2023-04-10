@@ -15,7 +15,6 @@ export default () => (
             errors={['Error 1 text', 'Error 2 text']}
             items={items}
             className='RadioListFieldView__item_hasError'
-            layout
         />
     </>
 );

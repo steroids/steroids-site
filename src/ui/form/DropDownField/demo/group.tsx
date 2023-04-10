@@ -86,7 +86,6 @@ export default () => (
     <>
         <DropDownField
             label='Group'
-            layout
             placeholder='Group'
             multiple
             showReset

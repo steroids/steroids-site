@@ -32,6 +32,5 @@ export default () => (
         showReset
         multiple
         items={items}
-        layout
     />
 );
