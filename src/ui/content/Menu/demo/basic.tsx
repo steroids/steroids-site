@@ -1,6 +1,5 @@
 import * as React from 'react';
-import Menu from '../../../../../../react/src/ui/content/Menu';
-// import Menu from '@steroidsjs/core/ui/content/Menu/Menu'
+import Menu from '@steroidsjs/core/ui/content/Menu/Menu'
 
 /**
  * @order 1
