@@ -6,23 +6,25 @@ import Menu from '@steroidsjs/core/ui/content/Menu/Menu'
  * @col 6
  */
 
+const VoidFunction = () => {};
+
 export default () => (
     <>
         <Menu
             closeMode='click-any'
             position='bottom'
             items={[
-                {label: 'Вырезать', icon: 'cut'},
-                {label: 'Копировать', icon: 'copy'},
-                {label: 'Вставить', icon: 'paste'},
-                {label: 'Специальная вставка', hasBorder: true},
-                {label: 'Показать историю изменений', hasBorder: true},
-                {label: 'Вставить строку'},
-                {label: 'Вставить столбец'},
-                {label: 'Вставить ячейки', hasBorder: true},
-                {label: 'Редактировать', icon: 'edit-duotone'},
-                {label: 'Сделать основным', icon: 'pin'},
-                {label: 'Удалить', icon: 'trash'},
+                {label: 'Вырезать', icon: 'cut', onClick: VoidFunction},
+                {label: 'Копировать', icon: 'copy', onClick: VoidFunction},
+                {label: 'Вставить', icon: 'paste', onClick: VoidFunction},
+                {label: 'Специальная вставка', hasBorder: true, onClick: VoidFunction},
+                {label: 'Показать историю изменений', hasBorder: true, onClick: VoidFunction},
+                {label: 'Вставить строку', onClick: VoidFunction},
+                {label: 'Вставить столбец', onClick: VoidFunction},
+                {label: 'Вставить ячейки', hasBorder: true, onClick: VoidFunction},
+                {label: 'Редактировать', icon: 'edit-duotone', onClick: VoidFunction},
+                {label: 'Сделать основным', icon: 'pin', onClick: VoidFunction},
+                {label: 'Удалить', icon: 'trash', onClick: VoidFunction},
             ]}
         />
     </>
