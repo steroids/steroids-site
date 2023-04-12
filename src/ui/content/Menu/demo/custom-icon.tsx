@@ -6,7 +6,7 @@ import Menu from '@steroidsjs/core/ui/content/Menu/Menu';
  * @col 6
  */
 
-const VoidFunction = () => {};
+const voidFunction = () => {};
 
 export default () => (
     <>
@@ -15,17 +15,17 @@ export default () => (
             position='bottom'
             icon='user'
             items={[
-                {label: 'Вырезать', icon: 'cut', onClick: VoidFunction},
-                {label: 'Копировать', icon: 'copy', onClick: VoidFunction},
-                {label: 'Вставить', icon: 'paste', onClick: VoidFunction},
-                {label: 'Специальная вставка', hasBorder: true, onClick: VoidFunction},
-                {label: 'Показать историю изменений', hasBorder: true, onClick: VoidFunction},
-                {label: 'Вставить строку', onClick: VoidFunction},
-                {label: 'Вставить столбец', onClick: VoidFunction},
-                {label: 'Вставить ячейки', hasBorder: true, onClick: VoidFunction},
-                {label: 'Редактировать', icon: 'edit-duotone', onClick: VoidFunction},
-                {label: 'Сделать основным', icon: 'pin', onClick: VoidFunction},
-                {label: 'Удалить', icon: 'trash', onClick: VoidFunction},
+                {label: 'Вырезать', icon: 'cut', onClick: voidFunction},
+                {label: 'Копировать', icon: 'copy', onClick: voidFunction},
+                {label: 'Вставить', icon: 'paste', onClick: voidFunction},
+                {label: 'Специальная вставка', hasBorder: true, onClick: voidFunction},
+                {label: 'Показать историю изменений', hasBorder: true, onClick: voidFunction},
+                {label: 'Вставить строку', onClick: voidFunction},
+                {label: 'Вставить столбец', onClick: voidFunction},
+                {label: 'Вставить ячейки', hasBorder: true, onClick: voidFunction},
+                {label: 'Редактировать', icon: 'edit-duotone', onClick: voidFunction},
+                {label: 'Сделать основным', icon: 'pin', onClick: voidFunction},
+                {label: 'Удалить', icon: 'trash', onClick: voidFunction},
             ]}
         />
     </>
