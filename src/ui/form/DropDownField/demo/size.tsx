@@ -17,7 +17,7 @@ const sizes = {
 
 export default () => (
     <>
-        <div style={{display: 'flex', flexFlow: 'row nowrap', columnGap: '30px'}}>
+        <div style={{display: 'flex', flexFlow: 'column nowrap', rowGap: '30px'}}>
             {Object.entries(sizes)
                 .map(([size, label]) => (
                     <DropDownField

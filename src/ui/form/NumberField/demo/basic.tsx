@@ -13,7 +13,6 @@ export default () => (
         <NumberField
             label='Basic'
             id="Basic"
-            layout
         />
     </>
 );

@@ -5,7 +5,7 @@ import {ICardProps} from '@steroidsjs/core/ui/content/Card/Card';
 import {IButtonProps} from '@steroidsjs/core/ui/form/Button/Button';
 import {ILinkProps} from '@steroidsjs/core/ui/nav/Link/Link';
 
-const CARD_TITLE = 'Card Title';
+const CARD_TITLE = 'Card title';
 const CARD_DESCRIPTION = 'Some quick example text to build on the card title and make up the bulk of the cards content.';
 
 const buttons = [
@@ -51,7 +51,7 @@ const footer = {
     subhead: 'Subhead',
 };
 
-const cardsRows: Record<string, ICardProps[]> = {
+const cardsRows = {
     row1: [
         {
             header,
