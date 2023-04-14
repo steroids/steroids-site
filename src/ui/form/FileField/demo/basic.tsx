@@ -10,9 +10,17 @@ import * as React from 'react';
 
 export default () => (
     <div style={{display: 'grid', gridGap: '10px'}}>
-        <FileField backendUrl={process.env.APP_BACKEND_URL + '/api/v1/file/upload-photo'} />
         <FileField
             backendUrl={process.env.APP_BACKEND_URL + '/api/v1/file/upload-photo'}
+            uploaderConfig={{
+                useFormData: true,
+            }}
+        />
+        <FileField
+            backendUrl={process.env.APP_BACKEND_URL + '/api/v1/file/upload-photo'}
+            uploaderConfig={{
+                useFormData: true,
+            }}
             imagesOnly
         />
         <FileField
@@ -20,6 +28,5 @@ export default () => (
             imagesOnly
             filesLayout='wall'
         />
-        <ImageField backendUrl='/api/v1/file/upload-photo' />
     </div>
 );
