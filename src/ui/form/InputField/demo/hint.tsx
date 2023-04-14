@@ -11,7 +11,6 @@ import InputField from '@steroidsjs/core/ui/form/InputField/InputField';
 export default () => (
     <InputField
         label='Label'
-        layout
         hint='Your message'
     />
 );

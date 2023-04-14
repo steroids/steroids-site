@@ -12,7 +12,6 @@ export default () => (
         <PasswordField
             label='Required'
             required
-            layout
         />
     </>
 );

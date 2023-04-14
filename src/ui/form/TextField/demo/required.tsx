@@ -12,7 +12,6 @@ export default () => (
         <TextField
             label='Required'
             required
-            layout
         />
     </>
 );

@@ -25,7 +25,6 @@ export default () => (
                 <InputField
                     label={type}
                     type={type}
-                    layout
                 />
             </div>
         ))}

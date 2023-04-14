@@ -13,7 +13,6 @@ export default () => (
         <NumberField
             label='Hint'
             hint='Message'
-            layout
         />
     </>
 );

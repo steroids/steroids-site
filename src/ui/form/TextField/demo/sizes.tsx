@@ -14,7 +14,6 @@ export default () => (
                 <TextField
                     label="Small"
                     size='sm'
-                    layout
                     placeholder='Small'
                     showClose
                 />
@@ -23,7 +22,6 @@ export default () => (
                 <TextField
                     label="Medium"
                     size='md'
-                    layout
                     placeholder='Medium'
                     showClose
                 />
@@ -32,7 +30,6 @@ export default () => (
                 <TextField
                     label="Large"
                     size='lg'
-                    layout
                     placeholder='Large'
                     showClose
                 />

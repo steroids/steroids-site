@@ -12,7 +12,6 @@ export default () => (
     <>
         <NumberField
             label='Disabled'
-            layout
             disabled
             value={3}
         />

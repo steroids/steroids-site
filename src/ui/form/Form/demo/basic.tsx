@@ -5,8 +5,6 @@ import InputField from '@steroidsjs/core/ui/form/InputField';
 
 /**
  * Обычный пример использования Form.
- * @order 1
- * @col 12
  */
 
 export default () => (
@@ -16,7 +14,6 @@ export default () => (
             useRedux
             syncWithAddressBar
             autoFocus
-            layout='default'
             size='large'
             fields={[
                 {

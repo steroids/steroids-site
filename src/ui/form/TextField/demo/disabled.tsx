@@ -12,7 +12,6 @@ export default () => (
             label='Disabled'
             placeholder='Disabled'
             disabled
-            layout
             showClose
         />
     </>

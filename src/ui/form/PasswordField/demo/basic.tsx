@@ -12,7 +12,6 @@ export default () => (
         <PasswordField
             label='Basic'
             id='Basic'
-            layout
         />
     </>
 );
