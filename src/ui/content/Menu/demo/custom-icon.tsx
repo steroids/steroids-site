@@ -13,6 +13,7 @@ export default () => (
         <Menu
             closeMode='click-any'
             position='bottom'
+            icon='user'
             items={[
                 {label: 'Вырезать', icon: 'cut', onClick: voidFunction},
                 {label: 'Копировать', icon: 'copy', onClick: voidFunction},
