@@ -8,8 +8,7 @@ const colors = {
     danger: 'Danger',
     warning: 'Warning',
     info: 'Info',
-    light: 'Light',
-    dark: 'Dark',
+    link: 'Link',
 };
 
 /**
@@ -24,7 +23,6 @@ export default () => (
                 url='https://google.ru'
                 target='_blank'
                 key={color}
-                textColor={color}
                 color={color}
                 label={colors[color]}
                 style={{display: 'inline-block', marginBottom: '1rem'}}
