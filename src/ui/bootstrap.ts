@@ -28,7 +28,6 @@ export default {
     'form.DateTimeRangeFieldView': {lazy: () => require('@steroidsjs/bootstrap/form/DateTimeRangeField/DateTimeRangeFieldView').default},
     'form.DropDownFieldItemView': {lazy: () => require('@steroidsjs/bootstrap/form/DropDownFieldItem/DropDownFieldItemView').default},
     'form.DropDownFieldView': {lazy: () => require('@steroidsjs/bootstrap/form/DropDownField/DropDownFieldView').default},
-    'form.DropDownFieldItemView': {lazy: () => require('@steroidsjs/bootstrap/form/DropDownFieldItem/DropDownFieldItemView').default},
     'form.FieldLayoutView': {lazy: () => require('@steroidsjs/bootstrap/form/FieldLayout/FieldLayoutView').default},
     'form.FieldSetView': {lazy: () => require('@steroidsjs/bootstrap/form/FieldSet/FieldSetView').default},
     'form.FieldListView': {lazy: () => require('@steroidsjs/bootstrap/form/FieldList/FieldListView').default},
