@@ -11,8 +11,10 @@ const voidFunction = () => {};
 export default () => (
     <>
         <Menu
-            closeMode='click-any'
-            position='bottom'
+            dropDownProps={{
+                position: 'bottom',
+                closeMode: 'click-any',
+            }}
             items={[
                 {label: 'Вырезать', icon: 'cut', onClick: voidFunction},
                 {label: 'Копировать', icon: 'copy', onClick: voidFunction},
