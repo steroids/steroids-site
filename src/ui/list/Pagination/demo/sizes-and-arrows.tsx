@@ -2,6 +2,8 @@ import * as React from 'react';
 
 import Pagination from '@steroidsjs/core/ui/list/Pagination/Pagination';
 
+import './pagination.scss';
+
 const sizes = {
     sm: 'Small',
     md: 'Medium',
