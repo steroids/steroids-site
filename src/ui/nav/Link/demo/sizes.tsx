@@ -19,8 +19,7 @@ export default () => (
             <Link
                 key={size}
                 size={size}
-                style={{float: 'left', marginRight: '0.5rem'}}
-                className='float-left mr-2'
+                style={{marginRight: '1rem'}}
                 url='https://google.ru'
                 target='_blank'
                 label={sizes[size]}

@@ -12,7 +12,6 @@ export default () => (
         <Link
             confirm='Confirm text'
             label='Confirm'
-            style={{display: 'inline-block', marginBottom: '1rem'}}
         />
     </>
 );

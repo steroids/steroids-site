@@ -12,7 +12,6 @@ export default () => (
             url='https://google.ru'
             target='_blank'
             label={__('Basic')}
-            style={{display: 'inline-block', marginBottom: '1rem'}}
         />
     </>
 );

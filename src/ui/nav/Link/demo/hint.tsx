@@ -10,10 +10,8 @@ import Link from '@steroidsjs/core/ui/nav/Link';
 export default () => (
     <>
         <Link
-            textColor=''
             label='Hint'
             hint='hint text'
-            style={{display: 'inline-block', marginBottom: '1rem'}}
         />
     </>
 );

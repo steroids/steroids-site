@@ -14,7 +14,6 @@ export default () => (
             icon='phone'
             url='https://google.ru'
             target='_blank'
-            style={{display: 'inline-block', marginBottom: '1rem'}}
         />
     </>
 );

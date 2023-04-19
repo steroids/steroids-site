@@ -25,7 +25,7 @@ export default () => (
                 key={color}
                 color={color}
                 label={colors[color]}
-                style={{display: 'inline-block', marginBottom: '1rem'}}
+                style={{marginRight: '1rem'}}
             />
         ))}
     </>
