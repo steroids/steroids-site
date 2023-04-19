@@ -1,5 +1,4 @@
 import {FileField} from '@steroidsjs/core/ui/form';
-import ImageField from '@steroidsjs/core/ui/form/ImageField';
 import * as React from 'react';
 
 /**
