@@ -25,7 +25,7 @@ export default () => (
                 {label: 'Вставить строку', onClick: voidFunction},
                 {label: 'Вставить столбец', onClick: voidFunction},
                 {label: 'Вставить ячейки', hasBorder: true, onClick: voidFunction},
-                {label: 'Редактировать', icon: 'edit-duotone', onClick: voidFunction},
+                {label: 'Редактировать', icon: 'edit', onClick: voidFunction},
                 {label: 'Сделать основным', icon: 'pin', onClick: voidFunction},
                 {label: 'Удалить', icon: 'trash', onClick: voidFunction},
             ]}
