@@ -11,7 +11,7 @@ export default () => (
     <>
         <Form formId='FieldListForm'>
             <FieldList
-                zebra
+                hasAlternatingColors
                 attribute='items'
                 label='items'
                 initialRowsCount={4}
@@ -39,7 +39,7 @@ export default () => (
                     },
                     {
                         title: 'Отправлять в ЕППУ',
-                        attribute: 'boolean',
+                        attribute: 'needSend',
                         component: CheckboxField,
                         placeholder: 'Конец мероприятия (Красноярское время)',
                         size: 'sm',

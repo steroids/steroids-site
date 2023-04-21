@@ -40,7 +40,7 @@ export default () => (
                     },
                     {
                         title: 'Отправлять в ЕППУ',
-                        attribute: 'boolean',
+                        attribute: 'needSend',
                         component: CheckboxField,
                         placeholder: 'Конец мероприятия (Красноярское время)',
                         size: 'sm',
