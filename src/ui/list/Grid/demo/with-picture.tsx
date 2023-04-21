@@ -27,25 +27,27 @@ export const columns = [
         label: 'Default',
         attribute: 'name',
         picture: {
-            property: 'pic',
-            isLeft: true,
+            attribute: 'pic',
         },
-        valueView: 'PictureColumnView',
+        subtitle: 'surname',
+        valueView: 'ContentColumnView',
     },
     {
         label: 'Just picture',
         picture: {
-            property: 'pic',
+            attribute: 'pic',
         },
-        valueView: 'PictureColumnView',
+        valueView: 'ContentColumnView',
     },
     {
-        label: 'With picture right',
+        label: 'With picture left',
         attribute: 'name',
         picture: {
-            property: 'pic',
+            attribute: 'pic',
+            isLeft: true,
         },
-        valueView: 'PictureColumnView',
+        subtitle: 'surname',
+        valueView: 'ContentColumnView',
     },
 ];
 

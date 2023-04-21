@@ -18,7 +18,7 @@ const items = [
         id: 3,
         name: 'John',
         surname: 'Doe',
-        url: 'https://steroids.kozhin.dev',
+        url: 'https://kozhindev.com',
     },
 ];
 
@@ -26,11 +26,14 @@ export const columns = [
     {
         label: 'Name',
         link: {
-            property: 'name',
-            urlProperty: 'url',
+            attribute: 'name',
+            linkProps: {
+                target: 'blank',
+            },
+            url: 'url',
         },
         subtitle: 'surname',
-        valueView: 'LinkColumnView',
+        valueView: 'ContentColumnView',
     },
 ];
 

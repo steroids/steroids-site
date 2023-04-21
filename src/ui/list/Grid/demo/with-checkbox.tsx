@@ -1,30 +1,21 @@
 import * as React from 'react';
 import Grid from '@steroidsjs/core/ui/list/Grid/Grid';
+import CheckboxColumnView from '@steroidsjs/core/ui/list/CheckboxColumn/CheckboxColumn';
 
 const items = [
     {
         id: 1,
         name: 'Ivan',
         surname: 'Ivanov',
-    },
-    {
-        id: 2,
-        name: 'Petr',
-        surname: 'Petrov',
-    },
-    {
-        id: 3,
-        name: 'John',
-        surname: 'Doe',
+        icon: 'user',
     },
 ];
 
 export const columns = [
     {
-        label: 'Name',
+        label: 'Checkbox',
         attribute: 'name',
-        subtitle: 'surname',
-        valueView: 'ContentColumnView',
+        valueView: CheckboxColumnView,
     },
 ];
 
@@ -36,7 +27,7 @@ export const columns = [
 export default () => (
     <>
         <Grid
-            listId='GridSubtitleDemo'
+            listId='GridIconDemo'
             items={items}
             columns={columns}
         />

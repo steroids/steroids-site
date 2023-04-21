@@ -27,25 +27,27 @@ export const columns = [
         label: 'Default',
         attribute: 'name',
         icon: {
-            property: 'icon',
-            isLeft: true,
+            attribute: 'icon',
         },
-        valueView: 'IconColumnView',
+        valueView: 'ContentColumnView',
+        subtitle: 'surname',
     },
     {
         label: 'Just Icon',
         icon: {
-            property: 'icon',
+            attribute: 'icon',
         },
-        valueView: 'IconColumnView',
+        valueView: 'ContentColumnView',
     },
     {
-        label: 'With icon right',
+        label: 'With icon left',
         attribute: 'name',
         icon: {
-            property: 'icon',
+            attribute: 'icon',
+            isLeft: true,
         },
-        valueView: 'IconColumnView',
+        subtitle: 'surname',
+        valueView: 'ContentColumnView',
     },
 ];
 
