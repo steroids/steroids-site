@@ -13,7 +13,7 @@ export default () => (
         items={demoItems}
         pagination={{
             loadMore: false,
-            position: 'both',
+            position: 'bottom',
         }}
         paginationSize={{
             defaultValue: 3,
