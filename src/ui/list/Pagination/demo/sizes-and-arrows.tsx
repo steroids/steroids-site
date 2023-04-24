@@ -1,8 +1,6 @@
 import * as React from 'react';
-
 import Pagination from '@steroidsjs/core/ui/list/Pagination/Pagination';
-
-import './pagination.scss';
+import {Text} from '@steroidsjs/core/ui/typography';
 
 const sizes = {
     sm: 'Small',
@@ -21,9 +19,10 @@ export default () => (
             <div
                 key={size}
             >
-                <h6 style={{marginBottom: '10px'}}>
-                    {sizes[size]}
-                </h6>
+                <Text
+                    style={{marginBottom: '10px'}}
+                    content={sizes[size]}
+                />
                 <Pagination
                     aroundCount={3}
                     showSteps
