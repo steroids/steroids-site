@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 import Pagination from '@steroidsjs/core/ui/list/Pagination/Pagination';
 
 /**
