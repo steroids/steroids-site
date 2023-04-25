@@ -30,7 +30,7 @@ export const columns = [
             attribute: 'icon',
         },
         valueView: 'ContentColumnView',
-        subtitle: 'surname',
+        subtitleAttribute: 'surname',
     },
     {
         label: 'Just Icon',
@@ -46,7 +46,7 @@ export const columns = [
             attribute: 'icon',
             isLeft: true,
         },
-        subtitle: 'surname',
+        subtitleAttribute: 'surname',
         valueView: 'ContentColumnView',
     },
 ];

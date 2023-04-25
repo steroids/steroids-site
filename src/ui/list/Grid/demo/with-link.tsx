@@ -30,9 +30,9 @@ export const columns = [
             linkProps: {
                 target: 'blank',
             },
-            url: 'url',
+            urlAttribute: 'url',
         },
-        subtitle: 'surname',
+        subtitleAttribute: 'surname',
         valueView: 'ContentColumnView',
     },
 ];

@@ -23,7 +23,7 @@ export const columns = [
     {
         label: 'Name',
         attribute: 'name',
-        subtitle: 'surname',
+        subtitleAttribute: 'surname',
         valueView: 'ContentColumnView',
     },
 ];

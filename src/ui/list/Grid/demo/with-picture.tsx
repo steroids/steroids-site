@@ -29,7 +29,7 @@ export const columns = [
         picture: {
             attribute: 'pic',
         },
-        subtitle: 'surname',
+        subtitleAttribute: 'surname',
         valueView: 'ContentColumnView',
     },
     {
@@ -46,7 +46,7 @@ export const columns = [
             attribute: 'pic',
             isLeft: true,
         },
-        subtitle: 'surname',
+        subtitleAttribute: 'surname',
         valueView: 'ContentColumnView',
     },
 ];
