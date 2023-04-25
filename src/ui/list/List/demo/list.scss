@@ -1,0 +1,30 @@
+@import '../../../../style/variables.scss';
+
+.list-group { 
+
+    &-item { 
+        padding: 5px 10px;
+        border-bottom: 1px solid $border-color;
+
+        &:last-child{
+            border: none;
+        }
+    }
+}
+
+.row { 
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+
+.col-12 { 
+    width: 100%;
+    
+}
+
+.col-6 {
+    width: calc(100% / 6);
+}
