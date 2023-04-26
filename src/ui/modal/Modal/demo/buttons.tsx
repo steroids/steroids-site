@@ -9,8 +9,8 @@ function DemoModal(props: IModalProps) {
         <Modal
             title='Modal with controls'
             onClose={props.onClose}
-            controls={[
-                {label: 'Show Alert', onClick: () => alert('This is alert!')},
+            buttons={[
+                {label: 'Alert', onClick: () => alert('This is alert!'), outline: true},
                 {label: 'Close', onClick: () => props.onClose()},
             ]}
             {...props}
@@ -23,7 +23,7 @@ function DemoModal(props: IModalProps) {
 }
 
 /**
- * Modal содержит набор контролов с привязанными обработчиками.
+ * Modal содержит набор кнопок с привязанными обработчиками.
  * @order 2
  * @col 6
  */

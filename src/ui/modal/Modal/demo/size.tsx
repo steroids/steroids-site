@@ -3,21 +3,30 @@ import Modal, {IModalProps} from '@steroidsjs/core/ui/modal/Modal/Modal';
 import Button from '@steroidsjs/core/ui/form/Button';
 import {openModal} from '@steroidsjs/core/actions/modal';
 import useDispatch from '@steroidsjs/core/hooks/useDispatch';
+import _upperFirst from 'lodash-es/upperFirst';
 
-const sizesArray: Size[] = ['sm', 'md', 'lg'];
+const sizes = {
+    sm: 'small',
+    md: 'medium',
+    lg: 'large',
+};
 
 function DemoModal(props: IModalProps) {
     return (
         <Modal
-            title={`${props.size} modal`}
+            title={_upperFirst(`${props.label} modal`)}
             onClose={props.onClose}
+            buttons={[
+                {label: 'Alert', onClick: () => alert('This is alert!'), outline: true},
+                {label: 'Close', onClick: () => props.onClose()},
+            ]}
             {...props}
         >
             <div style={{marginBottom: '20px'}}>
                 This is your content for
                 <strong>
                     {' '}
-                    {props.size}
+                    {props.label}
                     {' '}
                 </strong>
                 modal.
@@ -34,19 +43,19 @@ function DemoModal(props: IModalProps) {
 export default () => {
     const dispatch = useDispatch();
     return (
-        <div style={{display: 'flex'}}>
-            {sizesArray.map((size) => (
+        <div style={{display: 'flex', columnGap: '20px'}}>
+            {Object.entries(sizes).map(([size, label]) => (
                 <Button
                     key={size}
-                    label={`Open ${size} modal`}
+                    label={`Open ${label} modal`}
                     onClick={e => {
                         e.preventDefault();
                         dispatch(openModal(DemoModal, {
                             modalId: 'demo',
                             size,
+                            label,
                         }));
                     }}
-                    style={{marginRight: '20px'}}
                 />
             ))}
         </div>
