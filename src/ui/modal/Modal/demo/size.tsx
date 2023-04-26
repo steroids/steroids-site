@@ -4,7 +4,7 @@ import Button from '@steroidsjs/core/ui/form/Button';
 import {openModal} from '@steroidsjs/core/actions/modal';
 import useDispatch from '@steroidsjs/core/hooks/useDispatch';
 
-const sizesArray: Size[] = ['small', 'middle', 'large'];
+const sizesArray: Size[] = ['sm', 'md', 'lg'];
 
 function DemoModal(props: IModalProps) {
     return (

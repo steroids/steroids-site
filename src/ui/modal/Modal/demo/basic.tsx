@@ -31,7 +31,6 @@ export default () => {
             <Button
                 label='Open modal'
                 onClick={e => {
-                    console.log('Hello');
                     e.preventDefault();
                     dispatch(openModal(DemoModal, {
                         modalId: 'demoModal',
