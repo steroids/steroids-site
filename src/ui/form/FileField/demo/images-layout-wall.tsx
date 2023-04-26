@@ -1,4 +1,5 @@
 import {FileField} from '@steroidsjs/core/ui/form';
+import {FilesLayout} from '@steroidsjs/core/ui/form/FileField/FileField';
 import * as React from 'react';
 
 /**
@@ -11,7 +12,7 @@ export default () => (
     <div style={{minWidth: '500px'}}>
         <FileField
             backendUrl="/api/v1/file/upload-photo"
-            filesLayout='wall'
+            filesLayout={FilesLayout.wall}
             imagesOnly
         />
     </div>
