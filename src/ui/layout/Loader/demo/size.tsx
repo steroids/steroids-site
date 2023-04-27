@@ -9,7 +9,7 @@ import {Loader} from '@steroidsjs/core/ui/layout';
 export default () => (
     <>
         <Loader
-            size='large'
+            size='small'
             color='primary'
         />
     </>
