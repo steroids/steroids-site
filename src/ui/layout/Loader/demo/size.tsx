@@ -7,18 +7,18 @@ import {Loader} from '@steroidsjs/core/ui/layout';
  */
 
 export default () => (
-    <>
-        <div style={{width: 100, height: 100, display: 'inline-block'}}>
+    <div style={{display: 'flex'}}>
+        <div style={{width: 100, height: 100}}>
             <Loader
                 size='sm'
-                color='primary'
+                color='gradient'
             />
         </div>
-        <div style={{width: 100, height: 100, display: 'inline-block'}}>
+        <div style={{width: 100, height: 100}}>
             <Loader
                 size='lg'
-                color='primary'
+                color='gradient'
             />
         </div>
-    </>
+    </div>
 );
