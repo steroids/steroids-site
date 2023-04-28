@@ -16,6 +16,12 @@ export default () => (
         </div>
         <div style={{width: 100, height: 100}}>
             <Loader
+                size='md'
+                color='gradient'
+            />
+        </div>
+        <div style={{width: 100, height: 100}}>
+            <Loader
                 size='lg'
                 color='gradient'
             />
