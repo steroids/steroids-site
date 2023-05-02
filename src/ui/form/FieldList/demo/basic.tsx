@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {CheckboxField, InputField, FieldList, Form} from '@steroidsjs/core/ui/form';
+import {CheckboxField, InputField, FieldList, Form, NumberField} from '@steroidsjs/core/ui/form';
 
 /**
  * Обычный пример использования FieldList.
@@ -23,24 +23,23 @@ export default () => (
                         size: 'sm',
                     },
                     {
-                        title: 'Начало мероприятия (Красноярское время)',
-                        attribute: 'start',
+                        title: 'Описание направления подготовки',
+                        attribute: 'descriptions',
                         component: InputField,
-                        placeholder: '14.07.2022  08:00',
+                        placeholder: 'Описание направления подготовки',
                         size: 'sm',
                     },
                     {
-                        title: 'Конец мероприятия (Красноярское время)',
-                        attribute: 'end',
-                        component: InputField,
-                        placeholder: '14.07.2022  08:00',
+                        title: 'Количество мест',
+                        attribute: 'count',
+                        component: NumberField,
+                        placeholder: '0',
                         size: 'sm',
                     },
                     {
                         title: 'Отправлять в ЕППУ',
                         attribute: 'needSend',
                         component: CheckboxField,
-                        placeholder: 'Конец мероприятия (Красноярское время)',
                         size: 'sm',
                     },
                 ]}
