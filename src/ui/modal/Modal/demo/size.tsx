@@ -22,7 +22,7 @@ function DemoModal(props: IModalProps) {
             ]}
             {...props}
         >
-            <div style={{marginBottom: '20px'}}>
+            <div>
                 This is your content for
                 <strong>
                     {' '}
