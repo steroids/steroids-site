@@ -6,19 +6,19 @@ const items = [
         id: 1,
         name: 'Ivan',
         surname: 'Ivanov',
-        icon: 'user',
+        icon: 'user_alt',
     },
     {
         id: 2,
         name: 'Petr',
         surname: 'Petrov',
-        icon: 'user',
+        icon: 'user_alt',
     },
     {
         id: 3,
         name: 'John',
         surname: 'Doe',
-        icon: 'user',
+        icon: 'user_alt',
     },
 ];
 

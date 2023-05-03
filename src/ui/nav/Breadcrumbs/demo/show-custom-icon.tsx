@@ -16,7 +16,7 @@ export default () => (
                 {id: 'Breadcrumbs', title: 'Breadcrumbs'},
             ]}
             showIcon
-            customIcon='user'
+            customIcon='user_alt'
         />
     </>
 );

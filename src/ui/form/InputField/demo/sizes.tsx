@@ -22,7 +22,7 @@ export default () => (
             >
                 <InputField
                     placeholder='Placeholder'
-                    leadIcon='user'
+                    leadIcon='user_alt'
                     showClear
                     label={label}
                     size={size}

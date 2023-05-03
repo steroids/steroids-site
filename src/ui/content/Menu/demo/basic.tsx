@@ -16,17 +16,17 @@ export default () => (
                 closeMode: 'click-any',
             }}
             items={[
-                {label: 'Вырезать', icon: 'cut', onClick: voidFunction},
-                {label: 'Копировать', icon: 'copy', onClick: voidFunction},
-                {label: 'Вставить', icon: 'paste', onClick: voidFunction},
+                {label: 'Вырезать', icon: 'cut_8', onClick: voidFunction},
+                {label: 'Копировать', icon: 'copy_8', onClick: voidFunction},
+                {label: 'Вставить', icon: 'paste_8', onClick: voidFunction},
                 {label: 'Специальная вставка', hasBorder: true, onClick: voidFunction},
                 {label: 'Показать историю изменений', hasBorder: true, onClick: voidFunction},
                 {label: 'Вставить строку', onClick: voidFunction},
                 {label: 'Вставить столбец', onClick: voidFunction},
                 {label: 'Вставить ячейки', hasBorder: true, onClick: voidFunction},
-                {label: 'Редактировать', icon: 'edit', onClick: voidFunction},
-                {label: 'Сделать основным', icon: 'pin', onClick: voidFunction},
-                {label: 'Удалить', icon: 'trash', onClick: voidFunction},
+                {label: 'Редактировать', icon: 'edit_duotone_8', onClick: voidFunction},
+                {label: 'Сделать основным', icon: 'pin_8', onClick: voidFunction},
+                {label: 'Удалить', icon: 'trash_8', onClick: voidFunction},
             ]}
         />
     </>

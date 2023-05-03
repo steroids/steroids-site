@@ -9,7 +9,7 @@ import {Accordion, AccordionItem} from '@steroidsjs/core/ui/content';
 
 export default () => (
     <div style={{minHeight: '255px'}}>
-        <Accordion icon={{open: 'success', close: 'error'}}>
+        <Accordion icon={{open: 'success_24x24', close: 'error_24x24'}}>
             <AccordionItem title='Show more'>Some content</AccordionItem>
         </Accordion>
     </div>
