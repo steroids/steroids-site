@@ -15,12 +15,12 @@ export default () => (
         />
         <DateField
             label='With error'
-            icon='plane'
+            icon='user'
             errors={['Error 1 text']}
         />
         <DateField
             label='Custom'
-            icon='dizzy'
+            icon='map'
         />
     </>
 );
