@@ -15,7 +15,7 @@ export default () => (
                 position: 'bottom',
                 closeMode: 'click-any',
             }}
-            icon='user'
+            icon='folder'
             items={[
                 {label: 'Вырезать', icon: 'cut', onClick: voidFunction},
                 {label: 'Копировать', icon: 'copy', onClick: voidFunction},

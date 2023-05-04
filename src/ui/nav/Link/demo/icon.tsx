@@ -11,7 +11,7 @@ export default () => (
     <>
         <Link
             label={__('Icon')}
-            icon='phone'
+            icon='home'
             url='https://google.ru'
             target='_blank'
         />
