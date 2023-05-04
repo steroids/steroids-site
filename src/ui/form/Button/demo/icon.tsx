@@ -11,6 +11,6 @@ import Button from '@steroidsjs/core/ui/form/Button/Button';
 export default () => (
     <Button
         label={__('Icon')}
-        icon='phone'
+        icon='home'
     />
 );

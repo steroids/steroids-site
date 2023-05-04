@@ -12,7 +12,7 @@ export default () => {
     return (
         <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '15px', minHeight: '225px'}}>
             <Accordion
-                icon='plus'
+                icon='add'
                 onChange={() => setTouches(prevTouches => prevTouches + 1)}
             >
                 <AccordionItem>Custom icon</AccordionItem>
