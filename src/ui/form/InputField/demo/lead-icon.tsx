@@ -32,7 +32,7 @@ export default () => (
         <InputField
             label="Steroids lead icon"
             showClear
-            leadIcon='user_alt'
+            leadIcon='user'
         />
     </div>
 );

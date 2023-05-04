@@ -10,7 +10,7 @@ import InputField from '@steroidsjs/core/ui/form/InputField/InputField';
 export default () => (
     <InputField
         label='Disabled'
-        leadIcon="user_alt"
+        leadIcon="user"
         placeholder='Placeholder'
         disabled
         showClear
