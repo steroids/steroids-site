@@ -16,6 +16,7 @@ export default () => (
         <DateField
             label='With error'
             icon='user'
+            className='DateFieldView_is-invalid'
             errors={['Error 1 text']}
         />
         <DateField

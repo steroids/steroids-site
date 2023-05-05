@@ -11,6 +11,7 @@ export default () => (
     <>
         <DateField
             label='Errors'
+            className='DateFieldView_is-invalid'
             errors={['Error 1 text', 'Error 2 text']}
         />
     </>
