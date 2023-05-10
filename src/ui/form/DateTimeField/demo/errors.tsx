@@ -1,5 +1,5 @@
 import * as React from 'react';
-import DateRangeField from '@steroidsjs/core/ui/form/DateRangeField';
+import DateTimeField from '@steroidsjs/core/ui/form/DateTimeField';
 
 /**
  * Обработка ошибок.
@@ -9,9 +9,9 @@ import DateRangeField from '@steroidsjs/core/ui/form/DateRangeField';
 
 export default () => (
     <>
-        <DateRangeField
+        <DateTimeField
             label='Errors'
-            className='DateRangeFieldView_is-invalid'
+            className='DateTimeFieldView_is-invalid'
             errors={['Error 1 text', 'Error 2 text']}
         />
     </>
