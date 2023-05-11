@@ -49,6 +49,7 @@ export default {
     'form.SwitcherFieldView': {lazy: () => require('@steroidsjs/bootstrap/form/SwitcherField/SwitcherFieldView').default},
     'form.TextFieldView': {lazy: () => require('@steroidsjs/bootstrap/form/TextField/TextFieldView').default},
     'form.TimeFieldView': {lazy: () => require('@steroidsjs/bootstrap/form/TimeField/TimeFieldView').default},
+    'form.MaskFieldView': {lazy: () => require('@steroidsjs/bootstrap/form/MaskField/MaskFieldView').default},
     'format.BooleanFormatterView': {lazy: () => require('@steroidsjs/bootstrap/format/BooleanFormatter/BooleanFormatterView').default},
     'format.DefaultFormatterView': {lazy: () => require('@steroidsjs/bootstrap/format/DefaultFormatter/DefaultFormatterView').default},
     // 'format.PhotosFormatterView': {lazy: () => require('@steroidsjs/bootstrap/format/PhotosFormatter/PhotosFormatterView').default},
