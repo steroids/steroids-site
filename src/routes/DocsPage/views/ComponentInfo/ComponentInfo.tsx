@@ -11,10 +11,7 @@ import ApiTable from '../ApiTable';
 
 import './ComponentInfo.scss';
 
-interface IComponentInfoProps {
-}
-
-export default function ComponentInfo(props: IComponentInfoProps) {
+export default function ComponentInfo() {
     const bem = useBem('ComponentInfo');
     const routeParam = useSelector(state => getRouteParam(state, PATH_ROUTE_PARAM));
     const componentInfo = autoDocs.components[`components/${_upperFirst(routeParam)}Component`];
