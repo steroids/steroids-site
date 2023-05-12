@@ -3,9 +3,10 @@ import Tree from '@steroidsjs/core/ui/nav/Tree';
 import {useBem, useSelector} from '@steroidsjs/core/hooks';
 import {getRouteParam} from '@steroidsjs/core/reducers/router';
 import {useDocsPageData} from 'hooks/useDocsPageData';
-import {CATEGORY_UI} from 'constants/categories';
+import {CATEGORY_COMPONENT, CATEGORY_UI} from 'constants/categories';
 import {CATEGORY_ROUTE_PARAM} from 'constants/routeParams';
 import Demos from './views/Demos';
+import ComponentInfo from './views/ComponentInfo';
 
 import './DocsPage.scss';
 
@@ -22,6 +23,9 @@ export default function DocsPage() {
             <div className={bem.element('content')}>
                 {category === CATEGORY_UI && (
                     <Demos demosComponents={demosComponents} />
+                )}
+                {category === CATEGORY_COMPONENT && (
+                    <ComponentInfo />
                 )}
             </div>
         </div>
