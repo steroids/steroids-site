@@ -1,0 +1,20 @@
+@import 'style/variables';
+
+.ApiTable {
+  padding-top: 30px;
+  
+  &__type {
+    min-width: 200px;
+    code {
+      color: #932981;
+    }
+  }
+
+  &__name {
+    min-width: 200px;
+  }
+
+  &__default {
+    min-width: 150px;
+  }
+}
