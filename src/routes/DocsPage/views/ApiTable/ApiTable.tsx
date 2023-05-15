@@ -4,25 +4,34 @@ import {IEntityInfo} from 'types/IEntityInfo';
 import _isEmpty from 'lodash-es/isEmpty';
 import Grid from '@steroidsjs/core/ui/list/Grid/Grid';
 import Title from '@steroidsjs/core/ui/typography/Title';
+import {ITitleProps} from '@steroidsjs/core/ui/typography/Title/Title';
 
 import './ApiTable.scss';
 
 interface IApiTableProps {
     entityInfo: IEntityInfo,
+    titleProps?: ITitleProps,
+    listId: string,
+    className?: string,
 }
 
 export default function ApiTable(props: IApiTableProps) {
     const bem = useBem('ApiTable');
 
-    if (_isEmpty(props.entityInfo?.properties)) {
+    console.log(props.listId, 'listId');
+
+    if (_isEmpty(props.entityInfo?.properties) || !props.listId) {
         return null;
     }
 
     return (
-        <div className={bem.block()}>
-            <Title content='Component props' />
+        <div className={bem(bem.block(), props.className)}>
+            <Title
+                content='Component props'
+                {...props.titleProps}
+            />
             <Grid
-                listId='apiTable'
+                listId={props.listId}
                 items={props.entityInfo.properties}
                 columns={[
                     {

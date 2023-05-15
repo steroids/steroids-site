@@ -1,12 +1,14 @@
 import React from 'react';
-import _upperFirst from 'lodash-es/upperFirst';
 import {useBem, useSelector} from '@steroidsjs/core/hooks';
 import {getRouteParam} from '@steroidsjs/core/reducers/router';
 import {PATH_ROUTE_PARAM} from 'constants/routeParams';
 import autoDocs from '@steroidsjs/core/docs-autogen-result.json';
-import _last from 'lodash-es/last';
+import _isEmpty from 'lodash-es/isEmpty';
+
+import {Title} from '@steroidsjs/core/ui/typography';
 import DemoCard from '../DemoCard';
 import ApiTable from '../ApiTable';
+import {getComponentNameByRouteParam, getDemosByRouteParam, getNestedInterfaces} from './helpers';
 
 import './Demos.scss';
 
@@ -14,24 +16,14 @@ interface IDemosProps {
     demosComponents: any;
 }
 
-const getComponentNameByRouteParam = (routeParam: string) => _last(routeParam?.split('-'));
-
-const toDemoFormat = ([title, component]) => ({
-    title: _upperFirst(title.replaceAll('-', ' ')),
-    component,
-});
-
-const getDemosByRouteParam = (
-    demos: Record<string, any>,
-    routeParam: string,
-) => Object
-    .entries(demos[routeParam] || {})
-    .map(toDemoFormat);
+const API_TABLE_ID = 'apiTable';
 
 export default function Demos(props: IDemosProps) {
     const bem = useBem('Demos');
     const routeParam = useSelector(state => getRouteParam(state, PATH_ROUTE_PARAM));
     const componentInfo = autoDocs.interfaces[`I${getComponentNameByRouteParam(routeParam)}Props`];
+
+    const nestedInterfaces = React.useMemo(() => getNestedInterfaces(componentInfo, autoDocs.interfaces), [componentInfo]);
 
     const demos = React.useMemo(
         () => getDemosByRouteParam(props.demosComponents, routeParam),
@@ -52,7 +44,27 @@ export default function Demos(props: IDemosProps) {
                     description="description"
                 />
             ))}
-            <ApiTable entityInfo={componentInfo} />
+            <ApiTable
+                className={bem.element('table')}
+                entityInfo={componentInfo}
+                listId={API_TABLE_ID}
+            />
+            {!_isEmpty(nestedInterfaces) && (
+                <div className={bem.element('nested-interfaces')}>
+                    <Title content='Props interfaces' />
+                    {nestedInterfaces.map((nestedInterface, nestedInterfaceIndex) => (
+                        <ApiTable
+                            key={nestedInterfaceIndex}
+                            entityInfo={nestedInterface}
+                            titleProps={{
+                                content: nestedInterface.name,
+                                type: 'h3',
+                            }}
+                            listId={routeParam + nestedInterface.name}
+                        />
+                    ))}
+                </div>
+            )}
         </div>
     );
 }
