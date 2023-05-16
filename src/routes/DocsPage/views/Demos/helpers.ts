@@ -1,6 +1,7 @@
 import _upperFirst from 'lodash-es/upperFirst';
 import _last from 'lodash-es/last';
 import {IEntityInfo} from 'types/IEntityInfo';
+import {checkAndRemoveArraySign} from 'helpers/apiTable';
 
 const toDemoFormat = ([title, component]) => ({
     title: _upperFirst(title.replaceAll('-', ' ')),
@@ -27,15 +28,6 @@ export const getNestedInterfaces = (mainInterface: IEntityInfo, allInterfaces: I
     const interfacePresencePattern = /I.*/;
 
     const typesSeparator = ' | ';
-    const arraySign = '[]';
-
-    const checkAndRemoveArraySign = (type: string) => {
-        if (type.includes(arraySign)) {
-            return type.replace(arraySign, '');
-        }
-
-        return type;
-    };
 
     const checkAndAddNestedInterface = (type: string) => {
         const normalizedType = checkAndRemoveArraySign(type);

@@ -60,7 +60,7 @@ export default function Demos(props: IDemosProps) {
                                 content: nestedInterface.name,
                                 type: 'h3',
                             }}
-                            listId={routeParam + nestedInterface.name}
+                            listId={API_TABLE_ID + nestedInterfaceIndex}
                         />
                     ))}
                 </div>
