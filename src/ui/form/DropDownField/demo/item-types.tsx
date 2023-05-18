@@ -54,7 +54,6 @@ export default () => (
                 color={item.color}
                 placeholder={_upperFirst(item.type)}
                 multiple={item.type !== 'radio'}
-                hasSelectAll={item.type !== 'radio'}
                 showEllipses={item.showEllipses}
                 itemsContent={{
                     type: item.type,

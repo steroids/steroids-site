@@ -51,7 +51,12 @@ export default () => (
         <DropDownField
             label='Basic'
             placeholder='Basic'
-            hasSelectAll
+            itemToSelectAll={
+                {
+                    label: 'All',
+                    id: 'all',
+                }
+            }
             multiple
             items={items}
         />
