@@ -11,6 +11,8 @@ import ApiTable from '../ApiTable';
 
 import './ComponentInfo.scss';
 
+const API_TABLE_ID = 'apiTable';
+
 export default function ComponentInfo() {
     const bem = useBem('ComponentInfo');
     const routeParam = useSelector(state => getRouteParam(state, PATH_ROUTE_PARAM));
@@ -24,7 +26,10 @@ export default function ComponentInfo() {
         <div className={bem.block()}>
             <Title content={componentInfo.title || componentInfo.name} />
             <Text content={componentInfo.description} />
-            <ApiTable entityInfo={componentInfo} />
+            <ApiTable
+                entityInfo={componentInfo}
+                listId={API_TABLE_ID}
+            />
         </div>
     );
 }

@@ -1,6 +1,7 @@
 import _upperFirst from 'lodash-es/upperFirst';
 import _set from 'lodash-es/set';
 import _get from 'lodash-es/get';
+import _last from 'lodash-es/last';
 import {CATEGORY_UI} from 'constants/categories';
 import {ROUTE_DOCS} from 'constants/routes';
 
@@ -60,3 +61,17 @@ export const getDemosAndTreeItems = (demosTree: Record<string, any>) => {
         demosTreeItems,
     };
 };
+
+const toDemoFormat = ([title, component]) => ({
+    title: _upperFirst(title.replaceAll('-', ' ')),
+    component,
+});
+
+export const getDemosByRouteParam = (
+    demos: Record<string, any>,
+    routeParam: string,
+) => Object
+    .entries(demos[routeParam] || {})
+    .map(toDemoFormat);
+
+export const getComponentNameByRouteParam = (routeParam: string) => _last(routeParam?.split('-'));

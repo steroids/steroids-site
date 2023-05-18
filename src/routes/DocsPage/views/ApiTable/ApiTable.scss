@@ -5,7 +5,7 @@
   
   &__type {
     min-width: 200px;
-    code {
+    code, a {
       color: #932981;
     }
   }
@@ -16,5 +16,10 @@
 
   &__default {
     min-width: 150px;
+  }
+
+  a:hover,
+  .ButtonView__link:hover {
+    text-decoration: underline;
   }
 }
