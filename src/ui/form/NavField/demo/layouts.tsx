@@ -27,7 +27,7 @@ export const items = [
 ];
 
 export default () => (
-    <div>
+    <div style={{display: 'flex', gridGap: '10px', alignItems: 'center'}}>
         <NavField
             navProps={{layout: 'button'}}
             items={items}

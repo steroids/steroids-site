@@ -27,10 +27,10 @@ export const items = [
 ];
 
 export default () => (
-    <>
+    <div style={{display: 'flex'}}>
         <NavField
             items={items}
             label='Basic'
         />
-    </>
+    </div>
 );
