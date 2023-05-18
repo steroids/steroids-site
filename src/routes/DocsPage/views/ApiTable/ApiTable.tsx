@@ -4,15 +4,16 @@ import {IEntityInfo} from 'types/IEntityInfo';
 import _isEmpty from 'lodash-es/isEmpty';
 import Grid from '@steroidsjs/core/ui/list/Grid/Grid';
 import Title from '@steroidsjs/core/ui/typography/Title';
+import {goToRoute} from '@steroidsjs/core/actions/router';
 import {ITitleProps} from '@steroidsjs/core/ui/typography/Title/Title';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import {useUnmount} from 'react-use';
-
-import './ApiTable.scss';
 import {useDispatch} from '@steroidsjs/core/hooks';
 import {listSetItems} from '@steroidsjs/core/actions/list';
-import {getInterfaceFromType} from 'helpers/apiTable';
-import Link from '@steroidsjs/core/ui/nav/Link';
+import {scrollToTop} from 'utils/utils';
+import {checkAndCreateTypeLink} from 'helpers/apiTable';
+
+import './ApiTable.scss';
 
 interface IApiTableProps {
     entityInfo: IEntityInfo,
@@ -21,33 +22,14 @@ interface IApiTableProps {
     className?: string,
 }
 
-const checkAndCreateTypeLink = (type: string) => {
-    const interfacePresencePattern = /I.*/;
-    const interfacePattern = /^I\w+$/;
-    const propsInterfacePattern = /^I\w+Props$/;
-
-    if (interfacePresencePattern.test(type)) {
-        const interfaceName = getInterfaceFromType(type, interfacePattern);
-
-        // if (propsInterfacePattern.test(interfaceName)) {
-        //     return (
-        //         <Link
-        //             url={}
-        //         />
-        //     )
-        // }
-        return (
-            <a href={`#${interfaceName}`}>
-                {type}
-            </a>
-        );
-    }
-    return type;
-};
-
 export default function ApiTable(props: IApiTableProps) {
     const bem = useBem('ApiTable');
     const dispatch = useDispatch();
+
+    const onLinkClick = React.useCallback((routeId: string, routeParams: Record<string, any>) => {
+        dispatch(goToRoute(routeId, routeParams));
+        scrollToTop();
+    }, [dispatch]);
 
     useUnmount(() => {
         dispatch(listSetItems(props.listId, []));
@@ -78,7 +60,7 @@ export default function ApiTable(props: IApiTableProps) {
                     {
                         className: bem.element('type'),
                         label: 'Type',
-                        valueView: ({item}) => <code>{checkAndCreateTypeLink(item.type)}</code>,
+                        valueView: ({item}) => <code>{checkAndCreateTypeLink(item.type, onLinkClick)}</code>,
                     },
                     {
                         className: bem.element('default'),
