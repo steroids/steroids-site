@@ -10,6 +10,5 @@ import DateTimeRangeField from '@steroidsjs/core/ui/form/DateTimeRangeField';
 export default () => (
     <DateTimeRangeField
         disabled
-        noBorder
     />
 );
