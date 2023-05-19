@@ -3,7 +3,6 @@ import {ROUTE_DOCS} from 'constants/routes';
 import React from 'react';
 import {IEntityInfo} from 'types/IEntityInfo';
 import autoDocs from '@steroidsjs/core/docs-autogen-result.json';
-import _uniq from 'lodash-es/uniq';
 
 const INTERFACE_PATTERN = /^I\w+/;
 const INTERFACE_PRESENCE_PATTERN = /I.*/;
@@ -56,6 +55,10 @@ export const getNestedInterfaces = (mainInterface: IEntityInfo, allInterfaces: I
                 return;
             }
 
+            if (nestedInterfaces.includes(nestedInterface)) {
+                return;
+            }
+
             nestedInterfaces.push(nestedInterface);
             getNestedInterfaces(nestedInterface, allInterfaces, nestedInterfaces);
         }
@@ -66,7 +69,7 @@ export const getNestedInterfaces = (mainInterface: IEntityInfo, allInterfaces: I
         normalizedType.forEach(checkAndAddNestedInterface);
     });
 
-    return _uniq(nestedInterfaces);
+    return nestedInterfaces;
 };
 
 export const checkAndCreateTypeLink = (type: string, onClick: any) => {
