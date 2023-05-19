@@ -2136,10 +2136,10 @@
     "@sentry/types" "5.30.0"
     tslib "^1.9.3"
 
-"@steroidsjs/bootstrap@^3.0.0-beta.55":
-  version "3.0.0-beta.55"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.55.tgz#0ac31c777e76e8d9bf3cd232659a860917ef41b0"
-  integrity sha512-AnW1AvqOEWJ5kwH7dHdPMymTvTTyXLgZQ+nuOv/smDYZsqMKX8PaHpyt/tQ/vpiSn8If2VsdXs2Gke+Lv6jW/A==
+"@steroidsjs/bootstrap@^3.0.0-beta.56":
+  version "3.0.0-beta.56"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.56.tgz#ed1188d9406c2129bca50b51ccc6e1569d3ffd66"
+  integrity sha512-jpcjbOMdGR9o+1nnxPckhcYmY1tmTVbOdJIHUaoIVG0FV5MyQAMSBGlboYUoufSBiz7k4R8UBwQC6DeleBkp0A==
   dependencies:
     "@ckeditor/ckeditor5-react" "^3.0.2"
     "@steroidsjs/ckeditor5" "^27.0.2-rc.2"
@@ -2217,10 +2217,10 @@
     "@ckeditor/ckeditor5-widget" "^27.0.0"
     "@ckeditor/ckeditor5-word-count" "^27.0.0"
 
-"@steroidsjs/core@^3.0.0-beta.39":
-  version "3.0.0-beta.39"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.0-beta.39.tgz#b4ee8fad53f56d78e4d443b0c7a02ace29f8a286"
-  integrity sha512-ot4TYqurhOmG6J0aLjHw/W8GT/wfrhD+lyY5MKA/FnXZRDHyvTCk8dgdhx/ZLVu0iSI53DpKAESLrrtelsc8xA==
+"@steroidsjs/core@^3.0.0-beta.40":
+  version "3.0.0-beta.40"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.0-beta.40.tgz#f4274024b936a2f2591ec1a6753299082b780d85"
+  integrity sha512-RgfTWaRYnYyM+YefUoYabUoAkk9XtteUcKZpDb2msUT84k4sQu1xdft9yH/PZXyfQhJOBBXXeZPtMLVFpImrRw==
   dependencies:
     axios "^0.21.1"
     connected-react-router "^6.9.3"
