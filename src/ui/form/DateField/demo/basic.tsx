@@ -9,6 +9,6 @@ import DateField from '@steroidsjs/core/ui/form/DateField/DateField';
 
 export default () => (
     <>
-        <DateField />
+        <DateField label="Basic" />
     </>
 );
