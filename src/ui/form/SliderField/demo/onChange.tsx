@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Header} from '../../../../../../react/src/ui/layout';
+import {Header} from '@steroidsjs/core/ui/layout';
 import SliderField from '@steroidsjs/core/ui/form/SliderField/SliderField';
 
 /**
