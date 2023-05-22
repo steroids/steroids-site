@@ -80,6 +80,7 @@ export default {
     'nav.NavListView': {lazy: () => require('@steroidsjs/bootstrap/nav/Nav/NavListView').default},
     'nav.NavTabsView': {lazy: () => require('@steroidsjs/bootstrap/nav/Nav/NavTabsView').default},
     'nav.TreeView': {lazy: () => require('@steroidsjs/bootstrap/nav/Tree/TreeView').default},
+    'nav.ButtonGroupView': {lazy: () => require('@steroidsjs/bootstrap/nav/ButtonGroup/ButtonGroupView').default},
     'typography.TextView': {lazy: () => require('@steroidsjs/bootstrap/typography/Text/TextView').default},
     'typography.TitleView': {lazy: () => require('@steroidsjs/bootstrap/typography/Title/TitleView').default},
 };
