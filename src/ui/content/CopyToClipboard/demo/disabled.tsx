@@ -1,12 +1,12 @@
 import * as React from 'react';
-import CopyToClipBoard from '@steroidsjs/core/ui/content/CopyToClipboard';
+import CopyToClipboard from '@steroidsjs/core/ui/content/CopyToClipboard';
 
 /**
  * Disabled
  */
 
 export default () => (
-    <CopyToClipBoard
+    <CopyToClipboard
         value="Steroids.js"
         notification="'Steroids.js' has been copied"
         disabled
