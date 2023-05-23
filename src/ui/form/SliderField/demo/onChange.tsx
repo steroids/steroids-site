@@ -1,6 +1,6 @@
 import * as React from 'react';
-import {Header} from '@steroidsjs/core/ui/layout';
 import SliderField from '@steroidsjs/core/ui/form/SliderField/SliderField';
+import {Text} from '@steroidsjs/core/ui/typography';
 
 /**
  * Использования свойства onChange для изминения значения счетчика.
@@ -16,9 +16,9 @@ export default () => {
                 onChange={value => setCounter(value)}
             />
             <div>
-                <Header>
+                <Text>
                     {__('Значение меняется при изменения значения слайдера в реальном времени: {counter}', {counter})}
-                </Header>
+                </Text>
             </div>
         </div>
     );

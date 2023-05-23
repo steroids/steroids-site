@@ -1,7 +1,6 @@
 import * as React from 'react';
-import {Header} from '@steroidsjs/core/ui/layout';
-
 import SliderField from '@steroidsjs/core/ui/form/SliderField/SliderField';
+import {Text} from '@steroidsjs/core/ui/typography';
 
 /**
  * Использования свойства onAfterChange для изминения значения счетчика после отпускания tip'а у слайдера.
@@ -17,9 +16,9 @@ export default () => {
                 onAfterChange={value => setCounter(value)}
             />
             <div>
-                <Header>
+                <Text>
                     {__('Значение слайдера: {counter}', {counter})}
-                </Header>
+                </Text>
             </div>
         </div>
     );
