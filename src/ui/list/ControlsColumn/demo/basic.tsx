@@ -18,7 +18,7 @@ const controls = [
 export default () => (
     <>
         <Grid
-            listId='GridControlsDemo'
+            listId='ControlsColumnDemo'
             items={items}
             columns={columns}
             controls={controls.map(control => ({id: control}))}
