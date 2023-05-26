@@ -13,12 +13,9 @@ const style = {
 export default () => (
     <div style={{maxWidth: '620px'}}>
         <FlexGrid
-            gap={10}
+            gap={[10, 20]}
             wrap
         >
-            <div style={style} />
-            <div style={style} />
-            <div style={style} />
             <div style={style} />
             <div style={style} />
             <div style={style} />
