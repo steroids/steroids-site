@@ -64,6 +64,12 @@ export default () => (
             label='Group'
             placeholder='Group'
             multiple
+            itemToSelectAll={
+                {
+                    label: 'All',
+                    id: 'all',
+                }
+            }
             showReset
             itemsContent={{
                 type: 'checkbox',
