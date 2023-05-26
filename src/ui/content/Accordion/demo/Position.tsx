@@ -11,20 +11,17 @@ export default () => (
             <AccordionItem
                 title='Top'
                 position="top"
-                theme="dark"
             >
                 Top content
             </AccordionItem>
             <AccordionItem
                 title='Middle'
                 position="middle"
-                theme="intermediate"
             >
                 Middle content
             </AccordionItem>
             <AccordionItem
                 title='Bottom'
-                theme="light"
                 position="bottom"
             >
                 Botoom content
