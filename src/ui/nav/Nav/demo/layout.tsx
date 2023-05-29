@@ -1,6 +1,7 @@
 import * as React from 'react';
 import _startCase from 'lodash-es/startCase';
 import Nav from '@steroidsjs/core/ui/nav/Nav';
+import {Text} from '@steroidsjs/core/ui/typography';
 import {items} from '../../../nav/Nav/demo/basic';
 
 const layouts = ['button', 'icon', 'link', 'tabs', 'navbar', 'list'];
@@ -13,13 +14,12 @@ const icons = ['coffee', 'shopping-basket', 'hospital'];
  */
 export default () => (
     <>
-        <div className='row'>
+        <div style={{display: 'flex', flexFlow: 'row nowrap', columnGap: 60}}>
             {layouts.map(layout => (
                 <div
-                    className='col-8 mb-5'
                     key={layout}
                 >
-                    <h6>{_startCase(layout)}</h6>
+                    <Text>{_startCase(layout)}</Text>
                     <Nav
                         items={layout === 'icon'
                             ? items.map((item, index) => ({
