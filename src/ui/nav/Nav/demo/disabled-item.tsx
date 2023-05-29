@@ -15,7 +15,7 @@ export const items = [
 const layouts = ['button', 'icon', 'link', 'tabs', 'navbar', 'list'];
 
 /**
- * Basic
+ * Disabled item
  * @order 1
  * @col 6
  */
