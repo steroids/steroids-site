@@ -14,7 +14,6 @@ export const items = [
     {
         id: 'three',
         label: 'three',
-        disabled: true,
     },
 ];
 

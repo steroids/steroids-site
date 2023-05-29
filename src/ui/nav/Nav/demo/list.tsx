@@ -26,7 +26,6 @@ export const items = [
     {
         id: 'Three',
         label: 'Three',
-        disabled: true,
         items: [
             {
                 id: 'Six',
