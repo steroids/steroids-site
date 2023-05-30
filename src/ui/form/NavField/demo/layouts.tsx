@@ -1,5 +1,6 @@
 import * as React from 'react';
 import NavField from '@steroidsjs/core/ui/form/NavField';
+import {Text} from '@steroidsjs/core/ui/typography';
 
 /**
  * Демонстрация всех видов использования свойства layout
@@ -26,31 +27,21 @@ export const items = [
     },
 ];
 
+const layouts = ['button', 'icon', 'link', 'tabs', 'navbar', 'list'];
+
 export default () => (
-    <div style={{display: 'flex', gridGap: '10px', alignItems: 'center'}}>
-        <NavField
-            navProps={{layout: 'button'}}
-            items={items}
-        />
-        <NavField
-            navProps={{layout: 'list'}}
-            items={items}
-        />
-        <NavField
-            navProps={{layout: 'link'}}
-            items={items}
-        />
-        <NavField
-            navProps={{layout: 'tabs'}}
-            items={items}
-        />
-        <NavField
-            navProps={{layout: 'navbar'}}
-            items={items}
-        />
-        <NavField
-            navProps={{layout: 'icon'}}
-            items={items}
-        />
+    <div>
+        {layouts.map(layout => (
+            <div
+                key={layout}
+                style={{marginBottom: '24px'}}
+            >
+                <Text content={'Layout ' + layout} />
+                <NavField
+                    navProps={{layout}}
+                    items={items}
+                />
+            </div>
+        ))}
     </div>
 );
