@@ -3,7 +3,7 @@ import Grid from '@steroidsjs/core/ui/list/Grid/Grid';
 import {items, columns} from '../../Grid/demo/basic';
 
 const controls = [
-    'index',
+    'back',
     'create',
     'view',
     'update',
