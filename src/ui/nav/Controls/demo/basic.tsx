@@ -5,7 +5,8 @@ export const controls = [
     {
         id: 'back',
         onClick: () => alert('Go back'),
-    }, {
+    },
+    {
         id: 'create',
         onClick: () => alert('Something is created'),
     },
