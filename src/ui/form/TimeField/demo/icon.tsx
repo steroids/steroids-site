@@ -9,6 +9,6 @@ import TimeField from '@steroidsjs/core/ui/form/TimeField';
 
 export default () => (
     <>
-        <TimeField icon='utensils' />
+        <TimeField icon='user' />
     </>
 );
