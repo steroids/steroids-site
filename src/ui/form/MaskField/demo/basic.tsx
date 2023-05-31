@@ -1,7 +1,8 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable max-len */
 import * as React from 'react';
-
 import MaskField from '@steroidsjs/core/ui/form/MaskField';
+import {MASK_PRESETS} from '@steroidsjs/core/ui/form/InputField/InputField';
 
 /**
  * С использованием маски для ввода номера телефона
@@ -13,20 +14,17 @@ export default () => (
     <>
         <MaskField
             label="Mask phone"
-            mask='+7 (999) 999-99-99'
+            maskOptions={MASK_PRESETS.phone}
             showClear
         />
         <MaskField
             label="Mask date"
-            maskProps={{
-                mask: '99.99.9999',
-                maskPlaceholder: 'дд.мм.гггг',
-            }}
+            maskOptions={MASK_PRESETS.date}
             showClear
         />
         <MaskField
             label="Mask bank card"
-            mask='9999 9999 9999 9999'
+            maskOptions={MASK_PRESETS.card}
             showClear
         />
     </>

@@ -11,8 +11,8 @@
     },
     "dependencies": {
         "@sentry/browser": "^5.27.3",
-        "@steroidsjs/bootstrap": "^3.0.0-beta.69",
-        "@steroidsjs/core": "^3.0.0-beta.47",
+        "@steroidsjs/bootstrap": "^3.0.0-beta.70",
+        "@steroidsjs/core": "^3.0.0-beta.48",
         "@steroidsjs/webpack": "^3.0 || >=3.0.0-beta.1",
         "@storybook/react": "~6.3.13",
         "connected-react-router": "^6.9.1",

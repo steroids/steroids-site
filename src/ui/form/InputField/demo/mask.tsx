@@ -1,7 +1,6 @@
 /* eslint-disable max-len */
 import * as React from 'react';
-
-import InputField from '@steroidsjs/core/ui/form/InputField/InputField';
+import InputField, {MASK_PRESETS} from '@steroidsjs/core/ui/form/InputField/InputField';
 
 /**
  * С использованием маски для ввода номера телефона
@@ -13,9 +12,7 @@ export default () => (
     <>
         <InputField
             label="Mask"
-            maskProps={{
-                mask: '+7 (999) 999-99-99',
-            }}
+            maskOptions={MASK_PRESETS.phone}
             showClear
         />
     </>
