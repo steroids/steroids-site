@@ -33,8 +33,10 @@ export default () => (
                             attribute='pageSize'
                             sizes={[3, 6, 9]}
                             defaultValue={3}
-                            size={size}
                             position='top'
+                            buttonProps={{
+                                size,
+                            }}
                         />
                     </div>
                 ))}
