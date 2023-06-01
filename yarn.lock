@@ -2151,10 +2151,10 @@
     "@sentry/types" "5.30.0"
     tslib "^1.9.3"
 
-"@steroidsjs/bootstrap@^3.0.0-beta.70":
-  version "3.0.0-beta.70"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.70.tgz#de1876298916fabe32a79c5b93f66cf8b6ab7717"
-  integrity sha512-kP5tkAn9TT2oxS4GculV/kmjvi/MNCsTtHeI5YwOXPABfe0hKBcjRs1AxRSFMw0ikEjaQXNkqs3/Pv9+wCfqxw==
+"@steroidsjs/bootstrap@^3.0.0-beta.71":
+  version "3.0.0-beta.71"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.71.tgz#afae986a76d7a1bd9ddaf7e2ba4ea831ad8ebb00"
+  integrity sha512-y8Ntm5I0LqzIIAcK3Wd3xv7hVvex7nlukEoVh+YvbOBJgybgBDihJbLmGhLaWq4uY/lkLfc7fHlw0wKHsn8wKg==
   dependencies:
     "@ckeditor/ckeditor5-react" "^3.0.2"
     "@steroidsjs/ckeditor5" "^27.0.2-rc.2"
@@ -2232,10 +2232,10 @@
     "@ckeditor/ckeditor5-widget" "^27.0.0"
     "@ckeditor/ckeditor5-word-count" "^27.0.0"
 
-"@steroidsjs/core@^3.0.0-beta.48":
-  version "3.0.0-beta.48"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.0-beta.48.tgz#7d52a3f3b2d624762c16e813f88ad633761784bd"
-  integrity sha512-VwaAEaBomfmzjbgwX91RRRGUYQcrX5Dmb2FcC75SjjmEBGGLrOnbpcT6Sl3/G28btob7Tbu3gsPEqtC2rUsEBQ==
+"@steroidsjs/core@^3.0.0-beta.49":
+  version "3.0.0-beta.49"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.0-beta.49.tgz#b6a890c41355e543d0af27335fbf1c0e529c3635"
+  integrity sha512-wUYRVb/6BLndC6cEjrI5637wxUFVtlgWxyDZBFV2tk9oXpiTlyF+st4A4CQ3uV18lHm9ew95Qeb0s5pjLqD0xg==
   dependencies:
     "@maskito/core" "^0.12.1"
     "@maskito/kit" "^0.12.1"
@@ -7424,6 +7424,11 @@ grapheme-splitter@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/grapheme-splitter/-/grapheme-splitter-1.0.4.tgz#9cf3a665c6247479896834af35cf1dbb4400767e"
   integrity sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==
+
+gsap@^3.11.5:
+  version "3.11.5"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.11.5.tgz#97ef65091f43868be387803f9db277e8cd5bd041"
+  integrity sha512-Q89nKCLgoX5xUjznh9LcaIUkz54k1voNucT1Rpf9SJNFIQznBwFqt5qUUQbeVInFyN/n18OUJkpeI6CNEDt74w==
 
 gud@^1.0.0:
   version "1.0.0"

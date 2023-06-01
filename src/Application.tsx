@@ -1,6 +1,10 @@
+/* eslint-disable import/no-extraneous-dependencies */
+import React from 'react';
 import useApplication from '@steroidsjs/core/hooks/useApplication';
 import HttpComponent from '@steroidsjs/core/components/HttpComponent';
 import LocaleComponent from '@steroidsjs/core/components/LocaleComponent';
+import {gsap} from 'gsap';
+import {ScrollToPlugin} from 'gsap/ScrollToPlugin';
 
 import 'style/index.scss';
 
@@ -20,6 +24,10 @@ export default function Application() {
             ui.addFormatters(require('@steroidsjs/core/ui/format').default);
             ui.addIcons(require('@steroidsjs/bootstrap/icons/index').default);
         },
+    });
+
+    React.useEffect(() => {
+        gsap.registerPlugin(ScrollToPlugin);
     });
 
     return renderApplication();
