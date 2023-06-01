@@ -10,7 +10,7 @@ import {ITitleProps} from '@steroidsjs/core/ui/typography/Title/Title';
 import {useUnmount} from 'react-use';
 import {useDispatch} from '@steroidsjs/core/hooks';
 import {listSetItems} from '@steroidsjs/core/actions/list';
-import {scrollToTop} from 'utils/utils';
+import {scrollToPropsTable} from 'utils/utils';
 import {checkAndCreateTypeLink} from 'helpers/apiTable';
 
 import './ApiTable.scss';
@@ -28,7 +28,7 @@ export default function ApiTable(props: IApiTableProps) {
 
     const onLinkClick = React.useCallback((routeId: string, routeParams: Record<string, any>) => {
         dispatch(goToRoute(routeId, routeParams));
-        scrollToTop();
+        scrollToPropsTable();
     }, [dispatch]);
 
     useUnmount(() => {
@@ -46,6 +46,7 @@ export default function ApiTable(props: IApiTableProps) {
         >
             <Title
                 content='Component props'
+                className={bem.element('title')}
                 {...props.titleProps}
             />
             <Grid
