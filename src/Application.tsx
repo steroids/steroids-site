@@ -3,6 +3,7 @@ import React from 'react';
 import useApplication from '@steroidsjs/core/hooks/useApplication';
 import HttpComponent from '@steroidsjs/core/components/HttpComponent';
 import LocaleComponent from '@steroidsjs/core/components/LocaleComponent';
+import ResourceComponent from '@steroidsjs/core/components/ResourceComponent';
 import {gsap} from 'gsap';
 import {ScrollToPlugin} from 'gsap/ScrollToPlugin';
 
@@ -17,6 +18,10 @@ export default function Application() {
         components: {
             locale: LocaleComponent,
             http: HttpComponent,
+            resource: {
+                googleCaptchaSiteKey: 'test',
+                className: ResourceComponent,
+            },
         },
         onInit: ({ui}) => {
             ui.addViews(require('./ui/bootstrap').default);
