@@ -27,11 +27,12 @@ const navItems = [
 export default () => (
     <div style={{minWidth: '400px'}}>
         <Header
-            logo={{title: 'Logo'}}
+            logo={{icon: 'kozhinDev', title: 'KozhinDev'}}
             nav={{
                 items: navItems,
-                layout: 'link',
+                layout: 'navbar',
             }}
+
         />
     </div>
 );
