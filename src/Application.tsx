@@ -18,10 +18,7 @@ export default function Application() {
         components: {
             locale: LocaleComponent,
             http: HttpComponent,
-            resource: {
-                googleCaptchaSiteKey: 'test',
-                className: ResourceComponent,
-            },
+            resource: ResourceComponent,
         },
         onInit: ({ui}) => {
             ui.addViews(require('./ui/bootstrap').default);
