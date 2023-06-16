@@ -8,6 +8,8 @@ import {ILinkProps} from '@steroidsjs/core/ui/nav/Link/Link';
 const CARD_TITLE = 'Card title';
 const CARD_DESCRIPTION = 'Some quick example text to build on the card title and make up the bulk of the cards content.';
 
+const voidFunction = () => { };
+
 const buttons = [
     {
         outline: true,
@@ -43,7 +45,20 @@ export const header = {
     },
     head: 'Header',
     subhead: 'Subhead',
-    menu: true,
+    menu: {
+        dropDownProps: {
+            position: 'bottom',
+            closeMode: 'click-any',
+        },
+        items: [
+            {label: 'Вырезать', icon: 'cut', onClick: voidFunction},
+            {label: 'Копировать', icon: 'copy', hasBorder: true, onClick: voidFunction},
+            {label: 'Показать историю изменений', hasBorder: true, onClick: voidFunction},
+            {label: 'Редактировать', icon: 'edit', onClick: voidFunction},
+            {label: 'Удалить', icon: 'trash', onClick: voidFunction},
+        ],
+        icon: 'menu_dots',
+    },
 };
 
 const footer = {
