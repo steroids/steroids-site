@@ -11,36 +11,36 @@ export default () => (
     <div style={{display: 'grid', gridGap: '20px'}}>
         <div style={{display: 'flex', gridGap: '10px'}}>
             <Avatar
-                size='small'
+                size='sm'
                 shape='square'
                 src='https://i.ibb.co/1fWbXCt/F-1.png'
             />
             <Avatar
-                size='small'
+                size='sm'
                 shape='square'
                 title='Kozhin Dev'
             />
         </div>
         <div style={{display: 'flex', gridGap: '10px'}}>
             <Avatar
-                size='middle'
+                size='md'
                 shape='square'
                 src='https://i.ibb.co/1fWbXCt/F-1.png'
             />
             <Avatar
-                size='middle'
+                size='md'
                 shape='square'
                 title='Kozhin Dev'
             />
         </div>
         <div style={{display: 'flex', gridGap: '10px'}}>
             <Avatar
-                size='large'
+                size='lg'
                 shape='square'
                 src='https://i.ibb.co/1fWbXCt/F-1.png'
             />
             <Avatar
-                size='large'
+                size='lg'
                 shape='square'
                 title='Kozhin Dev'
             />
