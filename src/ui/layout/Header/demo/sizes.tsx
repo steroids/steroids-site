@@ -23,6 +23,8 @@ const navItems = [
     },
 ];
 
+const voidFunction = () => { };
+
 const sizes = {
     sm: 'small',
     md: 'medium',
@@ -41,10 +43,21 @@ export default () => (
                     items: navItems,
                     layout: 'navbar',
                 }}
-                auth={{
-                    username: 'KozhinDev',
-                    userAvatar: {
+                user={{
+                    name: 'KozhinDev',
+                    avatar: {
                         title: 'K D',
+                    },
+                    menu: {
+                        items: [
+                            {label: 'Профиль', icon: 'user', onClick: voidFunction},
+                            {label: 'Настройки', icon: 'setting_line', onClick: voidFunction},
+                            {label: 'Выйти', icon: 'menu_left', onClick: voidFunction},
+                        ],
+                        dropDownProps: {
+                            position: 'bottom',
+                            closeMode: 'click-any',
+                        },
                     },
                 }}
             />

@@ -1,11 +1,23 @@
 import * as React from 'react';
 import Header from '@steroidsjs/core/ui/layout/Header';
+import Modal, {IModalProps} from '@steroidsjs/core/ui/modal/Modal/Modal';
 
-/**
- * Пример использования Header с auth
- * @order 1
- * @col 6
- */
+function DemoModal(props: IModalProps) {
+    return (
+        <Modal
+            title='Auth modal'
+            onClose={props.onClose}
+            {...props}
+            id={props.modalId}
+        >
+            <div style={{marginBottom: '20px'}}>
+                Try to login here :)
+            </div>
+        </Modal>
+    );
+}
+
+const voidFunction = () => { };
 
 const navItems = [
     {
@@ -23,6 +35,12 @@ const navItems = [
     },
 ];
 
+/**
+ * Пример использования Header с auth
+ * @order 1
+ * @col 6
+ */
+
 export default () => (
     <div style={{display: 'flex', flexFlow: 'column nowrap', rowGap: 10}}>
         <Header
@@ -31,7 +49,11 @@ export default () => (
                 items: navItems,
                 layout: 'navbar',
             }}
-            auth="root"
+            authParams={{
+                isAuth: true,
+                toRoute: 'root',
+                modal: DemoModal,
+            }}
         />
         <Header
             logo={{icon: 'kozhinDev', title: 'KozhinDev'}}
@@ -39,10 +61,21 @@ export default () => (
                 items: navItems,
                 layout: 'navbar',
             }}
-            auth={{
-                username: 'KozhinDev',
-                userAvatar: {
+            user={{
+                name: 'KozhinDev',
+                avatar: {
                     title: 'K D',
+                },
+                menu: {
+                    items: [
+                        {label: 'Профиль', icon: 'user', onClick: voidFunction},
+                        {label: 'Настройки', icon: 'setting_line', onClick: voidFunction},
+                        {label: 'Выйти', icon: 'menu_left', onClick: voidFunction},
+                    ],
+                    dropDownProps: {
+                        position: 'bottom',
+                        closeMode: 'click-any',
+                    },
                 },
             }}
         />
