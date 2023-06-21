@@ -2151,10 +2151,10 @@
     "@sentry/types" "5.30.0"
     tslib "^1.9.3"
 
-"@steroidsjs/bootstrap@^3.0.0-beta.71":
-  version "3.0.0-beta.71"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.71.tgz#afae986a76d7a1bd9ddaf7e2ba4ea831ad8ebb00"
-  integrity sha512-y8Ntm5I0LqzIIAcK3Wd3xv7hVvex7nlukEoVh+YvbOBJgybgBDihJbLmGhLaWq4uY/lkLfc7fHlw0wKHsn8wKg==
+"@steroidsjs/bootstrap@^3.0.0-beta.73":
+  version "3.0.0-beta.73"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.73.tgz#364d7113783f315fe465f279419ce3a6087a5abe"
+  integrity sha512-wjG4mFe0QbEUdbKNoHCM9JOMtap9EL6hx2olA39E8ee5fnPB506da+FPrI9DVETbberM34P81TjyBszE0q9r0Q==
   dependencies:
     "@ckeditor/ckeditor5-react" "^3.0.2"
     "@steroidsjs/ckeditor5" "^27.0.2-rc.2"
@@ -2167,6 +2167,7 @@
     react-collapse "^5.0.1"
     react-day-picker "^7.4.10"
     react-dom "^18.2.0"
+    react-google-recaptcha "^3.1.0"
     react-image-crop "^9.0.2"
     react-modal "^3.11.2"
     react-transition-group "^2.9.0"
@@ -2232,10 +2233,10 @@
     "@ckeditor/ckeditor5-widget" "^27.0.0"
     "@ckeditor/ckeditor5-word-count" "^27.0.0"
 
-"@steroidsjs/core@^3.0.0-beta.49":
-  version "3.0.0-beta.49"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.0-beta.49.tgz#b6a890c41355e543d0af27335fbf1c0e529c3635"
-  integrity sha512-wUYRVb/6BLndC6cEjrI5637wxUFVtlgWxyDZBFV2tk9oXpiTlyF+st4A4CQ3uV18lHm9ew95Qeb0s5pjLqD0xg==
+"@steroidsjs/core@^3.0.0-beta.52":
+  version "3.0.0-beta.52"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.0-beta.52.tgz#49c92406c1f11e8547aa9c3ed6bf0a4ae934d78f"
+  integrity sha512-s+JCeBaxh8ArSV24dVnbDS3RS7S19vY1k+PpvPaxLwxnVNmT5vzuxecE+y7i9eZY5dNSk4/zHeAUZfTPmw8TTQ==
   dependencies:
     "@maskito/core" "^0.12.1"
     "@maskito/kit" "^0.12.1"
@@ -10947,6 +10948,14 @@ rc-util@^5.16.1, rc-util@^5.19.2, rc-util@^5.21.0, rc-util@^5.26.0:
     "@babel/runtime" "^7.18.3"
     react-is "^16.12.0"
 
+react-async-script@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/react-async-script/-/react-async-script-1.2.0.tgz#ab9412a26f0b83f5e2e00de1d2befc9400834b21"
+  integrity sha512-bCpkbm9JiAuMGhkqoAiC0lLkb40DJ0HOEJIku+9JDjxX3Rcs+ztEOG13wbrOskt3n2DTrjshhaQ/iay+SnGg5Q==
+  dependencies:
+    hoist-non-react-statics "^3.3.0"
+    prop-types "^15.5.0"
+
 react-click-outside@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/react-click-outside/-/react-click-outside-3.0.1.tgz#6e77e84d2f17afaaac26dbad743cbbf909f5e24c"
@@ -11052,6 +11061,14 @@ react-fast-compare@^3.0.1, react-fast-compare@^3.1.1, react-fast-compare@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.0.tgz#641a9da81b6a6320f270e89724fb45a0b39e43bb"
   integrity sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==
+
+react-google-recaptcha@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/react-google-recaptcha/-/react-google-recaptcha-3.1.0.tgz#44aaab834495d922b9d93d7d7a7fb2326315b4ab"
+  integrity sha512-cYW2/DWas8nEKZGD7SCu9BSuVz8iOcOLHChHyi7upUuVhkpkhYG/6N3KDiTQ3XAiZ2UAZkfvYKMfAHOzBOcGEg==
+  dependencies:
+    prop-types "^15.5.0"
+    react-async-script "^1.2.0"
 
 react-grid-gallery@^0.4.8:
   version "0.4.11"
