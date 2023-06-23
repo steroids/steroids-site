@@ -20,7 +20,10 @@ export default () => (
                 attribute='text'
                 required
             />
-            <ReCaptchaField attribute='token' />
+            <ReCaptchaField
+                attribute='token'
+                sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+            />
             <Button
                 type='submit'
                 label='Submit'
