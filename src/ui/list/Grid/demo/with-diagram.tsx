@@ -5,11 +5,6 @@ const items = [
     {
         id: 1,
         name: 'John',
-        color: 'secondary',
-        healthColor: 'success',
-        hungerColor: 'warning',
-        damageColor: 'danger',
-        manaColor: 'secondary',
         percentage: 50,
         health: 25,
         hunger: 35,
@@ -19,11 +14,6 @@ const items = [
     {
         id: 2,
         name: 'Julia',
-        color: 'danger',
-        healthColor: 'success',
-        hungerColor: 'warning',
-        damageColor: 'danger',
-        manaColor: 'secondary',
         percentage: 30,
         health: 25,
         hunger: 35,
@@ -36,11 +26,11 @@ export const columns = [
     {
         label: 'Horizontal',
         valueView: 'DiagramColumnView',
-        diagrams: {
+        diagram: {
             type: 'horizontal',
             items: [
                 {
-                    colorAttribute: 'color',
+                    color: 'secondary',
                     percentageAttribute: 'percentage',
                 },
             ],
@@ -49,23 +39,23 @@ export const columns = [
     {
         label: 'Vertical',
         valueView: 'DiagramColumnView',
-        diagrams: {
+        diagram: {
             type: 'vertical',
             items: [
                 {
-                    colorAttribute: 'healthColor',
+                    color: 'success',
                     percentageAttribute: 'health',
                 },
                 {
-                    colorAttribute: 'hungerColor',
+                    color: 'warning',
                     percentageAttribute: 'hunger',
                 },
                 {
-                    colorAttribute: 'damageColor',
+                    color: 'danger',
                     percentageAttribute: 'damage',
                 },
                 {
-                    colorAttribute: 'manaColor',
+                    color: 'secondary',
                     percentageAttribute: 'mana',
                 },
             ],
@@ -74,23 +64,23 @@ export const columns = [
     {
         label: 'Circle',
         valueView: 'DiagramColumnView',
-        diagrams: {
+        diagram: {
             type: 'circle',
             items: [
                 {
-                    colorAttribute: 'healthColor',
+                    color: 'success',
                     percentageAttribute: 'health',
                 },
                 {
-                    colorAttribute: 'hungerColor',
+                    color: 'warning',
                     percentageAttribute: 'hunger',
                 },
                 {
-                    colorAttribute: 'damageColor',
+                    color: 'danger',
                     percentageAttribute: 'damage',
                 },
                 {
-                    colorAttribute: 'manaColor',
+                    color: 'secondary',
                     percentageAttribute: 'mana',
                 },
             ],
@@ -99,23 +89,23 @@ export const columns = [
     {
         label: 'Circle with subtitle',
         valueView: 'DiagramColumnView',
-        diagrams: {
+        diagram: {
             type: 'circle',
             items: [
                 {
-                    colorAttribute: 'healthColor',
+                    color: 'success',
                     percentageAttribute: 'health',
                 },
                 {
-                    colorAttribute: 'hungerColor',
+                    color: 'warning',
                     percentageAttribute: 'hunger',
                 },
                 {
-                    colorAttribute: 'damageColor',
+                    color: 'danger',
                     percentageAttribute: 'damage',
                 },
                 {
-                    colorAttribute: 'manaColor',
+                    color: 'secondary',
                     percentageAttribute: 'mana',
                 },
             ],
