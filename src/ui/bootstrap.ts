@@ -17,6 +17,7 @@ export default {
     'content.MenuView': {lazy: () => require('@steroidsjs/bootstrap/content/Menu/MenuView').default},
     'content.MenuItemView': {lazy: () => require('@steroidsjs/bootstrap/content/Menu/MenuItemView').default},
     'content.CopyToClipboardView': {lazy: () => require('@steroidsjs/bootstrap/content/CopyToClipboard/CopyToClipboardView').default},
+    'content.SliderView': {lazy: () => require('@steroidsjs/bootstrap/content/Slider/SliderView').default},
     // 'crud.CrudView': {lazy: () => require('@steroidsjs/bootstrap/crud/Crud/CrudView').default},
     'form.AutoCompleteFieldView': {lazy: () => require('@steroidsjs/bootstrap/form/AutoCompleteField/AutoCompleteFieldView').default},
     'form.ButtonView': {lazy: () => require('@steroidsjs/bootstrap/form/Button/ButtonView').default},
