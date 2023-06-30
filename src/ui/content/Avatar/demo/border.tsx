@@ -22,13 +22,13 @@ export default () => (
         </div>
         <div style={{display: 'flex', gridGap: '20px'}}>
             <Avatar
-                size='small'
+                size='sm'
                 title='Kozhin Dev'
                 status
                 hasBorder
             />
             <Avatar
-                size='small'
+                size='sm'
                 src='https://i.ibb.co/1fWbXCt/F-1.png'
                 status
                 hasBorder
@@ -36,13 +36,13 @@ export default () => (
         </div>
         <div style={{display: 'flex', gridGap: '20px'}}>
             <Avatar
-                size='middle'
+                size='md'
                 title='Kozhin Dev'
                 status
                 hasBorder
             />
             <Avatar
-                size='middle'
+                size='md'
                 src='https://i.ibb.co/1fWbXCt/F-1.png'
                 status
                 hasBorder
@@ -50,13 +50,13 @@ export default () => (
         </div>
         <div style={{display: 'flex', gridGap: '20px'}}>
             <Avatar
-                size='large'
+                size='lg'
                 title='Kozhin Dev'
                 status
                 hasBorder
             />
             <Avatar
-                size='large'
+                size='lg'
                 src='https://i.ibb.co/1fWbXCt/F-1.png'
                 status
                 hasBorder

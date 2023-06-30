@@ -30,5 +30,19 @@ export default () => (
             items: navItems,
             layout: 'navbar',
         }}
+        burgerMenu={{
+            content: <div>Burger content</div>,
+            links: [
+                {
+                    label: 'Home',
+                },
+                {
+                    label: 'About',
+                },
+                {
+                    label: 'Contacts',
+                },
+            ],
+        }}
     />
 );
