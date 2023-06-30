@@ -11,33 +11,33 @@ export default () => (
     <div style={{display: 'grid', gridGap: '20px'}}>
         <div style={{display: 'flex', gridGap: '10px'}}>
             <Avatar
-                size='small'
+                size='sm'
                 title='Kozhin Dev'
             />
             <Avatar
-                size='small'
-                title='Kozhin Dev'
-                status
-            />
-        </div>
-        <div style={{display: 'flex', gridGap: '10px'}}>
-            <Avatar
-                size='middle'
-                title='Kozhin Dev'
-            />
-            <Avatar
-                size='middle'
+                size='sm'
                 title='Kozhin Dev'
                 status
             />
         </div>
         <div style={{display: 'flex', gridGap: '10px'}}>
             <Avatar
-                size='large'
+                size='md'
                 title='Kozhin Dev'
             />
             <Avatar
-                size='large'
+                size='md'
+                title='Kozhin Dev'
+                status
+            />
+        </div>
+        <div style={{display: 'flex', gridGap: '10px'}}>
+            <Avatar
+                size='lg'
+                title='Kozhin Dev'
+            />
+            <Avatar
+                size='lg'
                 title='Kozhin Dev'
                 status
             />

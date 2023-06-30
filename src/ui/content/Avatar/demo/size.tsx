@@ -11,33 +11,33 @@ export default () => (
     <div style={{display: 'grid', gridGap: '20px'}}>
         <div style={{display: 'flex', gridGap: '10px'}}>
             <Avatar
-                size='small'
+                size='sm'
                 src='https://i.ibb.co/1fWbXCt/F-1.png'
             />
             <Avatar
-                size='small'
-                src='https://i.ibb.co/1fWbXCt/F-1.png'
-                status
-            />
-        </div>
-        <div style={{display: 'flex', gridGap: '10px'}}>
-            <Avatar
-                size='middle'
-                src='https://i.ibb.co/1fWbXCt/F-1.png'
-            />
-            <Avatar
-                size='middle'
+                size='sm'
                 src='https://i.ibb.co/1fWbXCt/F-1.png'
                 status
             />
         </div>
         <div style={{display: 'flex', gridGap: '10px'}}>
             <Avatar
-                size='large'
+                size='md'
                 src='https://i.ibb.co/1fWbXCt/F-1.png'
             />
             <Avatar
-                size='large'
+                size='md'
+                src='https://i.ibb.co/1fWbXCt/F-1.png'
+                status
+            />
+        </div>
+        <div style={{display: 'flex', gridGap: '10px'}}>
+            <Avatar
+                size='lg'
+                src='https://i.ibb.co/1fWbXCt/F-1.png'
+            />
+            <Avatar
+                size='lg'
                 src='https://i.ibb.co/1fWbXCt/F-1.png'
                 status
             />
