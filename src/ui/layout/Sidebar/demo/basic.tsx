@@ -1,9 +1,7 @@
 import * as React from 'react';
 import Sidebar from '@steroidsjs/core/ui/layout/Sidebar/Sidebar';
 
-const voidFunction = () => {
-
-};
+const voidFunction = () => { };
 
 /**
  * Базовое представление Sidebar
@@ -47,6 +45,13 @@ export default () => (
                 },
                 {
                     name: 'instagram',
+                },
+            ]}
+            items={[
+                {
+                    id: 1,
+                    label: 'Dashboard',
+
                 },
             ]}
         />
