@@ -9,6 +9,7 @@ import {Notifications} from '@steroidsjs/core/ui/layout';
 import Header from 'shared/Header';
 
 import './Layout.scss';
+import Footer from 'shared/Footer';
 
 export default function Layout(props: React.PropsWithChildren<any>) {
     const bem = useBem('Layout');
@@ -28,6 +29,7 @@ export default function Layout(props: React.PropsWithChildren<any>) {
                 <ModalPortal />
                 <Portal />
             </div>
+            <Footer />
         </div>
     );
 }

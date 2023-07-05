@@ -1,0 +1,33 @@
+@import "style/variables";
+
+.ThemesButtons {
+    column-gap: 2px;
+    padding: 2px;
+    background-color: $light-gray;
+    border-radius: $radius-large;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+
+    .ButtonView {
+        border: none;
+        padding: 3px;
+        border-radius: $radius-large;
+        width: 30px;
+        height: 30px;
+    }
+    
+    .ButtonView { 
+        background-color: transparent;
+    }
+
+
+    .ButtonGroupView__button_active {
+        background-color: #fff;
+    }
+
+    .ButtonView__icon { 
+        width: 24px;
+        height: 24px;
+    }
+}

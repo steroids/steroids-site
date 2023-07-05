@@ -13,7 +13,7 @@ const cards = [
             avatar: undefined,
         },
     },
-];
+] as any;
 
 /**
  * Body
