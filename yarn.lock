@@ -2151,6 +2151,11 @@
     "@sentry/types" "5.30.0"
     tslib "^1.9.3"
 
+"@splidejs/splide-extension-auto-scroll@^0.5.3":
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/@splidejs/splide-extension-auto-scroll/-/splide-extension-auto-scroll-0.5.3.tgz#3d3f61229b27fae7923dba62bcd13f6e1b798410"
+  integrity sha512-vPJ8Tn4uebnHa6scBcIypW154HTDenkazX9Nw8T1na44n7OtLoz40R4RoirteV7taPWW7w7ZZPCiEpi2ReYFAQ==
+
 "@steroidsjs/bootstrap@^3.0.0-beta.73":
   version "3.0.0-beta.73"
   resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.73.tgz#364d7113783f315fe465f279419ce3a6087a5abe"

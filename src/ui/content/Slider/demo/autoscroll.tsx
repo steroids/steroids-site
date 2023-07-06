@@ -1,5 +1,7 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import * as React from 'react';
 import Slider from '@steroidsjs/core/ui/content/Slider/Slider';
+import {AutoScroll} from '@splidejs/splide-extension-auto-scroll';
 import {itemView, items} from './basic';
 
 /**
@@ -18,7 +20,7 @@ export default () => (
                 autoWidth: true,
             }}
             extensions={{
-                hasAutoScroll: true,
+                AutoScroll,
             }}
             autoScroll={{
                 pauseOnHover: true,
