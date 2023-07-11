@@ -1,5 +1,3 @@
-@import 'style/variables';
-
 .IndexPage {
   &__centered {
     display: flex;
@@ -14,8 +12,8 @@
     display: flex;
     flex-direction: row;
     justify-content: start;
-    align-items: center;
-    line-height: 1;
+align-items: center;
+line-height: 1;
     font-family: 'Merriweather', serif;
     font-weight: 700;
     max-width: 480px;
