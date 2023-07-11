@@ -45,6 +45,7 @@ export default function Demos(props: IDemosProps) {
                         key={demoIndex}
                         demo={demo.component}
                         title={demo.title}
+                        sourceUrl={demo.sourceUrl}
                         description="description"
                     />
                 ))}

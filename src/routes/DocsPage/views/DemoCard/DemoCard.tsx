@@ -8,6 +8,7 @@ interface IDemoCardProps {
     title: string,
     description: string,
     demo: React.FC,
+    sourceUrl: string,
 }
 
 export default function DemoCard(props: IDemoCardProps) {
@@ -23,9 +24,11 @@ export default function DemoCard(props: IDemoCardProps) {
                 />
                 <a
                     className={bem.element('link')}
-                    href="#"
+                    href={props.sourceUrl}
+                    target='_blank'
+                    rel="noreferrer"
                 >
-                    {__('Source')}
+                    {__('Github')}
                 </a>
             </div>
             <Text
