@@ -1,0 +1,15 @@
+@import 'style/variables';
+
+.UiComponentInfo {
+  &__content {
+    padding: 44px 84px;
+  }
+
+  &__text {
+    margin-bottom: 40px;
+  }
+
+  &__description {
+    max-width: 790px;
+  }
+}

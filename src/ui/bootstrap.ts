@@ -66,6 +66,7 @@ export default {
     'list.GridView': {lazy: () => require('@steroidsjs/bootstrap/list/Grid/GridView').default},
     'list.FlexGridView': {lazy: () => require('@steroidsjs/bootstrap/list/FlexGrid/FlexGridView').default},
     'list.ContentColumnView': {lazy: () => require('@steroidsjs/bootstrap/list/Grid/views/ContentColumnView/ContentColumnView').default},
+    'list.DiagramColumnView': {lazy: () => require('@steroidsjs/bootstrap/list/Grid/views/DiagramColumnView/DiagramColumnView').default},
     'list.ListView': {lazy: () => require('@steroidsjs/bootstrap/list/List/ListView').default},
     'list.ListItemView': {lazy: () => require('@steroidsjs/bootstrap/list/List/ListItemView').default},
     'list.PaginationButtonView': {lazy: () => require('@steroidsjs/bootstrap/list/Pagination/PaginationButtonView').default},
