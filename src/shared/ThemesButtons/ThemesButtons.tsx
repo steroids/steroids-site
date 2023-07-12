@@ -6,7 +6,7 @@ import ButtonGroupView from './views/ButtonGroupView';
 import './ThemesButtons.scss';
 
 export interface IThemesButtonsProps {
-    className: string;
+    className?: string;
 }
 
 export default function ThemesButtons(props: IThemesButtonsProps) {

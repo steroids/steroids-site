@@ -1,0 +1,43 @@
+@import "style/variables";
+
+.Section {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 0 32px; 
+
+    &_isGray { 
+        background-color: $grayF9;
+    }
+
+    &__title {
+        font-size: $font-size-32;
+        font-weight: $font-weight-sm;
+        line-height: $line-height-40;
+        margin-bottom: 8px;
+
+        &-postscript {
+            position: relative;
+            color: $grayD3;
+
+            &:before {
+                position: absolute;
+                content: "";
+                width: 52px;
+                height: 2px;
+                background-color: $grayD3;
+                transform: translateX(-2px) translateY(26px);
+            }
+        }
+    }
+
+    &__description {
+        width: 37.3958vw;
+        text-align: center;
+        opacity: 0.6;
+        font-size: $font-size-16;
+        font-weight: $font-weight-sm;
+        line-height: $line-height-22;
+        margin-bottom: 64px;
+    }
+}

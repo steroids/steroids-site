@@ -1,0 +1,18 @@
+@import 'style/variables';
+
+.CreateSection {
+    padding-top: 80px;
+    padding-bottom: 160px;
+
+
+    &__cards {
+        display: flex;
+        flex-flow: row nowrap;
+        column-gap: 16px;
+
+        .CreateCard { 
+            width: 21.6666vw;
+            height: 424px;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+@import "style/variables";
+
+.InteractiveSection {
+    padding-top: 80px;
+    padding-bottom: 160px;
+    bgc
+
+    .Section__title {
+        margin-bottom: 0;
+    }
+
+    .Section__description {
+        display: none;
+    }
+
+    &__wrapper {
+        width: 100%;
+        margin-top: 64px;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+    }
+
+    &__present { 
+        margin-right: 7.1354vw;
+        margin-left: 17.5vw;
+    }
+}

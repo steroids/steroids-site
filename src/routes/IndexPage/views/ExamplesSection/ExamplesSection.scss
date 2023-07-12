@@ -1,0 +1,14 @@
+@import "style/variables";
+
+.ExamplesSection {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    column-gap: 16px;
+
+    .Section__title,
+    .Section__description {
+        display: none;
+    }
+}

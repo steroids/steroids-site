@@ -1,0 +1,30 @@
+@import "style/variables";
+
+.CreateCard {
+    border-radius: 20px;
+
+    .CardView {
+        &__cover {
+            margin-top: 16px;
+            width: 376px;
+            height: 220px;
+            align-self: center;
+
+            border-radius: 8px;
+        }
+
+        &__title {
+            font-size: $font-size-24;
+            font-weight: $font-weight-sm;
+            line-height: $line-height-34;
+            margin-bottom: 16px;
+        }
+
+        &__description {
+            font-size: $font-size-16;
+            font-weight: $font-weight-sm;
+            line-height: $line-height-22;
+            opacity: 0.6;
+        }
+    }
+}

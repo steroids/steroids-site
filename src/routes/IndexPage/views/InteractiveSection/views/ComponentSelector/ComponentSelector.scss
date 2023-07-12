@@ -1,0 +1,51 @@
+@import "style/variables";
+
+.ComponentSelector {
+    display: flex;
+    flex-flow: row nowrap;
+    column-gap: 24px;
+
+
+    &__decoration {
+        left: -24px;
+        width: 2px;
+        height: 140px;
+        background-color: $gray;
+    }
+
+    &__components {
+        position: relative;
+        flex-flow: column;
+        background-color: transparent;
+        padding: 0;
+
+        .ButtonView .ButtonView__link .ButtonView__text {
+            color: $black;
+            font-size: $font-size-24;
+            font-weight: $font-weight-sm;
+            line-height: $line-height-34;
+            position: relative;
+
+            &::before {
+                display: block;
+                position: absolute;
+                content: "";
+                width: 2px;
+                height: 44px;
+                top: -3px;
+                left: -26px;
+                background-color: $primary;
+                opacity: 0;
+                transition: opacity 150ms ease-in-out;
+            }
+        }
+
+        .ButtonView.ButtonView_link.ButtonGroupView__button_active .ButtonView__link .ButtonView__text {
+            color: $primary;
+
+            &:before {
+                opacity: 1;
+            }
+        }
+    }
+}

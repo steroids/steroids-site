@@ -1,0 +1,28 @@
+@import "style/variables";
+
+.ComponentPresent {
+    position: relative;
+    height: 571px;
+    width: 47.9166vw;
+    border-radius: 20px;
+    padding: 24px;
+    background-color: $white;
+    border: 4px solid rgba(#000000, 0.2);
+
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+
+    &__themes { 
+        position: absolute;
+        top: 24px;
+        left: 50%; 
+        transform: translateX(-50%);
+    }
+
+    &__component { 
+        margin-top: 24px;
+    }
+}

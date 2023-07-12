@@ -1,0 +1,14 @@
+@import "style/variables";
+
+.ComponentOptions {
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 32px;
+
+    &__text {
+        font-size: $font-size-24;
+        font-weight: $font-weight-sm;
+        line-height: $line-height-34;
+        margin-bottom: 8px;
+    }
+}

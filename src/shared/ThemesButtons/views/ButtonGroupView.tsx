@@ -26,7 +26,6 @@ export default function ButtonGroupView(props: IButtonGroupViewProps) {
                                 default: !isActive,
                                 active: isActive,
                             })}
-
                             size="sm"
                             icon={item.label}
                             onClick={() => props.onClick(item.id)}
