@@ -5,8 +5,8 @@ import {getRouteParam} from '@steroidsjs/core/reducers/router';
 import {useDocsPageData} from 'hooks/useDocsPageData';
 import {CATEGORY_COMPONENT, CATEGORY_UI} from 'constants/categories';
 import {CATEGORY_ROUTE_PARAM} from 'constants/routeParams';
-import Demos from './views/Demos';
 import ComponentInfo from './views/ComponentInfo';
+import UiComponentInfo from './views/UiComponentInfo';
 
 import './DocsPage.scss';
 
@@ -17,12 +17,12 @@ export default function DocsPage() {
 
     return (
         <div className={bem.block()}>
-            <div className={bem.element('tree')}>
+            <div className={bem.element('sidebar')}>
                 <Tree items={treeItems} />
             </div>
             <div className={bem.element('content')}>
                 {category === CATEGORY_UI && (
-                    <Demos demosComponents={demosComponents} />
+                    <UiComponentInfo demosComponents={demosComponents} />
                 )}
                 {category === CATEGORY_COMPONENT && (
                     <ComponentInfo />

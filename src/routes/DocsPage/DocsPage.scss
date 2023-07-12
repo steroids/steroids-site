@@ -1,12 +1,19 @@
+@import 'style/variables';
+
+$sidebar-width: 332px;
 
 .DocsPage {
-    display: flex;
     
-    &__tree {
-        flex-grow: 0;
-        flex-basis: 350px;
+    &__sidebar {
+        position: absolute;
+        top: $header-height;
+        left: 0;
+        bottom: 0;
+        padding: 20px;
+        width: $sidebar-width;
     }
+
     &__content {
-        flex-grow: 1;
+      margin-left: $sidebar-width;
     }
 }

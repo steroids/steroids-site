@@ -6,7 +6,6 @@ import './DemoCard.scss';
 
 interface IDemoCardProps {
     title: string,
-    description: string,
     demo: React.FC,
     sourceUrl: string,
 }
@@ -31,10 +30,6 @@ export default function DemoCard(props: IDemoCardProps) {
                     {__('Github')}
                 </a>
             </div>
-            <Text
-                className={bem.element('description')}
-                content={props.description}
-            />
             <div className={bem.element('content')}>
                 <Demo />
             </div>
