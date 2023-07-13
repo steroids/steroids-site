@@ -1,27 +1,9 @@
 import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
+import ButtonGroup from '@steroidsjs/core/ui/nav/ButtonGroup';
+import {COMPONENTS_LIST} from '../../../../../../../data/interactive/interfactiveData';
 
 import './ComponentSelector.scss';
-import ButtonGroup from '@steroidsjs/core/ui/nav/ButtonGroup';
-
-const COMPONENTS_LIST = [
-    {
-        id: 'Input',
-        label: 'Input',
-    },
-    {
-        id: 'Button',
-        label: 'Button',
-    },
-    {
-        id: 'Card',
-        label: 'Card',
-    },
-    {
-        id: 'Checkbox',
-        label: 'Checkbox',
-    },
-];
 
 interface IComponentSelectorProps {
     handleComponentClick: (component: string) => void;

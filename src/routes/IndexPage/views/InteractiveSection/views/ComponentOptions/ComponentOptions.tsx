@@ -10,32 +10,43 @@ import './ComponentOptions.scss';
 
 interface IComponentOptionsProps {
     handleSizeClick: (size: string) => void;
-    propControls: IPropControl<any>[],
+    propControls: IPropControl[];
+    handleControlsChange: (selectedControlsIds: number[]) => void;
+    currentComponent: string;
 }
 
 export default function ComponentOptions(props: IComponentOptionsProps) {
     const bem = useBem('ComponentOptions');
 
-    const handleControlChange = React.useCallback((smthng) => {
-        console.log(smthng);
-    }, []);
+    const defaultSelectedIds = React.useMemo(
+        () => props.propControls?.filter((control) => control.enabled === true).map(control => control.id),
+        [props.propControls],
+    );
 
     return (
         <div className={bem.block()}>
-            <div className={bem.element('item')}>
-                <Text
-                    content={__('Размер')}
-                    className={bem.element('text')}
-                />
-                <ButtonGroup
-                    items={SIZES}
-                    onClick={props.handleSizeClick}
-                />
-            </div>
+            {props.currentComponent !== 'Card' && (
+                <div>
+                    <Text
+                        content={__('Размер')}
+                        className={bem.element('text')}
+                    />
+                    <ButtonGroup
+                        items={SIZES}
+                        onClick={props.handleSizeClick}
+                        className={bem.element('sizes')}
+                        buttonProps={{
+                            size: 'sm',
+                        }}
+                    />
+                </div>
+            )}
             <SwitcherField
                 multiple
                 items={props.propControls}
-                onChange={handleControlChange}
+                onChange={props.handleControlsChange}
+                selectedIds={defaultSelectedIds}
+                size="lg"
             />
         </div>
     );

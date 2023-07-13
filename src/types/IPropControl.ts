@@ -1,6 +1,6 @@
-export interface IPropControl<T> {
+export interface IPropControl {
     id: number,
     label: string,
-    params: T,
     enabled: boolean,
+    propName: string,
 }

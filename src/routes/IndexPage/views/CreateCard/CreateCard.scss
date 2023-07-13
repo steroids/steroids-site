@@ -5,12 +5,12 @@
 
     .CardView {
         &__cover {
-            margin-top: 16px;
-            width: 376px;
+            padding: 16px 16px 0 16px;
             height: 220px;
-            align-self: center;
 
-            border-radius: 8px;
+            img {
+                border-radius: 8px;
+            }
         }
 
         &__title {
