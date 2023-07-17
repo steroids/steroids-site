@@ -8,7 +8,7 @@
     position: relative;
     overflow: hidden;
 
-    background-color: $grayF9;
+    background-color: $custom-background-color-f9;
     border-radius: 20px;
     height: 839px;
 
@@ -39,7 +39,7 @@
         font-size: $font-size-16;
         font-weight: $font-weight-sm;
         line-height: $line-height-22;
-        color: $black-60;
+        color: $custom-text-decr-color;
         margin-bottom: 109px;
     }
 

@@ -15,6 +15,7 @@
         flex-flow: row nowrap;
         align-items: center;
         margin-bottom: 28px;
+        color: $custom-text-color;
 
         &-letters {
             font-size: $font-size-96;
@@ -67,6 +68,8 @@
     &__description {
         width: 46.66vw;
         text-align: center;
+        color: $custom-text-color;
+
 
         font-size: $font-size-24;
         font-weight: $font-weight-sm;

@@ -7,7 +7,7 @@
     padding: 0 32px; 
 
     &_isGray { 
-        background-color: $grayF9;
+        background-color: $custom-background-color-f9-additional;
     }
 
     &__title {
@@ -15,6 +15,7 @@
         font-weight: $font-weight-sm;
         line-height: $line-height-40;
         margin-bottom: 8px;
+        color: $custom-text-color;
 
         &-postscript {
             position: relative;
@@ -34,10 +35,10 @@
     &__description {
         width: 37.3958vw;
         text-align: center;
-        opacity: 0.6;
         font-size: $font-size-16;
         font-weight: $font-weight-sm;
         line-height: $line-height-22;
         margin-bottom: 64px;
+        color: $custom-text-decr-color;
     }
 }
