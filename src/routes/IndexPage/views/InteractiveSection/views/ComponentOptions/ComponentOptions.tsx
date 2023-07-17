@@ -13,15 +13,12 @@ interface IComponentOptionsProps {
     propControls: IPropControl[];
     handleControlsChange: (selectedControlsIds: number[]) => void;
     currentComponent: string;
+    selectedIds: number[];
+    size: string;
 }
 
 export default function ComponentOptions(props: IComponentOptionsProps) {
     const bem = useBem('ComponentOptions');
-
-    const defaultSelectedIds = React.useMemo(
-        () => props.propControls?.filter((control) => control.enabled === true).map(control => control.id),
-        [props.propControls],
-    );
 
     return (
         <div className={bem.block()}>
@@ -35,6 +32,7 @@ export default function ComponentOptions(props: IComponentOptionsProps) {
                         items={SIZES}
                         onClick={props.handleSizeClick}
                         className={bem.element('sizes')}
+                        activeButton={props.size}
                         buttonProps={{
                             size: 'sm',
                         }}
@@ -45,7 +43,7 @@ export default function ComponentOptions(props: IComponentOptionsProps) {
                 multiple
                 items={props.propControls}
                 onChange={props.handleControlsChange}
-                selectedIds={defaultSelectedIds}
+                selectedIds={props.selectedIds}
                 size="lg"
             />
         </div>
