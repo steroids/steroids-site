@@ -166,7 +166,7 @@ export default () => (
         {Object.entries(cardsRows).map(([_, cardsRow], cardsRowIndex) => (
             <div
                 key={cardsRowIndex}
-                style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', columnGap: '20px'}}
+                style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px'}}
             >
                 {cardsRow.map((card, cardIndex) => (
                     <Card

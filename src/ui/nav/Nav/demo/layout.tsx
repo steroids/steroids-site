@@ -14,7 +14,7 @@ const icons = ['coffee', 'shopping-basket', 'hospital'];
  */
 export default () => (
     <>
-        <div style={{display: 'flex', flexFlow: 'row nowrap', columnGap: 60}}>
+        <div style={{display: 'flex', flexFlow: 'row wrap', gap: 60}}>
             {layouts.map(layout => (
                 <div
                     key={layout}

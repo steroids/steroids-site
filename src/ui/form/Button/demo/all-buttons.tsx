@@ -46,11 +46,11 @@ const buttonPropsList = [
  * @col 4
  */
 export default () => (
-    <div style={{display: 'flex', gridGap: '30px', flexDirection: 'column', flexWrap: 'wrap'}}>
+    <div style={{display: 'flex', gap: '30px', flexDirection: 'column', flexWrap: 'wrap', maxWidth: '790px'}}>
         {Object.keys(buttonColors).map((buttonColor, buttonColorIndex) => (
             <div
                 key={buttonColorIndex}
-                style={{display: 'flex', columnGap: '20px'}}
+                style={{display: 'flex', flexWrap: 'wrap', gap: '20px'}}
             >
                 {buttonPropsList.map((buttonPropsItem, buttonPropsIndex) => (
                     <Button
