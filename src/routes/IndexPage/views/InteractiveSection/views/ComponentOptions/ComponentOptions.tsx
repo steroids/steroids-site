@@ -13,6 +13,7 @@ interface IComponentOptionsProps {
     propControls: IPropControl[];
     handleControlsChange: (selectedControlsIds: number[]) => void;
     currentComponent: string;
+    size: string;
 }
 
 export default function ComponentOptions(props: IComponentOptionsProps) {
@@ -33,6 +34,7 @@ export default function ComponentOptions(props: IComponentOptionsProps) {
                     />
                     <ButtonGroup
                         items={SIZES}
+                        activeButton={props.size}
                         onClick={props.handleSizeClick}
                         className={bem.element('sizes')}
                         buttonProps={{
