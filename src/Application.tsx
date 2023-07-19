@@ -16,6 +16,7 @@ export default function Application() {
         routes: () => require('routes').default,
         layoutView: () => require('shared/Layout').default,
         screen: {},
+        theme: {},
         components: {
             locale: LocaleComponent,
             http: HttpComponent,

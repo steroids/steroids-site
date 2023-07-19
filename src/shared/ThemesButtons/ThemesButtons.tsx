@@ -1,6 +1,6 @@
 import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
-import {useTheme} from '@steroidsjs/core/hooks/useTheme';
+import useTheme from '@steroidsjs/core/hooks/useTheme';
 import ButtonGroup from '@steroidsjs/core/ui/nav/ButtonGroup';
 import ButtonGroupView from './views/ButtonGroupView';
 import './ThemesButtons.scss';
@@ -11,13 +11,11 @@ export interface IThemesButtonsProps {
 
 export default function ThemesButtons(props: IThemesButtonsProps) {
     const bem = useBem('ThemesButtons');
-    const {theme, toggleTheme} = useTheme();
+    const {theme, setTheme} = useTheme();
 
     const onClickTheme = React.useCallback((selectedTheme: string) => {
-        if (selectedTheme !== theme) {
-            toggleTheme();
-        }
-    }, [theme, toggleTheme]);
+        setTheme(selectedTheme);
+    }, [setTheme]);
 
     return (
         <ButtonGroup
