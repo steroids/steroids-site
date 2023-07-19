@@ -38,7 +38,7 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
                     <Title content={componentName} />
                     <Text
                         className={bem.element('text')}
-                        content={componentInfo.description}
+                        content={componentInfo?.description}
                     />
                     <Demos demos={demos} />
                 </div>
