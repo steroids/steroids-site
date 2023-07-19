@@ -56,6 +56,7 @@ export default function InteractiveSection() {
         setProps(newComponentProps);
         setComponent(newComponent);
         setCurrentComponentName(selectedComponent);
+        setSize(DEFAULT_SIZE);
     }, []);
 
     return (
@@ -79,6 +80,7 @@ export default function InteractiveSection() {
                     handleSizeClick={handleSizeClick}
                     propControls={controls}
                     handleControlsChange={handleControlChange}
+                    size={size}
                 />
             </div>
         </Section>
