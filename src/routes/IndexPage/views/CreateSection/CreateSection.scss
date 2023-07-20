@@ -1,8 +1,19 @@
 @import 'style/variables';
 
+:root { 
+    --create-background-color: #FFFFFF;
+}
+
+html[data-theme='dark'] { 
+    --create-background-color: #333646;
+}
+
+$create-background-color: var(--create-background-color);
+
 .CreateSection {
     padding-top: 80px;
     padding-bottom: 160px;
+    background-color: $create-background-color;
 
 
     &__cards {

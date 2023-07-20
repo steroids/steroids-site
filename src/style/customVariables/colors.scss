@@ -1,9 +1,44 @@
-$grayF8: #F8F8F8;
-$grayF0: #F0F0F0;
-$grayF9: #F9F9F9;
-$grayD3: #D3D3D3;
+:root {
+    --custom-text-color: #000000;
+    --custom-text-descr-color: rgba(0, 0, 0, 0.60);
+    --custom-main-background-color: #FFFFFF;
+    --custom-background-color: #FFFFFF;
+    --custom-background-color-f9: #F9F9F9;
+    --custom-background-color-f9-additional: #F9F9F9;
+    --control-background-color: #f1f5f7;
+    --custom-icon-color: #323232;
+    --custom-icon-active: #323232;
+}
 
-$black1D: #1D1F24;
+html[data-theme="dark"] {
+    --custom-text-color: #ffffff;
+    --custom-text-descr-color: rgba(255, 255, 255, 0.60);
+    --custom-main-background-color: #23232C;;
+    --custom-background-color:  #333646;
+    --custom-background-color-f9: #333646;
+    --custom-background-color-f9-additional: #272A37;
+    --control-background-color: #333646;
+    --custom-icon-color: #FFFFFF;
+    --custom-icon-active: #323232;
+}
 
-$border-color-first: #EDF0F1;
-$border-color-second: #16171B;
+$control-background-color: var(--control-background-color);
+$custom-main-background-color: var(--custom-main-background-color);
+$custom-background-color: var(--custom-background-color);
+$custom-background-color-f9: var(--custom-background-color-f9);
+$custom-background-color-f9-additional: var(--custom-background-color-f9-additional);
+$control-background-color: var(--control-background-color);
+$custom-text-color: var(--custom-text-color);
+$custom-text-decr-color: var(--custom-text-descr-color);
+$custom-icon-color: var(--custom-icon-color);
+$custom-icon-active: var(--custom-icon-active);
+
+$grayF8: #f8f8f8;
+$grayF0: #f0f0f0;
+$grayF9: #f9f9f9;
+$grayD3: #d3d3d3;
+
+$black1D: #1d1f24;
+
+$border-color-first: #edf0f1;
+$border-color-second: #16171b;

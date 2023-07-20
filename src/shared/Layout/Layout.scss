@@ -1,7 +1,7 @@
 @import 'style/variables';
 
 .Layout {
-    background-color: $element-background-color;
+    background-color: $custom-main-background-color;
     display: flex;
     flex-flow: column nowrap;
     min-height: 100vh;

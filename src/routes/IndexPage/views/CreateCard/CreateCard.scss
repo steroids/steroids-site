@@ -1,7 +1,18 @@
 @import "style/variables";
 
+:root { 
+    --create-card-background-color: #FFFFFF;
+}
+
+html[data-theme="dark"] { 
+    --create-card-background-color: #272A37;
+}
+
+$create-card-background-color: var(--create-card-background-color);
+
 .CreateCard {
     border-radius: 20px;
+    background-color: $create-card-background-color;
 
     .CardView {
         &__cover {
@@ -18,13 +29,14 @@
             font-weight: $font-weight-sm;
             line-height: $line-height-34;
             margin-bottom: 16px;
+            color: $custom-text-color;
         }
 
         &__description {
             font-size: $font-size-16;
             font-weight: $font-weight-sm;
             line-height: $line-height-22;
-            opacity: 0.6;
+            color: $custom-text-decr-color;            
         }
     }
 }
