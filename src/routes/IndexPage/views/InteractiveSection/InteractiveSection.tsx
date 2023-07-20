@@ -4,6 +4,7 @@ import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import {IPropControl} from 'types/IPropControl';
 import Section from 'shared/Section';
+import {useScreen} from '@steroidsjs/core/hooks';
 import __unset from 'lodash-es/unset';
 import ComponentSelector from './views/ComponentSelector';
 import ComponentPresent from './views/ComponentPresent';
@@ -65,7 +66,10 @@ export default function InteractiveSection() {
             isGray
         >
             <div className={bem.element('wrapper')}>
-                <ComponentSelector handleComponentClick={handleComponentClick} />
+                <ComponentSelector
+                    className={bem.element('selector')}
+                    handleComponentClick={handleComponentClick}
+                />
                 <ComponentPresent
                     component={component}
                     className={bem.element('present')}
@@ -75,6 +79,7 @@ export default function InteractiveSection() {
                     }}
                 />
                 <ComponentOptions
+                    className={bem.element('options')}
                     currentComponent={currentComponentName}
                     handleSizeClick={handleSizeClick}
                     propControls={controls}

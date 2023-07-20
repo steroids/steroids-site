@@ -13,6 +13,7 @@ interface IComponentOptionsProps {
     propControls: IPropControl[];
     handleControlsChange: (selectedControlsIds: number[]) => void;
     currentComponent: string;
+    className?: string;
 }
 
 export default function ComponentOptions(props: IComponentOptionsProps) {
@@ -24,7 +25,11 @@ export default function ComponentOptions(props: IComponentOptionsProps) {
     );
 
     return (
-        <div className={bem.block()}>
+        <div className={bem(
+            bem.block(),
+            props.className,
+        )}
+        >
             {props.currentComponent !== 'Card' && (
                 <div>
                     <Text

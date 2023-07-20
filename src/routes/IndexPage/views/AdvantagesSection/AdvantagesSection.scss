@@ -4,10 +4,30 @@
     padding-top: 80px;
     padding-bottom: 160px;
 
+    @media (max-width: $tablet-width) {
+        padding-bottom: 124px;
+    }
+    @media (max-width: $tablet-width-small) {
+        padding-top: 40px;
+        padding-bottom: 80px;
+    }
+    @media (max-width: $mobile-width-small){
+        padding-top: 24px;      
+        padding-bottom: 24px;
+    }
 
     &__cards {
         display: flex;
-        column-gap: 16px;
+        margin: 0 auto;
+        gap: 16px;
         flex-flow: row nowrap;
+
+        @media (max-width: 612px) {
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: center;
+            padding: 0 16px;
+            gap: 24px;
+        }
     }
 }

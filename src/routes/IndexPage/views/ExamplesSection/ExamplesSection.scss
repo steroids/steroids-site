@@ -5,10 +5,69 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: flex-start;
+    overflow: hidden;
     column-gap: 16px;
+
+    @media (min-width: 1920px) {
+        .ExampleCard {
+            width: 21.5104166667vw;
+
+            &:nth-child(3) {
+                width: 29.5833vw;
+            }
+        }
+    }
+
+    @media (max-width: $tablet-width) {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    @media (max-width: $tablet-width-small) {
+        padding: 0;
+        padding-top: 16px;
+    }
+
+    @media (max-width: $mobile-width-small) {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
 
     .Section__title,
     .Section__description {
         display: none;
+    }
+
+    @media (max-width: 1919px) {
+        display: block;
+    }
+
+    .splide__list {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    .splide__slide {
+        width: 413px !important;
+
+        &:nth-child(1) {
+            width: 568px !important;
+        }
+
+        @media (max-width: $tablet-width) {
+            width: 380px !important;
+
+            &:nth-child(1) {
+                width: 500px !important;
+            }
+        }
+
+        @media (max-width: $mobile-width-small) {
+            width: 260px !important;
+
+            &:nth-child(1) {
+                width: 269px !important;
+            }
+        }
     }
 }

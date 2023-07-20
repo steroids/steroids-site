@@ -23,22 +23,24 @@ export default function FeatureCard(props: IFeatureCardProps) {
         )}
         >
             <Icon
-                name={props.isDark ? 'decoration7' : 'decoration8'}
+                name={props.isDark ? 'featureIconBlack' : 'featureIcon'}
                 className={bem.element('icon')}
             />
-            <Title
-                content={props.title}
-                className={bem.element('title')}
-            />
-            <Text
-                content={props.description}
-                className={bem.element('description')}
-            />
-            <div className={bem.element('img-wrapper')}>
-                <img
-                    src={props.img}
-                    alt="feature"
+            <div className={bem.element('content')}>
+                <Title
+                    content={props.title}
+                    className={bem.element('title')}
                 />
+                <Text
+                    content={props.description}
+                    className={bem.element('description')}
+                />
+                <div className={bem.element('img-wrapper')}>
+                    <img
+                        src={props.img}
+                        alt="feature"
+                    />
+                </div>
             </div>
         </div>
     );

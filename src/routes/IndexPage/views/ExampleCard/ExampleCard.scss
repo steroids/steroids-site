@@ -3,18 +3,18 @@
 .ExampleCard {
     $root: &;
 
-    display: flex;
+    display: inline-flex;
     flex-flow: column nowrap;
     align-items: center;
     padding: 32px;
     background-color: $custom-background-color-f9;
     border-radius: 20px;
     height: 530px;
-    min-width: 21.5104vw;
     width: 100%;
 
-    &:first-of-type {
-        min-width: 29.5833vw;
+    @media (max-width: $mobile-width-small) {
+        height: 320px;
+        padding: 16px;
     }
 
     &__title {
@@ -24,6 +24,11 @@
         font-size: $font-size-24;
         font-weight: $font-weight-sm;
         line-height: $line-height-34;
+
+        @media (max-width: $mobile-width-small) {
+            font-size: $font-size-14;
+            line-height: $line-height-16;
+        }
     }
 
     &:nth-child(3) {
@@ -44,6 +49,19 @@
         }
     }
 
+    &__img-wrapper {
+        margin: auto 0;
+
+        @media (max-width: $mobile-width-small) {
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            transform: scale(0.9);
+        }
+    }
+
     &__more {
         width: 100%;
         height: 100%;
@@ -60,9 +78,14 @@
             font-weight: $font-weight-sm;
             line-height: $line-height-34;
             margin-bottom: 0;
+
+            @media (max-width: $mobile-width-small) {
+                font-size: $font-size-14;
+                line-height: $line-height-16;
+            }
         }
 
-        .ButtonView { 
+        .ButtonView {
             width: 190px;
         }
     }
