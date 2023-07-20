@@ -1,10 +1,11 @@
 :root {
     --custom-text-color: #000000;
-    --custom-text-descr-color: rgba(0, 0, 0, 0.60);
-    --custom-main-background-color: #FFFFFF;
-    --custom-background-color: #FFFFFF;
-    --custom-background-color-f9: #F9F9F9;
-    --custom-background-color-f9-additional: #F9F9F9;
+    --custom-text-descr-color: rgba(0, 0, 0, 0.6);
+    --custom-text-descr-color-revert: rgba(255, 255, 255, 0.6);
+    --custom-main-background-color: #ffffff;
+    --custom-background-color: #ffffff;
+    --custom-background-color-f9: #f9f9f9;
+    --custom-background-color-f9-additional: #f9f9f9;
     --control-background-color: #f1f5f7;
     --custom-icon-color: #323232;
     --custom-icon-active: #323232;
@@ -12,13 +13,14 @@
 
 html[data-theme="dark"] {
     --custom-text-color: #ffffff;
-    --custom-text-descr-color: rgba(255, 255, 255, 0.60);
-    --custom-main-background-color: #23232C;;
-    --custom-background-color:  #333646;
+    --custom-text-descr-color: rgba(255, 255, 255, 0.6);
+    --custom-text-descr-color-revert: rgba(0, 0, 0, 0.6);
+    --custom-main-background-color: #23232c;
+    --custom-background-color: #333646;
     --custom-background-color-f9: #333646;
-    --custom-background-color-f9-additional: #272A37;
+    --custom-background-color-f9-additional: #272a37;
     --control-background-color: #333646;
-    --custom-icon-color: #FFFFFF;
+    --custom-icon-color: #ffffff;
     --custom-icon-active: #323232;
 }
 
@@ -30,6 +32,7 @@ $custom-background-color-f9-additional: var(--custom-background-color-f9-additio
 $control-background-color: var(--control-background-color);
 $custom-text-color: var(--custom-text-color);
 $custom-text-decr-color: var(--custom-text-descr-color);
+$custom-text-descr-color-revert: var(--custom-text-descr-color-revert);
 $custom-icon-color: var(--custom-icon-color);
 $custom-icon-active: var(--custom-icon-active);
 
@@ -37,6 +40,10 @@ $grayF8: #f8f8f8;
 $grayF0: #f0f0f0;
 $grayF9: #f9f9f9;
 $grayD3: #d3d3d3;
+
+
+$custom-text-descr-color-static: rgba(255, 255, 255, 0.6);
+
 
 $black1D: #1d1f24;
 

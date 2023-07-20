@@ -2,7 +2,18 @@
 
 .AdvantageCard {
     width: 240px;
-   
+
+    @media (max-width: 1080px) {
+        width: 200px;
+    }
+
+    @media (max-width: 876px) {
+        width: 172px;
+    }
+
+    @media (max-width: 764px) {
+        width: 132px;
+    }
 
     &__img-wrapper {
         margin-bottom: 16px;
@@ -10,6 +21,18 @@
         border-radius: 20px;
         background-color: $custom-background-color-f9;
         overflow: hidden;
+
+        @media (max-width: $tablet-width) {
+            height: 200px;
+        }
+
+        @media (max-width: 876px) {
+            height: 172px;
+        }
+
+        @media (max-width: 764px) {
+            height: 132px;
+        }
 
         img {
             width: 100%;
@@ -21,7 +44,6 @@
     &__description {
         text-align: center;
         margin-bottom: 0;
-        opacity: 0.6;
         color: $custom-text-decr-color;
     }
 }

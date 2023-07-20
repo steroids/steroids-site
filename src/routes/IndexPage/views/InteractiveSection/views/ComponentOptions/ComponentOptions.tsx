@@ -15,13 +15,18 @@ interface IComponentOptionsProps {
     currentComponent: string;
     selectedIds: number[];
     size: string;
+    className?: string;
 }
 
 export default function ComponentOptions(props: IComponentOptionsProps) {
     const bem = useBem('ComponentOptions');
 
     return (
-        <div className={bem.block()}>
+        <div className={bem(
+            bem.block(),
+            props.className,
+        )}
+        >
             {props.currentComponent !== 'Card' && (
                 <div>
                     <Text

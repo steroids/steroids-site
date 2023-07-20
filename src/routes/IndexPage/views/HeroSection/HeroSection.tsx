@@ -1,7 +1,7 @@
 import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import {Button} from '@steroidsjs/core/ui/form';
-import {useDispatch} from '@steroidsjs/core/hooks';
+import {useDispatch, useScreen} from '@steroidsjs/core/hooks';
 import {ROUTE_DOCS} from 'constants/routes';
 import {goToRoute} from '@steroidsjs/core/actions/router';
 import {Icon} from '@steroidsjs/core/ui/content';
@@ -14,6 +14,7 @@ import './HeroSection.scss';
 export default function HeroSection() {
     const bem = useBem('HeroSection');
     const dispatch = useDispatch();
+    const {isPhone} = useScreen();
 
     const onClickStart = React.useCallback(() => {
         dispatch(goToRoute(ROUTE_DOCS));
@@ -41,7 +42,7 @@ export default function HeroSection() {
                 <Button
                     url={githubLink}
                     target='_blank'
-                    label={__('Перейти на Github')}
+                    label={isPhone ? __('Перейти в Git') : __('Перейти на Github')}
                     outline
                 />
             </div>
@@ -49,7 +50,7 @@ export default function HeroSection() {
                 className={bem.element('description')}
             >
                 Наш Open-Source фреймворк Steroids&nbsp;&mdash;
-                это экосистема на&nbsp;основе React и&nbsp;Redux
+                это экосистема на&nbsp;основе React&nbsp;и Redux
                 с&nbsp;большим набором готовых компонентов,
                 уникальной архитектурой, UI&nbsp;Kit и&nbsp;SSR.
             </p>

@@ -4,6 +4,19 @@
     padding-top: 80px;
     padding-bottom: 160px;
 
+    @media (max-width: $tablet-width) {
+        padding-top: 64px;
+        padding-bottom: 80px;
+    }
+
+    @media (max-width: 800px) {
+        padding-bottom: 40px;
+    }
+
+    @media (max-width: 800px) {
+        padding: 24px 8px;
+    }
+
     .Section__title {
         margin-bottom: 0;
     }
@@ -18,10 +31,60 @@
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
+
+        @media (max-width: 1244px) {
+            margin-top: 32px;
+            display: grid;
+            grid-template-areas:
+                "a b"
+                "c c";
+        }
+
+        @media (max-width: 800px) {
+            grid-template-areas:
+                "b"
+                "a"
+                "c";
+        }
     }
 
-    &__present { 
+    &__selector {
+        grid-area: a;
+
+        @media (max-width: 800px) {
+            margin-bottom: 16px;
+        }
+        @media (max-width: $mobile-width-small) {
+            margin-bottom: 14px;
+        }
+    }
+
+    &__present {
         margin-right: 7.1354vw;
         margin-left: 17.5vw;
+        grid-area: b;
+
+        @media (max-width: 1244px) {
+            margin: 0;
+            margin-left: -92px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 800px) {
+            margin: 0;
+            margin-bottom: 16px;
+        }
+    }
+
+    &__options {
+        grid-area: c;
+
+        @media (max-width: 1244px) {
+            margin-top: 6px;
+        }
+
+        @media (max-width: 800px) {
+            margin-top: 14px;
+        }
     }
 }
