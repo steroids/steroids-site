@@ -4,15 +4,78 @@
     display: flex;
     flex-flow: column nowrap;
     row-gap: 32px;
+    transform: translateY(-5px) translateX(-2px);
+
+    @media (max-width: 1244px) {
+        align-items: center;
+    }
+
+    .FieldLayoutView {
+        @media (max-width: $tablet-width) {
+            width: 585px;
+        }
+
+        @media (max-width: 800px) {
+            width: 481px;
+        }
+        @media (max-width: 492px) {
+            width: 304px;
+            align-items: flex-start;
+        }
+    }
+
+    > div {
+        @media (max-width: $tablet-width) {
+            display: flex;
+            flex-flow: row nowrap;
+            gap: 4px;
+        }
+
+        @media (max-width: 800px) {
+            gap: 0;
+            align-items: center;
+        }
+
+        @media (max-width: 492px) {
+            flex-flow: column;
+        }
+    }
 
     &__text {
         font-size: $font-size-24;
         font-weight: $font-weight-sm;
         line-height: $line-height-34;
         margin-bottom: 8px;
+
+        @media (max-width: $tablet-width) {
+            width: 320px;
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 800px) {
+            width: 220px;
+            font-size: $font-size-16;
+            line-height: $line-height-22;
+        }
+
+        @media (max-width: 492px) {
+            width: 100%;
+            margin-bottom: 4px;
+        }
     }
 
-    &__sizes { 
+    &__sizes {
         width: 261px;
+
+        @media (max-width: 492px) {
+            width: 304px;
+
+            gap: 9px;
+
+            .ButtonView {
+                width: 94px;
+                height: 34px;
+            }
+        }
     }
 }

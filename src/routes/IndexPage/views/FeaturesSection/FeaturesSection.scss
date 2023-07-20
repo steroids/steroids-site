@@ -6,11 +6,28 @@
     flex-flow: row nowrap;
     column-gap: 16px;
 
+    @media (max-width: $tablet-width){
+        padding: 0 16px 16px 16px;
+    }
+    @media (max-width: $tablet-width-small){
+          flex-flow: column nowrap;
+          row-gap: 16px;
+          padding: 0;
+    }
+
     .Section__title,.Section__description { 
         display: none;
     }
 
     .FeatureCard {
         width: 47.9166vw;
+
+        @media (max-width: $tablet-width){
+            width: 47.65625vw;
+        }
+
+        @media (max-width: $tablet-width-small){
+            width: 100%;  
+        }
     }
 }

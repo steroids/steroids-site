@@ -6,7 +6,7 @@ import {Icon} from '@steroidsjs/core/ui/content';
 
 import './Header.scss';
 import {DropDownField, InputField} from '@steroidsjs/core/ui/form';
-import {useDispatch} from '@steroidsjs/core/hooks';
+import {useDispatch, useScreen} from '@steroidsjs/core/hooks';
 import {goToRoute} from '@steroidsjs/core/actions/router';
 import {ROUTE_ROOT} from 'constants/routes';
 import {gsap} from 'gsap';
@@ -29,11 +29,14 @@ const languageItems = [
 
 const EMPTY_VALUE = '';
 const SET_VALUE_DELAY = 500;
+const TABLET_WIDTH_SMALL = 768;
 
 export default function Header() {
     const bem = useBem('Header');
+    const {isTablet, isPhone} = useScreen();
     const dispatch = useDispatch();
     const [prevValue, setPrevValue] = React.useState('');
+    const [isBurgerOpened, setIsBurgerOpened] = React.useState(false);
     const fieldRef = React.useRef<HTMLInputElement>(null);
     const inputRef = React.useRef<HTMLInputElement>(null);
 
@@ -43,7 +46,7 @@ export default function Header() {
 
     const handleInputAnimation = React.useCallback((state: 'focus' | 'blur') => {
         if (state === 'focus') {
-            gsap.to(fieldRef.current, {width: '480px', duration: 0.5, ease: 'power2.inOut'});
+            gsap.to(fieldRef.current, {width: isTablet() ? '380px' : '480px', duration: 0.5, ease: 'power2.inOut'});
 
             setTimeout(() => {
                 inputRef.current.value = prevValue;
@@ -54,7 +57,7 @@ export default function Header() {
         gsap.to(fieldRef.current, {width: '48px', duration: 0.5, ease: 'power2.inOut'});
         setPrevValue(inputRef.current.value);
         inputRef.current.value = EMPTY_VALUE;
-    }, [prevValue]);
+    }, [isTablet, prevValue]);
 
     return (
         <header className={bem.block()}>
@@ -70,29 +73,44 @@ export default function Header() {
                     {__('Steroids')}
                 </h1>
             </div>
-            <div className={bem.element('controls')}>
-                <InputField
-                    leadIcon="searchAlt"
-                    size='sm'
-                    className={bem.element('controls-input')}
-                    viewProps={{
-                        onFocus: () => handleInputAnimation('focus'),
-                        onBlur: () => handleInputAnimation('blur'),
-                        ref: fieldRef,
-                        inputRef,
-                    }}
-                    view={InputFieldView}
-                />
-                <ThemesButtons className={bem.element('controls-themes')} />
-                <DropDownField
-                    view={DropDownFieldView}
-                    className={bem.element('controls-lang')}
-                    items={languageItems}
-                    selectFirst
-                    placeholder={languageItems[FIRST_INDEX].label}
-                    size="sm"
-                />
-            </div>
+            {!isPhone() ? (
+                <div className={bem.element('controls')}>
+                    <InputField
+                        leadIcon="searchAlt"
+                        size='sm'
+                        className={bem.element('controls-input')}
+                        viewProps={{
+                            onFocus: () => handleInputAnimation('focus'),
+                            onBlur: () => handleInputAnimation('blur'),
+                            ref: fieldRef,
+                            inputRef,
+                        }}
+                        view={InputFieldView}
+                    />
+                    <ThemesButtons className={bem.element('controls-themes')} />
+                    <DropDownField
+                        view={DropDownFieldView}
+                        className={bem.element('controls-lang')}
+                        items={languageItems}
+                        selectFirst
+                        placeholder={languageItems[FIRST_INDEX].label}
+                        size="sm"
+                    />
+                </div>
+            )
+                : (
+                    <div className={bem.element('burger')}>
+                        <div
+                            className={bem.element('burger-wrapper')}
+                            onClick={() => setIsBurgerOpened((prev) => !prev)}
+                        >
+                            <Icon
+                                className={bem.element('burger-button')}
+                                name={isBurgerOpened ? 'cross_12x12' : 'burger'}
+                            />
+                        </div>
+                    </div>
+                )}
         </header>
     );
 }

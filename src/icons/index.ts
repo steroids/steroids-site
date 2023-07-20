@@ -12,4 +12,7 @@ export const icons = {
     decoration6: require('./svgs/decoration6.svg'),
     decoration7: require('./svgs/decoration7.svg'),
     decoration8: require('./svgs/decoration8.svg'),
+    burger: require('./svgs/burger.svg'),
+    featureIcon: require('./svgs/feature-icon.svg'),
+    featureIconBlack: require('./svgs/feature-icon-black.svg'),
 };
