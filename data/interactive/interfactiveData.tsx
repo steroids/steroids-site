@@ -1,9 +1,7 @@
 import {Card} from '@steroidsjs/core/ui/content';
 import {ICardProps} from '@steroidsjs/core/ui/content/Card/Card';
 import {Button, CheckboxField, InputField} from '@steroidsjs/core/ui/form';
-import {IButtonProps} from '@steroidsjs/core/ui/form/Button/Button';
 import {ICheckboxFieldProps} from '@steroidsjs/core/ui/form/CheckboxField/CheckboxField';
-import {IInputFieldProps} from '@steroidsjs/core/ui/form/InputField/InputField';
 import {IPropControl} from 'types/IPropControl';
 
 export const voidFunction = () => { };

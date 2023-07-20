@@ -19,6 +19,8 @@ export default function InteractiveSection() {
     const [props, setProps] = React.useState(COMPONENTS.Input.props);
     const [controls, setControls] = React.useState(COMPONENTS.Input.controls);
     const [currentComponentName, setCurrentComponentName] = React.useState(DEFAULT_COMPONENT_NAME);
+    const [selectedIds, setSelectedIds] = React.useState(COMPONENTS.Input.controls
+        ?.filter((control) => control.enabled === true).map(control => control.id));
 
     const getInitialProps = (defaultProps: Record<string, any>, defaultControls: IPropControl[]) => {
         const resultProps = {
@@ -46,16 +48,21 @@ export default function InteractiveSection() {
         });
 
         setProps(resultProps);
+        setSelectedIds(selectedControlsIds);
     }, [controls, currentComponentName]);
 
     const handleComponentClick = React.useCallback((selectedComponent: string) => {
         const newControls = COMPONENTS[selectedComponent].controls;
         const newComponentProps = getInitialProps(COMPONENTS[selectedComponent].props, newControls);
         const newComponent = () => COMPONENTS[selectedComponent].component;
+        const newSelectedIds = COMPONENTS[selectedComponent].controls
+            ?.filter((control) => control.enabled === true).map(control => control.id);
+
         setControls(newControls);
         setProps(newComponentProps);
         setComponent(newComponent);
         setCurrentComponentName(selectedComponent);
+        setSelectedIds(newSelectedIds);
         setSize(DEFAULT_SIZE);
     }, []);
 
@@ -76,11 +83,12 @@ export default function InteractiveSection() {
                     }}
                 />
                 <ComponentOptions
+                    size={size}
                     currentComponent={currentComponentName}
                     handleSizeClick={handleSizeClick}
                     propControls={controls}
                     handleControlsChange={handleControlChange}
-                    size={size}
+                    selectedIds={selectedIds}
                 />
             </div>
         </Section>
