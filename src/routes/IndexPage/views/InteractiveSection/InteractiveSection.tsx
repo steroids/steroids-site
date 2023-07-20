@@ -63,6 +63,7 @@ export default function InteractiveSection() {
         setComponent(newComponent);
         setCurrentComponentName(selectedComponent);
         setSelectedIds(newSelectedIds);
+        setSize(DEFAULT_SIZE);
     }, []);
 
     return (

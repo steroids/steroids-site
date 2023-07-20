@@ -30,6 +30,7 @@ export default function ComponentOptions(props: IComponentOptionsProps) {
                     />
                     <ButtonGroup
                         items={SIZES}
+                        activeButton={props.size}
                         onClick={props.handleSizeClick}
                         className={bem.element('sizes')}
                         activeButton={props.size}

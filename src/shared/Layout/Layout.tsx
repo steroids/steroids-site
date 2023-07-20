@@ -23,12 +23,12 @@ export default function Layout(props: React.PropsWithChildren<any>) {
     return (
         <div className={bem.block()}>
             <Header />
-            <div className={bem.element('content')}>
+            <main className={bem.element('content')}>
                 <Notifications />
                 {props.children}
                 <ModalPortal />
                 <Portal />
-            </div>
+            </main>
             <Footer />
         </div>
     );
