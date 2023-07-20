@@ -33,7 +33,6 @@ export default function ComponentOptions(props: IComponentOptionsProps) {
                         activeButton={props.size}
                         onClick={props.handleSizeClick}
                         className={bem.element('sizes')}
-                        activeButton={props.size}
                         buttonProps={{
                             size: 'sm',
                         }}
