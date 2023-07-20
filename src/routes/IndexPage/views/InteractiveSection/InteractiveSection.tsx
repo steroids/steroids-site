@@ -8,17 +8,21 @@ import __unset from 'lodash-es/unset';
 import ComponentSelector from './views/ComponentSelector';
 import ComponentPresent from './views/ComponentPresent';
 import ComponentOptions from './views/ComponentOptions';
-import {COMPONENTS, DEFAULT_COMPONENT_NAME, DEFAULT_SIZE} from '../../../../../data/interactive/interfactiveData';
+import {components, defaultButtonColor} from '../../../../data/interactiveBlockData';
 
 import './InteractiveSection.scss';
+
+export const DEFAULT_SIZE = 'sm';
+export const DEFAULT_COMPONENT_NAME = 'input';
 
 export default function InteractiveSection() {
     const bem = useBem('InteractiveSection');
     const [size, setSize] = React.useState(DEFAULT_SIZE);
-    const [component, setComponent] = React.useState<any>(() => COMPONENTS.Input.component);
-    const [props, setProps] = React.useState(COMPONENTS.Input.props);
-    const [controls, setControls] = React.useState(COMPONENTS.Input.controls);
+    const [component, setComponent] = React.useState<any>(() => components.input.component);
+    const [currentProps, setCurrentProps] = React.useState(components.input.props);
     const [currentComponentName, setCurrentComponentName] = React.useState(DEFAULT_COMPONENT_NAME);
+    const [buttonColor, setButtonColor] = React.useState(defaultButtonColor);
+    const currentControls = React.useMemo(() => components[currentComponentName].controls, [currentComponentName]);
 
     const getInitialProps = (defaultProps: Record<string, any>, defaultControls: IPropControl[]) => {
         const resultProps = {
@@ -32,28 +36,27 @@ export default function InteractiveSection() {
         return resultProps;
     };
 
-    const handleSizeClick = React.useCallback((newSize: string) => {
-        setSize(newSize);
+    const handleButtonColorClick = React.useCallback((newColor: string) => {
+        setButtonColor(newColor);
     }, []);
 
     const handleControlChange = React.useCallback((selectedControlsIds: number[]) => {
-        const resultProps = {...COMPONENTS[currentComponentName].props};
+        const resultProps = {...components[currentComponentName].props};
 
-        const notSelectedControls = controls?.filter(control => !selectedControlsIds.includes(control.id));
+        const notSelectedControls = currentControls?.filter(control => !selectedControlsIds.includes(control.id));
 
         notSelectedControls?.forEach(notSelectedControl => {
             __unset(resultProps, [notSelectedControl.propName]);
         });
 
-        setProps(resultProps);
-    }, [controls, currentComponentName]);
+        setCurrentProps(resultProps);
+    }, [currentComponentName, currentControls]);
 
     const handleComponentClick = React.useCallback((selectedComponent: string) => {
-        const newControls = COMPONENTS[selectedComponent].controls;
-        const newComponentProps = getInitialProps(COMPONENTS[selectedComponent].props, newControls);
-        const newComponent = () => COMPONENTS[selectedComponent].component;
-        setControls(newControls);
-        setProps(newComponentProps);
+        const newControls = components[selectedComponent].controls;
+        const newComponentProps = getInitialProps(components[selectedComponent].props, newControls);
+        const newComponent = () => components[selectedComponent].component;
+        setCurrentProps(newComponentProps);
         setComponent(newComponent);
         setCurrentComponentName(selectedComponent);
         setSize(DEFAULT_SIZE);
@@ -72,14 +75,17 @@ export default function InteractiveSection() {
                     className={bem.element('present')}
                     componentProps={{
                         size,
-                        ...props,
+                        color: buttonColor,
+                        ...currentProps,
                     }}
                 />
                 <ComponentOptions
                     currentComponent={currentComponentName}
-                    handleSizeClick={handleSizeClick}
-                    propControls={controls}
+                    handleSizeClick={(newSize) => setSize(newSize)}
+                    propControls={currentControls}
                     handleControlsChange={handleControlChange}
+                    handleButtonColorClick={handleButtonColorClick}
+                    buttonColor={buttonColor}
                     size={size}
                 />
             </div>

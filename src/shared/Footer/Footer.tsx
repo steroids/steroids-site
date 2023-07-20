@@ -1,7 +1,7 @@
 import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import Link from '@steroidsjs/core/ui/nav/Link';
-import {designEmail, footerColumns} from '../../../data/footerData';
+import {designEmail, footerColumns} from '../../data/footerData';
 
 import './Footer.scss';
 

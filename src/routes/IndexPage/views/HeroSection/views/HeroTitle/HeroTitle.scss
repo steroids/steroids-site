@@ -1,0 +1,34 @@
+@import "style/variables";
+
+.HeroTitle {
+    margin-top: 21px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-bottom: 28px;
+
+    &__letters {
+        font-size: $font-size-96;
+        font-weight: 700;
+        line-height: $line-height-112;
+
+        &:first-child {
+            transform: translateX(-8px) translateY(1px);
+        }
+
+        &:last-child {
+            transform: translateX(7px) translateY(1px);
+        }
+    }
+
+    &__icon {
+        width: 115px;
+        height: 115px;
+
+        transform: scale(1.42) translateX(-9px) translateY(3px);
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

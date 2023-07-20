@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {memo} from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import ButtonGroup from '@steroidsjs/core/ui/nav/ButtonGroup';
-import {COMPONENTS_LIST} from '../../../../../../../data/interactive/interfactiveData';
+import {components} from '../../../../../../data/interactiveBlockData';
 
 import './ComponentSelector.scss';
 
@@ -9,7 +9,7 @@ interface IComponentSelectorProps {
     handleComponentClick: (component: string) => void;
 }
 
-export default function ComponentSelector(props: IComponentSelectorProps) {
+function ComponentSelector(props: IComponentSelectorProps) {
     const bem = useBem('ComponentSelector');
 
     return (
@@ -17,7 +17,7 @@ export default function ComponentSelector(props: IComponentSelectorProps) {
             <div className={bem.element('decoration')} />
             <ButtonGroup
                 className={bem.element('components')}
-                items={COMPONENTS_LIST}
+                items={Object.keys(components)}
                 onClick={props.handleComponentClick}
                 buttonProps={{
                     link: true,
@@ -26,3 +26,5 @@ export default function ComponentSelector(props: IComponentSelectorProps) {
         </div>
     );
 }
+
+export default memo(ComponentSelector);

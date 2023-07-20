@@ -1,6 +1,6 @@
 @import 'style/variables';
 
-.CreateSection {
+.ResourcesSection {
     padding-top: 80px;
     padding-bottom: 160px;
 
@@ -10,7 +10,7 @@
         flex-flow: row nowrap;
         column-gap: 16px;
 
-        .CreateCard { 
+        .ResourceCard { 
             width: 21.6666vw;
             height: 424px;
         }

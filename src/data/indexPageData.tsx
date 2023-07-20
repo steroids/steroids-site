@@ -42,7 +42,13 @@ export const advantagesCards = [
     },
 ];
 
-export const createCards = [
+export const advantagesDescription = __('Наш Open-Source \
+фреймворк Steroids \
+это экосистема на основе \
+React и Redux с большим набором готовых \
+компонентов, уникальной архитектурой, UI Kit и SSR');
+
+export const resourcesCards = [
     {
         img: 'https://i.ibb.co/6JQcWrX/Frame-338670.jpg',
         title: 'На старт',
@@ -60,21 +66,31 @@ export const createCards = [
     },
 ];
 
+export const resourcesDescription = __('Наш Open-Source фреймворк Steroids \
+это экосистема наоснове React \
+иRedux сбольшим набором готовых компонентов, \
+уникальной архитектурой, UIKit иSSR');
 export const examplesCards = [
     {
         label: 'Датапикер',
-        img: '/images/calendar.png',
+        img: '/images/calendar.webp',
     },
     {
         label: 'Карточка',
-        img: '/images/card.png',
+        img: '/images/card.webp',
     },
     {
         label: 'Пароль',
-        img: '/images/password.png',
+        img: '/images/password.webp',
     },
     {
         label: '',
         img: '',
+        isMoreCard: true,
     },
 ];
+
+export const heroDescription = __('Наш Open-Source фреймворк Steroids \
+                это экосистема на основе React и Redux \
+                с большим набором готовых компонентов, \
+                уникальной архитектурой, UI Kit и SSR.');

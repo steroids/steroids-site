@@ -1,8 +1,8 @@
 import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import Section from 'shared/Section';
-import {featureCards} from '../../../../../data/indexPageData';
-import FeatureCard from '../FeatureCard';
+import {featureCards} from '../../../../data/indexPageData';
+import FeatureCard from './views/FeatureCard';
 
 import './FeaturesSection.scss';
 

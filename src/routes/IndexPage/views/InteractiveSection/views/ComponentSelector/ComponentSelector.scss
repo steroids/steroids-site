@@ -25,6 +25,7 @@
             font-weight: $font-weight-sm;
             line-height: $line-height-34;
             position: relative;
+            text-transform: capitalize;
 
             &::before {
                 display: block;

@@ -3,8 +3,8 @@ import useBem from '@steroidsjs/core/hooks/useBem';
 
 import './ExamplesSection.scss';
 import Section from 'shared/Section';
-import {examplesCards} from '../../../../../data/indexPageData';
-import ExampleCard from '../ExampleCard';
+import {examplesCards} from '../../../../data/indexPageData';
+import ExampleCard from './views/ExampleCard';
 
 export default function ExamplesSection() {
     const bem = useBem('ExamplesSection');
