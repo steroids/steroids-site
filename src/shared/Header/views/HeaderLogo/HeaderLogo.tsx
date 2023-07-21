@@ -3,28 +3,26 @@
 import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import {Icon} from '@steroidsjs/core/ui/content';
+import Link from '@steroidsjs/core/ui/nav/Link';
+import {ROUTE_ROOT} from 'constants/routes';
 
 import './HeaderLogo.scss';
 
-interface IHeaderLogoProps {
-    onClick: () => void;
-}
-
-export default function HeaderLogo(props: IHeaderLogoProps) {
+export default function HeaderLogo() {
     const bem = useBem('HeaderLogo');
 
     return (
-        <div
-            onClick={props.onClick}
+        <Link
+            toRoute={ROUTE_ROOT}
             className={bem.block()}
         >
             <Icon
                 name='logo'
                 className={bem.element('icon')}
             />
-            <h1 className={bem.element('title')}>
+            <p className={bem.element('title')}>
                 {__('Steroids')}
-            </h1>
-        </div>
+            </p>
+        </Link>
     );
 }

@@ -1,11 +1,13 @@
 @import "style/variables";
 
 .HeaderLogo {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
+
+    .ButtonView__text {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: 8px;
+    }
 
     @media (max-width: $mobile-width-small) {
         height: 64px;

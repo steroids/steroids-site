@@ -5,8 +5,6 @@ import {Button, CheckboxField, InputField} from '@steroidsjs/core/ui/form';
 import {ICheckboxFieldProps} from '@steroidsjs/core/ui/form/CheckboxField/CheckboxField';
 import {IPropControl} from 'types/IPropControl';
 
-export const voidFunction = () => { };
-
 export const sizes = [
     {
         label: 'Small',
@@ -21,8 +19,6 @@ export const sizes = [
         id: 'lg',
     },
 ];
-
-export const defaultButtonColor = 'primary';
 
 export const buttonColors = [
     {
@@ -39,40 +35,40 @@ export const buttonColors = [
     },
 ];
 
-export const defaultInputProps = {
+const defaultInputProps = {
     label: __('Логин'),
     leadIcon: 'user',
     placeholder: 'Placeholder',
 };
 
-export const inputControls: IPropControl[] = [
+const inputControls: IPropControl[] = [
     {
         id: 1,
-        label: __('Отображение иконки'),
+        label: __('Отобразить иконку'),
         enabled: false,
         propName: 'leadIcon',
     },
     {
         id: 2,
-        label: __('Placeholder'),
+        label: __('Отобразить placeholder'),
         enabled: false,
         propName: 'placeholder',
     },
     {
         id: 3,
-        label: __('Label'),
+        label: __('Отобразить label'),
         enabled: false,
         propName: 'label',
     },
 ];
 
-export const defaultButtonProps = {
+const defaultButtonProps = {
     label: __('Отправить'),
     outline: true,
     isLoading: true,
 };
 
-export const buttonControls: IPropControl[] = [
+const buttonControls: IPropControl[] = [
     {
         id: 1,
         label: __('Включить стиль outline'),
@@ -87,7 +83,7 @@ export const buttonControls: IPropControl[] = [
     },
 ];
 
-export const defaultCardProps: ICardProps = {
+const defaultCardProps: ICardProps = {
     header: {
         avatar: {
             src: 'https://i.ibb.co/pxSYhX0/image-3.png',
@@ -101,7 +97,7 @@ export const defaultCardProps: ICardProps = {
     description: 'Some quick example text to build on the card title and make up the bulk of the cards content.',
 };
 
-export const cardControls: IPropControl[] = [
+const cardControls: IPropControl[] = [
     {
         id: 1,
         label: __('Отобразить header'),
@@ -116,13 +112,13 @@ export const cardControls: IPropControl[] = [
     },
 ];
 
-export const defaultCheckboxProps: ICheckboxFieldProps = {
-    label: __('Согласие на обработку данных'),
+const defaultCheckboxProps: ICheckboxFieldProps = {
+    label: __('Согласен на обработку данных'),
     disabled: true,
     errors: [__('Произошла ошибка')],
 };
 
-export const checkboxControls: IPropControl[] = [
+const checkboxControls: IPropControl[] = [
     {
         id: 1,
         enabled: false,
@@ -143,6 +139,7 @@ export const components: Record<string, {
     controls?: IPropControl[],
     hasSizeControl: boolean,
     hasColorControl: boolean,
+    isHiddenOnMobile?: boolean,
 }> = {
     input: {
         component: InputField,
@@ -164,6 +161,7 @@ export const components: Record<string, {
         controls: cardControls,
         hasColorControl: false,
         hasSizeControl: false,
+        isHiddenOnMobile: true,
     },
     checkbox: {
         component: CheckboxField,

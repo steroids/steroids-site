@@ -8,39 +8,47 @@ import __unset from 'lodash-es/unset';
 import ComponentSelector from './views/ComponentSelector';
 import ComponentPresent from './views/ComponentPresent';
 import ComponentOptions from './views/ComponentOptions';
-import {components, defaultButtonColor} from '../../../../data/interactiveBlockData';
+import {components} from '../../../../data/interactiveBlockData';
 
 import './InteractiveSection.scss';
 
-export const DEFAULT_SIZE = 'sm';
-export const DEFAULT_COMPONENT_NAME = 'input';
+const DEFAULT_SIZE = 'sm';
+const DEFAULT_COMPONENT_NAME = 'input';
+const DEFAULT_BUTTON_COLOR = 'primary';
+
+const getInitialProps = (props: Record<string, any>, controls: IPropControl[]) => {
+    const initialProps = {
+        ...props,
+    };
+
+    controls?.forEach(control => {
+        if (!control.enabled) {
+            __unset(initialProps, [control.propName]);
+        }
+    });
+
+    return initialProps;
+};
 
 export default function InteractiveSection() {
     const bem = useBem('InteractiveSection');
+
     const [size, setSize] = React.useState(DEFAULT_SIZE);
-    const [component, setComponent] = React.useState<any>(() => components.input.component);
-    const [currentProps, setCurrentProps] = React.useState(components.input.props);
+    const [buttonColor, setButtonColor] = React.useState(DEFAULT_BUTTON_COLOR);
+
+    const [currentProps, setCurrentProps] = React.useState(components[DEFAULT_COMPONENT_NAME].props);
     const [currentComponentName, setCurrentComponentName] = React.useState(DEFAULT_COMPONENT_NAME);
-    const [buttonColor, setButtonColor] = React.useState(defaultButtonColor);
-    const currentControls = React.useMemo(() => components[currentComponentName].controls, [currentComponentName]);
-    const [selectedIds, setSelectedIds] = React.useState(components.input.controls
-        ?.filter((control) => control.enabled === true).map(control => control.id));
 
-    const getInitialProps = (defaultProps: Record<string, any>, defaultControls: IPropControl[]) => {
-        const resultProps = {
-            ...defaultProps,
-        };
+    const [selectedIds, setSelectedIds] = React.useState(
+        components[DEFAULT_COMPONENT_NAME].controls
+            ?.filter((control) => control.enabled)
+            .map(control => control.id),
+    );
 
-        defaultControls?.forEach(defaultControl => {
-            defaultControl.enabled === false ? __unset(resultProps, [defaultControl.propName]) : null;
-        });
-
-        return resultProps;
-    };
-
-    const handleButtonColorClick = React.useCallback((newColor: string) => {
-        setButtonColor(newColor);
-    }, []);
+    const currentControls = React.useMemo(
+        () => components[currentComponentName].controls,
+        [currentComponentName],
+    );
 
     const handleControlChange = React.useCallback((selectedControlsIds: number[]) => {
         const resultProps = {...components[currentComponentName].props};
@@ -58,12 +66,10 @@ export default function InteractiveSection() {
     const handleComponentClick = React.useCallback((selectedComponent: string) => {
         const newControls = components[selectedComponent].controls;
         const newComponentProps = getInitialProps(components[selectedComponent].props, newControls);
-        const newComponent = () => components[selectedComponent].component;
         const newSelectedIds = components[selectedComponent].controls
-            ?.filter((control) => control.enabled === true).map(control => control.id);
+            ?.filter((control) => control.enabled).map(control => control.id);
 
         setCurrentProps(newComponentProps);
-        setComponent(newComponent);
         setCurrentComponentName(selectedComponent);
         setSelectedIds(newSelectedIds);
         setSize(DEFAULT_SIZE);
@@ -81,7 +87,7 @@ export default function InteractiveSection() {
                     handleComponentClick={handleComponentClick}
                 />
                 <ComponentPresent
-                    component={component}
+                    component={components[currentComponentName].component}
                     className={bem.element('present')}
                     componentProps={{
                         size,
@@ -96,7 +102,7 @@ export default function InteractiveSection() {
                     handleSizeClick={(newSize) => setSize(newSize)}
                     propControls={currentControls}
                     handleControlsChange={handleControlChange}
-                    handleButtonColorClick={handleButtonColorClick}
+                    handleButtonColorClick={(newColor) => setButtonColor(newColor)}
                     buttonColor={buttonColor}
                     selectedIds={selectedIds}
                 />

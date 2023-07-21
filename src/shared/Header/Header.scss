@@ -81,23 +81,9 @@ $control-background-color: var(--control-background-color);
                 stroke: $custom-icon-active;
             }
         }
-    }
 
-    &__burger {
-        &-wrapper {
-            width: 32px;
-            height: 32px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        &-button {
-            display: block;
-            width: 24px;
-            height: 24px;
-            background-color: $control-background-color;
-            border-radius: $radius-large;
+        @media (max-width: 767px) {
+          display: none;
         }
     }
 }

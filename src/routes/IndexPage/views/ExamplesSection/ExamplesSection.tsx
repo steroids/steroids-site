@@ -18,12 +18,14 @@ const SLIDER_OPTIONS: Options = {
     resetProgress: false,
 };
 
+const MAX_SCREEN_WIDTH_FOR_RENDER_SLIDER = 1919;
+
 export default function ExamplesSection() {
     const bem = useBem('ExamplesSection');
     const {width} = useScreen();
 
     const isSlider = React.useMemo(
-        () => width <= 1919,
+        () => width <= MAX_SCREEN_WIDTH_FOR_RENDER_SLIDER,
         [width],
     );
 

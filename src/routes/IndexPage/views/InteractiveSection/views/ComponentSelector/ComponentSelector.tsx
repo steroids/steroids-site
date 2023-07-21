@@ -15,12 +15,11 @@ function ComponentSelector(props: IComponentSelectorProps) {
     const bem = useBem('ComponentSelector');
     const {isPhone} = useScreen();
 
-    const actualComponents = React.useMemo(
+    const componentsByScreenType = React.useMemo(
         () => {
             if (isPhone()) {
                 const newComponents = [...Object.keys(components)];
-
-                return newComponents.filter((component) => component !== 'card');
+                return newComponents.filter((component) => !components[component].isHiddenOnMobile);
             }
 
             return Object.keys(components);
@@ -37,7 +36,7 @@ function ComponentSelector(props: IComponentSelectorProps) {
             <div className={bem.element('decoration')} />
             <ButtonGroup
                 className={bem.element('components')}
-                items={actualComponents}
+                items={componentsByScreenType}
                 onClick={props.handleComponentClick}
                 buttonProps={{
                     link: true,

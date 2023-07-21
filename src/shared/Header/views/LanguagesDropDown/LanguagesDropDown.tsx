@@ -2,8 +2,9 @@
 import * as React from 'react';
 import {useBem} from '@steroidsjs/core/hooks';
 import {DropDownField} from '@steroidsjs/core/ui/form';
-import DropDownView from './DropDownView';
-import './CustomDropDown.scss';
+import LanguagesDropDownView from './views/LanguagesDropDownView';
+
+import './LanguagesDropDown.scss';
 
 const FIRST_INDEX = 0;
 
@@ -18,12 +19,12 @@ const languageItems = [
     },
 ];
 
-export default function CustomDropDown() {
-    const bem = useBem('CustomDropDown');
+export default function LanguagesDropDown() {
+    const bem = useBem('LanguagesDropDown');
 
     return (
         <DropDownField
-            view={DropDownView}
+            view={LanguagesDropDownView}
             className={bem.block()}
             items={languageItems}
             selectFirst

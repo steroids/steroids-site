@@ -2,7 +2,7 @@
 import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import {Button} from '@steroidsjs/core/ui/form';
-import {useDispatch, useScreen} from '@steroidsjs/core/hooks';
+import {useScreen} from '@steroidsjs/core/hooks';
 import {ROUTE_DOCS} from 'constants/routes';
 import {goToRoute} from '@steroidsjs/core/actions/router';
 import Section from 'shared/Section';
@@ -15,7 +15,6 @@ import './HeroSection.scss';
 
 export default function HeroSection() {
     const bem = useBem('HeroSection');
-    const dispatch = useDispatch();
     const {isPhone} = useScreen();
 
     return (
@@ -24,7 +23,7 @@ export default function HeroSection() {
             <div className={bem.element('buttons')}>
                 <Button
                     label={__('Начать')}
-                    onClick={() => dispatch(goToRoute(ROUTE_DOCS))}
+                    toRoute={ROUTE_DOCS}
                 />
                 <Button
                     url={githubLink}

@@ -20,10 +20,10 @@ export default function AnimatedIcons() {
 
     return (
         <div className={bem.block()}>
-            {DECORATIONS.map((deco, decoIndex) => (
+            {DECORATIONS.map((decoration, decorationIndex) => (
                 <Icon
-                    key={decoIndex}
-                    name={deco}
+                    key={decorationIndex}
+                    name={decoration}
                     className={bem.element('item')}
                 />
             ))}

@@ -1,8 +1,8 @@
 import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
+import ThemesButtons from 'shared/ThemesButtons';
 
 import './ComponentPresent.scss';
-import ThemesButtons from 'shared/ThemesButtons';
 
 interface IComponentPresentProps {
     component: React.FunctionComponent<any>,
