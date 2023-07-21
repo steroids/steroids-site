@@ -1,3 +1,4 @@
+/* eslint-disable no-multi-str */
 import {Card} from '@steroidsjs/core/ui/content';
 import {ICardProps} from '@steroidsjs/core/ui/content/Card/Card';
 import {Button, CheckboxField, InputField} from '@steroidsjs/core/ui/form';
@@ -172,4 +173,3 @@ export const components: Record<string, {
         hasSizeControl: true,
     },
 };
-
