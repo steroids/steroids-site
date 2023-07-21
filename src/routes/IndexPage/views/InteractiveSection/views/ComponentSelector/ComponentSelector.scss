@@ -1,0 +1,109 @@
+@import "style/variables";
+
+.ComponentSelector {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 24px;
+    transform: translateY(52px);
+
+    @media (max-width: $tablet-width) {
+        transform: translateY(-54px);
+    }
+
+    @media (max-width: 800px) {
+        transform: none;
+    }
+
+    @media (max-width: 800px) {
+        flex-flow: column;
+        gap: 22px;
+        align-items: center;
+    }
+
+    &__decoration {
+        left: -24px;
+        width: 2px;
+        height: 184px;
+        background-color: $gray;
+
+        @media (max-width: $tablet-width) {
+            height: 136px;
+        }
+
+        @media (max-width: 800px) {
+            width: 300px;
+            height: 4px;
+            border-radius: 20px;
+        }
+
+        @media (max-width: 492px) {
+            width: 304px;
+        }
+    }
+
+    &__components {
+        position: relative;
+        flex-flow: column;
+        background-color: transparent;
+        gap: 12px;
+        padding: 0;
+
+        @media (max-width: 800px) {
+            flex-flow: row;
+            gap: 32px;
+        }
+
+        .ButtonView .ButtonView__link .ButtonView__text {
+            color: $custom-text-color;
+            font-size: $font-size-24;
+            font-weight: $font-weight-sm;
+            line-height: $line-height-34;
+            position: relative;
+            text-transform: capitalize;
+
+            @media (max-width: $tablet-width) {
+                font-size: $font-size-16;
+                line-height: $line-height-22;
+            }
+
+            @media (max-width: 800px) {
+                font-size: $font-size-24;
+                font-weight: 400;
+                line-height: $line-height-34;
+            }
+
+            &::before {
+                display: block;
+                position: absolute;
+                content: "";
+                width: 2px;
+                height: 44px;
+                top: -3px;
+                left: -26px;
+                background-color: $primary;
+                opacity: 0;
+                transition: opacity 150ms ease-in-out;
+
+                @media (max-width: $tablet-width) {
+                    top: -10px;
+                }
+
+                @media (max-width: 800px) {
+                    width: 100%;
+                    height: 4px;
+                    top: -26px;
+                    left: 0px;
+                    border-radius: 4px;
+                }
+            }
+        }
+
+        .ButtonView.ButtonView_link.ButtonGroupView__button_active .ButtonView__link .ButtonView__text {
+            color: $primary;
+
+            &:before {
+                opacity: 1;
+            }
+        }
+    }
+}

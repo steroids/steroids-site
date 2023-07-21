@@ -1,4 +1,7 @@
-@import '@steroidsjs/bootstrap/scss/variables/index';
+@import './customVariables';
+@import '~@steroidsjs/bootstrap/scss/variables';
+@import '~@steroidsjs/bootstrap/scss/mixins';
+
 
 $color-purple: #932981;
 $header-height: 86px;

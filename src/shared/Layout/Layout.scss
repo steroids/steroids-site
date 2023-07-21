@@ -1,6 +1,21 @@
 @import 'style/variables';
 
 .Layout {
-  background-color: $background-color;
-  min-height: 100vh;
+    background-color: $custom-main-background-color;
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100vh;
+
+    header {
+		flex: 0 0 auto;
+	}
+
+	main {
+		flex: 1 0 auto;
+	}
+
+	footer {
+		flex: 0 0 auto;
+	}
 }
+

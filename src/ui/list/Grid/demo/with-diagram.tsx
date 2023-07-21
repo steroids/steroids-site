@@ -112,7 +112,7 @@ export const columns = [
         },
         subtitleAttribute: 'name',
     },
-];
+] as any;
 
 /**
  * Cell with diagrams

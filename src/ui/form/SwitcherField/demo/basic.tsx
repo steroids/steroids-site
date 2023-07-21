@@ -1,5 +1,6 @@
 import * as React from 'react';
 import SwitcherField from '@steroidsjs/core/ui/form/SwitcherField';
+import onChange from 'ui/content/Accordion/demo/on-change';
 
 /**
  * Обычный пример использования SwitcherField.
