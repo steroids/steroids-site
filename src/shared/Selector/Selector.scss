@@ -1,0 +1,54 @@
+@import "style/variables";
+
+.Selector {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 24px;
+
+    &__decoration {
+        position: absolute;
+        left: -24px;
+        width: 2px;
+        height: 100%;
+        background-color: $gray;
+    }
+
+    &__elements {
+        position: relative;
+        flex-flow: column;
+        background-color: transparent;
+        gap: 12px;
+        padding: 0;
+
+        .ButtonView .ButtonView__link .ButtonView__text {
+            color: $custom-text-color;
+            font-size: $font-size-24;
+            font-weight: $font-weight-sm;
+            line-height: $line-height-34;
+            position: relative;
+            text-transform: capitalize;
+
+            &::before {
+                display: block;
+                position: absolute;
+                content: "";
+                width: 2px;
+                height: 44px;
+                top: -3px;
+                left: -24px;
+                background-color: $primary;
+                opacity: 0;
+                transition: opacity 150ms ease-in-out;
+            }
+        }
+
+        .ButtonView.ButtonView_link.ButtonGroupView__button_active .ButtonView__link .ButtonView__text {
+            color: $primary;
+
+            &:before {
+                opacity: 1;
+            }
+        }
+    }
+}

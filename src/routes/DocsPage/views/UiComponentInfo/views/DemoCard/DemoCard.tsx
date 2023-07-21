@@ -8,6 +8,7 @@ interface IDemoCardProps {
     title: string,
     demo: React.FC,
     sourceUrl: string,
+    id?: string;
 }
 
 export default function DemoCard(props: IDemoCardProps) {
@@ -15,7 +16,10 @@ export default function DemoCard(props: IDemoCardProps) {
     const {demo: Demo} = props;
 
     return (
-        <div className={bem.block()}>
+        <div
+            className={bem.block()}
+            id={props.id}
+        >
             <div className={bem.element('header')}>
                 <Title
                     className={bem.element('title')}

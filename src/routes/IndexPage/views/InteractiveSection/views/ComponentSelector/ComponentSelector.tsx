@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
-import ButtonGroup from '@steroidsjs/core/ui/nav/ButtonGroup';
+import Selector from 'shared/Selector';
 import {useScreen} from '@steroidsjs/core/hooks';
 import {components} from '../../../../../../data/interactiveBlockData';
 
@@ -13,11 +13,11 @@ interface IComponentSelectorProps {
 
 function ComponentSelector(props: IComponentSelectorProps) {
     const bem = useBem('ComponentSelector');
-    const {isPhone} = useScreen();
+    const {width} = useScreen();
 
     const actualComponents = React.useMemo(
         () => {
-            if (isPhone()) {
+            if (width <= 410) {
                 const newComponents = [...Object.keys(components)];
 
                 return newComponents.filter((component) => component !== 'card');
@@ -25,25 +25,18 @@ function ComponentSelector(props: IComponentSelectorProps) {
 
             return Object.keys(components);
         },
-        [isPhone],
+        [width],
     );
 
     return (
-        <div className={bem(
-            bem.block(),
-            props.className,
-        )}
-        >
-            <div className={bem.element('decoration')} />
-            <ButtonGroup
-                className={bem.element('components')}
-                items={actualComponents}
-                onClick={props.handleComponentClick}
-                buttonProps={{
-                    link: true,
-                }}
-            />
-        </div>
+        <Selector
+            items={actualComponents}
+            className={bem(
+                bem.block(),
+                props.className,
+            )}
+            onClick={props.handleComponentClick}
+        />
     );
 }
 

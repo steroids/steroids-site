@@ -1,15 +1,55 @@
-@import 'style/variables';
+@import "style/variables";
 
 .UiComponentInfo {
-  &__content {
-    padding: 44px 84px;
-  }
+    &__content {
+        padding: 44px 84px;
+        display: grid;
+        grid-template-areas:
+            "a"
+            "b";
 
-  &__text {
-    margin-bottom: 40px;
-  }
+        &-wrapper {
+            grid-area: a;
+            display: grid;
+            grid-template-areas: "c j";
+        }
+    }
 
-  &__description {
-    max-width: 790px;
-  }
+    &__text {
+        margin-bottom: 40px;
+    }
+
+    &__description {
+        max-width: 790px;
+    }
+
+    &__demos {
+        grid-area: c;
+    }
+
+    &__navigation {
+        position: sticky;
+        top: 32px;
+        height: fit-content;
+        margin-left: auto;
+        grid-area: j;
+        transform: translateX(-2px);
+
+        .ButtonView .ButtonView__link .ButtonView__text {
+            font-size: $font-size-16;
+            font-weight: $font-weight-sm;
+            line-height: $line-height-22;
+
+            &::before {
+                height: 100%;
+                top: 0;
+                left: 0;
+                left: -24px;
+            }
+        }
+    }
+
+    &__props {
+        grid-area: b;
+    }
 }
