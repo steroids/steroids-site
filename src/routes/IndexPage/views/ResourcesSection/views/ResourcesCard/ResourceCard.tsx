@@ -2,16 +2,16 @@ import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import {Card} from '@steroidsjs/core/ui/content';
 
-import './CreateCard.scss';
+import './ResourceCard.scss';
 
-interface ICreateCardProps {
+interface IResourceCardProps {
     img: string;
     title: string;
     description: string
 }
 
-export default function CreateCard(props: ICreateCardProps) {
-    const bem = useBem('CreateCard');
+export default function ResourceCard(props: IResourceCardProps) {
+    const bem = useBem('ResourceCard');
 
     return (
         <Card

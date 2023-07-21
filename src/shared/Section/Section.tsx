@@ -5,7 +5,7 @@ import {Text} from '@steroidsjs/core/ui/typography';
 import './Section.scss';
 
 const SEPARATOR = '-';
-const START_OF_LINE = 0;
+const START_OF_TITLE = 0;
 
 interface ISectionProps {
     title?: string;
@@ -23,7 +23,7 @@ export default function Section(props: ISectionProps) {
 
         if (hasSeparator) {
             const indexOfSeparator = title.indexOf(SEPARATOR);
-            const mainTitle = title.substring(START_OF_LINE, indexOfSeparator);
+            const mainTitle = title.substring(START_OF_TITLE, indexOfSeparator);
             const postScript = title.substring(indexOfSeparator, title.length).replace(SEPARATOR, '');
 
             return (

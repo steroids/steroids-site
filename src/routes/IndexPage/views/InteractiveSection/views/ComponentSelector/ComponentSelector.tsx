@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {memo} from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import ButtonGroup from '@steroidsjs/core/ui/nav/ButtonGroup';
 import {useScreen} from '@steroidsjs/core/hooks';
-import {COMPONENTS_LIST} from '../../../../../../../data/interactive/interfactiveData';
+import {components} from '../../../../../../data/interactiveBlockData';
 
 import './ComponentSelector.scss';
 
@@ -11,19 +11,19 @@ interface IComponentSelectorProps {
     className?: string;
 }
 
-export default function ComponentSelector(props: IComponentSelectorProps) {
+function ComponentSelector(props: IComponentSelectorProps) {
     const bem = useBem('ComponentSelector');
-
     const {isPhone} = useScreen();
+
     const actualComponents = React.useMemo(
         () => {
             if (isPhone()) {
-                const newComponents = [...COMPONENTS_LIST];
+                const newComponents = [...Object.keys(components)];
 
-                return newComponents.filter((component) => component.id !== 'Card');
+                return newComponents.filter((component) => component !== 'card');
             }
 
-            return COMPONENTS_LIST;
+            return Object.keys(components);
         },
         [isPhone],
     );
@@ -46,3 +46,5 @@ export default function ComponentSelector(props: IComponentSelectorProps) {
         </div>
     );
 }
+
+export default memo(ComponentSelector);

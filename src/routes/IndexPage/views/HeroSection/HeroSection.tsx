@@ -1,13 +1,15 @@
+/* eslint-disable no-multi-str */
 import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import {Button} from '@steroidsjs/core/ui/form';
 import {useDispatch, useScreen} from '@steroidsjs/core/hooks';
 import {ROUTE_DOCS} from 'constants/routes';
 import {goToRoute} from '@steroidsjs/core/actions/router';
-import {Icon} from '@steroidsjs/core/ui/content';
 import Section from 'shared/Section';
-import AnimatedIcons from '../AnimatedIcons';
-import {githubLink} from '../../../../../data/indexPageData';
+import {Text} from '@steroidsjs/core/ui/typography';
+import AnimatedIcons from './views/AnimatedIcons';
+import HeroTitle from './views/HeroTitle';
+import {githubLink, heroDescription} from '../../../../data/indexPageData';
 
 import './HeroSection.scss';
 
@@ -16,44 +18,25 @@ export default function HeroSection() {
     const dispatch = useDispatch();
     const {isPhone} = useScreen();
 
-    const onClickStart = React.useCallback(() => {
-        dispatch(goToRoute(ROUTE_DOCS));
-    }, [dispatch]);
-
     return (
         <Section className={bem.block()}>
-            <h1 className={bem.element('title')}>
-                <span className={bem.element('title-letters')}>
-                    Ster
-                </span>
-                <Icon
-                    name="logo"
-                    className={bem.element('title-icon')}
-                />
-                <span className={bem.element('title-letters')}>
-                    ids
-                </span>
-            </h1>
+            <HeroTitle />
             <div className={bem.element('buttons')}>
                 <Button
                     label={__('Начать')}
-                    onClick={onClickStart}
+                    onClick={() => dispatch(goToRoute(ROUTE_DOCS))}
                 />
                 <Button
                     url={githubLink}
                     target='_blank'
-                    label={isPhone ? __('Перейти в Git') : __('Перейти на Github')}
+                    label={isPhone() ? __('Перейти в Git') : __('Перейти на Github')}
                     outline
                 />
             </div>
-            <p
+            <Text
+                content={heroDescription}
                 className={bem.element('description')}
-            >
-                Наш Open-Source фреймворк Steroids&nbsp;&mdash;
-                это экосистема на&nbsp;основе React&nbsp;и Redux
-                с&nbsp;большим набором готовых компонентов,
-                уникальной архитектурой, UI&nbsp;Kit и&nbsp;SSR.
-            </p>
+            />
             <AnimatedIcons />
         </Section>
     );

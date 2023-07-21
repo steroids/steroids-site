@@ -3,99 +3,35 @@
 import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import {Icon} from '@steroidsjs/core/ui/content';
-
-import './Header.scss';
-import {DropDownField, InputField} from '@steroidsjs/core/ui/form';
 import {useDispatch, useScreen} from '@steroidsjs/core/hooks';
 import {goToRoute} from '@steroidsjs/core/actions/router';
 import {ROUTE_ROOT} from 'constants/routes';
-import {gsap} from 'gsap';
 import ThemesButtons from '../ThemesButtons';
-import DropDownFieldView from './views/DropDownFieldView';
-import InputFieldView from './views/InputFieldView';
+import HeaderLogo from './views/HeaderLogo';
+import SearchInput from './views/SearchInput';
+import CustomDropDown from './views/CustomDropDown';
 
-const FIRST_INDEX = 0;
-
-const languageItems = [
-    {
-        id: 1,
-        label: __('Ru'),
-    },
-    {
-        id: 2,
-        label: __('En'),
-    },
-];
-
-const EMPTY_VALUE = '';
-const SET_VALUE_DELAY = 500;
-const TABLET_WIDTH_SMALL = 768;
+import './Header.scss';
 
 export default function Header() {
     const bem = useBem('Header');
-    const {isTablet, isPhone} = useScreen();
+
+    const {isPhone} = useScreen();
     const dispatch = useDispatch();
-    const [prevValue, setPrevValue] = React.useState('');
     const [isBurgerOpened, setIsBurgerOpened] = React.useState(false);
-    const fieldRef = React.useRef<HTMLInputElement>(null);
-    const inputRef = React.useRef<HTMLInputElement>(null);
 
     const onClickLogo = React.useCallback(() => {
         dispatch(goToRoute(ROUTE_ROOT));
     }, [dispatch]);
 
-    const handleInputAnimation = React.useCallback((state: 'focus' | 'blur') => {
-        if (state === 'focus') {
-            gsap.to(fieldRef.current, {width: isTablet() ? '380px' : '480px', duration: 0.5, ease: 'power2.inOut'});
-
-            setTimeout(() => {
-                inputRef.current.value = prevValue;
-            }, SET_VALUE_DELAY);
-            return;
-        }
-
-        gsap.to(fieldRef.current, {width: '48px', duration: 0.5, ease: 'power2.inOut'});
-        setPrevValue(inputRef.current.value);
-        inputRef.current.value = EMPTY_VALUE;
-    }, [isTablet, prevValue]);
-
     return (
         <header className={bem.block()}>
-            <div
-                onClick={onClickLogo}
-                className={bem.element('logo')}
-            >
-                <Icon
-                    name='logo'
-                    className={bem.element('logo-icon')}
-                />
-                <h1 className={bem.element('logo-title')}>
-                    {__('Steroids')}
-                </h1>
-            </div>
+            <HeaderLogo onClick={onClickLogo} />
             {!isPhone() ? (
                 <div className={bem.element('controls')}>
-                    <InputField
-                        leadIcon="searchAlt"
-                        size='sm'
-                        className={bem.element('controls-input')}
-                        viewProps={{
-                            onFocus: () => handleInputAnimation('focus'),
-                            onBlur: () => handleInputAnimation('blur'),
-                            ref: fieldRef,
-                            inputRef,
-                        }}
-                        view={InputFieldView}
-                    />
+                    <SearchInput />
                     <ThemesButtons className={bem.element('controls-themes')} />
-                    <DropDownField
-                        view={DropDownFieldView}
-                        className={bem.element('controls-lang')}
-                        items={languageItems}
-                        selectFirst
-                        placeholder={languageItems[FIRST_INDEX].label}
-                        size="sm"
-                    />
+                    <CustomDropDown />
                 </div>
             )
                 : (

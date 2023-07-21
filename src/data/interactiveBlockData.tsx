@@ -6,29 +6,7 @@ import {IPropControl} from 'types/IPropControl';
 
 export const voidFunction = () => { };
 
-export const DEFAULT_SIZE = 'sm';
-export const DEFAULT_COMPONENT_NAME = 'Input';
-
-export const COMPONENTS_LIST = [
-    {
-        id: 'Input',
-        label: 'Input',
-    },
-    {
-        id: 'Button',
-        label: 'Button',
-    },
-    {
-        id: 'Card',
-        label: 'Card',
-    },
-    {
-        id: 'Checkbox',
-        label: 'Checkbox',
-    },
-];
-
-export const SIZES = [
+export const sizes = [
     {
         label: 'Small',
         id: 'sm',
@@ -43,13 +21,30 @@ export const SIZES = [
     },
 ];
 
-export const INPUT_DEFAULT_PROPS = {
+export const defaultButtonColor = 'primary';
+
+export const buttonColors = [
+    {
+        label: 'Primary',
+        id: 'primary',
+    },
+    {
+        label: 'Warning',
+        id: 'warning',
+    },
+    {
+        label: 'Danger',
+        id: 'danger',
+    },
+];
+
+export const defaultInputProps = {
     label: __('Логин'),
     leadIcon: 'user',
     placeholder: 'Placeholder',
 };
 
-export const INPUT_CONTROLS: IPropControl[] = [
+export const inputControls: IPropControl[] = [
     {
         id: 1,
         label: __('Отображение иконки'),
@@ -58,47 +53,40 @@ export const INPUT_CONTROLS: IPropControl[] = [
     },
     {
         id: 2,
-        label: __('Заполнитель'),
+        label: __('Placeholder'),
         enabled: false,
         propName: 'placeholder',
     },
     {
         id: 3,
-        label: __('Заголовок'),
+        label: __('Label'),
         enabled: false,
         propName: 'label',
     },
 ];
 
-export const BUTTON_DEFAULT_PROPS = {
+export const defaultButtonProps = {
     label: __('Отправить'),
     outline: true,
-    color: 'warning',
     isLoading: true,
 };
 
-export const BUTTON_CONTROLS: IPropControl[] = [
+export const buttonControls: IPropControl[] = [
     {
         id: 1,
-        label: __('Сменить стиль'),
+        label: __('Включить стиль outline'),
         propName: 'outline',
         enabled: false,
     },
     {
-        id: 2,
-        label: __('Сменить цвет'),
-        propName: 'color',
-        enabled: false,
-    },
-    {
         id: 3,
-        label: __('Состояние загрузки'),
+        label: __('Включить состояние загрузки'),
         propName: 'isLoading',
         enabled: false,
     },
 ];
 
-export const CARD_DEFAULT_PROPS: ICardProps = {
+export const defaultCardProps: ICardProps = {
     header: {
         avatar: {
             src: 'https://i.ibb.co/pxSYhX0/image-3.png',
@@ -112,10 +100,10 @@ export const CARD_DEFAULT_PROPS: ICardProps = {
     description: 'Some quick example text to build on the card title and make up the bulk of the cards content.',
 };
 
-export const CARD_CONTROLS: IPropControl[] = [
+export const cardControls: IPropControl[] = [
     {
         id: 1,
-        label: __('Отобразить шапку'),
+        label: __('Отобразить header'),
         enabled: false,
         propName: 'header',
     },
@@ -127,17 +115,17 @@ export const CARD_CONTROLS: IPropControl[] = [
     },
 ];
 
-export const CHECKBOX_DEFAULT_PROPS: ICheckboxFieldProps = {
-    label: __('Включить настроение'),
+export const defaultCheckboxProps: ICheckboxFieldProps = {
+    label: __('Согласие на обработку данных'),
     disabled: true,
     errors: [__('Произошла ошибка')],
 };
 
-export const CHECKBOX_CONTROLS: IPropControl[] = [
+export const checkboxControls: IPropControl[] = [
     {
         id: 1,
         enabled: false,
-        label: __('Состояние disabled'),
+        label: __('Включить состояние disabled'),
         propName: 'disabled',
     },
     {
@@ -148,29 +136,40 @@ export const CHECKBOX_CONTROLS: IPropControl[] = [
     },
 ];
 
-export const COMPONENTS: Record<string, {
+export const components: Record<string, {
     component: any,
     props: Record<string, any>,
     controls?: IPropControl[],
+    hasSizeControl: boolean,
+    hasColorControl: boolean,
 }> = {
-    Input: {
+    input: {
         component: InputField,
-        props: INPUT_DEFAULT_PROPS,
-        controls: INPUT_CONTROLS,
+        props: defaultInputProps,
+        controls: inputControls,
+        hasSizeControl: true,
+        hasColorControl: false,
     },
-    Button: {
+    button: {
         component: Button,
-        props: BUTTON_DEFAULT_PROPS,
-        controls: BUTTON_CONTROLS,
+        props: defaultButtonProps,
+        controls: buttonControls,
+        hasSizeControl: true,
+        hasColorControl: true,
     },
-    Card: {
+    card: {
         component: Card,
-        props: CARD_DEFAULT_PROPS,
-        controls: CARD_CONTROLS,
+        props: defaultCardProps,
+        controls: cardControls,
+        hasColorControl: false,
+        hasSizeControl: false,
     },
-    Checkbox: {
+    checkbox: {
         component: CheckboxField,
-        props: CHECKBOX_DEFAULT_PROPS,
-        controls: CHECKBOX_CONTROLS,
+        props: defaultCheckboxProps,
+        controls: checkboxControls,
+        hasColorControl: false,
+        hasSizeControl: true,
     },
 };
+

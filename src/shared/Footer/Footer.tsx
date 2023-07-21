@@ -1,7 +1,8 @@
 import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import Link from '@steroidsjs/core/ui/nav/Link';
-import {designEmail, footerColumns} from '../../../data/footerData';
+import {footerCredits} from 'data/indexPageData';
+import {designEmail, footerColumns} from '../../data/footerData';
 
 import './Footer.scss';
 
@@ -37,14 +38,14 @@ export default function Footer() {
             <div className={bem.element('bottom')}>
                 <div className={bem.element('bottom-left')}>
                     <small>
-                        © Steroids 2023
+                        {footerCredits}
                     </small>
                     <Link className={bem.element('link')}>
-                        Политика конфиденциальности
+                        {__('Политика конфиденциальности')}
                     </Link>
                 </div>
                 <div className={bem.element('bottom-right')}>
-                    Сделано в KozhinDev
+                    {__('Сделано в KozhinDev')}
                 </div>
             </div>
         </footer>

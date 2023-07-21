@@ -4,8 +4,8 @@ import useBem from '@steroidsjs/core/hooks/useBem';
 import {Options, Splide, SplideSlide} from '@splidejs/react-splide';
 import Section from 'shared/Section';
 import {useScreen} from '@steroidsjs/core/hooks';
-import {examplesCards} from '../../../../../data/indexPageData';
-import ExampleCard from '../ExampleCard';
+import {examplesCards} from '../../../../data/indexPageData';
+import ExampleCard from './views/ExampleCard';
 
 import './ExamplesSection.scss';
 

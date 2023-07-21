@@ -1,19 +1,20 @@
-@import "style/variables";
+@import 'style/variables';
 
 :root {
-    --create-background-color: #ffffff;
+    --resource-background-color: #ffffff;
 }
 
 html[data-theme="dark"] {
-    --create-background-color: #333646;
+    --resource-background-color: #333646;
 }
 
-$create-background-color: var(--create-background-color);
+$resource-background-color: var(--resource-background-color);
 
-.CreateSection {
+
+.ResourcesSection {
     padding-top: 80px;
     padding-bottom: 160px;
-    background-color: $create-background-color;
+    background-color: $resource-background-color;
 
     @media (max-width: $tablet-width) {
         padding-top: 64px;
@@ -45,7 +46,7 @@ $create-background-color: var(--create-background-color);
             flex-flow: row wrap;
         }
 
-        .CreateCard {
+        .ResourceCard {
             width: 21.6666vw;
             height: 424px;
             @media (max-width: $tablet-width) {

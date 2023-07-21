@@ -1,9 +1,3 @@
-import Card from '@steroidsjs/core/ui/content/Card';
-import Calendar from '@steroidsjs/core/ui/content/Calendar';
-import PasswordField from '@steroidsjs/core/ui/form/PasswordField';
-import {voidFunction} from 'ui/content/Card/demo/All-variants';
-import description from 'ui/content/Alert/demo/description';
-
 /* eslint-disable no-multi-str */
 export const githubLink = 'https://github.com/steroids/react';
 export const featureCards = [
@@ -42,7 +36,13 @@ export const advantagesCards = [
     },
 ];
 
-export const createCards = [
+export const advantagesDescription = __('Наш Open-Source \
+фреймворк Steroids \
+это экосистема на основе \
+React и Redux с большим набором готовых \
+компонентов, уникальной архитектурой, UI Kit и SSR');
+
+export const resourcesCards = [
     {
         img: 'https://i.ibb.co/6JQcWrX/Frame-338670.jpg',
         title: 'На старт',
@@ -60,21 +60,33 @@ export const createCards = [
     },
 ];
 
+export const resourcesDescription = __('Наш Open-Source фреймворк Steroids \
+это экосистема наоснове React \
+иRedux сбольшим набором готовых компонентов, \
+уникальной архитектурой, UIKit иSSR');
 export const examplesCards = [
     {
         label: 'Датапикер',
-        img: '/images/calendar.png',
+        img: '/images/calendar.webp',
     },
     {
         label: 'Карточка',
-        img: '/images/card.png',
+        img: '/images/card.webp',
     },
     {
         label: 'Пароль',
-        img: '/images/password.png',
+        img: '/images/password.webp',
     },
     {
         label: '',
         img: '',
+        isMoreCard: true,
     },
 ];
+
+export const heroDescription = __('Наш Open-Source фреймворк Steroids \
+                это экосистема на основе React и Redux \
+                с большим набором готовых компонентов, \
+                уникальной архитектурой, UI Kit и SSR.');
+
+export const footerCredits = '© Steroids 2023';
