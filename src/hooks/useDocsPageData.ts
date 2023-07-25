@@ -1,7 +1,7 @@
 import React from 'react';
 import {INavItem} from '@steroidsjs/core/ui/nav/Nav/Nav';
 import {getDemosAndTreeItems, getDemosTree} from 'helpers/demosHelpers';
-import {getComponentsTreeItem, getUiComponentTreeItem} from 'helpers/treeItems';
+import {getComponentsTreeItem, getGettingStartedTreeItem, getUiComponentTreeItem} from 'helpers/treeItems';
 import autoDocs from '@steroidsjs/core/docs-autogen-result.json';
 
 export const useDocsPageData = () => {
@@ -14,6 +14,7 @@ export const useDocsPageData = () => {
 
         setDemosComponents(demos);
         setTreeItems([
+            getGettingStartedTreeItem(),
             getComponentsTreeItem(autoDocs),
             getUiComponentTreeItem(demosTreeItems),
         ]);
