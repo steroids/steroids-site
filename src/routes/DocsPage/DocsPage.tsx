@@ -25,7 +25,7 @@ export default function DocsPage() {
                 category: CATEGORY_GETTING_STARTED,
             }));
         }
-    }, [category]);
+    }, [category, dispatch]);
 
     return (
         <div className={bem.block()}>
