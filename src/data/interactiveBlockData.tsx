@@ -172,4 +172,3 @@ export const components: Record<string, {
         hasSizeControl: true,
     },
 };
-

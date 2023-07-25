@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable func-names */
 /* eslint-disable no-undef */
 import React from 'react';
 
