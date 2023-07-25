@@ -17,7 +17,10 @@ export default function DemoCard(props: IDemoCardProps) {
 
     return (
         <div
-            className={bem.block()}
+            className={bem(
+                bem.block(),
+                'element-to-observe',
+            )}
             id={props.id}
         >
             <div className={bem.element('header')}>

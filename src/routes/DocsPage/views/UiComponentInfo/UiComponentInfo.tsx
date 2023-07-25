@@ -2,16 +2,19 @@ import React from 'react';
 import {useBem, useSelector} from '@steroidsjs/core/hooks';
 import {getRouteParam} from '@steroidsjs/core/reducers/router';
 import {PATH_ROUTE_PARAM} from 'constants/routeParams';
-import autoDocs from '@steroidsjs/core/docs-autogen-result.json';
 import {Title, Text} from '@steroidsjs/core/ui/typography';
 import {getComponentNameByRouteParam, getDemosByRouteParam} from 'helpers/demosHelpers';
 import Selector from 'shared/Selector';
 import {scrollToElement} from 'utils/utils';
+import {useCollision} from 'hooks/useCollision';
+import {useUIComponentInfo} from 'hooks/useUIComponentInfo';
 import Demos from './views/Demos';
 import ComponentPropsInfo from './views/ComponentPropsInfo';
 import Banner from './views/Banner';
 
 import './UiComponentInfo.scss';
+
+const ELEMENTS_TO_OBSERVE_CLASS = '.element-to-observe';
 
 interface IUiComponentInfoProps {
     demosComponents: any;
@@ -19,33 +22,27 @@ interface IUiComponentInfoProps {
 
 export default function UiComponentInfo(props: IUiComponentInfoProps) {
     const bem = useBem('UiComponentInfo');
-    const routeParam = useSelector(state => getRouteParam(state, PATH_ROUTE_PARAM));
-    const componentName = getComponentNameByRouteParam(routeParam);
-    const componentInfo = autoDocs.interfaces[`I${componentName}Props`];
+    const triggerElementRef = React.useRef(null);
 
-    const demos = React.useMemo(
-        () => getDemosByRouteParam(props.demosComponents, routeParam),
-        [props, routeParam],
-    );
+    const {
+        routeParam,
+        selectedDemo,
+        setSelectedDemo,
+        componentName,
+        demos,
+        demosAnchors,
+        componentInfo,
+    } = useUIComponentInfo(props.demosComponents);
 
-    const demosAnchors = React.useMemo(() => {
-        if (!demos) {
-            return null;
-        }
+    const {toggleOffCollision} = useCollision(triggerElementRef, (el) => {
+        setSelectedDemo(el.id);
+    }, ELEMENTS_TO_OBSERVE_CLASS, true);
 
-        return demos.map((demo) => ({id: demo.id, label: demo.title}));
-    }, [demos]);
-
-    const [selectedDemo, setSelectedDemo] = React.useState(demosAnchors[0]?.id);
-
-    const handleSelect = (id: string) => {
+    const handleSelect = React.useCallback((id: string) => {
+        toggleOffCollision();
         setSelectedDemo(id);
         scrollToElement(`#${id}`);
-    };
-
-    React.useEffect(() => {
-        setSelectedDemo(demosAnchors[0]?.id);
-    }, [demosAnchors]);
+    }, [setSelectedDemo, toggleOffCollision]);
 
     if (!routeParam) {
         return null;
@@ -76,6 +73,10 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
                     className={bem.element('props')}
                 />
             </div>
+            <span
+                className={bem.element('trigger')}
+                ref={triggerElementRef}
+            />
         </div>
     );
 }

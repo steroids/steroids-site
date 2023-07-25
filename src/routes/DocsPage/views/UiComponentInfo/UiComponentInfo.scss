@@ -52,4 +52,14 @@
     &__props {
         grid-area: b;
     }
+
+    &__trigger { 
+        position: fixed;
+        top: 1.5%;
+        left: 0;
+        width: 100%;
+        background-color: black;
+        pointer-events: none;
+        height: 1px;
+    }
 }
