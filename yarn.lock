@@ -2151,17 +2151,30 @@
     "@sentry/types" "5.30.0"
     tslib "^1.9.3"
 
+"@splidejs/react-splide@^0.7.12":
+  version "0.7.12"
+  resolved "https://registry.yarnpkg.com/@splidejs/react-splide/-/react-splide-0.7.12.tgz#c7efe231bbbb6812da64689178b6c871269baff5"
+  integrity sha512-UfXH+j47jsMc4x5HA/aOwuuHPqn6y9+ZTNYPWDRD8iLKvIVMZlzq2unjUEvyDAU+TTVPZOXkG2Ojeoz0P4AkZw==
+  dependencies:
+    "@splidejs/splide" "^4.1.3"
+
 "@splidejs/splide-extension-auto-scroll@^0.5.3":
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/@splidejs/splide-extension-auto-scroll/-/splide-extension-auto-scroll-0.5.3.tgz#3d3f61229b27fae7923dba62bcd13f6e1b798410"
   integrity sha512-vPJ8Tn4uebnHa6scBcIypW154HTDenkazX9Nw8T1na44n7OtLoz40R4RoirteV7taPWW7w7ZZPCiEpi2ReYFAQ==
 
-"@steroidsjs/bootstrap@^3.0.0-beta.73":
-  version "3.0.0-beta.73"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.73.tgz#364d7113783f315fe465f279419ce3a6087a5abe"
-  integrity sha512-wjG4mFe0QbEUdbKNoHCM9JOMtap9EL6hx2olA39E8ee5fnPB506da+FPrI9DVETbberM34P81TjyBszE0q9r0Q==
+"@splidejs/splide@^4.1.3", "@splidejs/splide@^4.1.4":
+  version "4.1.4"
+  resolved "https://registry.yarnpkg.com/@splidejs/splide/-/splide-4.1.4.tgz#02d029360569e7d75d28357a9727fc48322015a3"
+  integrity sha512-5I30evTJcAJQXt6vJ26g2xEkG+l1nXcpEw4xpKh0/FWQ8ozmAeTbtniVtVmz2sH1Es3vgfC4SS8B2X4o5JMptA==
+
+"@steroidsjs/bootstrap@^3.0.0-beta.81":
+  version "3.0.0-beta.81"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.81.tgz#0bb944f3fa2d8f35b1094c0e8ee7f54f147f32a6"
+  integrity sha512-pb4r7fsv1MzTQLVUD/r54Jtc71UOFhdQQR/UlRn/wksk0PO6F/5p0CFahpxVplOfZIbWzQGs6ME9OYSUKV/aTg==
   dependencies:
     "@ckeditor/ckeditor5-react" "^3.0.2"
+    "@splidejs/react-splide" "^0.7.12"
     "@steroidsjs/ckeditor5" "^27.0.2-rc.2"
     date-fns "^2.29.3"
     lodash "^4.17.20"
@@ -2238,14 +2251,15 @@
     "@ckeditor/ckeditor5-widget" "^27.0.0"
     "@ckeditor/ckeditor5-word-count" "^27.0.0"
 
-"@steroidsjs/core@^3.0.0-beta.52":
-  version "3.0.0-beta.52"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.0-beta.52.tgz#49c92406c1f11e8547aa9c3ed6bf0a4ae934d78f"
-  integrity sha512-s+JCeBaxh8ArSV24dVnbDS3RS7S19vY1k+PpvPaxLwxnVNmT5vzuxecE+y7i9eZY5dNSk4/zHeAUZfTPmw8TTQ==
+"@steroidsjs/core@^3.0.0-beta.60":
+  version "3.0.0-beta.60"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.0-beta.60.tgz#ce2e7d960ebd59e594280cd7e9b60e38a2f4a85f"
+  integrity sha512-hL5fGPKgmRicTNEjedA8V47ZYPP8nb55kj2cgo/uvp5BHCeh28JBUsFc+N4C5GXRZgorOn76A9uO7s9Z9DU90Q==
   dependencies:
     "@maskito/core" "^0.12.1"
     "@maskito/kit" "^0.12.1"
     "@maskito/react" "^0.12.1"
+    "@splidejs/react-splide" "^0.7.12"
     axios "^0.21.1"
     connected-react-router "^6.9.3"
     domready "^1.0.8"
@@ -7431,10 +7445,10 @@ grapheme-splitter@^1.0.4:
   resolved "https://registry.yarnpkg.com/grapheme-splitter/-/grapheme-splitter-1.0.4.tgz#9cf3a665c6247479896834af35cf1dbb4400767e"
   integrity sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==
 
-gsap@^3.11.5:
-  version "3.11.5"
-  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.11.5.tgz#97ef65091f43868be387803f9db277e8cd5bd041"
-  integrity sha512-Q89nKCLgoX5xUjznh9LcaIUkz54k1voNucT1Rpf9SJNFIQznBwFqt5qUUQbeVInFyN/n18OUJkpeI6CNEDt74w==
+gsap@^3.12.2:
+  version "3.12.2"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.12.2.tgz#6e88203eed360761cbf2a2cb3a8d702aa87f3f6d"
+  integrity sha512-EkYnpG8qHgYBFAwsgsGEqvT1WUidX0tt/ijepx7z8EUJHElykg91RvW1XbkT59T0gZzzszOpjQv7SE41XuIXyQ==
 
 gud@^1.0.0:
   version "1.0.0"

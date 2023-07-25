@@ -11,60 +11,60 @@ export default () => (
     <div style={{display: 'flex', gridGap: '20px'}}>
         <AvatarGroup>
             <Avatar
-                size='small'
+                size='sm'
                 src='https://i.ibb.co/1fWbXCt/F-1.png'
             />
             <Avatar
-                size='small'
+                size='sm'
                 title='Kozhin Dev'
             />
             <Avatar
-                size='small'
+                size='sm'
                 src='https://i.ibb.co/1fWbXCt/F-1.png'
                 status
             />
             <Avatar
-                size='small'
+                size='sm'
                 title='Kozhin Dev'
                 status
             />
         </AvatarGroup>
         <AvatarGroup maxCount={2}>
             <Avatar
-                size='middle'
+                size='md'
                 src='https://i.ibb.co/1fWbXCt/F-1.png'
             />
             <Avatar
-                size='middle'
+                size='md'
                 title='Kozhin Dev'
             />
             <Avatar
-                size='middle'
+                size='md'
                 src='https://i.ibb.co/1fWbXCt/F-1.png'
                 status
             />
             <Avatar
-                size='middle'
+                size='md'
                 title='Kozhin Dev'
                 status
             />
         </AvatarGroup>
         <AvatarGroup>
             <Avatar
-                size='large'
+                size='lg'
                 src='https://i.ibb.co/1fWbXCt/F-1.png'
             />
             <Avatar
-                size='large'
+                size='lg'
                 title='Kozhin Dev'
             />
             <Avatar
-                size='large'
+                size='lg'
                 src='https://i.ibb.co/1fWbXCt/F-1.png'
                 status
             />
             <Avatar
-                size='large'
+                size='lg'
                 title='Kozhin Dev'
                 status
             />

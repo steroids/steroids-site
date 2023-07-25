@@ -1,7 +1,5 @@
 import * as React from 'react';
 import Header from '@steroidsjs/core/ui/layout/Header';
-import DemoItems from 'enums/demoItems';
-import {ROUTE_ROOT} from 'constants/routes';
 
 /**
  * Обычный пример использования Header.
@@ -21,17 +19,16 @@ const navItems = [
     {
         id: 3,
         label: 'Контакты',
+        disabled: true,
     },
 ];
 
 export default () => (
-    <div style={{minWidth: '400px'}}>
-        <Header
-            logo={{title: 'Logo'}}
-            nav={{
-                items: navItems,
-                layout: 'link',
-            }}
-        />
-    </div>
+    <Header
+        logo={{icon: 'kozhinDev', title: 'KozhinDev'}}
+        nav={{
+            items: navItems,
+            layout: 'navbar',
+        }}
+    />
 );

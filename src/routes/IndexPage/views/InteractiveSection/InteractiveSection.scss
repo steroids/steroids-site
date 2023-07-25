@@ -1,0 +1,90 @@
+@import "style/variables";
+
+.InteractiveSection {
+    padding-top: 80px;
+    padding-bottom: 160px;
+
+    @media (max-width: $tablet-width) {
+        padding-top: 64px;
+        padding-bottom: 80px;
+    }
+
+    @media (max-width: 800px) {
+        padding-bottom: 40px;
+    }
+
+    @media (max-width: 320px) {
+        padding: 24px 8px;
+    }
+
+    .Section__title {
+        margin-bottom: 0;
+    }
+
+    .Section__description {
+        display: none;
+    }
+
+    &__wrapper {
+        width: 100%;
+        margin-top: 64px;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+
+        @media (max-width: 1244px) {
+            margin-top: 32px;
+            display: grid;
+            grid-template-areas:
+                "a b"
+                "c c";
+        }
+
+        @media (max-width: 800px) {
+            grid-template-areas:
+                "b"
+                "a"
+                "c";
+        }
+    }
+
+    &__selector {
+        grid-area: a;
+
+        @media (max-width: 800px) {
+            margin-bottom: 16px;
+        }
+        @media (max-width: $mobile-width-small) {
+            margin-bottom: 14px;
+        }
+    }
+
+    &__present {
+        margin-right: 7.1354vw;
+        margin-left: 18.9vw;
+        grid-area: b;
+
+        @media (max-width: 1244px) {
+            margin: 0;
+            margin-left: -72px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 800px) {
+            margin: 0;
+            margin-bottom: 16px;
+        }
+    }
+
+    &__options {
+        grid-area: c;
+
+        @media (max-width: 1244px) {
+            margin-top: 6px;
+        }
+
+        @media (max-width: 800px) {
+            margin-top: 14px;
+        }
+    }
+}

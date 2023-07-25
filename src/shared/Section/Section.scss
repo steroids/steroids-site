@@ -1,0 +1,82 @@
+@import "style/variables";
+
+.Section {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 0 32px;
+
+    @media (max-width: $tablet-width) {
+        padding: 0 16px;
+    }
+
+    @media (max-width: $mobile-width-small) {
+        padding: 0;
+    }
+
+    &_isGray {
+        background-color: $custom-background-color-f9-additional;
+    }
+
+    &__title {
+        position: relative;
+        font-size: $font-size-32;
+        font-weight: $font-weight-sm;
+        line-height: $line-height-40;
+        margin-bottom: 8px;
+        color: $custom-text-color;
+        z-index: 4;
+
+        @media (max-width: $mobile-width-small) {
+            font-size: $font-size-18;
+            line-height: $line-height-24;
+        }
+
+        &-postscript {
+            position: relative;
+            color: $grayD3;
+            z-index: 3;
+
+            &:before {
+                z-index: 0;
+                position: absolute;
+                content: "";
+                width: 52px;
+                height: 2px;
+                background-color: $grayD3;
+                transform: translateX(-2px) translateY(26px);
+
+                @media (max-width: $mobile-width-small) {
+                    transform: translateY(16px) translateX(-10px);
+                    height: 1px;
+                    width: 36px;
+                }
+            }
+        }
+    }
+
+    &__description {
+        width: 37.3958vw;
+        text-align: center;
+        font-size: $font-size-16;
+        font-weight: $font-weight-sm;
+        line-height: $line-height-22;
+        margin-bottom: 64px;
+        color: $custom-text-decr-color;
+
+        @media (max-width: $tablet-width) {
+            width: 70.1171vw;
+            margin-bottom: 32px;
+        }
+
+        @media (max-width: $tablet-width-small) {
+            width: 88.5416vw;
+        }
+
+        @media (max-width: $mobile-width-small) {
+            font-size: $font-size-12;
+            font-weight: 300;
+            line-height: $line-height-16;
+        }
+    }
+}

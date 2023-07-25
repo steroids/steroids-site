@@ -1,0 +1,58 @@
+@import "style/variables";
+
+.HeroTitle {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-bottom: 30px;
+    color: $custom-text-color;
+
+    @media (max-width: $mobile-width-small) {
+        margin-bottom: 26px;
+    }
+
+    &__letters {
+        font-size: $font-size-80;
+        font-weight: 700;
+        line-height: $line-height-96;
+
+        &:first-child {
+            transform: translateX(3px);
+
+            @media (max-width: 384px) {
+                transform: translateX(-4px) translateY(2px);
+            }
+        }
+
+        &:last-child {
+            transform: translateX(-4px) translateY(1px);
+
+            @media (max-width: 384px) {
+                transform: translateX(2px) translateY(2px);
+            }
+        }
+
+        @media (max-width: 384px) {
+            font-size: $font-size-48;
+            line-height: $line-height-60;
+        }
+    }
+
+    &__icon {
+        width: 115px;
+        height: 115px;
+
+        transform: scale(1.4) translateX(0px) translateY(4px);
+
+        @media (max-width: 384px) {
+            width: 60px;
+            height: 60px;
+            transform: scale(1.45) translateY(6px);
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

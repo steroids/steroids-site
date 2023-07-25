@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import Link from '@steroidsjs/core/ui/nav/Link';
 import {ROUTE_DOCS} from 'constants/routes';
 import React from 'react';

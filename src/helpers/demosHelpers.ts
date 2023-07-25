@@ -2,8 +2,12 @@ import _upperFirst from 'lodash-es/upperFirst';
 import _set from 'lodash-es/set';
 import _get from 'lodash-es/get';
 import _last from 'lodash-es/last';
+import __toLower from 'lodash-es/toLower';
 import {CATEGORY_UI} from 'constants/categories';
 import {ROUTE_DOCS} from 'constants/routes';
+import {GITHUB_URL_TO_UI_FOLDER} from 'constants/githubUrl';
+
+const FOLDER_SEPARATOR = '-';
 
 const addToDemosTree = (demosContext: any, demosTree: Record<string, any>) => (fileName: string) => {
     const matches = fileName.match(/^\.\/(.*)\/demo\/([^^/]+)\.(js|ts)x?$/);
@@ -39,7 +43,7 @@ export const getDemosAndTreeItems = (demosTree: Record<string, any>) => {
         .keys(_demosTree || {})
         .map(demosTreeItemId => {
             const item = _demosTree[demosTreeItemId];
-            const path = item.path ? item.path.join('-') : null;
+            const path = item.path ? item.path.join(FOLDER_SEPARATOR) : null;
 
             if (path) {
                 demos[path] = item.demos;
@@ -62,9 +66,17 @@ export const getDemosAndTreeItems = (demosTree: Record<string, any>) => {
     };
 };
 
-const toDemoFormat = ([title, component]) => ({
+const createSourceUrl = (generalPath: string, componentRouteParam: string, demoTitle: string) => {
+    const [groupFolder, componentFolder] = componentRouteParam.split(FOLDER_SEPARATOR);
+
+    return `${generalPath}/${groupFolder}/${componentFolder}/demo/${demoTitle}.tsx`;
+};
+
+const toDemoFormat = (routeParam: string) => ([title, component]) => ({
     title: _upperFirst(title.replaceAll('-', ' ')),
     component,
+    sourceUrl: createSourceUrl(GITHUB_URL_TO_UI_FOLDER, routeParam, title),
+    id: title.toLowerCase(),
 });
 
 export const getDemosByRouteParam = (
@@ -72,6 +84,6 @@ export const getDemosByRouteParam = (
     routeParam: string,
 ) => Object
     .entries(demos[routeParam] || {})
-    .map(toDemoFormat);
+    .map(toDemoFormat(routeParam));
 
-export const getComponentNameByRouteParam = (routeParam: string) => _last(routeParam?.split('-'));
+export const getComponentNameByRouteParam = (routeParam: string) => _last(routeParam?.split(FOLDER_SEPARATOR));

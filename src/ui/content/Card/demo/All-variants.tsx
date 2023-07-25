@@ -8,7 +8,7 @@ import {ILinkProps} from '@steroidsjs/core/ui/nav/Link/Link';
 const CARD_TITLE = 'Card title';
 const CARD_DESCRIPTION = 'Some quick example text to build on the card title and make up the bulk of the cards content.';
 
-const voidFunction = () => { };
+export const voidFunction = () => { };
 
 const buttons = [
     {
@@ -166,7 +166,7 @@ export default () => (
         {Object.entries(cardsRows).map(([_, cardsRow], cardsRowIndex) => (
             <div
                 key={cardsRowIndex}
-                style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', columnGap: '20px'}}
+                style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px'}}
             >
                 {cardsRow.map((card, cardIndex) => (
                     <Card

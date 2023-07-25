@@ -6,8 +6,10 @@ import LocaleComponent from '@steroidsjs/core/components/LocaleComponent';
 import ResourceComponent from '@steroidsjs/core/components/ResourceComponent';
 import {gsap} from 'gsap';
 import {ScrollToPlugin} from 'gsap/ScrollToPlugin';
+import {icons} from 'icons';
 
 import 'style/index.scss';
+import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 
 export default function Application() {
     const {renderApplication} = useApplication({
@@ -15,6 +17,7 @@ export default function Application() {
         routes: () => require('routes').default,
         layoutView: () => require('shared/Layout').default,
         screen: {},
+        theme: {},
         components: {
             locale: LocaleComponent,
             http: HttpComponent,
@@ -24,7 +27,7 @@ export default function Application() {
             ui.addViews(require('./ui/bootstrap').default);
             ui.addFields(require('@steroidsjs/core/ui/form').default);
             ui.addFormatters(require('@steroidsjs/core/ui/format').default);
-            ui.addIcons(require('@steroidsjs/bootstrap/icons/index').default);
+            ui.addIcons(require('@steroidsjs/bootstrap/icons/index').default(icons));
         },
     });
 
