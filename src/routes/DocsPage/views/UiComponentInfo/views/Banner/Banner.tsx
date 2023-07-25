@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import {Title} from '@steroidsjs/core/ui/typography';
 
@@ -8,7 +8,7 @@ interface IBannerProps {
     componentName: string,
 }
 
-export default function Banner(props: IBannerProps) {
+function Banner(props: IBannerProps) {
     const bem = useBem('Banner');
 
     return (
@@ -20,3 +20,5 @@ export default function Banner(props: IBannerProps) {
         </div>
     );
 }
+
+export default memo(Banner);

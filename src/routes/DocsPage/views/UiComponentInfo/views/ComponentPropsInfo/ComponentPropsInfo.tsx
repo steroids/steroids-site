@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import _isEmpty from 'lodash-es/isEmpty';
 import autoDocs from '@steroidsjs/core/docs-autogen-result.json';
@@ -11,11 +11,12 @@ import './ComponentPropsInfo.scss';
 
 interface IComponentPropsInfoProps {
     componentInfo: IEntityInfo;
+    className?: string;
 }
 
 const API_TABLE_ID = 'apiTable';
 
-export default function ComponentPropsInfo(props: IComponentPropsInfoProps) {
+function ComponentPropsInfo(props: IComponentPropsInfoProps) {
     const bem = useBem('ComponentPropsInfo');
 
     const nestedInterfaces = React.useMemo(
@@ -24,7 +25,11 @@ export default function ComponentPropsInfo(props: IComponentPropsInfoProps) {
     );
 
     return (
-        <div className={bem.block()}>
+        <div className={bem(
+            bem.block(),
+            props.className,
+        )}
+        >
             <ApiTable
                 className={bem.element('table')}
                 entityInfo={props.componentInfo}
@@ -49,3 +54,5 @@ export default function ComponentPropsInfo(props: IComponentPropsInfoProps) {
         </div>
     );
 }
+
+export default memo(ComponentPropsInfo);

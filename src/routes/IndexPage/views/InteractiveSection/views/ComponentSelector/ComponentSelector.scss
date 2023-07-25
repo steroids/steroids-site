@@ -1,13 +1,10 @@
 @import "style/variables";
 
 .ComponentSelector {
-    display: flex;
-    flex-flow: row nowrap;
-    gap: 24px;
-    transform: translateY(52px);
+    transform: translateY(44px) translateX(24px);
 
     @media (max-width: $tablet-width) {
-        transform: translateY(-54px);
+        transform: translateY(-21px) translateX(26px);
     }
 
     @media (max-width: 800px) {
@@ -20,47 +17,33 @@
         align-items: center;
     }
 
-    &__decoration {
-        left: -24px;
-        width: 2px;
-        height: 184px;
-        background-color: $gray;
-
+    .Selector__decoration {
         @media (max-width: $tablet-width) {
-            height: 136px;
+            height: 130px;
+            left: -26px;
         }
 
         @media (max-width: 800px) {
-            width: 300px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 380px;
             height: 4px;
             border-radius: 20px;
         }
 
-        @media (max-width: 492px) {
-            width: 304px;
+        @media (max-width: 410px) {
+            width: 300px;
         }
     }
 
-    &__components {
-        position: relative;
-        flex-flow: column;
-        background-color: transparent;
-        gap: 12px;
-        padding: 0;
-
+    .Selector__elements {
         @media (max-width: 800px) {
+            margin-top: 26px;
             flex-flow: row;
             gap: 32px;
         }
 
         .ButtonView .ButtonView__link .ButtonView__text {
-            color: $custom-text-color;
-            font-size: $font-size-24;
-            font-weight: $font-weight-sm;
-            line-height: $line-height-34;
-            position: relative;
-            text-transform: capitalize;
-
             @media (max-width: $tablet-width) {
                 font-size: $font-size-16;
                 line-height: $line-height-22;
@@ -73,19 +56,10 @@
             }
 
             &::before {
-                display: block;
-                position: absolute;
-                content: "";
-                width: 2px;
-                height: 44px;
-                top: -3px;
-                left: -26px;
-                background-color: $primary;
-                opacity: 0;
-                transition: opacity 150ms ease-in-out;
-
                 @media (max-width: $tablet-width) {
-                    top: -10px;
+                    top: 0px;
+                    height: 30px;
+                    left: -26px;
                 }
 
                 @media (max-width: 800px) {
@@ -95,14 +69,6 @@
                     left: 0px;
                     border-radius: 4px;
                 }
-            }
-        }
-
-        .ButtonView.ButtonView_link.ButtonGroupView__button_active .ButtonView__link .ButtonView__text {
-            color: $primary;
-
-            &:before {
-                opacity: 1;
             }
         }
     }
