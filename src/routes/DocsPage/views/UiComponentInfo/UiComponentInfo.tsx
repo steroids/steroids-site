@@ -32,6 +32,7 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
         demos,
         demosAnchors,
         componentInfo,
+        componentSmallDescription,
     } = useUIComponentInfo(props.demosComponents);
 
     const {toggleOffCollision} = useCollision(triggerElementRef, (el) => {
@@ -50,7 +51,10 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
 
     return (
         <div className={bem.block()}>
-            <Banner componentName={componentName} />
+            <Banner
+                componentName={componentName}
+                smallDescription={componentSmallDescription}
+            />
             <div className={bem.element('content')}>
                 <div className={bem.element('content-wrapper')}>
                     <div className={bem.element('description')}>

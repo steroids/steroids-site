@@ -9,6 +9,7 @@ export const useUIComponentInfo = (demosComponents: any) => {
     const routeParam = useSelector(state => getRouteParam(state, PATH_ROUTE_PARAM));
     const componentName = getComponentNameByRouteParam(routeParam);
     const componentInfo = autoDocs.interfaces[`I${componentName}Props`];
+    const componentSmallDescription = 'When choosing the right button for an action, consider the level of emphasis each button type provides.';
 
     const demos = React.useMemo(
         () => getDemosByRouteParam(demosComponents, routeParam),
@@ -37,5 +38,6 @@ export const useUIComponentInfo = (demosComponents: any) => {
         demos,
         demosAnchors,
         componentInfo,
+        componentSmallDescription,
     };
 };

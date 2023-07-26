@@ -15,4 +15,5 @@ export const icons = {
     burger: require('./svgs/burger.svg'),
     featureIcon: require('./svgs/feature-icon.svg'),
     featureIconBlack: require('./svgs/feature-icon-black.svg'),
+    'banner-frame': require('./svgs/banner-frame.svg'),
 };
