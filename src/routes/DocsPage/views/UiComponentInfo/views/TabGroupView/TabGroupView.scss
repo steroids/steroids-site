@@ -1,0 +1,67 @@
+@import "style/variables";
+
+:root {
+    --tab-text-active-color: #312c3a;
+    --tab-text-color: #312c3a;
+    --tab-icon-color: #323232;
+    --tab-icon-active-color: #323232;
+}
+
+html[data-theme="dark"] {
+    --tab-text-active-color: #312c3a;
+    --tab-text-color: #fff;
+    --tab-icon-color: #fff;
+    --tab-icon-active-color: #323232;
+}
+
+$tab-text-active-color: var(--tab-text-active-color);
+$tab-text-color: var(--tab-text-color);
+$tab-icon-color: var(--tab-icon-color);
+$tab-icon-active-color: var(--tab-icon-active-color);
+
+.TabGroupView {
+    background-color: $control-background-color;
+    width: 452px;
+    padding: 4px;
+    border-radius: 40px;
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &__button {
+        width: 220px;
+        border-radius: 40px;
+        background-color: $control-background-color;
+        color: $tab-text-color;
+
+        &:hover {
+            background-color: $control-background-color;
+        }
+
+        .IconView svg path,
+        rect,
+        circle {
+            stroke: $tab-icon-color;
+        }
+
+        .IconView { 
+            margin-right: 8px;
+        }
+
+        &_active {
+            color: $tab-text-active-color;
+            background-color: $control-active-background-color;
+
+            &:hover { 
+                background-color: $control-active-background-color;
+            }
+
+            .IconView svg path,
+            rect,
+            circle {
+                stroke: $tab-icon-active-color;
+            }
+        }
+    }
+}

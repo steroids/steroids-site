@@ -7,6 +7,7 @@
     --custom-background-color-f9: #f9f9f9;
     --custom-background-color-f9-additional: #f9f9f9;
     --control-background-color: #f1f5f7;
+    --control-active-background-color: #DBCBFF;
     --custom-icon-color: #323232;
     --custom-icon-active: #323232;
 }
@@ -22,6 +23,7 @@ html[data-theme="dark"] {
     --control-background-color: #333646;
     --custom-icon-color: #ffffff;
     --custom-icon-active: #323232;
+    --control-active-background-color: #B898FF;
 }
 
 $control-background-color: var(--control-background-color);
@@ -35,6 +37,7 @@ $custom-text-decr-color: var(--custom-text-descr-color);
 $custom-text-descr-color-revert: var(--custom-text-descr-color-revert);
 $custom-icon-color: var(--custom-icon-color);
 $custom-icon-active: var(--custom-icon-active);
+$control-active-background-color: var(--control-active-background-color);
 
 $grayF8: #f8f8f8;
 $grayF0: #f0f0f0;
