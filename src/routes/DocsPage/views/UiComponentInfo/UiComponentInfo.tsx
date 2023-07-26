@@ -1,20 +1,30 @@
 import React from 'react';
-import {useBem, useSelector} from '@steroidsjs/core/hooks';
-import {getRouteParam} from '@steroidsjs/core/reducers/router';
-import {PATH_ROUTE_PARAM} from 'constants/routeParams';
-import {Title, Text} from '@steroidsjs/core/ui/typography';
-import {getComponentNameByRouteParam, getDemosByRouteParam} from 'helpers/demosHelpers';
-import Selector from 'shared/Selector';
+import {useBem} from '@steroidsjs/core/hooks';
+import ButtonGroup from '@steroidsjs/core/ui/nav/ButtonGroup';
 import {scrollToElement} from 'utils/utils';
 import {useCollision} from 'hooks/useCollision';
 import {useUIComponentInfo} from 'hooks/useUIComponentInfo';
-import Demos from './views/Demos';
 import ComponentPropsInfo from './views/ComponentPropsInfo';
 import Banner from './views/Banner';
+import ComponentDescription from './views/ComponentDescription';
+import TabGroupView from './views/TabGroupView';
 
 import './UiComponentInfo.scss';
 
 const ELEMENTS_TO_OBSERVE_CLASS = '.element-to-observe';
+
+const TABS_ITEMS = [
+    {
+        id: 'description',
+        label: 'bookmark',
+    },
+    {
+        id: 'props',
+        label: 'file',
+    },
+];
+
+type TabType = 'description' | 'props';
 
 interface IUiComponentInfoProps {
     demosComponents: any;
@@ -23,6 +33,7 @@ interface IUiComponentInfoProps {
 export default function UiComponentInfo(props: IUiComponentInfoProps) {
     const bem = useBem('UiComponentInfo');
     const triggerElementRef = React.useRef(null);
+    const [tab, setTab] = React.useState<TabType>('description');
 
     const {
         routeParam,
@@ -44,6 +55,10 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
         scrollToElement(`#${id}`);
     }, [setSelectedDemo, toggleOffCollision]);
 
+    const handleTabChanges = React.useCallback((newTab: TabType) => {
+        setTab(newTab);
+    }, []);
+
     if (!routeParam) {
         return null;
     }
@@ -51,27 +66,28 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
     return (
         <div className={bem.block()}>
             <Banner componentName={componentName} />
+            <ButtonGroup
+                view={TabGroupView}
+                items={TABS_ITEMS}
+                onClick={handleTabChanges}
+                className={bem.element('tabs')}
+            />
             <div className={bem.element('content')}>
-                <div className={bem.element('content-wrapper')}>
-                    <div className={bem.element('description')}>
-                        <Title content={componentName} />
-                        <Text
-                            className={bem.element('text')}
-                            content={componentInfo?.description}
-                        />
-                        <Demos demos={demos} />
-                    </div>
-                    <Selector
-                        items={demosAnchors}
-                        activeButton={selectedDemo}
-                        onClick={handleSelect}
-                        className={bem.element('navigation')}
+                {tab === 'description' ? (
+                    <ComponentDescription
+                        demosAnchors={demosAnchors}
+                        componentInfo={componentInfo}
+                        componentName={componentName}
+                        demos={demos}
+                        handleSelect={handleSelect}
+                        selectedDemo={selectedDemo}
                     />
-                </div>
-                <ComponentPropsInfo
-                    componentInfo={componentInfo}
-                    className={bem.element('props')}
-                />
+                )
+                    : (
+                        <ComponentPropsInfo
+                            componentInfo={componentInfo}
+                        />
+                    )}
             </div>
             <span
                 className={bem.element('trigger')}
