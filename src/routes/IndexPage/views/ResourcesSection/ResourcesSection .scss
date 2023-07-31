@@ -1,0 +1,95 @@
+@import 'style/variables';
+
+:root {
+    --resource-background-color: #ffffff;
+}
+
+html[data-theme="dark"] {
+    --resource-background-color: #333646;
+}
+
+$resource-background-color: var(--resource-background-color);
+
+
+.ResourcesSection {
+    padding-top: 80px;
+    padding-bottom: 160px;
+    background-color: $resource-background-color;
+
+    @media (max-width: $tablet-width) {
+        padding-top: 64px;
+        padding-bottom: 80px;
+    }
+
+    @media (max-width: $tablet-width-small) {
+        padding-bottom: 40px;
+    }
+
+    @media (max-width: 520px) {
+        padding-top: 24px;
+        padding-bottom: 32px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    &__cards {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: 16px;
+        
+        @media (max-width: 767px){
+            justify-content: center;
+        }
+
+        @media (max-width: $tablet-width-small) {
+            flex-flow: row wrap;
+        }
+
+        .ResourceCard {
+            width: 21.6666vw;
+            height: 424px;
+            @media (max-width: $tablet-width) {
+                width: 31.25vw;
+            }
+            @media (max-width: $tablet-width-small) {
+                width: 46.875vw;
+            }
+
+            @media (max-width: 520px) {
+                width: 100%;
+            }
+        }
+    }
+
+    .Section__title {
+        @media (max-width: 410px) {
+            font-size: $font-size-18;
+            line-height: $line-height-24;
+        }
+
+        &-postscript:before {
+            @media (max-width: 410px) {
+                transform: translateY(16px) translateX(-10px);
+                height: 1px;
+                width: 36px;
+            }
+        }
+    }
+
+    .Section__description {
+        margin-bottom: 80px;
+
+        @media (max-width: $tablet-width) {
+            margin-bottom: 50px;
+        }
+
+        @media (max-width: $tablet-width-small) {
+            width: 93.4895vw;
+        }
+        @media (max-width: $mobile-width-small) {
+            width: 260px;
+            margin-bottom: 40px;
+        }
+    }
+}

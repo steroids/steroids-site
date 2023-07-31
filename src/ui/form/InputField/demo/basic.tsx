@@ -12,5 +12,6 @@ export default () => (
     <InputField
         label='Basic input'
         id="Basic"
+        placeholder=''
     />
 );

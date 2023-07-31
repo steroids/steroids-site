@@ -1,6 +1,11 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import * as React from 'react';
 import {useBem} from '@steroidsjs/core/hooks';
+import HeroSection from './views/HeroSection';
+import FeaturesSection from './views/FeaturesSection';
+import AdvantagesSection from './views/AdvantagesSection';
+import ResourcesSection from './views/ResourcesSection';
+import ExamplesSection from './views/ExamplesSection';
+import InteractiveSection from './views/InteractiveSection';
 
 import './IndexPage.scss';
 
@@ -9,17 +14,12 @@ export default function IndexPage() {
 
     return (
         <div className={bem.block()}>
-            <div className={bem.element('centered')}>
-                <div className={bem.element('title')}>
-                    {__('Steroids — фреймворк для создания сложных и расширяемых веб-приложений')}
-                </div>
-                <div className={bem.element('image')}>
-                    <img
-                        src='/images/index-app-illustration.png'
-                        alt={__('Steroids — фреймворк для создания сложных и расширяемых веб-приложений')}
-                    />
-                </div>
-            </div>
+            <HeroSection />
+            <FeaturesSection />
+            <ExamplesSection />
+            <AdvantagesSection />
+            <InteractiveSection />
+            <ResourcesSection />
         </div>
     );
 }

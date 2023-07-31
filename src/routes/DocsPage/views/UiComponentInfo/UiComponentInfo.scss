@@ -1,0 +1,39 @@
+@import "style/variables";
+
+.UiComponentInfo {
+    &__content {
+        padding: 44px 84px;
+        display: grid;
+        grid-template-areas:
+            "a"
+            "b";
+
+        .ComponentDescription {
+            grid-area: a;
+            display: grid;
+            grid-template-areas: "c j";
+        }
+    }
+
+    &__demos {
+        grid-area: c;
+    }
+
+    .ComponentPropsInfo {
+        grid-area: b;
+    }
+
+    &__trigger { 
+        position: fixed;
+        top: 1.5%;
+        left: 0;
+        width: 100%;
+        background-color: transparent;
+        pointer-events: none;
+        height: 1px;
+    }
+
+    &__tabs { 
+        margin: 44px 0px 40px 84px;
+    }
+}

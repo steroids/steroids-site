@@ -1,0 +1,75 @@
+@import "style/variables";
+
+.ComponentSelector {
+    transform: translateY(44px) translateX(24px);
+
+    @media (max-width: $tablet-width) {
+        transform: translateY(-21px) translateX(26px);
+    }
+
+    @media (max-width: 800px) {
+        transform: none;
+    }
+
+    @media (max-width: 800px) {
+        flex-flow: column;
+        gap: 22px;
+        align-items: center;
+    }
+
+    .Selector__decoration {
+        @media (max-width: $tablet-width) {
+            height: 130px;
+            left: -26px;
+        }
+
+        @media (max-width: 800px) {
+            left: 50%;
+            transform: translateX(-50%);
+            width: 380px;
+            height: 4px;
+            border-radius: 20px;
+        }
+
+        @media (max-width: 410px) {
+            width: 300px;
+        }
+    }
+
+    .Selector__elements {
+        @media (max-width: 800px) {
+            margin-top: 26px;
+            flex-flow: row;
+            gap: 32px;
+        }
+
+        .ButtonView .ButtonView__link .ButtonView__text {
+            @media (max-width: $tablet-width) {
+                font-size: $font-size-16;
+                line-height: $line-height-22;
+            }
+
+            @media (max-width: 800px) {
+                font-size: $font-size-24;
+                font-weight: 400;
+                line-height: $line-height-34;
+            }
+
+            &::before {
+                @media (max-width: $tablet-width) {
+                    top: 0px;
+                    height: 30px;
+                    left: -26px;
+                }
+
+                @media (max-width: 800px) {
+                    width: 100%;
+                    height: 4px;
+                    top: -26px;
+                    left: 0px;
+                    border-radius: 4px;
+                }
+            }
+        }
+    }
+}
