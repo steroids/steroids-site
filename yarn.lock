@@ -2168,10 +2168,10 @@
   resolved "https://registry.yarnpkg.com/@splidejs/splide/-/splide-4.1.4.tgz#02d029360569e7d75d28357a9727fc48322015a3"
   integrity sha512-5I30evTJcAJQXt6vJ26g2xEkG+l1nXcpEw4xpKh0/FWQ8ozmAeTbtniVtVmz2sH1Es3vgfC4SS8B2X4o5JMptA==
 
-"@steroidsjs/bootstrap@^3.0.0-beta.81":
-  version "3.0.0-beta.81"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.81.tgz#0bb944f3fa2d8f35b1094c0e8ee7f54f147f32a6"
-  integrity sha512-pb4r7fsv1MzTQLVUD/r54Jtc71UOFhdQQR/UlRn/wksk0PO6F/5p0CFahpxVplOfZIbWzQGs6ME9OYSUKV/aTg==
+"@steroidsjs/bootstrap@^3.0.0-beta.85":
+  version "3.0.0-beta.85"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.85.tgz#4aea2ef440e58f1d91ac8d9c6c4d5878f34879af"
+  integrity sha512-EUxoBQ380m6F3vkK49kVU9EnFs49c8yuXvIMmZTcqB5nJI3nBRAx6bziTnyZDmkSa8cnZp+dNvGT8FiWevzbCQ==
   dependencies:
     "@ckeditor/ckeditor5-react" "^3.0.2"
     "@splidejs/react-splide" "^0.7.12"
@@ -2251,10 +2251,10 @@
     "@ckeditor/ckeditor5-widget" "^27.0.0"
     "@ckeditor/ckeditor5-word-count" "^27.0.0"
 
-"@steroidsjs/core@^3.0.0-beta.60":
-  version "3.0.0-beta.60"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.0-beta.60.tgz#ce2e7d960ebd59e594280cd7e9b60e38a2f4a85f"
-  integrity sha512-hL5fGPKgmRicTNEjedA8V47ZYPP8nb55kj2cgo/uvp5BHCeh28JBUsFc+N4C5GXRZgorOn76A9uO7s9Z9DU90Q==
+"@steroidsjs/core@^3.0.0-beta.64":
+  version "3.0.0-beta.64"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.0-beta.64.tgz#65fb708885e86464d7c5c7324783b0a923d09a13"
+  integrity sha512-KsY5lJs4dCe+r9sD7SjpwTG9usFai5v2JLJf/RH/iZFcRvAlEb+Oe4JioIJ9xGBCsd1i6BbPANvdAiEGzmt96g==
   dependencies:
     "@maskito/core" "^0.12.1"
     "@maskito/kit" "^0.12.1"

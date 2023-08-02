@@ -5,10 +5,27 @@ import {PATH_ROUTE_PARAM} from 'constants/routeParams';
 import {getComponentNameByRouteParam, getDemosByRouteParam} from 'helpers/demosHelpers';
 import React from 'react';
 
+export interface IComponentInfo {
+    name: string,
+    moduleName: string,
+    title: string,
+    description: string,
+    defaultProps: any,
+    extends: string[],
+    tags: any,
+    properties: {
+        decorators: [],
+        description: string, example: string,
+        name: string,
+        required: boolean,
+        type: string
+    }[]
+}
+
 export const useUIComponentInfo = (demosComponents: any) => {
     const routeParam = useSelector(state => getRouteParam(state, PATH_ROUTE_PARAM));
-    const componentName = getComponentNameByRouteParam(routeParam);
-    const componentInfo = autoDocs.interfaces[`I${componentName}Props`];
+    const componentName: string = getComponentNameByRouteParam(routeParam);
+    const componentInfo: IComponentInfo = autoDocs.interfaces[`I${componentName}Props`];
     const componentSmallDescription = 'When choosing the right button for an action, consider the level of emphasis each button type provides.';
 
     const demos = React.useMemo(

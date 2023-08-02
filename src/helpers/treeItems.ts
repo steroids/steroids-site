@@ -5,7 +5,7 @@ import {CATEGORY_ROUTE_PARAM, GETTING_STARTED_ROUTE_PARAM, PATH_ROUTE_PARAM} fro
 import {CATEGORY_COMPONENT, CATEGORY_GETTING_STARTED, CATEGORY_UI} from '../constants/categories';
 import {ROUTE_DOCS} from '../constants/routes';
 
-export const getUiComponentTreeItem = (items: INavItem) => ({
+export const getUiComponentTreeItem = (items: INavItem[]) => ({
     id: CATEGORY_UI,
     label: __('UI компоненты'),
     toRoute: ROUTE_DOCS,

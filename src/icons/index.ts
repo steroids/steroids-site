@@ -16,4 +16,6 @@ export const icons = {
     featureIcon: require('./svgs/feature-icon.svg'),
     featureIconBlack: require('./svgs/feature-icon-black.svg'),
     'banner-frame': require('./svgs/banner-frame.svg'),
+    bookmark: require('./svgs/bookmark.svg'),
+    file: require('./svgs/file.svg'),
 };
