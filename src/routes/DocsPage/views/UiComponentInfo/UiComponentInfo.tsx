@@ -68,7 +68,7 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
         <div className={bem.block()}>
             <Banner
                 componentName={componentName}
-                smallDescription={componentSmallDescription}
+                description={componentSmallDescription}
             />
             <ButtonGroup
                 view={TabGroupView}

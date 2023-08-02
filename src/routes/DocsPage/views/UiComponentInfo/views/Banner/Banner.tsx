@@ -7,7 +7,7 @@ import {Icon} from '@steroidsjs/core/ui/content';
 
 interface IBannerProps {
     componentName: string,
-    smallDescription: string;
+    description: string;
 }
 
 function Banner(props: IBannerProps) {
@@ -22,7 +22,7 @@ function Banner(props: IBannerProps) {
                 />
                 <Text
                     className={bem.element('description')}
-                    content={props.smallDescription}
+                    content={props.description}
                 />
                 <Icon
                     className={bem.element('background')}
