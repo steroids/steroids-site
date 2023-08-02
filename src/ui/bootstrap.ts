@@ -60,6 +60,7 @@ export default {
     'layout.NotificationsView': {lazy: () => require('@steroidsjs/bootstrap/layout/Notifications/NotificationsView').default},
     'layout.NotificationsItemView': {lazy: () => require('@steroidsjs/bootstrap/layout/Notifications/NotificationsItemView').default},
     'layout.TooltipView': {lazy: () => require('@steroidsjs/bootstrap/layout/Tooltip/TooltipView').default},
+    'layout.SidebarView': {lazy: () => require('@steroidsjs/bootstrap/layout/Sidebar/SidebarView').default},
     // 'list.AccordionView': {lazy: () => require('@steroidsjs/bootstrap/list/Accordion/AccordionView').default},
     'list.ControlsColumnView': {lazy: () => require('@steroidsjs/bootstrap/list/ControlsColumnView/ControlsColumnView').default},
     'list.CheckboxColumnView': {lazy: () => require('@steroidsjs/bootstrap/list/CheckboxColumn/CheckboxColumnView').default},
