@@ -1,7 +1,7 @@
 import React from 'react';
 import {useBem} from '@steroidsjs/core/hooks';
 import ButtonGroup from '@steroidsjs/core/ui/nav/ButtonGroup';
-import {scrollToElement} from 'utils/utils';
+import {scrollToElement, scrollToTop} from 'utils/utils';
 import {useCollision} from 'hooks/useCollision';
 import {useUIComponentInfo} from 'hooks/useUIComponentInfo';
 import ComponentPropsInfo from './views/ComponentPropsInfo';
@@ -58,6 +58,13 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
     const handleTabChanges = React.useCallback((newTab: TabType) => {
         setTab(newTab);
     }, []);
+
+    React.useEffect(() => {
+        //Проверяем, что мы открыли действительно страницу с компонентом, а не переключаемся по вкладкам в Sidebar'е
+        if (componentInfo) {
+            scrollToTop();
+        }
+    }, [componentInfo, demos]);
 
     if (!routeParam) {
         return null;
