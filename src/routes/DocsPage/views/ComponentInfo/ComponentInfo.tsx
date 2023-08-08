@@ -21,8 +21,6 @@ export default function ComponentInfo() {
 
     React.useEffect(() => {
         //Проверяем, что мы открыли действительно страницу с компонентом, а не переключаемся по вкладкам в Sidebar'е
-
-        console.log('ComponentInfo', componentInfo);
         if (componentInfo) {
             scrollToTop();
         }
