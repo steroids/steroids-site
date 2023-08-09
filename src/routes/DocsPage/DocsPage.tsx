@@ -30,9 +30,7 @@ export default function DocsPage() {
     return (
         <div className={bem.block()}>
             <div className={bem.element('sidebar')}>
-                <Tree
-                    items={treeItems}
-                />
+                <Tree items={treeItems} />
             </div>
             <div className={bem.element('content')}>
                 {category === CATEGORY_UI && (

@@ -7,7 +7,7 @@ import {getRouteParam} from '@steroidsjs/core/reducers/router';
 import {PATH_ROUTE_PARAM} from 'constants/routeParams';
 import Title from '@steroidsjs/core/ui/typography/Title';
 import Text from '@steroidsjs/core/ui/typography/Text';
-import {scrollToTop} from 'utils/utils';
+import {useScrollToTop} from 'hooks/useScrollToTop';
 import ApiTable from '../ApiTable';
 
 import './ComponentInfo.scss';
@@ -15,16 +15,11 @@ import './ComponentInfo.scss';
 const API_TABLE_ID = 'apiTable';
 
 export default function ComponentInfo() {
+    useScrollToTop();
+
     const bem = useBem('ComponentInfo');
     const routeParam = useSelector(state => getRouteParam(state, PATH_ROUTE_PARAM));
     const componentInfo = autoDocs.components[`components/${_upperFirst(routeParam)}Component`];
-
-    React.useEffect(() => {
-        //Проверяем, что мы открыли действительно страницу с компонентом, а не переключаемся по вкладкам в Sidebar'е
-        if (componentInfo) {
-            scrollToTop();
-        }
-    }, [componentInfo]);
 
     if (!routeParam) {
         return null;
