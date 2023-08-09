@@ -28,7 +28,7 @@ $control-background-color: var(--control-background-color);
     }
 
     &__nav {
-        &-list {
+        .NavLinkView__list {
             display: flex;
             gap: 90px;
 
