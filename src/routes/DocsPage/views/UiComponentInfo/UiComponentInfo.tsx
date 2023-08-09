@@ -19,7 +19,7 @@ const TABS_ITEMS = [
         label: 'bookmark',
     },
     {
-        id: 'props',
+        id: 'properties',
         label: 'file',
     },
 ];
