@@ -30,14 +30,14 @@ const throttle = (callback, delay) => {
  * @returns {{toggleOffCollision: () => void, toggleOnCollision: () => void, isCollisionActive: boolean}}
  * - Объект с функциями для включения/отключения обнаружения столкновений и текущим состоянием обнаружения столкновений.
  */
-export const useCollision = (triggerElement: React.MutableRefObject<any>, callback: (intersectingElement: Element)
-    => void, elementToObserveQuery: string, useAutoScroll = false) => {
+export const useCollision = (
+    triggerElement: React.MutableRefObject<any>,
+    callback: (intersectingElement: Element) => void,
+    elementToObserveQuery: string,
+    useAutoScroll = false,
+) => {
     const [isCollisionActive, setIsCollisionActive] = React.useState(DEFAULT_COLLISION_STATE);
     const [isAutoScrolling, setIsAutoScrolling] = React.useState(false);
-
-    const handleCollision = React.useCallback((element) => {
-        callback(element);
-    }, [callback]);
 
     React.useEffect(() => {
         const handleCollisionCheck = () => {
@@ -56,7 +56,7 @@ export const useCollision = (triggerElement: React.MutableRefObject<any>, callba
                         && centerRect.right > otherRect.left
                     ) {
                         // Соприкосновение элементов
-                        handleCollision(element);
+                        callback(element);
                     }
                 });
             }

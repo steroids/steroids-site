@@ -5,7 +5,7 @@ import {getRouteParam} from '@steroidsjs/core/reducers/router';
 import {goToRoute} from '@steroidsjs/core/actions/router';
 import {useDocsPageData} from 'hooks/useDocsPageData';
 import {CATEGORY_COMPONENT, CATEGORY_GETTING_STARTED, CATEGORY_UI} from 'constants/categories';
-import {CATEGORY_ROUTE_PARAM, GETTING_STARTED_ROUTE_PARAM} from 'constants/routeParams';
+import {CATEGORY_ROUTE_PARAM} from 'constants/routeParams';
 import {ROUTE_DOCS} from 'constants/routes';
 import ComponentInfo from './views/ComponentInfo';
 import UiComponentInfo from './views/UiComponentInfo';

@@ -77,6 +77,10 @@ const toDemoFormat = (routeParam: string) => ([title, component]) => ({
     component,
     sourceUrl: createSourceUrl(GITHUB_URL_TO_UI_FOLDER, routeParam, title),
     id: title.toLowerCase(),
+    anchor: {
+        id: title.toLowerCase(),
+        label: _upperFirst(title.replaceAll('-', ' ')),
+    },
 });
 
 export const getDemosByRouteParam = (
