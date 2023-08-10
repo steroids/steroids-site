@@ -1,30 +1,26 @@
 import {IRouteItem} from '@steroidsjs/core/ui/nav/Router/Router';
-import {ROUTE_CHANGELOG, ROUTE_DOCS, ROUTE_ROOT} from 'constants/routes';
-import ChangelogPage from './ChangelogPage';
+import {ROUTE_DOCS, ROUTE_ROOT} from 'constants/routes';
+import LanguageEnum from 'enums/LanguageEnum';
+import {LANGUAGE_ROUTE_PARAM} from 'constants/routeParams';
 import DocsPage from './DocsPage';
 import IndexPage from './IndexPage';
 
 const roles = [null];
+const baseUrl = `/:${LANGUAGE_ROUTE_PARAM}(${LanguageEnum.getKeys().join('|')})?`;
 
 export default {
     id: ROUTE_ROOT,
     exact: true,
-    path: '/',
+    path: baseUrl,
     title: 'Home',
     component: IndexPage,
     roles,
     items: {
         [ROUTE_DOCS]: {
             label: 'Documentation',
-            path: '/docs/:category?/:path?',
+            path: baseUrl + '/docs/:category?/:path?',
             component: DocsPage,
             roles,
-        },
-        [ROUTE_CHANGELOG]: {
-            path: '/changelog',
-            component: ChangelogPage,
-            roles,
-            isNavVisible: false,
         },
     },
 } as IRouteItem;

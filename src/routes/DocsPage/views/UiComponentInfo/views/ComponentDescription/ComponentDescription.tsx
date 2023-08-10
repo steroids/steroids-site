@@ -1,8 +1,8 @@
 import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import {Text, Title} from '@steroidsjs/core/ui/typography';
-import {IComponentInfo} from 'hooks/useUIComponentInfo';
 import Selector from 'shared/Selector';
+import {IEntityInfo} from 'types/IEntityInfo';
 import Demos from '../Demos';
 
 import './ComponentDescription.scss';
@@ -17,7 +17,7 @@ interface IComponentDescriptionProps {
         sourceUrl: string;
         id: any;
     }[],
-    componentInfo: IComponentInfo,
+    componentInfo: IEntityInfo,
     componentName: string,
     className?: string;
 }
@@ -35,7 +35,7 @@ export default function ComponentDescription(props: IComponentDescriptionProps) 
                 <Title content={props.componentName} />
                 <Text
                     className={bem.element('text')}
-                    content={props.componentInfo?.description}
+                    content={__(props.componentInfo?.description)}
                 />
                 <Demos demos={props.demos} />
             </div>
