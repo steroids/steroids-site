@@ -3,10 +3,22 @@
 .ComponentDescription {
     &__text {
         margin-bottom: 40px;
+
+        @supports (text-wrap: balance) {
+            text-wrap: balance;
+        }
     }
 
     &__description {
-        max-width: 790px;
+        max-width: 792px;
+
+        @media (max-width: $tablet-width) {
+            max-width: 672px;
+        }
+
+        @media (max-width: $tablet-width-small) {
+            max-width: 520px;
+        }
     }
 
     &__navigation {
@@ -16,6 +28,10 @@
         margin-left: auto;
         grid-area: j;
         transform: translateX(-2px);
+
+        @media (max-width: 1372px) {
+            display: none;
+        }
 
         .ButtonView .ButtonView__link .ButtonView__text {
             font-size: $font-size-16;

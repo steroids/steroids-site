@@ -25,6 +25,14 @@ $tab-icon-active-color: var(--tab-icon-active-color);
     padding: 4px;
     border-radius: 40px;
 
+    @media (max-width: $tablet-width) {
+        width: 372px;
+    }
+
+    @media (max-width: $mobile-width) {
+        width: 306px;
+    }
+
     display: flex;
     align-items: center;
     gap: 4px;
@@ -34,6 +42,29 @@ $tab-icon-active-color: var(--tab-icon-active-color);
         border-radius: 40px;
         background-color: $control-background-color;
         color: $tab-text-color;
+        padding: 11px 16px;
+
+        @media (max-width: $tablet-width) {
+            width: 180px;
+            padding: 5px 16px;
+        }
+
+        @media (max-width: $mobile-width) {
+            width: 147px;
+            padding: 5px 12px;
+        }
+
+        .Button__text {
+            font-size: $font-size-16;
+            font-weight: $font-weight-sm;
+            line-height: $line-height-24;
+
+            @media (max-width: $tablet-width) {
+                font-size: $font-size-14;
+                font-weight: $font-weight-sm;
+                line-height: $line-height-24;
+            }
+        }
 
         &:hover {
             background-color: $control-background-color;
@@ -45,7 +76,7 @@ $tab-icon-active-color: var(--tab-icon-active-color);
             stroke: $tab-icon-color;
         }
 
-        .IconView { 
+        .IconView {
             margin-right: 8px;
         }
 
@@ -53,7 +84,7 @@ $tab-icon-active-color: var(--tab-icon-active-color);
             color: $tab-text-active-color;
             background-color: $control-active-background-color;
 
-            &:hover { 
+            &:hover {
                 background-color: $control-active-background-color;
             }
 
