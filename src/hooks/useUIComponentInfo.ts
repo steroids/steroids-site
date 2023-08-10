@@ -26,7 +26,6 @@ export const useUIComponentInfo = (demosComponents: any) => {
     const routeParam = useSelector(state => getRouteParam(state, PATH_ROUTE_PARAM));
     const componentName: string = getComponentNameByRouteParam(routeParam);
     const componentInfo: IComponentInfo = autoDocs.interfaces[`I${componentName}Props`];
-    const componentSmallDescription = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry';
 
     const demos = React.useMemo(
         () => getDemosByRouteParam(demosComponents, routeParam),
@@ -55,6 +54,5 @@ export const useUIComponentInfo = (demosComponents: any) => {
         demos,
         demosAnchors,
         componentInfo,
-        componentSmallDescription,
     };
 };

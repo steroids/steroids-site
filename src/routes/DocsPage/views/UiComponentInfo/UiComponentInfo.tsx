@@ -43,7 +43,6 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
         demos,
         demosAnchors,
         componentInfo,
-        componentSmallDescription,
     } = useUIComponentInfo(props.demosComponents);
 
     const {toggleOffCollision} = useCollision(triggerElementRef, (el) => {
@@ -68,7 +67,6 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
         <div className={bem.block()}>
             <Banner
                 componentName={componentName}
-                description={componentSmallDescription}
             />
             <ButtonGroup
                 view={TabGroupView}
