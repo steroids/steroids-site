@@ -1,7 +1,7 @@
 import React from 'react';
 import {useBem} from '@steroidsjs/core/hooks';
 import ButtonGroup from '@steroidsjs/core/ui/nav/ButtonGroup';
-import {scrollToElement, scrollToTop} from 'utils/utils';
+import {scrollToElement} from 'utils/utils';
 import {useCollision} from 'hooks/useCollision';
 import {useUIComponentInfo} from 'hooks/useUIComponentInfo';
 import {useScrollToTop} from 'hooks/useScrollToTop';

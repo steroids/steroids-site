@@ -15,11 +15,11 @@ import './ComponentInfo.scss';
 const API_TABLE_ID = 'apiTable';
 
 export default function ComponentInfo() {
-    useScrollToTop();
-
     const bem = useBem('ComponentInfo');
     const routeParam = useSelector(state => getRouteParam(state, PATH_ROUTE_PARAM));
     const componentInfo = autoDocs.components[`components/${_upperFirst(routeParam)}Component`];
+
+    useScrollToTop();
 
     if (!routeParam) {
         return null;
