@@ -8,9 +8,6 @@ import {ROUTE_DOCS} from '../constants/routes';
 export const getUiComponentTreeItem = (items: INavItem[]) => ({
     id: CATEGORY_UI,
     label: __('UI компоненты'),
-    toRouteParams: {
-        [CATEGORY_ROUTE_PARAM]: CATEGORY_UI,
-    },
     items,
 });
 

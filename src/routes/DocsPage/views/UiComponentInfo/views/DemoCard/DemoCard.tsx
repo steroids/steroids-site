@@ -1,7 +1,7 @@
 import React from 'react';
 import {useBem} from '@steroidsjs/core/hooks';
 import {Title} from '@steroidsjs/core/ui/typography';
-import {ELEMENT_TO_OBSERVE_CLASS} from 'constants/classes';
+import {ELEMENT_TO_OBSERVE_CLASS_NAME} from 'constants/classes';
 import {IDemo} from 'types/IDemo';
 
 import './DemoCard.scss';
@@ -14,7 +14,7 @@ export default function DemoCard(props: IDemo) {
         <div
             className={bem(
                 bem.block(),
-                ELEMENT_TO_OBSERVE_CLASS,
+                ELEMENT_TO_OBSERVE_CLASS_NAME,
             )}
             id={props.id}
         >

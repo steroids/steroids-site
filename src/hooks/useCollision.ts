@@ -23,7 +23,7 @@ const throttle = (callback, delay) => {
  * Хук для обработки определения столкновений между элементом-триггером и другими элементами на странице.
  *
  * @param {React.MutableRefObject<any>} triggerElement - Ref элемента-триггера для обнаружения столкновений.
- * @param {(intersectingElement: Element) => void} callback - Функция обратного вызова, которая будет вызываться при обнаружении столкновения.
+ * @param {(intersectingElement: Element) => void} onCollision - Функция обратного вызова, которая будет вызываться при обнаружении столкновения.
  * @param {string} elementToObserveQuery - Селектор элементов для наблюдения за столкновениями с элементом-триггером.
  * @param {boolean} [useAutoScroll=false] - Опционально. Если true, учитывает автоматическую прокрутку через gsap с задержкой в 1 секунду
  *  при отключении столкновений через toggleOffCollision.
@@ -32,7 +32,7 @@ const throttle = (callback, delay) => {
  */
 export const useCollision = (
     triggerElement: React.MutableRefObject<any>,
-    callback: (intersectingElement: Element) => void,
+    onCollision: (intersectingElement: Element) => void,
     elementToObserveQuery: string,
     useAutoScroll = false,
 ) => {
@@ -56,7 +56,7 @@ export const useCollision = (
                         && centerRect.right > otherRect.left
                     ) {
                         // Соприкосновение элементов
-                        callback(element);
+                        onCollision(element);
                     }
                 });
             }

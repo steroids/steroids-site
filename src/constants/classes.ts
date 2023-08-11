@@ -1,1 +1,1 @@
-export const ELEMENT_TO_OBSERVE_CLASS = 'element-to-observe';
+export const ELEMENT_TO_OBSERVE_CLASS_NAME = 'element-to-observe';

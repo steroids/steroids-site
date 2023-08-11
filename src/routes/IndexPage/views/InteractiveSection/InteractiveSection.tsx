@@ -5,7 +5,7 @@ import useBem from '@steroidsjs/core/hooks/useBem';
 import {IPropControl} from 'types/IPropControl';
 import Section from 'shared/Section';
 import __unset from 'lodash-es/unset';
-import ComponentSelector from './views/ComponentPicker';
+import ComponentSelector from './views/ComponentNavigation';
 import ComponentPresent from './views/ComponentPresent';
 import ComponentOptions from './views/ComponentOptions';
 import {components} from '../../../../data/interactiveBlockData';

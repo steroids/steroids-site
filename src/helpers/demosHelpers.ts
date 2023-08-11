@@ -72,16 +72,21 @@ const createSourceUrl = (generalPath: string, componentRouteParam: string, demoT
     return `${generalPath}/${groupFolder}/${componentFolder}/demo/${demoTitle}.tsx`;
 };
 
-const toDemoFormat = (routeParam: string) => ([title, component]) => ({
-    title: _upperFirst(title.replaceAll('-', ' ')),
-    component,
-    sourceUrl: createSourceUrl(GITHUB_URL_TO_UI_FOLDER, routeParam, title),
-    id: title.toLowerCase(),
-    anchor: {
-        id: title.toLowerCase(),
-        label: _upperFirst(title.replaceAll('-', ' ')),
-    },
-});
+const toDemoFormat = (routeParam: string) => ([title, component]) => {
+    const formattedTitle = _upperFirst(title.replaceAll('-', ' '));
+    const lowerCasedTitle = title.toLowerCase();
+
+    return {
+        title: formattedTitle,
+        component,
+        sourceUrl: createSourceUrl(GITHUB_URL_TO_UI_FOLDER, routeParam, title),
+        id: lowerCasedTitle,
+        anchor: {
+            id: lowerCasedTitle,
+            label: formattedTitle,
+        },
+    };
+};
 
 export const getDemosByRouteParam = (
     demos: Record<string, any>,

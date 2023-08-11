@@ -4,7 +4,7 @@ import ButtonGroup from '@steroidsjs/core/ui/nav/ButtonGroup';
 import {getClassSelector, getIdSelector, scrollToElement} from 'utils/utils';
 import {useCollision} from 'hooks/useCollision';
 import {useUIComponentInfo} from 'hooks/useUIComponentInfo';
-import {ELEMENT_TO_OBSERVE_CLASS} from 'constants/classes';
+import {ELEMENT_TO_OBSERVE_CLASS_NAME} from 'constants/classes';
 import ComponentInfoTabs from 'enums/tabs';
 import ComponentPropsInfo from './views/ComponentPropsInfo';
 import Banner from './views/Banner';
@@ -45,7 +45,7 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
     const {toggleOffCollision} = useCollision(
         triggerElementRef,
         (el) => setSelectedDemo(el.id),
-        getClassSelector(ELEMENT_TO_OBSERVE_CLASS),
+        getClassSelector(ELEMENT_TO_OBSERVE_CLASS_NAME),
         true,
     );
 
