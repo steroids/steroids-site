@@ -4,6 +4,7 @@ import ButtonGroup from '@steroidsjs/core/ui/nav/ButtonGroup';
 import {scrollToElement} from 'utils/utils';
 import {useCollision} from 'hooks/useCollision';
 import {useUIComponentInfo} from 'hooks/useUIComponentInfo';
+import {useScrollToTop} from 'hooks/useScrollToTop';
 import ComponentPropsInfo from './views/ComponentPropsInfo';
 import Banner from './views/Banner';
 import ComponentDescription from './views/ComponentDescription';
@@ -31,6 +32,8 @@ interface IUiComponentInfoProps {
 }
 
 export default function UiComponentInfo(props: IUiComponentInfoProps) {
+    useScrollToTop();
+
     const bem = useBem('UiComponentInfo');
     const triggerElementRef = React.useRef(null);
     const [tab, setTab] = React.useState<TabType>('description');
