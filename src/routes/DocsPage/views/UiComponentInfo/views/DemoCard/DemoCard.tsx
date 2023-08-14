@@ -1,7 +1,7 @@
 import React from 'react';
 import {useBem} from '@steroidsjs/core/hooks';
 import {Title} from '@steroidsjs/core/ui/typography';
-import {ELEMENT_TO_OBSERVE_CLASS_NAME} from 'constants/classes';
+import {ELEMENT_TO_OBSERVE_CLASS_NAME} from 'constants/classNames';
 import {IDemo} from 'types/IDemo';
 
 import './DemoCard.scss';

@@ -1,3 +1,3 @@
-import DemosNavigation from './DemosNaviagation';
+import CustomNavigation from './CustomNavigation';
 
-export default DemosNavigation;
+export default CustomNavigation;

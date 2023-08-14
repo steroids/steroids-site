@@ -1,7 +1,7 @@
 import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import {Text, Title} from '@steroidsjs/core/ui/typography';
-import DemosNavigation from 'shared/DemosNavigation';
+import CustomNavigation from 'shared/DemosNavigation';
 import {IEntityInfo} from 'types/IEntityInfo';
 import {IDemo} from 'types/IDemo';
 import Demos from '../Demos';
@@ -34,7 +34,7 @@ export default function ComponentDescription(props: IComponentDescriptionProps) 
                 />
                 <Demos demos={props.demos} />
             </div>
-            <DemosNavigation
+            <CustomNavigation
                 items={props.demos.map(demo => demo.anchor)}
                 activeButton={props.selectedDemo}
                 onClick={props.handleSelect}
