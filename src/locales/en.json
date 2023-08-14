@@ -42,5 +42,7 @@
   "Имя": "Name",
   "Значение слайдера: {counter}": "Slider value: {counter}",
   "Значение меняется при изменения значения слайдера в реальном времени: {counter}": "The value changes when the value of the slider changes in real time: {counter}",
-  "Уведомление типа": "Notification type"
+  "Уведомление типа": "Notification type",
+  "Документация": "Documentation",
+  "Набор статей": "Articles"
 }
