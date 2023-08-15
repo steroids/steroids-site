@@ -12,19 +12,14 @@ export const useDocsMarkdown = () => {
     const [markdownContent, setMarkdownContent] = React.useState(null);
     const {locale} = useComponents();
 
-    const currentLanguage = React.useMemo(
-        () => locale.language,
-        [locale],
-    );
-
     const fetchMarkDown = React.useCallback(async () => {
         try {
-            const response = await axios.get(`${PATH_TO_DOCS}${currentLanguage}/${currentPath}.md`);
+            const response = await axios.get(`${PATH_TO_DOCS}${locale.language}/${currentPath}.md`);
             setMarkdownContent(response.data);
         } catch (error) {
             console.error('Error loading Markdown file:', error);
         }
-    }, [currentPath]);
+    }, [currentPath, locale.language]);
 
     React.useEffect(() => {
         fetchMarkDown();
