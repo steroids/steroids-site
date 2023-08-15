@@ -1,4 +1,4 @@
-@import "style/variables";
+@use "style/variables" as vars;
 
 .AnimatedIcons {
     position: absolute;
@@ -30,12 +30,12 @@
             top: 9.6%;
             left: 13.7%;
 
-            @media (max-width: $tablet-width) {
+            @media (max-width: vars.$m-tablet-width) {
                 top: 13.7%;
                 left: 14.7%;
             }
 
-            @media (max-width: $tablet-width-small) {
+            @media (max-width: vars.$m-tablet-width-small) {
                 top: 8.7%;
                 left: 7.4%;
             }
@@ -45,13 +45,13 @@
             left: 65.2%;
             transform: rotate(9deg);
 
-            @media (max-width: $tablet-width) {
+            @media (max-width: vars.$m-tablet-width) {
                 top: 12.5%;
                 left: 67.6%;
                 transform: rotate(9deg);
             }
 
-            @media (max-width: $tablet-width-small) {
+            @media (max-width: vars.$m-tablet-width-small) {
                 top: 10.2%;
                 left: 50.3%;
                 transform: rotate(10deg);
@@ -63,12 +63,12 @@
             left: 90.8%;
             transform: scale(1.23);
 
-            @media (max-width: $tablet-width) {
+            @media (max-width: vars.$m-tablet-width) {
                 top: 11.9%;
                 left: 93.7%;
             }
 
-            @media (max-width: $tablet-width-small) {
+            @media (max-width: vars.$m-tablet-width-small) {
                 top: 11.5%;
                 left: 92.4%;
             }
@@ -79,7 +79,7 @@
             left: 21.4%;
             transform: scale(1.95);
 
-            @media (max-width: $tablet-width) {
+            @media (max-width: vars.$m-tablet-width) {
                 top: 47.3%;
                 left: 23.7%;
             }
@@ -91,7 +91,7 @@
                 left: 14%;
             }
 
-            @media (max-width: $tablet-width-small) {
+            @media (max-width: vars.$m-tablet-width-small) {
                 top: 51.7%;
                 left: 8.5%;
             }
@@ -110,12 +110,12 @@
             left: 81.3%;
             transform: scale(1.4);
 
-            @media (max-width: $tablet-width) {
+            @media (max-width: vars.$m-tablet-width) {
                 top: 35.2%;
                 left: 81.3%;
             }
 
-            @media (max-width: $tablet-width-small) {
+            @media (max-width: vars.$m-tablet-width-small) {
                 top: 38.5%;
                 left: 81.4%;
             }
@@ -130,11 +130,11 @@
             left: 22.6%;
             transform: scale(1.25);
 
-            @media (max-width: $tablet-width) {
+            @media (max-width: vars.$m-tablet-width) {
                 opacity: 0;
             }
 
-            @media (max-width: $tablet-width-small) {
+            @media (max-width: vars.$m-tablet-width-small) {
                 opacity: 1;
                 top: 87.2%;
                 left: 13.7%;
@@ -145,12 +145,12 @@
             top: 68.7%;
             left: 80.7%;
 
-            @media (max-width: $tablet-width) {
+            @media (max-width: vars.$m-tablet-width) {
                 top: 81%;
                 left: 84.2%;
             }
 
-            @media (max-width: $tablet-width-small) {
+            @media (max-width: vars.$m-tablet-width-small) {
                 top: 83.8%;
                 left: 83%;
             }
@@ -161,7 +161,7 @@
             left: 91.7%;
             transform: scale(1.23);
 
-            @media (max-width: $tablet-width) {
+            @media (max-width: vars.$m-tablet-width) {
                 opacity: 0;
             }
         }

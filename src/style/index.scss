@@ -1,4 +1,4 @@
-@import './fonts';
-@import './variables';
-@import './base';
-@import '../ui/index.scss';
+@use 'fonts';
+@use 'variables';
+@use 'base';
+@use '../ui/index.scss';

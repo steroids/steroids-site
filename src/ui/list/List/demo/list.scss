@@ -1,10 +1,10 @@
-@import '../../../../style/variables.scss';
+@use 'style/variables' as vars;
 
 .list-group { 
 
     &-item { 
         padding: 5px 10px;
-        border-bottom: 1px solid $element-border-color;
+        border-bottom: 1px solid vars.$element-border-color;
 
         &:last-child{
             border: none;

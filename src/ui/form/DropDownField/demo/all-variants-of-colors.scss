@@ -1,7 +1,7 @@
-@import '~@steroidsjs/bootstrap/scss/variables/common/colors.scss';
+@use "style/variables" as vars;
 
 .DropDownFieldDemo { 
     &__header { 
-        color: $text-color;
+        color: vars.$text-color;
     }
 }

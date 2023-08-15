@@ -1,4 +1,4 @@
-@import 'style/variables';
+@use "style/variables" as vars;
 
 .BurgerMenu {
   display: none;
@@ -15,8 +15,8 @@
     display: block;
     width: 24px;
     height: 24px;
-    background-color: $control-background-color;
-    border-radius: $radius-large;
+    background-color: vars.$control-background-color;
+    border-radius: vars.$radius-large;
   }
 
   @media (max-width: 767px) {

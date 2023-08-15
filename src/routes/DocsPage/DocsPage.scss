@@ -1,4 +1,4 @@
-@import "style/variables";
+@use "style/variables" as vars;
 
 $sidebar-width: 332px;
 
@@ -32,7 +32,7 @@ $sidebar-background-color: var(--sidebar-background-color);
             min-width: 272px;
         }
 
-        @media (max-width: $tablet-width-small) {
+        @media (max-width: vars.$m-tablet-width-small) {
             width: 224px;
             min-width: 224px;
             padding: 12px;
@@ -75,12 +75,12 @@ $sidebar-background-color: var(--sidebar-background-color);
             }
 
             &_selected:not(.TreeView__item_has-items) .ButtonView {
-                background-color: $primary-light;
+                background-color: vars.$primary-light;
             }
         }
 
         .TreeView__item_has-items.TreeView__item_opened .ButtonView {
-            background-color: $gray;
+            background-color: vars.$gray;
         }
         .TreeView__item:not(.TreeView__item_has-items) .ButtonView::before {
             display: none;
@@ -93,11 +93,11 @@ $sidebar-background-color: var(--sidebar-background-color);
                 width: 250px;
             }
 
-            @media (max-width: $tablet-width) {
+            @media (max-width: vars.$m-tablet-width) {
                 width: 240px;
             }
 
-            @media (max-width: $tablet-width-small) {
+            @media (max-width: vars.$m-tablet-width-small) {
                 width: 200px;
             }
         }
@@ -108,21 +108,21 @@ $sidebar-background-color: var(--sidebar-background-color);
                 width: 200px;
             }
 
-            @media (max-width: $tablet-width-small) {
+            @media (max-width: vars.$m-tablet-width-small) {
                 width: 160px;
             }
         }
 
         .ButtonView .ButtonView__link .ButtonView__text {
-            font-size: $font-size-16;
-            font-weight: $font-weight-sm;
-            line-height: $line-height-22;
+            font-size: vars.$font-size-16;
+            font-weight: vars.$font-weight-sm;
+            line-height: vars.$line-height-22;
 
             white-space: nowrap; /* Запретить перенос текста */
             overflow: hidden; /* Скрыть содержимое, выходящее за границы ячейки */
             text-overflow: ellipsis; /* Добавить многоточие, если текст обрезается */
 
-            @media (max-width: $tablet-width-small) {
+            @media (max-width: vars.$m-tablet-width-small) {
                 width: 147px;
             }
         }

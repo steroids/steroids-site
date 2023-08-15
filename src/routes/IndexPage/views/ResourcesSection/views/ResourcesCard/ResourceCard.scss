@@ -1,4 +1,4 @@
-@import "style/variables";
+@use "style/variables" as vars;
 
 :root {
     --resource-card-background-color: #ffffff;
@@ -17,7 +17,7 @@ $resource-card-background-color: var(--resource-card-background-color);
     align-items: center;
     padding: 16px;
 
-    @media (max-width: $mobile-width-small) {
+    @media (max-width: vars.$m-mobile-width-small) {
         padding: 8px;
         height: 302px !important;
     }
@@ -32,34 +32,34 @@ $resource-card-background-color: var(--resource-card-background-color);
         height: 220px;
         border-radius: 8px;
 
-        @media (max-width: $mobile-width-small) {
+        @media (max-width: vars.$m-mobile-width-small) {
             height: 180px;
         }
     }
 
     .CardView__title {
-        font-size: $font-size-24;
-        font-weight: $font-weight-sm;
-        line-height: $line-height-34;
+        font-size: vars.$font-size-24;
+        font-weight: vars.$font-weight-sm;
+        line-height: vars.$line-height-34;
         margin-bottom: 16px;
-        color: $custom-text-color;
+        color: vars.$custom-text-color;
 
-        @media (max-width: $mobile-width-small) {
-            font-size: $font-size-14;
-            line-height: $line-height-18;
+        @media (max-width: vars.$m-mobile-width-small) {
+            font-size: vars.$font-size-14;
+            line-height: vars.$line-height-18;
         }
     }
 
     .CardView__description {
-        font-size: $font-size-16;
-        font-weight: $font-weight-sm;
-        line-height: $line-height-22;
-        color: $custom-text-decr-color;
+        font-size: vars.$font-size-16;
+        font-weight: vars.$font-weight-sm;
+        line-height: vars.$line-height-22;
+        color: vars.$custom-text-decr-color;
 
-        @media (max-width: $mobile-width-small) {
-            font-size: $font-size-12;
+        @media (max-width: vars.$m-mobile-width-small) {
+            font-size: vars.$font-size-12;
             font-weight: 300;
-            line-height: $line-height-16;
+            line-height: vars.$line-height-16;
         }
     }
 }

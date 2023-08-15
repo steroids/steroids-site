@@ -1,10 +1,10 @@
-@import "style/variables";
+@use "style/variables" as vars;
 
 .InteractiveSection {
     padding-top: 80px;
     padding-bottom: 160px;
 
-    @media (max-width: $tablet-width) {
+    @media (max-width: vars.$m-tablet-width) {
         padding-top: 64px;
         padding-bottom: 80px;
     }
@@ -54,7 +54,7 @@
         @media (max-width: 800px) {
             margin-bottom: 16px;
         }
-        @media (max-width: $mobile-width-small) {
+        @media (max-width: vars.$m-mobile-width-small) {
             margin-bottom: 14px;
         }
     }

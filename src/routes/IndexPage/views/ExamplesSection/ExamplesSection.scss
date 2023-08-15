@@ -1,4 +1,4 @@
-@import "style/variables";
+@use "style/variables" as vars;
 
 .ExamplesSection {
     position: relative;
@@ -18,17 +18,17 @@
         }
     }
 
-    @media (max-width: $tablet-width) {
+    @media (max-width: vars.$m-tablet-width) {
         padding-left: 16px;
         padding-right: 16px;
     }
 
-    @media (max-width: $tablet-width-small) {
+    @media (max-width: vars.$m-tablet-width-small) {
         padding: 0;
         padding-top: 16px;
     }
 
-    @media (max-width: $mobile-width-small) {
+    @media (max-width: vars.$m-mobile-width-small) {
         padding-left: 8px;
         padding-right: 8px;
     }
@@ -54,7 +54,7 @@
             width: 568px !important;
         }
 
-        @media (max-width: $tablet-width) {
+        @media (max-width: vars.$m-tablet-width) {
             width: 380px !important;
 
             &:nth-child(1) {
@@ -62,7 +62,7 @@
             }
         }
 
-        @media (max-width: $mobile-width-small) {
+        @media (max-width: vars.$m-mobile-width-small) {
             width: 260px !important;
 
             &:nth-child(1) {

@@ -1,4 +1,4 @@
-@import "style/variables";
+@use "style/variables" as vars;
 
 .Section {
     display: flex;
@@ -6,35 +6,35 @@
     align-items: center;
     padding: 0 32px;
 
-    @media (max-width: $tablet-width) {
+    @media (max-width: vars.$m-tablet-width) {
         padding: 0 16px;
     }
 
-    @media (max-width: $mobile-width-small) {
+    @media (max-width: vars.$m-mobile-width-small) {
         padding: 0;
     }
 
     &_isGray {
-        background-color: $custom-background-color-f9-additional;
+        background-color: vars.$custom-background-color-f9-additional;
     }
 
     &__title {
         position: relative;
-        font-size: $font-size-32;
-        font-weight: $font-weight-sm;
-        line-height: $line-height-40;
+        font-size: vars.$font-size-32;
+        font-weight: vars.$font-weight-sm;
+        line-height: vars.$line-height-40;
         margin-bottom: 8px;
-        color: $custom-text-color;
+        color: vars.$custom-text-color;
         z-index: 4;
 
-        @media (max-width: $mobile-width-small) {
-            font-size: $font-size-18;
-            line-height: $line-height-24;
+        @media (max-width: vars.$m-mobile-width-small) {
+            font-size: vars.$font-size-18;
+            line-height: vars.$line-height-24;
         }
 
         &-postscript {
             position: relative;
-            color: $grayD3;
+            color: vars.$grayD3;
             z-index: 3;
 
             &:before {
@@ -43,10 +43,10 @@
                 content: "";
                 width: 52px;
                 height: 2px;
-                background-color: $grayD3;
+                background-color: vars.$grayD3;
                 transform: translateX(-2px) translateY(26px);
 
-                @media (max-width: $mobile-width-small) {
+                @media (max-width: vars.$m-mobile-width-small) {
                     transform: translateY(16px) translateX(-10px);
                     height: 1px;
                     width: 36px;
@@ -58,25 +58,25 @@
     &__description {
         width: 37.3958vw;
         text-align: center;
-        font-size: $font-size-16;
-        font-weight: $font-weight-sm;
-        line-height: $line-height-22;
+        font-size: vars.$font-size-16;
+        font-weight: vars.$font-weight-sm;
+        line-height: vars.$line-height-22;
         margin-bottom: 64px;
-        color: $custom-text-decr-color;
+        color: vars.$custom-text-decr-color;
 
-        @media (max-width: $tablet-width) {
+        @media (max-width: vars.$m-tablet-width) {
             width: 70.1171vw;
             margin-bottom: 32px;
         }
 
-        @media (max-width: $tablet-width-small) {
+        @media (max-width: vars.$m-tablet-width-small) {
             width: 88.5416vw;
         }
 
-        @media (max-width: $mobile-width-small) {
-            font-size: $font-size-12;
+        @media (max-width: vars.$m-mobile-width-small) {
+            font-size: vars.$font-size-12;
             font-weight: 300;
-            line-height: $line-height-16;
+            line-height: vars.$line-height-16;
         }
     }
 }
