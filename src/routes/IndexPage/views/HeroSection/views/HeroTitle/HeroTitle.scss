@@ -1,20 +1,20 @@
-@use "style/variables" as vars;
+@use "style/variables";
 
 .HeroTitle {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     margin-bottom: 30px;
-    color: vars.$custom-text-color;
+    color: variables.$custom-text-color;
 
-    @media (max-width: vars.$m-mobile-width-small) {
+    @media (max-width: variables.$mobile-width-small) {
         margin-bottom: 26px;
     }
 
     &__letters {
-        font-size: vars.$font-size-80;
+        font-size: variables.$font-size-80;
         font-weight: 700;
-        line-height: vars.$line-height-96;
+        line-height: variables.$line-height-96;
 
         &:first-child {
             transform: translateX(3px);
@@ -33,8 +33,8 @@
         }
 
         @media (max-width: 384px) {
-            font-size: vars.$font-size-48;
-            line-height: vars.$line-height-60;
+            font-size: variables.$font-size-48;
+            line-height: variables.$line-height-60;
         }
     }
 

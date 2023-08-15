@@ -1,9 +1,9 @@
-@use "style/variables" as vars;
+@use "style/variables";
 
 .ComponentSelector {
     transform: translateY(44px) translateX(24px);
 
-    @media (max-width: vars.$m-tablet-width) {
+    @media (max-width: variables.$tablet-width) {
         transform: translateY(-21px) translateX(26px);
     }
 
@@ -18,7 +18,7 @@
     }
 
     .Selector__decoration {
-        @media (max-width: vars.$m-tablet-width) {
+        @media (max-width: variables.$tablet-width) {
             height: 130px;
             left: -26px;
         }
@@ -44,19 +44,19 @@
         }
 
         .ButtonView .ButtonView__link .ButtonView__text {
-            @media (max-width: vars.$m-tablet-width) {
-                font-size: vars.$font-size-16;
-                line-height: vars.$line-height-22;
+            @media (max-width: variables.$tablet-width) {
+                font-size: variables.$font-size-16;
+                line-height: variables.$line-height-22;
             }
 
             @media (max-width: 800px) {
-                font-size: vars.$font-size-24;
+                font-size: variables.$font-size-24;
                 font-weight: 400;
-                line-height: vars.$line-height-34;
+                line-height: variables.$line-height-34;
             }
 
             &::before {
-                @media (max-width: vars.$m-tablet-width) {
+                @media (max-width: variables.$tablet-width) {
                     top: 0px;
                     height: 30px;
                     left: -26px;

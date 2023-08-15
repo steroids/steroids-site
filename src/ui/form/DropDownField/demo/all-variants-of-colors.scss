@@ -1,7 +1,7 @@
-@use "style/variables" as vars;
+@use "style/variables";
 
 .DropDownFieldDemo { 
     &__header { 
-        color: vars.$text-color;
+        color: variables.$text-color;
     }
 }

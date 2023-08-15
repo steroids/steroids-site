@@ -1,4 +1,4 @@
-@use "style/variables" as vars;
+@use "style/variables";
 
 .Selector {
     position: relative;
@@ -11,7 +11,7 @@
         left: -24px;
         width: 2px;
         height: 100%;
-        background-color: vars.$gray;
+        background-color: variables.$gray;
     }
 
     &__elements {
@@ -22,10 +22,10 @@
         padding: 0;
 
         .ButtonView .ButtonView__link .ButtonView__text {
-            color: vars.$custom-text-color;
-            font-size: vars.$font-size-24;
-            font-weight: vars.$font-weight-sm;
-            line-height: vars.$line-height-34;
+            color: variables.$custom-text-color;
+            font-size: variables.$font-size-24;
+            font-weight: variables.$font-weight-sm;
+            line-height: variables.$line-height-34;
             position: relative;
             text-transform: capitalize;
 
@@ -37,14 +37,14 @@
                 height: 44px;
                 top: -3px;
                 left: -24px;
-                background-color: vars.$primary;
+                background-color: variables.$primary;
                 opacity: 0;
                 transition: opacity 150ms ease-in-out;
             }
         }
 
         .ButtonView.ButtonView_link.ButtonGroupView__button_active .ButtonView__link .ButtonView__text {
-            color: vars.$primary;
+            color: variables.$primary;
 
             &:before {
                 opacity: 1;

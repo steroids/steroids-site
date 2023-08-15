@@ -1,4 +1,4 @@
-@use "style/variables" as vars;
+@use "style/variables";
 
 :root {
     --tab-text-active-color: #312c3a;
@@ -20,16 +20,16 @@ $tab-icon-color: var(--tab-icon-color);
 $tab-icon-active-color: var(--tab-icon-active-color);
 
 .TabGroupView {
-    background-color: vars.$control-background-color;
+    background-color: variables.$control-background-color;
     width: 452px;
     padding: 4px;
     border-radius: 40px;
 
-    @media (max-width: vars.$m-tablet-width) {
+    @media (max-width: variables.$tablet-width) {
         width: 372px;
     }
 
-    @media (max-width: vars.$m-mobile-width) {
+    @media (max-width: variables.$mobile-width) {
         width: 306px;
     }
 
@@ -40,34 +40,34 @@ $tab-icon-active-color: var(--tab-icon-active-color);
     &__button {
         width: 220px;
         border-radius: 40px;
-        background-color: vars.$control-background-color;
+        background-color: variables.$control-background-color;
         color: $tab-text-color;
         padding: 11px 16px;
 
-        @media (max-width: vars.$m-tablet-width) {
+        @media (max-width: variables.$tablet-width) {
             width: 180px;
             padding: 5px 16px;
         }
 
-        @media (max-width: vars.$m-mobile-width) {
+        @media (max-width: variables.$mobile-width) {
             width: 147px;
             padding: 5px 12px;
         }
 
         .Button__text {
-            font-size: vars.$font-size-16;
-            font-weight: vars.$font-weight-sm;
-            line-height: vars.$line-height-24;
+            font-size: variables.$font-size-16;
+            font-weight: variables.$font-weight-sm;
+            line-height: variables.$line-height-24;
 
-            @media (max-width: vars.$m-tablet-width) {
-                font-size: vars.$font-size-14;
-                font-weight: vars.$font-weight-sm;
-                line-height: vars.$line-height-24;
+            @media (max-width: variables.$tablet-width) {
+                font-size: variables.$font-size-14;
+                font-weight: variables.$font-weight-sm;
+                line-height: variables.$line-height-24;
             }
         }
 
         &:hover {
-            background-color: vars.$control-background-color;
+            background-color: variables.$control-background-color;
         }
 
         .IconView svg path,
@@ -82,10 +82,10 @@ $tab-icon-active-color: var(--tab-icon-active-color);
 
         &_active {
             color: $tab-text-active-color;
-            background-color: vars.$control-active-background-color;
+            background-color: variables.$control-active-background-color;
 
             &:hover {
-                background-color: vars.$control-active-background-color;
+                background-color: variables.$control-active-background-color;
             }
 
             .IconView svg path,

@@ -1,10 +1,10 @@
-@use 'style/variables' as vars;
+@use 'style/variables';
 
 .list-group { 
 
     &-item { 
         padding: 5px 10px;
-        border-bottom: 1px solid vars.$element-border-color;
+        border-bottom: 1px solid variables.$element-border-color;
 
         &:last-child{
             border: none;

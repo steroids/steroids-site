@@ -1,19 +1,19 @@
-@use "style/variables" as vars;
+@use "style/variables";
 
 .Banner {
     padding: 80px;
     background-color: #333646;
     height: 300px;
 
-    @media (max-width: vars.$m-tablet-width) {
+    @media (max-width: variables.$tablet-width) {
         padding: 50px 40px;
         height: 240px;
     }
 
-    @media (max-width: vars.$m-mobile-width) {
-        font-size: vars.$font-size-32;
-        font-weight: vars.$font-weight-lg;
-        line-height: vars.$line-height-40;
+    @media (max-width: variables.$mobile-width) {
+        font-size: variables.$font-size-32;
+        font-weight: variables.$font-weight-lg;
+        line-height: variables.$line-height-40;
 
         padding: 34px 24px;
         height: 180px;
@@ -21,27 +21,27 @@
 
     &__title {
         font-size: 96px;
-        color: vars.$white;
+        color: variables.$white;
         margin-bottom: 0;
 
-        font-size: vars.$font-size-80;
-        font-weight: vars.$font-weight-lg;
-        line-height: vars.$line-height-96;
+        font-size: variables.$font-size-80;
+        font-weight: variables.$font-weight-lg;
+        line-height: variables.$line-height-96;
 
         white-space: nowrap; /* Запретить перенос текста */
         overflow: hidden; /* Скрыть содержимое, выходящее за границы ячейки */
         text-overflow: ellipsis; /* Добавить многоточие, если текст обрезается */
 
-        @media (max-width: vars.$m-tablet-width) {
-            font-size: vars.$font-size-64;
-            font-weight: vars.$font-weight-lg;
-            line-height: vars.$line-height-80;
+        @media (max-width: variables.$tablet-width) {
+            font-size: variables.$font-size-64;
+            font-weight: variables.$font-weight-lg;
+            line-height: variables.$line-height-80;
         }
 
-        @media (max-width: vars.$m-mobile-width) {
-            font-size: vars.$font-size-32;
-            font-weight: vars.$font-weight-lg;
-            line-height: vars.$line-height-40;
+        @media (max-width: variables.$mobile-width) {
+            font-size: variables.$font-size-32;
+            font-weight: variables.$font-weight-lg;
+            line-height: variables.$line-height-40;
         }
     }
 }

@@ -1,4 +1,4 @@
-@use "style/variables" as vars;
+@use "style/variables";
 
 .HeaderLogo {
 
@@ -9,7 +9,7 @@
         gap: 8px;
     }
 
-    @media (max-width: vars.$m-mobile-width-small) {
+    @media (max-width: variables.$mobile-width-small) {
         height: 64px;
         gap: 4px;
     }
@@ -17,7 +17,7 @@
     &__icon {
         transform: translateY(3px);
 
-        @media (max-width: vars.$m-mobile-width-small) {
+        @media (max-width: variables.$mobile-width-small) {
             width: 40px;
             height: 40px;
             transform: scale(1.45);
@@ -30,17 +30,17 @@
     }
 
     &__title {
-        font-size: vars.$font-size-20;
-        font-weight: vars.$font-weight-sm;
-        line-height: vars.$line-height-32;
-        color: vars.$custom-text-color;
+        font-size: variables.$font-size-20;
+        font-weight: variables.$font-weight-sm;
+        line-height: variables.$line-height-32;
+        color: variables.$custom-text-color;
 
         transform: translateY(3px);
 
-        @media (max-width: vars.$m-mobile-width-small) {
-            font-size: vars.$font-size-18;
-            font-weight: vars.$font-weight-sm;
-            line-height: vars.$line-height-24;
+        @media (max-width: variables.$mobile-width-small) {
+            font-size: variables.$font-size-18;
+            font-weight: variables.$font-weight-sm;
+            line-height: variables.$line-height-24;
         }
     }
 }

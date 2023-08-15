@@ -1,4 +1,4 @@
-@use "style/variables" as vars;
+@use "style/variables";
 
 $sidebar-width: 332px;
 
@@ -32,7 +32,7 @@ $sidebar-background-color: var(--sidebar-background-color);
             min-width: 272px;
         }
 
-        @media (max-width: vars.$m-tablet-width-small) {
+        @media (max-width: variables.$tablet-width-small) {
             width: 224px;
             min-width: 224px;
             padding: 12px;
@@ -75,12 +75,12 @@ $sidebar-background-color: var(--sidebar-background-color);
             }
 
             &_selected:not(.TreeView__item_has-items) .ButtonView {
-                background-color: vars.$primary-light;
+                background-color: variables.$primary-light;
             }
         }
 
         .TreeView__item_has-items.TreeView__item_opened .ButtonView {
-            background-color: vars.$gray;
+            background-color: variables.$gray;
         }
         .TreeView__item:not(.TreeView__item_has-items) .ButtonView::before {
             display: none;
@@ -93,11 +93,11 @@ $sidebar-background-color: var(--sidebar-background-color);
                 width: 250px;
             }
 
-            @media (max-width: vars.$m-tablet-width) {
+            @media (max-width: variables.$tablet-width) {
                 width: 240px;
             }
 
-            @media (max-width: vars.$m-tablet-width-small) {
+            @media (max-width: variables.$tablet-width-small) {
                 width: 200px;
             }
         }
@@ -108,21 +108,21 @@ $sidebar-background-color: var(--sidebar-background-color);
                 width: 200px;
             }
 
-            @media (max-width: vars.$m-tablet-width-small) {
+            @media (max-width: variables.$tablet-width-small) {
                 width: 160px;
             }
         }
 
         .ButtonView .ButtonView__link .ButtonView__text {
-            font-size: vars.$font-size-16;
-            font-weight: vars.$font-weight-sm;
-            line-height: vars.$line-height-22;
+            font-size: variables.$font-size-16;
+            font-weight: variables.$font-weight-sm;
+            line-height: variables.$line-height-22;
 
             white-space: nowrap; /* Запретить перенос текста */
             overflow: hidden; /* Скрыть содержимое, выходящее за границы ячейки */
             text-overflow: ellipsis; /* Добавить многоточие, если текст обрезается */
 
-            @media (max-width: vars.$m-tablet-width-small) {
+            @media (max-width: variables.$tablet-width-small) {
                 width: 147px;
             }
         }

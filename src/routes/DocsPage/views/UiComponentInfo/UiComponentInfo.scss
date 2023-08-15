@@ -1,4 +1,4 @@
-@use "style/variables" as vars;
+@use "style/variables";
 
 .UiComponentInfo {
     &__content {
@@ -12,11 +12,11 @@
             padding: 0 80px 0px 80px;
         }
 
-        @media (max-width: vars.$m-tablet-width) {
+        @media (max-width: variables.$tablet-width) {
             padding: 0 24px;
         }
 
-        @media (max-width: vars.$m-tablet-width-small) {
+        @media (max-width: variables.$tablet-width-small) {
             padding: 0 12px;
         }
 
@@ -48,15 +48,15 @@
     &__tabs {
         margin: 44px 0px 40px 84px;
 
-        @media (max-width: vars.$m-tablet-width) {
+        @media (max-width: variables.$tablet-width) {
             margin: 32px 0 32px 24px;
         }
 
-        @media (max-width: vars.$m-tablet-width-small) {
+        @media (max-width: variables.$tablet-width-small) {
             margin: 32px 0 32px 12px;
         }
 
-        @media (max-width: vars.$m-mobile-width) {
+        @media (max-width: variables.$mobile-width) {
             margin: 32px auto;
         }
     }

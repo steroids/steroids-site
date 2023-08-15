@@ -1,7 +1,7 @@
-@use "style/variables" as vars;
+@use "style/variables";
 
 .Layout {
-    background-color: vars.$custom-main-background-color;
+    background-color: variables.$custom-main-background-color;
     display: flex;
     flex-flow: column nowrap;
     min-height: 100vh;
