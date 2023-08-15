@@ -7,6 +7,8 @@ import ResourceComponent from '@steroidsjs/core/components/ResourceComponent';
 import {gsap} from 'gsap';
 import {ScrollToPlugin} from 'gsap/ScrollToPlugin';
 import {icons} from 'icons';
+import {detectLanguage} from 'hooks/useAppLanguage';
+import {translationsMap} from 'constants/translationsMap';
 
 import 'style/index.scss';
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
@@ -23,7 +25,16 @@ export default function Application() {
             http: HttpComponent,
             resource: ResourceComponent,
         },
-        onInit: ({ui}) => {
+        onInit: ({ui, locale, store}) => {
+            // В момент создания в LocaleComponent язык указывается только на основе config'а, переданного в компонент
+            // Но на этом этапе нет возможности передать правильный язык (или функцию определения правильного языка)
+            // в компонент, поэтому мы устанавливаем язык после того, как компонент был проинициализирован
+            // (функция onInit) вызывается после инициализации всех компонентов
+            // @todo нужно перенести определение и установку языка в кастомный LocaleComponent, проверив и работу SSR
+            const contextLanguage = detectLanguage(store.history.location.pathname);
+            locale.language = contextLanguage;
+            locale.translations = translationsMap[contextLanguage];
+
             ui.addViews(require('./ui/bootstrap').default);
             ui.addFields(require('@steroidsjs/core/ui/form').default);
             ui.addFormatters(require('@steroidsjs/core/ui/format').default);

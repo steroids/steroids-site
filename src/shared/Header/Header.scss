@@ -27,6 +27,34 @@ $control-background-color: var(--control-background-color);
         padding: 0 12px;
     }
 
+    &__nav {
+        .NavLinkView__list {
+            display: flex;
+            gap: 90px;
+
+            @media (max-width: vars.$m-tablet-width) {
+                gap: 60px;
+            }
+
+            @media (max-width: vars.$m-tablet-width-small) {
+                gap: 30px;
+            }
+
+            @media (max-width: 767px) {
+                display: none;
+            }
+
+            &-item {
+                .ButtonView__text {
+                    font-size: vars.$font-size-16;
+                    font-weight: vars.$font-weight-sm;
+                    line-height: vars.$line-height-22;
+                    color: vars.$custom-text-color;
+                }
+            }
+        }
+    }
+
     &__controls {
         display: flex;
         align-items: center;
@@ -83,7 +111,7 @@ $control-background-color: var(--control-background-color);
         }
 
         @media (max-width: 767px) {
-          display: none;
+            display: none;
         }
     }
 }

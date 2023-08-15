@@ -7,6 +7,7 @@ import {getRouteParam} from '@steroidsjs/core/reducers/router';
 import {PATH_ROUTE_PARAM} from 'constants/routeParams';
 import Title from '@steroidsjs/core/ui/typography/Title';
 import Text from '@steroidsjs/core/ui/typography/Text';
+import {useScrollToTop} from 'hooks/useScrollToTop';
 import ApiTable from '../ApiTable';
 
 import './ComponentInfo.scss';
@@ -17,6 +18,8 @@ export default function ComponentInfo() {
     const bem = useBem('ComponentInfo');
     const routeParam = useSelector(state => getRouteParam(state, PATH_ROUTE_PARAM));
     const componentInfo = autoDocs.components[`components/${_upperFirst(routeParam)}Component`];
+
+    useScrollToTop();
 
     if (!routeParam) {
         return null;
