@@ -38,11 +38,43 @@ export const getComponentsTreeItem = (autoDocs: Record<string, string>, language
         .filter(Boolean),
 });
 
+const GETTING_STARTED_PAGES = [
+    {
+        id: 'overview',
+        label: __('Обзор'),
+    },
+    {
+        id: 'installation',
+        label: __('Установка'),
+    },
+    {
+        id: 'architecture',
+        label: __('Архитектура'),
+    },
+    {
+        id: 'ui-architecture',
+        label: __('Архитектура UI'),
+    },
+    {
+        id: 'routing',
+        label: __('Роутинг'),
+    },
+    {
+        id: 'ssr',
+        label: __('Использование SSR'),
+    },
+];
+
 export const getGettingStartedTreeItem = () => ({
     id: CATEGORY_GETTING_STARTED,
     label: __('Начало работы'),
-    toRoute: ROUTE_DOCS,
-    toRouteParams: {
-        [CATEGORY_GETTING_STARTED]: CATEGORY_GETTING_STARTED,
-    },
+    items: GETTING_STARTED_PAGES.map((page) => ({
+        id: page.id,
+        label: page.label,
+        toRoute: ROUTE_DOCS,
+        toRouteParams: {
+            [CATEGORY_ROUTE_PARAM]: CATEGORY_GETTING_STARTED,
+            [PATH_ROUTE_PARAM]: page.id,
+        },
+    })),
 });
