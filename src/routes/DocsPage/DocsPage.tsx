@@ -1,11 +1,11 @@
 import * as React from 'react';
 import Tree from '@steroidsjs/core/ui/nav/Tree';
-import {useBem, useDispatch, useSelector} from '@steroidsjs/core/hooks';
+import {useBem, useComponents, useDispatch, useSelector} from '@steroidsjs/core/hooks';
 import {getRouteParam} from '@steroidsjs/core/reducers/router';
 import {goToRoute} from '@steroidsjs/core/actions/router';
 import {useDocsPageData} from 'hooks/useDocsPageData';
 import {CATEGORY_COMPONENT, CATEGORY_GETTING_STARTED, CATEGORY_UI} from 'constants/categories';
-import {CATEGORY_ROUTE_PARAM} from 'constants/routeParams';
+import {CATEGORY_ROUTE_PARAM, LANGUAGE_ROUTE_PARAM} from 'constants/routeParams';
 import {ROUTE_DOCS} from 'constants/routes';
 import ComponentInfo from './views/ComponentInfo';
 import UiComponentInfo from './views/UiComponentInfo';
@@ -15,6 +15,7 @@ import './DocsPage.scss';
 
 export default function DocsPage() {
     const bem = useBem('DocsPage');
+    const {locale} = useComponents();
     const {treeItems, demosComponents} = useDocsPageData();
     const category = useSelector(state => getRouteParam(state, CATEGORY_ROUTE_PARAM));
     const dispatch = useDispatch();
@@ -22,10 +23,11 @@ export default function DocsPage() {
     React.useEffect(() => {
         if (!category) {
             dispatch(goToRoute(ROUTE_DOCS, {
-                category: CATEGORY_GETTING_STARTED,
+                [LANGUAGE_ROUTE_PARAM]: locale.language,
+                [CATEGORY_ROUTE_PARAM]: CATEGORY_GETTING_STARTED,
             }));
         }
-    }, [category, dispatch]);
+    }, [category, dispatch, locale]);
 
     return (
         <div className={bem.block()}>

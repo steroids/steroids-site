@@ -30,7 +30,7 @@ export default function ComponentDescription(props: IComponentDescriptionProps) 
                 <Title content={props.componentName} />
                 <Text
                     className={bem.element('text')}
-                    content={props.componentInfo?.description}
+                    content={__(props.componentInfo?.description)}
                 />
                 <Demos demos={props.demos} />
             </div>

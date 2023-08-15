@@ -6,6 +6,7 @@ import __toLower from 'lodash-es/toLower';
 import {CATEGORY_UI} from 'constants/categories';
 import {ROUTE_DOCS} from 'constants/routes';
 import {GITHUB_URL_TO_UI_FOLDER} from 'constants/githubUrl';
+import {CATEGORY_ROUTE_PARAM, LANGUAGE_ROUTE_PARAM} from 'constants/routeParams';
 
 const FOLDER_SEPARATOR = '-';
 
@@ -36,7 +37,7 @@ export const getDemosTree = () => {
     return demosTree;
 };
 
-export const getDemosAndTreeItems = (demosTree: Record<string, any>) => {
+export const getDemosAndTreeItems = (demosTree: Record<string, any>, language: string) => {
     const demos = {};
 
     const demosToItems = _demosTree => Object
@@ -54,7 +55,11 @@ export const getDemosAndTreeItems = (demosTree: Record<string, any>) => {
                 label: _upperFirst(demosTreeItemId),
                 items: demosToItems(item.items),
                 toRoute: !item.items ? ROUTE_DOCS : null,
-                toRouteParams: !item.items ? {category: CATEGORY_UI, path} : null,
+                toRouteParams: !item.items ? {
+                    [LANGUAGE_ROUTE_PARAM]: language,
+                    [CATEGORY_ROUTE_PARAM]: CATEGORY_UI,
+                    path,
+                } : null,
             };
         });
 
