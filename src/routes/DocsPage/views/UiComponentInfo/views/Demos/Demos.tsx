@@ -22,11 +22,8 @@ function Demos(props: IDemosProps) {
         >
             {props.demos.map((demo, demoIndex) => (
                 <DemoCard
-                    id={demo.id}
                     key={demoIndex}
-                    demo={demo.component}
-                    title={demo.title}
-                    sourceUrl={demo.sourceUrl}
+                    {...demo}
                 />
             ))}
         </div>

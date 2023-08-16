@@ -3,12 +3,12 @@ import useBem from '@steroidsjs/core/hooks/useBem';
 import ButtonGroup from '@steroidsjs/core/ui/nav/ButtonGroup';
 import {IButtonGroupProps} from '@steroidsjs/core/ui/nav/ButtonGroup/ButtonGroup';
 
-import './Selector.scss';
+import './CustomNavigation.scss';
 
-type ISelectorProps = IButtonGroupProps
+type ICustomNavigationProps = IButtonGroupProps
 
-export default function Selector(props: ISelectorProps) {
-    const bem = useBem('Selector');
+export default function CustomNavigation(props: ICustomNavigationProps) {
+    const bem = useBem('CustomNavigation');
 
     return (
         <div className={bem(

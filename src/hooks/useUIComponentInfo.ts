@@ -4,7 +4,10 @@ import {getRouteParam} from '@steroidsjs/core/reducers/router';
 import {PATH_ROUTE_PARAM} from 'constants/routeParams';
 import {getComponentNameByRouteParam, getDemosByRouteParam} from 'helpers/demosHelpers';
 import React from 'react';
+import {IDemo} from 'types/IDemo';
 import {IEntityInfo} from 'types/IEntityInfo';
+
+const getFirstDemoAnchorId = (demos: IDemo[]) => demos[0]?.anchor?.id;
 
 export const useUIComponentInfo = (demosComponents: any) => {
     const routeParam = useSelector(state => getRouteParam(state, PATH_ROUTE_PARAM));
@@ -16,19 +19,11 @@ export const useUIComponentInfo = (demosComponents: any) => {
         [demosComponents, routeParam],
     );
 
-    const demosAnchors = React.useMemo(() => {
-        if (!demos) {
-            return null;
-        }
-
-        return demos.map((demo) => ({id: demo.id, label: demo.title}));
-    }, [demos]);
-
-    const [selectedDemo, setSelectedDemo] = React.useState<any>(demosAnchors[0]?.id);
+    const [selectedDemo, setSelectedDemo] = React.useState<any>(getFirstDemoAnchorId(demos));
 
     React.useEffect(() => {
-        setSelectedDemo(demosAnchors[0]?.id);
-    }, [demosAnchors]);
+        setSelectedDemo(getFirstDemoAnchorId(demos));
+    }, [demos]);
 
     return {
         routeParam,
@@ -36,7 +31,6 @@ export const useUIComponentInfo = (demosComponents: any) => {
         setSelectedDemo,
         componentName,
         demos,
-        demosAnchors,
         componentInfo,
     };
 };

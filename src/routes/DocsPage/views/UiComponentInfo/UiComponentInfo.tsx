@@ -1,9 +1,11 @@
 import React from 'react';
 import {useBem} from '@steroidsjs/core/hooks';
 import ButtonGroup from '@steroidsjs/core/ui/nav/ButtonGroup';
-import {scrollToElement} from 'utils/utils';
+import {getClassSelector, getIdSelector, scrollToElement} from 'utils/utils';
 import {useCollision} from 'hooks/useCollision';
 import {useUIComponentInfo} from 'hooks/useUIComponentInfo';
+import {ELEMENT_TO_OBSERVE_CLASS_NAME} from 'constants/classNames';
+import ComponentInfoTabs from 'enums/tabs';
 import {useScrollToTop} from 'hooks/useScrollToTop';
 import ComponentPropsInfo from './views/ComponentPropsInfo';
 import Banner from './views/Banner';
@@ -12,20 +14,16 @@ import TabGroupView from './views/TabGroupView';
 
 import './UiComponentInfo.scss';
 
-const ELEMENTS_TO_OBSERVE_CLASS = '.element-to-observe';
-
 const TABS_ITEMS = [
     {
-        id: 'description',
+        id: ComponentInfoTabs.DESCRIPTION,
         label: 'bookmark',
     },
     {
-        id: 'properties',
+        id: ComponentInfoTabs.PROPERTIES,
         label: 'file',
     },
 ];
-
-type TabType = 'description' | 'props';
 
 interface IUiComponentInfoProps {
     demosComponents: any;
@@ -36,7 +34,7 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
 
     const bem = useBem('UiComponentInfo');
     const triggerElementRef = React.useRef(null);
-    const [tab, setTab] = React.useState<TabType>('description');
+    const [tab, setTab] = React.useState<ComponentInfoTabs>(ComponentInfoTabs.DESCRIPTION);
 
     const {
         routeParam,
@@ -44,23 +42,21 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
         setSelectedDemo,
         componentName,
         demos,
-        demosAnchors,
         componentInfo,
     } = useUIComponentInfo(props.demosComponents);
 
-    const {toggleOffCollision} = useCollision(triggerElementRef, (el) => {
-        setSelectedDemo(el.id);
-    }, ELEMENTS_TO_OBSERVE_CLASS, true);
+    const {toggleOffCollision} = useCollision(
+        triggerElementRef,
+        (el) => setSelectedDemo(el.id),
+        getClassSelector(ELEMENT_TO_OBSERVE_CLASS_NAME),
+        true,
+    );
 
     const handleSelect = React.useCallback((id: string) => {
         toggleOffCollision();
         setSelectedDemo(id);
-        scrollToElement(`#${id}`);
+        scrollToElement(getIdSelector(id));
     }, [setSelectedDemo, toggleOffCollision]);
-
-    const handleTabChanges = React.useCallback((newTab: TabType) => {
-        setTab(newTab);
-    }, []);
 
     if (!routeParam) {
         return null;
@@ -72,13 +68,12 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
             <ButtonGroup
                 view={TabGroupView}
                 items={TABS_ITEMS}
-                onClick={handleTabChanges}
+                onClick={(newTab: ComponentInfoTabs) => setTab(newTab)}
                 className={bem.element('tabs')}
             />
             <div className={bem.element('content')}>
-                {tab === 'description' ? (
+                {tab === ComponentInfoTabs.DESCRIPTION ? (
                     <ComponentDescription
-                        demosAnchors={demosAnchors}
                         componentInfo={componentInfo}
                         componentName={componentName}
                         demos={demos}

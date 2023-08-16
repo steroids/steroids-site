@@ -5,4 +5,8 @@ export interface IDemo {
     title: string,
     sourceUrl: string,
     id: string;
+    anchor: {
+        id: string,
+        label: string,
+    }
 }

@@ -1,22 +1,17 @@
 import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import {Text, Title} from '@steroidsjs/core/ui/typography';
-import Selector from 'shared/Selector';
+import CustomNavigation from 'shared/CustomNaviagtion';
 import {IEntityInfo} from 'types/IEntityInfo';
+import {IDemo} from 'types/IDemo';
 import Demos from '../Demos';
 
 import './ComponentDescription.scss';
 
 interface IComponentDescriptionProps {
-    demosAnchors: {id: string, label: string}[]
     handleSelect: (id: string) => void;
-    selectedDemo: any,
-    demos: {
-        title: string;
-        component: any;
-        sourceUrl: string;
-        id: any;
-    }[],
+    selectedDemo: string,
+    demos: IDemo[],
     componentInfo: IEntityInfo,
     componentName: string,
     className?: string;
@@ -39,8 +34,8 @@ export default function ComponentDescription(props: IComponentDescriptionProps) 
                 />
                 <Demos demos={props.demos} />
             </div>
-            <Selector
-                items={props.demosAnchors}
+            <CustomNavigation
+                items={props.demos.map(demo => demo.anchor)}
                 activeButton={props.selectedDemo}
                 onClick={props.handleSelect}
                 className={bem.element('navigation')}

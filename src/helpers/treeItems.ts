@@ -1,7 +1,7 @@
 /* eslint-disable consistent-return */
 import {INavItem} from '@steroidsjs/core/ui/nav/Nav/Nav';
 import _lowerFirst from 'lodash-es/lowerFirst';
-import {CATEGORY_ROUTE_PARAM, GETTING_STARTED_ROUTE_PARAM, LANGUAGE_ROUTE_PARAM, PATH_ROUTE_PARAM} from 'constants/routeParams';
+import {CATEGORY_ROUTE_PARAM, LANGUAGE_ROUTE_PARAM, PATH_ROUTE_PARAM} from 'constants/routeParams';
 import {CATEGORY_COMPONENT, CATEGORY_GETTING_STARTED, CATEGORY_UI} from '../constants/categories';
 import {ROUTE_DOCS} from '../constants/routes';
 
