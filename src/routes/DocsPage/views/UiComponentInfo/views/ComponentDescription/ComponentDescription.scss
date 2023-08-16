@@ -1,4 +1,4 @@
-@import "style/variables";
+@use "style/variables";
 
 .ComponentDescription {
     &__text {
@@ -12,11 +12,11 @@
     &__description {
         max-width: 792px;
 
-        @media (max-width: $tablet-width) {
+        @media (max-width: variables.$tablet-width) {
             max-width: 672px;
         }
 
-        @media (max-width: $tablet-width-small) {
+        @media (max-width: variables.$tablet-width-small) {
             max-width: 520px;
         }
     }
@@ -34,9 +34,9 @@
         }
 
         .ButtonView .ButtonView__link .ButtonView__text {
-            font-size: $font-size-16;
-            font-weight: $font-weight-sm;
-            line-height: $line-height-22;
+            font-size: variables.$font-size-16;
+            font-weight: variables.$font-weight-sm;
+            line-height: variables.$line-height-22;
 
             &::before {
                 height: 100%;

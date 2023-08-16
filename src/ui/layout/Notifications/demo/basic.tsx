@@ -31,7 +31,7 @@ export default () => {
                         <Button
                             key={level}
                             color={level}
-                            label={__(`Уведомление типа "${level}"`)}
+                            label={`${__('Уведомление типа')} "${level}"`}
                             onClick={() => {
                                 dispatch(showNotification(message, level));
                             }}

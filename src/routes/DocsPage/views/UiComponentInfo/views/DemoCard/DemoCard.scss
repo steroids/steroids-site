@@ -1,4 +1,4 @@
-@import 'style/variables';
+@use "style/variables";
 
 .DemoCard {
     margin-bottom: 40px;
@@ -14,6 +14,6 @@
     }
 
     &__link { 
-        color: $text-color;
+        color: variables.$text-color;
     }
 }

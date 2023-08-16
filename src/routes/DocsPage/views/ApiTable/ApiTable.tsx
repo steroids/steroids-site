@@ -8,12 +8,14 @@ import {goToRoute} from '@steroidsjs/core/actions/router';
 import {ITitleProps} from '@steroidsjs/core/ui/typography/Title/Title';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import {useUnmount} from 'react-use';
-import {useDispatch} from '@steroidsjs/core/hooks';
+import {useComponents, useDispatch} from '@steroidsjs/core/hooks';
 import {listSetItems} from '@steroidsjs/core/actions/list';
 import {scrollToElement} from 'utils/utils';
 import {checkAndCreateTypeLink} from 'helpers/apiTable';
+import _upperFirst from 'lodash-es/upperFirst';
 
 import './ApiTable.scss';
+import {LANGUAGE_ROUTE_PARAM} from 'constants/routeParams';
 
 interface IApiTableProps {
     entityInfo: IEntityInfo,
@@ -25,11 +27,18 @@ interface IApiTableProps {
 export default function ApiTable(props: IApiTableProps) {
     const bem = useBem('ApiTable');
     const dispatch = useDispatch();
+    const {locale} = useComponents();
 
     const onLinkClick = React.useCallback((routeId: string, routeParams: Record<string, any>) => {
-        dispatch(goToRoute(routeId, routeParams));
+        dispatch(goToRoute(
+            routeId,
+            {
+                ...routeParams,
+                [LANGUAGE_ROUTE_PARAM]: locale.language,
+            },
+        ));
         scrollToElement(`.${bem.element('title')}`);
-    }, [bem, dispatch]);
+    }, [bem, dispatch, locale]);
 
     useUnmount(() => {
         dispatch(listSetItems(props.listId, []));
@@ -70,7 +79,7 @@ export default function ApiTable(props: IApiTableProps) {
                     },
                     {
                         className: bem.element('descr'),
-                        attribute: 'description',
+                        valueView: ({item}) => __(item.description),
                         label: 'Description',
                     },
                 ]}

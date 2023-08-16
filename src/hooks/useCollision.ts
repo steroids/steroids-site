@@ -23,21 +23,21 @@ const throttle = (callback, delay) => {
  * Хук для обработки определения столкновений между элементом-триггером и другими элементами на странице.
  *
  * @param {React.MutableRefObject<any>} triggerElement - Ref элемента-триггера для обнаружения столкновений.
- * @param {(intersectingElement: Element) => void} callback - Функция обратного вызова, которая будет вызываться при обнаружении столкновения.
+ * @param {(intersectingElement: Element) => void} onCollision - Функция обратного вызова, которая будет вызываться при обнаружении столкновения.
  * @param {string} elementToObserveQuery - Селектор элементов для наблюдения за столкновениями с элементом-триггером.
  * @param {boolean} [useAutoScroll=false] - Опционально. Если true, учитывает автоматическую прокрутку через gsap с задержкой в 1 секунду
  *  при отключении столкновений через toggleOffCollision.
  * @returns {{toggleOffCollision: () => void, toggleOnCollision: () => void, isCollisionActive: boolean}}
  * - Объект с функциями для включения/отключения обнаружения столкновений и текущим состоянием обнаружения столкновений.
  */
-export const useCollision = (triggerElement: React.MutableRefObject<any>, callback: (intersectingElement: Element)
-    => void, elementToObserveQuery: string, useAutoScroll = false) => {
+export const useCollision = (
+    triggerElement: React.MutableRefObject<any>,
+    onCollision: (intersectingElement: Element) => void,
+    elementToObserveQuery: string,
+    useAutoScroll = false,
+) => {
     const [isCollisionActive, setIsCollisionActive] = React.useState(DEFAULT_COLLISION_STATE);
     const [isAutoScrolling, setIsAutoScrolling] = React.useState(false);
-
-    const handleCollision = React.useCallback((element) => {
-        callback(element);
-    }, [callback]);
 
     React.useEffect(() => {
         const handleCollisionCheck = () => {
@@ -56,7 +56,7 @@ export const useCollision = (triggerElement: React.MutableRefObject<any>, callba
                         && centerRect.right > otherRect.left
                     ) {
                         // Соприкосновение элементов
-                        handleCollision(element);
+                        onCollision(element);
                     }
                 });
             }

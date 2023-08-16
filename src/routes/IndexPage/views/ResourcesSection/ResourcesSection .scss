@@ -1,4 +1,4 @@
-@import 'style/variables';
+@use 'style/variables';
 
 :root {
     --resource-background-color: #ffffff;
@@ -16,12 +16,12 @@ $resource-background-color: var(--resource-background-color);
     padding-bottom: 160px;
     background-color: $resource-background-color;
 
-    @media (max-width: $tablet-width) {
+    @media (max-width: variables.$tablet-width) {
         padding-top: 64px;
         padding-bottom: 80px;
     }
 
-    @media (max-width: $tablet-width-small) {
+    @media (max-width: variables.$tablet-width-small) {
         padding-bottom: 40px;
     }
 
@@ -42,17 +42,17 @@ $resource-background-color: var(--resource-background-color);
             justify-content: center;
         }
 
-        @media (max-width: $tablet-width-small) {
+        @media (max-width: variables.$tablet-width-small) {
             flex-flow: row wrap;
         }
 
         .ResourceCard {
             width: 21.6666vw;
             height: 424px;
-            @media (max-width: $tablet-width) {
+            @media (max-width: variables.$tablet-width) {
                 width: 31.25vw;
             }
-            @media (max-width: $tablet-width-small) {
+            @media (max-width: variables.$tablet-width-small) {
                 width: 46.875vw;
             }
 
@@ -64,8 +64,8 @@ $resource-background-color: var(--resource-background-color);
 
     .Section__title {
         @media (max-width: 410px) {
-            font-size: $font-size-18;
-            line-height: $line-height-24;
+            font-size: variables.$font-size-18;
+            line-height: variables.$line-height-24;
         }
 
         &-postscript:before {
@@ -80,14 +80,14 @@ $resource-background-color: var(--resource-background-color);
     .Section__description {
         margin-bottom: 80px;
 
-        @media (max-width: $tablet-width) {
+        @media (max-width: variables.$tablet-width) {
             margin-bottom: 50px;
         }
 
-        @media (max-width: $tablet-width-small) {
+        @media (max-width: variables.$tablet-width-small) {
             width: 93.4895vw;
         }
-        @media (max-width: $mobile-width-small) {
+        @media (max-width: variables.$mobile-width-small) {
             width: 260px;
             margin-bottom: 40px;
         }

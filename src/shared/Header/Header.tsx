@@ -1,5 +1,7 @@
 import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
+import Nav from '@steroidsjs/core/ui/nav/Nav';
+import {HEADER_LINKS} from 'constants/links';
 import ThemesButtons from '../ThemesButtons';
 import HeaderLogo from './views/HeaderLogo';
 import SearchInput from './views/SearchInput';
@@ -15,6 +17,11 @@ export default function Header() {
     return (
         <header className={bem.block()}>
             <HeaderLogo />
+            <Nav
+                items={HEADER_LINKS}
+                layout="link"
+                className={bem.element('nav')}
+            />
             <div className={bem.element('controls')}>
                 <SearchInput />
                 <ThemesButtons className={bem.element('controls-themes')} />

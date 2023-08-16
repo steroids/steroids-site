@@ -1,4 +1,4 @@
-@import "style/variables";
+@use "style/variables";
 
 .HeroSection {
     position: relative;
@@ -12,22 +12,22 @@
 
     .Section__title,
     .Section__description {
-        @media (max-width: $mobile-width-small) {
+        @media (max-width: variables.$mobile-width-small) {
             display: none;
         }
     }
 
-    @media (max-width: $tablet-width) {
+    @media (max-width: variables.$tablet-width) {
         padding-top: 105px;
         padding-bottom: 157px;
     }
 
-    @media (max-width: $tablet-width-small) {
+    @media (max-width: variables.$tablet-width-small) {
         padding-top: 72px;
         padding-bottom: 131px;
     }
 
-    @media (max-width: $mobile-width-small) {
+    @media (max-width: variables.$mobile-width-small) {
         padding-top: 24px;
         padding-bottom: 32px;
     }
@@ -38,7 +38,7 @@
         column-gap: 16px;
         margin-bottom: 64px;
 
-        @media (max-width: $mobile-width-small) {
+        @media (max-width: variables.$mobile-width-small) {
             column-gap: 8px;
             margin-bottom: 24px;
         }
@@ -54,14 +54,14 @@
             }
 
             &__text {
-                font-size: $font-size-18;
+                font-size: variables.$font-size-18;
                 white-space: nowrap;
                 font-style: normal;
-                font-weight: $font-weight-sm;
-                line-height: $line-height-24;
+                font-weight: variables.$font-weight-sm;
+                line-height: variables.$line-height-24;
 
-                @media (max-width: $mobile-width-small) {
-                    font-size: $font-size-16;
+                @media (max-width: variables.$mobile-width-small) {
+                    font-size: variables.$font-size-16;
                 }
             }
         }
@@ -71,23 +71,23 @@
         width: 46.66vw;
         margin-bottom: 0;
         text-align: center;
-        color: $custom-text-color;
+        color: variables.$custom-text-color;
 
-        font-size: $font-size-24;
-        font-weight: $font-weight-sm;
-        line-height: $line-height-34;
+        font-size: variables.$font-size-24;
+        font-weight: variables.$font-weight-sm;
+        line-height: variables.$line-height-34;
 
-        @media (max-width: $tablet-width) {
+        @media (max-width: variables.$tablet-width) {
             width: 87.5vw;
         }
 
-        @media (max-width: $tablet-width-small) {
+        @media (max-width: variables.$tablet-width-small) {
             width: 95.83333333vw;
         }
 
         @media (max-width: 384px) {
-            font-size: $font-size-18;
-            line-height: $line-height-24;
+            font-size: variables.$font-size-18;
+            line-height: variables.$line-height-24;
             width: 81.25vw;
         }
     }

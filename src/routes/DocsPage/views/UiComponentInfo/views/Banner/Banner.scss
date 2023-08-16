@@ -1,4 +1,4 @@
-@import "style/variables";
+@use "style/variables";
 
 :root {
     --banner-frame-background-color: #333646;
@@ -15,12 +15,12 @@ $banner-frame-background-color: var(--banner-frame-background-color);
     position: relative;
     height: 300px;
 
-    @media (max-width: $tablet-width) {
+    @media (max-width: variables.$tablet-width) {
         height: 240px;
     }
 
-    @media (max-width: $mobile-width-small){
-          height: 180px;
+    @media (max-width: variables.$mobile-width) {
+        height: 180px;
     }
 
     &__frame {
@@ -31,53 +31,58 @@ $banner-frame-background-color: var(--banner-frame-background-color);
         clip-path: polygon(0 0, 100% 0%, 84% 100%, 0% 100%);
         background-color: $banner-frame-background-color;
         z-index: 2;
-        padding: 81px 80px;
 
-        @media (max-width: $tablet-width) {
+        @media (max-width: variables.$tablet-width) {
             width: 53.7109vw;
-            padding: 50px 40px;
             clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
         }
 
-        @media (max-width: $tablet-width-small) {
+        @media (max-width: variables.$tablet-width-small) {
             width: 54.6875vw;
-            padding: 41px 40px;
-
             clip-path: polygon(0 0, 100% 0%, 68% 100%, 0% 100%);
-
         }
 
         @media (max-width: 624px) {
             width: 90.625vw;
         }
 
-        @media (max-width: $mobile-width-small) {
+        @media (max-width: variables.$mobile-width-small) {
             clip-path: polygon(0 0, 100% 0%, 62% 100%, 0% 100%);
-            padding: 34px 24px;
         }
+        display: flex;
+        align-items: center;
 
         &-title {
-            color: $white;
+            color: variables.$white;
             position: relative;
-            font-size: $font-size-80;
-            font-weight: $font-weight-lg;
-            line-height: $line-height-96;
+            font-size: variables.$font-size-80;
+            font-weight: variables.$font-weight-lg;
+            line-height: variables.$line-height-96;
+            margin-bottom: 0;
             z-index: 3;
+            padding-left: 80px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
 
-            @media (max-width: $tablet-width) {
-                font-size: $font-size-64;
-                font-weight: $font-weight-lg;
-                line-height: $line-height-80;
+            @media (max-width: variables.$tablet-width) {
+                font-size: variables.$font-size-64;
+                line-height: variables.$line-height-80;
+                padding-left: 40px;
             }
 
-            @media (max-width: $mobile-width-small) {
-                font-size: $font-size-32;
-                font-weight: $font-weight-lg;
-                line-height: $line-height-40;
+            @media (max-width: variables.$tablet-width-small) {
+                font-size: variables.$font-size-48;
+                line-height: variables.$line-height-54;
+                padding-left: 32px;
+            }
+
+            @media (max-width: variables.$mobile-width) {
+                font-size: variables.$font-size-32;
+                line-height: variables.$line-height-40;
             }
         }
     }
-
     &__picture {
         position: absolute;
         top: 0;
@@ -86,11 +91,11 @@ $banner-frame-background-color: var(--banner-frame-background-color);
         width: 43.6459vw;
         z-index: 1;
 
-        @media (max-width: $tablet-width) {
+        @media (max-width: variables.$tablet-width) {
             width: 46.2891vw;
         }
 
-        @media (max-width: $tablet-width-small) {
+        @media (max-width: variables.$tablet-width-small) {
             width: 45.3125;
         }
 
@@ -102,7 +107,7 @@ $banner-frame-background-color: var(--banner-frame-background-color);
             object-fit: cover;
             object-position: center center;
 
-            @media (max-width: $tablet-width-small) {
+            @media (max-width: variables.$tablet-width-small) {
                 object-position: 1% center;
             }
         }

@@ -1,23 +1,25 @@
 import React, {memo} from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
-import Selector from 'shared/Selector';
+import CustomNavigation from 'shared/CustomNaviagtion';
 import {useScreen} from '@steroidsjs/core/hooks';
 import {components} from '../../../../../../data/interactiveBlockData';
 
-import './ComponentSelector.scss';
+import './ComponentNavigation.scss';
 
-interface IComponentSelectorProps {
+const HIDDEN_MOBILE_WIDTH = 410;
+
+interface IComponentNavigationProps {
     handleComponentClick: (component: string) => void;
     className?: string;
 }
 
-function ComponentSelector(props: IComponentSelectorProps) {
-    const bem = useBem('ComponentSelector');
+function ComponentNavigation(props: IComponentNavigationProps) {
+    const bem = useBem('ComponentNavigation');
     const {width} = useScreen();
 
     const componentsByScreenType = React.useMemo(
         () => {
-            if (width <= 410) {
+            if (width <= HIDDEN_MOBILE_WIDTH) {
                 const newComponents = [...Object.keys(components)];
                 return newComponents.filter((component) => !components[component].isHiddenOnMobile);
             }
@@ -28,7 +30,7 @@ function ComponentSelector(props: IComponentSelectorProps) {
     );
 
     return (
-        <Selector
+        <CustomNavigation
             items={componentsByScreenType}
             className={bem(
                 bem.block(),
@@ -39,4 +41,4 @@ function ComponentSelector(props: IComponentSelectorProps) {
     );
 }
 
-export default memo(ComponentSelector);
+export default memo(ComponentNavigation);
