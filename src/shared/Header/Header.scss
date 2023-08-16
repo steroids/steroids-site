@@ -1,4 +1,4 @@
-@import "style/variables";
+@use "style/variables";
 
 :root {
     --control-background-color: #f1f5f7;
@@ -17,13 +17,13 @@ $control-background-color: var(--control-background-color);
     align-items: center;
     justify-content: space-between;
     height: auto !important;
-    background-color: $custom-background-color;
+    background-color: variables.$custom-background-color;
     height: 64px;
     max-height: 64px;
 
     box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
 
-    @media (max-width: $tablet-width-small) {
+    @media (max-width: variables.$tablet-width-small) {
         padding: 0 12px;
     }
 
@@ -32,11 +32,11 @@ $control-background-color: var(--control-background-color);
             display: flex;
             gap: 90px;
 
-            @media (max-width: $tablet-width) {
+            @media (max-width: variables.$tablet-width) {
                 gap: 60px;
             }
 
-            @media (max-width: $tablet-width-small) {
+            @media (max-width: variables.$tablet-width-small) {
                 gap: 30px;
             }
 
@@ -46,10 +46,10 @@ $control-background-color: var(--control-background-color);
 
             &-item {
                 .ButtonView__text {
-                    font-size: $font-size-16;
-                    font-weight: $font-weight-sm;
-                    line-height: $line-height-22;
-                    color: $custom-text-color;
+                    font-size: variables.$font-size-16;
+                    font-weight: variables.$font-weight-sm;
+                    line-height: variables.$line-height-22;
+                    color: variables.$custom-text-color;
                 }
             }
         }
@@ -81,7 +81,7 @@ $control-background-color: var(--control-background-color);
                 svg {
                     path,
                     circle {
-                        stroke: $custom-icon-color;
+                        stroke: variables.$custom-icon-color;
                     }
                 }
             }
@@ -100,13 +100,13 @@ $control-background-color: var(--control-background-color);
             .ButtonGroupView__button:not(.ButtonGroupView__button_active) .IconView svg path,
             rect,
             circle {
-                stroke: $custom-icon-color;
+                stroke: variables.$custom-icon-color;
             }
 
             .ButtonGroupView__button_active .IconView svg path,
             rect,
             circle {
-                stroke: $custom-icon-active;
+                stroke: variables.$custom-icon-active;
             }
         }
 

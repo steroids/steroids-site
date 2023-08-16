@@ -1,17 +1,17 @@
-@import "style/variables";
+@use "style/variables";
 
 .AdvantagesSection {
     padding-top: 80px;
     padding-bottom: 160px;
 
-    @media (max-width: $tablet-width) {
+    @media (max-width: variables.$tablet-width) {
         padding-bottom: 124px;
     }
-    @media (max-width: $tablet-width-small) {
+    @media (max-width: variables.$tablet-width-small) {
         padding-top: 40px;
         padding-bottom: 80px;
     }
-    @media (max-width: $mobile-width-small){
+    @media (max-width: variables.$mobile-width-small){
         padding-top: 24px;      
         padding-bottom: 24px;
     }

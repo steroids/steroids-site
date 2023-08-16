@@ -1,4 +1,4 @@
-@import "style/variables";
+@use "style/variables";
 
 .ComponentOptions {
     display: flex;
@@ -11,7 +11,7 @@
     }
 
     .FieldLayoutView {
-        @media (max-width: $tablet-width) {
+        @media (max-width: variables.$tablet-width) {
             width: 585px;
         }
 
@@ -25,7 +25,7 @@
     }
 
     > div {
-        @media (max-width: $tablet-width) {
+        @media (max-width: variables.$tablet-width) {
             display: flex;
             flex-flow: row nowrap;
             gap: 4px;
@@ -42,20 +42,20 @@
     }
 
     &__text {
-        font-size: $font-size-24;
-        font-weight: $font-weight-sm;
-        line-height: $line-height-34;
+        font-size: variables.$font-size-24;
+        font-weight: variables.$font-weight-sm;
+        line-height: variables.$line-height-34;
         margin-bottom: 8px;
 
-        @media (max-width: $tablet-width) {
+        @media (max-width: variables.$tablet-width) {
             width: 320px;
             transform: translateX(4px);
         }
 
         @media (max-width: 800px) {
             width: 220px;
-            font-size: $font-size-16;
-            line-height: $line-height-22;
+            font-size: variables.$font-size-16;
+            line-height: variables.$line-height-22;
         }
 
         @media (max-width: 492px) {

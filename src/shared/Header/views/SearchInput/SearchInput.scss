@@ -1,4 +1,4 @@
-@import "style/variables";
+@use "style/variables";
 
 .SearchInput {
     .InputFieldView {
@@ -18,14 +18,14 @@
         svg {
             path,
             circle {
-                stroke: $custom-icon-color;
+                stroke: variables.$custom-icon-color;
             }
         }
     }
 
     .InputFieldView__input {
         padding-left: 12px;
-        background-color: $control-background-color;
+        background-color: variables.$control-background-color;
         border: none;
     }
 }

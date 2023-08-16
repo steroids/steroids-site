@@ -1,6 +1,6 @@
-@import './customVariables';
+@forward '~@steroidsjs/bootstrap/scss/mixins';
 @import '~@steroidsjs/bootstrap/scss/variables';
-@import '~@steroidsjs/bootstrap/scss/mixins';
+@import 'customVariables';
 
 
 $color-purple: #932981;

@@ -1,4 +1,4 @@
-@import "style/variables";
+@use "style/variables";
 
 :root {
     --footer-background-color: #f8f8f8;
@@ -14,15 +14,15 @@ $footer-background-color: var(--footer-background-color);
 $footer-separator-color: var(--footer-separator-color);
 
 %fontTemplate {
-    font-size: $font-size-18;
-    font-weight: $font-weight-sm;
-    line-height: $line-height-22;
-    color: $custom-text-decr-color;
+    font-size: variables.$font-size-18;
+    font-weight: variables.$font-weight-sm;
+    line-height: variables.$line-height-22;
+    color: variables.$custom-text-decr-color;
 
     @media (max-width: 538px) {
         font-family: Nunito Sans;
-        font-size: $font-size-14;
-        line-height: $line-height-18;
+        font-size: variables.$font-size-14;
+        line-height: variables.$line-height-18;
     }
 }
 
@@ -34,7 +34,7 @@ $footer-separator-color: var(--footer-separator-color);
     background: $footer-background-color;
     @extend %fontTemplate;
 
-    @media (max-width: $tablet-width) {
+    @media (max-width: variables.$tablet-width) {
         padding: 64px 16px 24px 16px;
     }
 
@@ -59,7 +59,7 @@ $footer-separator-color: var(--footer-separator-color);
         justify-content: space-between;
         padding-bottom: 192px;
 
-        @media (max-width: $tablet-width-small) {
+        @media (max-width: variables.$tablet-width-small) {
             padding-bottom: 122px;
         }
 
@@ -72,7 +72,7 @@ $footer-separator-color: var(--footer-separator-color);
             display: flex;
             flex-flow: row nowrap;
 
-            @media (max-width: $tablet-width) {
+            @media (max-width: variables.$tablet-width) {
                 width: 61.71875vw;
                 column-gap: 16px;
             }
@@ -110,7 +110,7 @@ $footer-separator-color: var(--footer-separator-color);
                 &:nth-child(1) {
                     margin-right: 8.3333vw;
 
-                    @media (max-width: $tablet-width) {
+                    @media (max-width: variables.$tablet-width) {
                         margin-right: 0;
                     }
 
@@ -120,7 +120,7 @@ $footer-separator-color: var(--footer-separator-color);
                 }
                 &:nth-child(2) {
                     margin-right: 12.1875vw;
-                    @media (max-width: $tablet-width) {
+                    @media (max-width: variables.$tablet-width) {
                         margin-right: 0;
                     }
 
@@ -150,7 +150,7 @@ $footer-separator-color: var(--footer-separator-color);
         align-items: center;
         padding-top: 16px;
 
-        @media (max-width: $tablet-width) {
+        @media (max-width: variables.$tablet-width) {
             padding-top: 15px;
             padding-left: 16px;
             padding-right: 16px;
@@ -182,21 +182,21 @@ $footer-separator-color: var(--footer-separator-color);
                 small {
                     order: 1;
 
-                    font-size: $font-size-12;
+                    font-size: variables.$font-size-12;
                     font-weight: 300;
                 }
             }
         }
 
         &-right {
-            font-size: $font-size-18;
-            font-weight: $font-weight-sm;
-            line-height: $line-height-22;
+            font-size: variables.$font-size-18;
+            font-weight: variables.$font-weight-sm;
+            line-height: variables.$line-height-22;
 
             @media (max-width: 538px) {
-                font-size: $font-size-12;
+                font-size: variables.$font-size-12;
                 font-weight: 300;
-                line-height: $line-height-16;
+                line-height: variables.$line-height-16;
             }
         }
     }

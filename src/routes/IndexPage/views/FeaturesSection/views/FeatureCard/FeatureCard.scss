@@ -1,4 +1,4 @@
-@import "style/variables";
+@use "style/variables";
 
 .FeatureCard {
     $root: &;
@@ -7,15 +7,15 @@
     align-items: center;
     position: relative;
 
-    background-color: $custom-background-color-f9;
+    background-color: variables.$custom-background-color-f9;
     border-radius: 20px;
     height: 839px;
 
-    @media (max-width: $tablet-width) {
+    @media (max-width: variables.$tablet-width) {
         height: 760px;
     }
 
-    @media (max-width: $tablet-width-small) {
+    @media (max-width: variables.$tablet-width-small) {
         height: 400px;
     }
 
@@ -40,12 +40,12 @@
         margin-top: -42px;
         margin-bottom: 32px;
 
-        @media (max-width: $tablet-width) {
+        @media (max-width: variables.$tablet-width) {
             margin-bottom: -6px;
             transform: translate(0px, -3px);
         }
 
-        @media (max-width: $tablet-width-small) {
+        @media (max-width: variables.$tablet-width-small) {
             transform: translate(0px, 0px);
             margin-bottom: 0px;
         }
@@ -62,15 +62,15 @@
     }
 
     &__title {
-        font-size: $font-size-32;
-        font-weight: $font-weight-sm;
-        line-height: $line-height-40;
+        font-size: variables.$font-size-32;
+        font-weight: variables.$font-weight-sm;
+        line-height: variables.$line-height-40;
         margin-bottom: 8px;
 
         @media (max-width: 360px) {
-            font-size: $font-size-18;
-            font-weight: $font-weight-sm;
-            line-height: $line-height-24;
+            font-size: variables.$font-size-18;
+            font-weight: variables.$font-weight-sm;
+            line-height: variables.$line-height-24;
         }
     }
 
@@ -78,33 +78,33 @@
         width: 59.6739%;
         text-align: center;
         font-family: Nunito Sans;
-        font-size: $font-size-16;
-        font-weight: $font-weight-sm;
-        line-height: $line-height-22;
-        color: $custom-text-decr-color;
+        font-size: variables.$font-size-16;
+        font-weight: variables.$font-weight-sm;
+        line-height: variables.$line-height-22;
+        color: variables.$custom-text-decr-color;
         margin-bottom: 109px;
 
-        @media (max-width: $tablet-width) {
+        @media (max-width: variables.$tablet-width) {
             width: 41.015625vw;
             height: 66px;
             margin-bottom: 64px;
         }
 
-        @media (max-width: $tablet-width-small) {
+        @media (max-width: variables.$tablet-width-small) {
             width: 88.54166vw;
         }
 
         @media (max-width: 360px) {
             width: 81.25vw;
-            font-size: $font-size-12;
+            font-size: variables.$font-size-12;
             font-weight: 300;
-            line-height: $line-height-16;
+            line-height: variables.$line-height-16;
         }
     }
 
     &__img-wrapper {
-        border-top: 12px solid $border-color-first;
-        border-left: 12px solid $border-color-first;
+        border-top: 12px solid variables.$border-color-first;
+        border-left: 12px solid variables.$border-color-first;
         border-top-left-radius: 12px;
         margin-top: auto;
         position: absolute;
@@ -113,18 +113,18 @@
         height: 600px;
         left: 121px;
         bottom: 0;
-        background-color: $border-color-first;
+        background-color: variables.$border-color-first;
 
-        @media (max-width: $tablet-width) {
+        @media (max-width: variables.$tablet-width) {
             width: 877px;
             height: 503px;
-            border: 12px solid $border-color-first;
+            border: 12px solid variables.$border-color-first;
             border-radius: 40px;
             left: 106px;
             bottom: 76px;
         }
 
-        @media (max-width: $tablet-width-small) {
+        @media (max-width: variables.$tablet-width-small) {
             bottom: auto;
             top: 143px;
             left: 94px;
@@ -135,7 +135,7 @@
             height: 225px;
             left: 48px;
             bottom: 20px;
-            border-radius: $radius-large;
+            border-radius: variables.$radius-large;
             border-width: 6px;
             top: auto;
         }
@@ -149,18 +149,18 @@
     }
 
     &_isDark {
-        background-color: $black1D;
+        background-color: variables.$black1D;
 
         #{$root}__icon {
             transform: translateX(-12px) translateY(1px);
             margin-bottom: 26px;
 
-            @media (max-width: $tablet-width) {
+            @media (max-width: variables.$tablet-width) {
                 transform: translate(0px, -3px);
                 margin-bottom: -6px;
             }
 
-            @media (max-width: $tablet-width-small) {
+            @media (max-width: variables.$tablet-width-small) {
                 margin-bottom: 0;
                 transform: translate(0px, 3px);
             }
@@ -172,11 +172,11 @@
         }
 
         #{$root}__title {
-            color: $white;
+            color: variables.$white;
         }
 
         #{$root}__description {
-            color: $custom-text-descr-color-static;
+            color: variables.$custom-text-descr-color-static;
             
             @media (max-width: 360px) {
                 width: 260px;
@@ -184,10 +184,10 @@
         }
 
         #{$root}__img-wrapper {
-            border-color: $border-color-second;
-            background-color: $border-color-second;
+            border-color: variables.$border-color-second;
+            background-color: variables.$border-color-second;
 
-            @media (max-width: $tablet-width-small) {
+            @media (max-width: variables.$tablet-width-small) {
                 top: 100px;
                 left: 88px;
             }
