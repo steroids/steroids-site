@@ -1,47 +1,115 @@
 @use "style/variables";
 
+:root {
+    --banner-frame-background-color: #333646;
+}
+
+html[data-theme="dark"] {
+    --banner-frame-background-color: #1b1b23;
+}
+
+$banner-frame-background-color: var(--banner-frame-background-color);
+
 .Banner {
-    padding: 80px;
-    background-color: #333646;
+    overflow: hidden;
+    position: relative;
     height: 300px;
 
     @media (max-width: variables.$tablet-width) {
-        padding: 50px 40px;
         height: 240px;
     }
 
     @media (max-width: variables.$mobile-width) {
-        font-size: variables.$font-size-32;
-        font-weight: variables.$font-weight-lg;
-        line-height: variables.$line-height-40;
-
-        padding: 34px 24px;
         height: 180px;
     }
 
-    &__title {
-        font-size: 96px;
-        color: variables.$white;
-        margin-bottom: 0;
-
-        font-size: variables.$font-size-80;
-        font-weight: variables.$font-weight-lg;
-        line-height: variables.$line-height-96;
-
-        white-space: nowrap; /* Запретить перенос текста */
-        overflow: hidden; /* Скрыть содержимое, выходящее за границы ячейки */
-        text-overflow: ellipsis; /* Добавить многоточие, если текст обрезается */
+    &__frame {
+        height: 100%;
+        width: 56.3541vw;
+        background-color: red;
+        position: relative;
+        clip-path: polygon(0 0, 100% 0%, 84% 100%, 0% 100%);
+        background-color: $banner-frame-background-color;
+        z-index: 2;
 
         @media (max-width: variables.$tablet-width) {
-            font-size: variables.$font-size-64;
-            font-weight: variables.$font-weight-lg;
-            line-height: variables.$line-height-80;
+            width: 53.7109vw;
+            clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
         }
 
-        @media (max-width: variables.$mobile-width) {
-            font-size: variables.$font-size-32;
+        @media (max-width: variables.$tablet-width-small) {
+            width: 54.6875vw;
+            clip-path: polygon(0 0, 100% 0%, 68% 100%, 0% 100%);
+        }
+
+        @media (max-width: 624px) {
+            width: 90.625vw;
+        }
+
+        @media (max-width: variables.$mobile-width-small) {
+            clip-path: polygon(0 0, 100% 0%, 62% 100%, 0% 100%);
+        }
+        display: flex;
+        align-items: center;
+
+        &-title {
+            color: variables.$white;
+            position: relative;
+            font-size: variables.$font-size-80;
             font-weight: variables.$font-weight-lg;
-            line-height: variables.$line-height-40;
+            line-height: variables.$line-height-96;
+            margin-bottom: 0;
+            z-index: 3;
+            padding-left: 80px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            @media (max-width: variables.$tablet-width) {
+                font-size: variables.$font-size-64;
+                line-height: variables.$line-height-80;
+                padding-left: 40px;
+            }
+
+            @media (max-width: variables.$tablet-width-small) {
+                font-size: variables.$font-size-48;
+                line-height: variables.$line-height-54;
+                padding-left: 32px;
+            }
+
+            @media (max-width: variables.$mobile-width) {
+                font-size: variables.$font-size-32;
+                line-height: variables.$line-height-40;
+            }
+        }
+    }
+    &__picture {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 43.6459vw;
+        z-index: 1;
+
+        @media (max-width: variables.$tablet-width) {
+            width: 46.2891vw;
+        }
+
+        @media (max-width: variables.$tablet-width-small) {
+            width: 45.3125;
+        }
+
+        transform: translateY(-1px);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+
+            @media (max-width: variables.$tablet-width-small) {
+                object-position: 1% center;
+            }
         }
     }
 }

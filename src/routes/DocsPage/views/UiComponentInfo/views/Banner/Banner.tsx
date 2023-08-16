@@ -3,6 +3,7 @@ import useBem from '@steroidsjs/core/hooks/useBem';
 import {Title} from '@steroidsjs/core/ui/typography';
 
 import './Banner.scss';
+import {useTheme} from '@steroidsjs/core/hooks';
 
 interface IBannerProps {
     componentName: string,
@@ -10,13 +11,23 @@ interface IBannerProps {
 
 function Banner(props: IBannerProps) {
     const bem = useBem('Banner');
+    const {theme} = useTheme();
 
     return (
         <div className={bem.block()}>
-            <Title
-                className={bem.element('title')}
-                content={props.componentName}
-            />
+            <div className={bem.element('frame')}>
+                <Title
+                    className={bem.element('frame-title')}
+                    content={props.componentName}
+                />
+            </div>
+            <div className={bem.element('picture')}>
+                <img
+                    className={bem.element('picture-img')}
+                    src={`/images/banners/${theme}/${props.componentName}.webp`}
+                    alt="component demos"
+                />
+            </div>
         </div>
     );
 }

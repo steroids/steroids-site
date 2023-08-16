@@ -64,7 +64,9 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
 
     return (
         <div className={bem.block()}>
-            <Banner componentName={componentName} />
+            <Banner
+                componentName={componentName}
+            />
             <ButtonGroup
                 view={TabGroupView}
                 items={TABS_ITEMS}
