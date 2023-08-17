@@ -29,7 +29,11 @@ export default function Layout(props: React.PropsWithChildren<any>) {
                 <Notifications />
                 {props.children}
                 <ModalPortal />
-                <Portal />
+                {
+                    process.env.IS_SSR
+                        ? null
+                        : <Portal />
+                }
             </main>
             <Footer />
         </div>
