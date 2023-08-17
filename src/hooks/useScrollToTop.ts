@@ -11,7 +11,7 @@ export const useScrollToTop = (...dependencies: any[]) => {
         const scrollTopEnd = 0;
 
         // Получаем текущую позицию вертикальной прокрутки
-        const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const currentScrollTop = document.documentElement.scrollTop;
 
         // Проверяем, нужно ли выполнять анимацию скроллинга
         if (currentScrollTop > scrollTopEnd) {
