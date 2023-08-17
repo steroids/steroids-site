@@ -19,7 +19,7 @@ export default function ComponentInfo() {
     const routeParam = useSelector(state => getRouteParam(state, PATH_ROUTE_PARAM));
     const componentInfo = autoDocs.components[`components/${_upperFirst(routeParam)}Component`];
 
-    useScrollToTop();
+    useScrollToTop(componentInfo);
 
     if (!routeParam) {
         return null;

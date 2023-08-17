@@ -30,8 +30,6 @@ interface IUiComponentInfoProps {
 }
 
 export default function UiComponentInfo(props: IUiComponentInfoProps) {
-    useScrollToTop();
-
     const bem = useBem('UiComponentInfo');
     const triggerElementRef = React.useRef(null);
     const [tab, setTab] = React.useState<ComponentInfoTabs>(ComponentInfoTabs.DESCRIPTION);
@@ -44,6 +42,8 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
         demos,
         componentInfo,
     } = useUIComponentInfo(props.demosComponents);
+
+    useScrollToTop(componentInfo);
 
     const {toggleOffCollision} = useCollision(
         triggerElementRef,

@@ -1,7 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import {gsap} from 'gsap';
 import React from 'react';
 
-export const useScrollToTop = () => {
+export const useScrollToTop = (...dependencies: any[]) => {
     React.useEffect(() => {
         if (process.env.IS_SSR) {
             return;
@@ -22,5 +23,5 @@ export const useScrollToTop = () => {
                 },
             });
         }
-    });
+    }, [...dependencies]);
 };
