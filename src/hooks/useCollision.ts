@@ -40,6 +40,10 @@ export const useCollision = (
     const [isAutoScrolling, setIsAutoScrolling] = React.useState(false);
 
     React.useEffect(() => {
+        if (process.env.IS_SSR) {
+            return () => {};
+        }
+
         const handleCollisionCheck = () => {
             if (isCollisionActive) {
                 const centerElement = triggerElement.current;
@@ -87,6 +91,10 @@ export const useCollision = (
     }, []);
 
     React.useEffect(() => {
+        if (process.env.IS_SSR) {
+            return () => {};
+        }
+
         const continueCollision = () => {
             if (!isAutoScrolling) {
                 toggleOnCollision();

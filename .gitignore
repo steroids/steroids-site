@@ -5,6 +5,10 @@
 .DS_Store
 Thumbs.db
 public/index-lang.json
+public/frontend
+public/bundle-all.js
+public/stats.json
+public/server.js
 node_modules
 !.gitempty
 /.env

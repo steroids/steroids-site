@@ -4,7 +4,10 @@ stages:
   - deploy
 
 variables:
-  DEV_DEPLOY_DIR: '/var/host/www/$CI_PROJECT_NAMESPACE-$CI_PROJECT_NAME/www-$CI_COMMIT_REF_NAME'
+  DEV_SSR_DEPLOY_DIR: '/var/www/steroids-steroids-site/www-master'
+  DEV_SSR_PROCESS: 'steroids-site-ssr-dev'
+  # PROD_SSR_DEPLOY_DIR: '/var/www/steroids-steroids-site/www-master'
+  # PROD_SSR_PROCESS: 'steroids-site-ssr-prod'
 
 lint:
   stage: lint
@@ -12,32 +15,80 @@ lint:
     - yarn
     - yarn lint
 
-build:
-  stage: build
+.build_ssr:
   cache:
     paths:
       - node_modules
+  stage: build
   artifacts:
     paths:
-      - public/
-  only:
-    - master
+      - public
+      - node_modules
   script:
     - yarn
-    - env > .env
-    - export APP_ENV="preview"
-    - node webpack production
+    - yarn run build-ssr
     - echo "$CI_COMMIT_REF_NAME-$CI_JOB_ID" > $CI_PROJECT_DIR/public/version.txt
 
-deploy_dev:
-  stage: deploy
+build_ssr_dev:
+  extends: .build_ssr
   only:
     - master
+  variables:
+    APP_SSR_PORT: 9993
+    APP_ENV: preview
+
+build_ssr_prod:
+  extends: .build_ssr
+  only:
+    - prod
+  variables:
+    APP_SSR_PORT: 9993
+    APP_ENV: production
+
+.deploy_ssr:
+  stage: deploy
   tags:
     - dev-server
   variables:
     GIT_STRATEGY: none
   script:
-    - mkdir -p $DEV_DEPLOY_DIR
-    - rsync --recursive --remove-source-files --delete ./ $DEV_DEPLOY_DIR
+    - mkdir -p $DEPLOY_DIR
+    - rsync
+      --recursive
+      --remove-source-files
+      --include=public/***
+      --include=node_modules/***
+      --exclude='*'
+      --delete
+      ./ $DEPLOY_DIR
+    # - sudo -i pm2 reload --update-env $SSR_PROCESS_NAME
+
+deploy_ssr_dev:
+  extends: .deploy_ssr
+  only:
+    - master
+  variables:
+    DEPLOY_DIR: $DEV_SSR_DEPLOY_DIR
+    SSR_PROCESS_NAME: $DEV_SSR_PROCESS
+
+deploy_ssr_prod:
+    stage: deploy
+    only:
+        - prod
+    script:
+        - ssh prod "mkdir -p $PROD_SSR_DEPLOY_DIR"
+        - rsync
+            --recursive
+            --remove-source-files
+            --include=public/***
+            --include=backend/***
+            --include=node_modules/***
+            --exclude='*'
+            --delete
+            $CI_PROJECT_DIR/ prod:$PROD_SSR_DEPLOY_DIR
+        # - ssh prod "
+        #     cd $PROD_SSR_DEPLOY_DIR
+        #     && rm -f $PROD_SSR_ROOT_DIR/current
+        #     && ln -sf $PROD_SSR_DEPLOY_DIR $PROD_SSR_ROOT_DIR/current
+        #     && sudo -i pm2 reload $PROD_SSR_PROCESS || exit 0"
 

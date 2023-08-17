@@ -1,8 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
+import {PATH_ROUTE_PARAM} from 'constants/routeParams';
 import React from 'react';
 import {useComponents, useSelector} from '@steroidsjs/core/hooks';
 import {getRouteParam} from '@steroidsjs/core/reducers/router';
-import {PATH_ROUTE_PARAM} from 'constants/routeParams';
 import axios from 'axios';
 
 const PATH_TO_DOCS = '../../../docs/';
