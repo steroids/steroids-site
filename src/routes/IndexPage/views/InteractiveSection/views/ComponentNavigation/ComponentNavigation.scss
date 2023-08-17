@@ -17,26 +17,26 @@
         align-items: center;
     }
 
-    .Selector__decoration {
+    .CustomNavigation__decoration {
         @media (max-width: variables.$tablet-width) {
-            height: 130px;
+            height: 133px;
             left: -26px;
         }
 
         @media (max-width: 800px) {
             left: 50%;
             transform: translateX(-50%);
-            width: 380px;
+            width: 330px;
             height: 4px;
             border-radius: 20px;
         }
 
-        @media (max-width: 410px) {
-            width: 300px;
+        @media (max-width: 428px) {
+            width: 243px;
         }
     }
 
-    .Selector__elements {
+    .CustomNavigation__elements {
         @media (max-width: 800px) {
             margin-top: 26px;
             flex-flow: row;

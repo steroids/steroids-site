@@ -4,7 +4,14 @@ import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import {IPropControl} from 'types/IPropControl';
 import Section from 'shared/Section';
-import __unset from 'lodash-es/unset';
+import _unset from 'lodash-es/unset';
+import _isObject from 'lodash-es/isObject';
+import _isArray from 'lodash-es/isArray';
+import _isPlainObject from 'lodash-es/isPlainObject';
+import _get from 'lodash-es/get';
+import _set from 'lodash-es/set';
+import _remove from 'lodash-es/remove';
+import _isEqual from 'lodash-es/isEqual';
 import ComponentNavigation from './views/ComponentNavigation';
 import ComponentPresent from './views/ComponentPresent';
 import ComponentOptions from './views/ComponentOptions';
@@ -16,18 +23,37 @@ const DEFAULT_SIZE = 'sm';
 const DEFAULT_COMPONENT_NAME = 'input';
 const DEFAULT_BUTTON_COLOR = 'primary';
 
-const getInitialProps = (props: Record<string, any>, controls: IPropControl[]) => {
-    const initialProps = {
-        ...props,
-    };
+const createProps = (selectedControlsIds: number[], componentName: string, controls: IPropControl[]) => {
+    const props = {...components[componentName].props};
 
-    controls?.forEach(control => {
-        if (!control.enabled) {
-            __unset(initialProps, [control.propName]);
+    const notSelectedControls = controls?.filter(control => !selectedControlsIds.includes(control.id));
+
+    notSelectedControls?.forEach(notSelectedControl => {
+        _unset(props, notSelectedControl.path);
+    });
+
+    controls?.forEach(currentControl => {
+        if (selectedControlsIds.includes(currentControl.id) && !!currentControl.addition) {
+            let currentPropState = _get(props, currentControl.addition.path);
+
+            if (_isPlainObject(currentPropState)) {
+                currentPropState = {
+                    ...currentPropState,
+                    [currentControl.addition.extraName]: currentControl.addition.toAddition,
+                };
+            }
+
+            if (_isArray(currentPropState)) {
+                currentPropState = [
+                    ...currentPropState,
+                    currentControl.addition?.toAddition,
+                ];
+            }
+            _set(props, currentControl.addition.path, currentPropState);
         }
     });
 
-    return initialProps;
+    return props;
 };
 
 export default function InteractiveSection() {
@@ -51,13 +77,7 @@ export default function InteractiveSection() {
     );
 
     const handleControlChange = React.useCallback((selectedControlsIds: number[]) => {
-        const resultProps = {...components[currentComponentName].props};
-
-        const notSelectedControls = currentControls?.filter(control => !selectedControlsIds.includes(control.id));
-
-        notSelectedControls?.forEach(notSelectedControl => {
-            __unset(resultProps, [notSelectedControl.propName]);
-        });
+        const resultProps = createProps(selectedControlsIds, currentComponentName, currentControls);
 
         setCurrentProps(resultProps);
         setSelectedIds(selectedControlsIds);
@@ -65,9 +85,9 @@ export default function InteractiveSection() {
 
     const handleComponentClick = React.useCallback((selectedComponent: string) => {
         const newControls = components[selectedComponent].controls;
-        const newComponentProps = getInitialProps(components[selectedComponent].props, newControls);
         const newSelectedIds = components[selectedComponent].controls
             ?.filter((control) => control.enabled).map(control => control.id);
+        const newComponentProps = createProps(newSelectedIds, selectedComponent, newControls);
 
         setCurrentProps(newComponentProps);
         setCurrentComponentName(selectedComponent);
