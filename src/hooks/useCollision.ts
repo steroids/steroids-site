@@ -41,7 +41,7 @@ export const useCollision = (
 
     React.useEffect(() => {
         if (process.env.IS_SSR) {
-            return;
+            return () => {};
         }
 
         const handleCollisionCheck = () => {
@@ -91,6 +91,10 @@ export const useCollision = (
     }, []);
 
     React.useEffect(() => {
+        if (process.env.IS_SSR) {
+            return () => {};
+        }
+
         const continueCollision = () => {
             if (!isAutoScrolling) {
                 toggleOnCollision();
