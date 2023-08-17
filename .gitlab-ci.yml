@@ -61,7 +61,7 @@ build_ssr_prod:
       --exclude='*'
       --delete
       ./ $DEPLOY_DIR
-    # - sudo -i pm2 reload --update-env $SSR_PROCESS_NAME
+    - sudo -i pm2 reload --update-env $SSR_PROCESS_NAME
 
 deploy_ssr_dev:
   extends: .deploy_ssr
