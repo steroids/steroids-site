@@ -17,4 +17,5 @@ require('@steroidsjs/webpack').config({
             },
         },
     },
+    languages: ['ru', 'en'],
 });
