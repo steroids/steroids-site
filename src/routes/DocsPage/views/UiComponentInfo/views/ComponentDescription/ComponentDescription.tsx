@@ -18,12 +18,12 @@ interface IComponentDescriptionProps {
     className?: string;
 }
 
-const translateComponentDescription = (componentName: string, message: string) => {
+const translateComponentDescription = (componentName: string, description: string) => {
     let translatedDescription;
     try {
-        translatedDescription = __(message);
+        translatedDescription = __(description);
     } catch (error) {
-        console.error('Provided componentName/message ', componentName, '+', message, 'Error: ', error);
+        console.error('Provided componentName/description ', componentName, '+', description, 'Error: ', error);
     }
 
     return translatedDescription;
