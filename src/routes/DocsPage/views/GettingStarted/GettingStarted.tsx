@@ -40,18 +40,18 @@ const MARKDOWN_OPTIONS = {
 
 export default function GettingStarted() {
     const bem = useBem('GettingStarted');
-    const {markdownContent} = useDocsMarkdown();
+    const {docsContent} = useDocsMarkdown();
 
     return (
         <article className={bem.block()}>
-            {markdownContent && (
+            {docsContent && (
                 <Markdown
                     options={{
                         ...MARKDOWN_OPTIONS,
                     }}
 
                 >
-                    {markdownContent}
+                    {docsContent}
                 </Markdown>
             )}
         </article>

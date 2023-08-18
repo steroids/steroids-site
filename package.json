@@ -22,7 +22,6 @@
         "@steroidsjs/ssr": "^2.0.3",
         "@steroidsjs/webpack": "^3.0 || >=3.0.0-beta.4",
         "@storybook/react": "~6.3.13",
-        "axios": "^0.21.1",
         "connected-react-router": "^6.9.1",
         "gsap": "^3.12.2",
         "lodash": "^4.17.21",
