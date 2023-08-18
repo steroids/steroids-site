@@ -98,7 +98,12 @@ $block-max-width: 700px;
     pre {
         max-width: 1200px;
         border-radius: 20px;
+        margin: 24px 0px !important;
         padding: 24px !important;
+
+        @media (max-width: variables.$mobile-width-small){
+              margin: 16px 0px !important;
+        }
 
         @media (max-width: variables.$tablet-width-small) {
             padding: 12px !important;
