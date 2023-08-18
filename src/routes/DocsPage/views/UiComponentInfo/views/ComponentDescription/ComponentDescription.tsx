@@ -18,22 +18,19 @@ interface IComponentDescriptionProps {
     className?: string;
 }
 
+const translateComponentDescription = (componentName: string, message: string) => {
+    let translatedDescription;
+    try {
+        translatedDescription = __(message);
+    } catch (error) {
+        console.error('Provided componentName/message ', componentName, '+', message, 'Error: ', error);
+    }
+
+    return translatedDescription;
+};
+
 export default function ComponentDescription(props: IComponentDescriptionProps) {
     const bem = useBem('ComponentDescription');
-
-    const getComponentDescription = React.useCallback((message: string) => {
-        let content;
-        try {
-            content = __(message);
-        } catch (error) {
-            console.error('Provided componentName: ', props.componentName);
-            console.error('Provided componentInfo: ', props.componentInfo);
-            console.error('Provided message: ', message);
-            console.error(error);
-        }
-
-        return content;
-    }, [props.componentInfo, props.componentName]);
 
     return (
         <div className={bem(
@@ -45,7 +42,7 @@ export default function ComponentDescription(props: IComponentDescriptionProps) 
                 <Title content={props.componentName} />
                 <Text
                     className={bem.element('text')}
-                    content={getComponentDescription(props.componentInfo?.description)}
+                    content={translateComponentDescription(props.componentName, props.componentInfo?.description)}
                 />
                 <Demos demos={props.demos} />
             </div>
