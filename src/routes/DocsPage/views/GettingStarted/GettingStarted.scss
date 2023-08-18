@@ -8,13 +8,14 @@ html[data-theme="dark"] {
     --docs-default-text-color: #fff;
 }
 $docs-default-text-color: var(--docs-default-text-color);
+$block-max-width: 700px;
 
 .GettingStarted {
     padding: 40px 80px;
     color: $docs-default-text-color;
 
     p {
-        max-width: 700px;
+        max-width: $block-max-width;
         font-size: variables.$font-size-14;
         font-weight: 300;
         line-height: 18px;
@@ -34,5 +35,21 @@ $docs-default-text-color: var(--docs-default-text-color);
 
     code {
         color: variables.$primary;
+    }
+    
+    ul { 
+        max-width: $block-max-width;
+        li { 
+            &:before { 
+                position: static;
+                content: '';
+                display: inline-block;
+                width: 7px;
+                height: 18px;
+                background-color: $docs-default-text-color;
+                height: 100%;
+                margin-right: 12.5px;
+            }
+        }
     }
 }
