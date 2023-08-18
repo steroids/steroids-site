@@ -49,7 +49,6 @@ export default function GettingStarted() {
                     options={{
                         ...MARKDOWN_OPTIONS,
                     }}
-
                 >
                     {docsContent}
                 </Markdown>

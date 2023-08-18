@@ -1,3 +1,38 @@
-.GettingStarted {
+@use "style/variables";
 
+:root {
+    --docs-default-text-color: #000;
+}
+
+html[data-theme="dark"] {
+    --docs-default-text-color: #fff;
+}
+$docs-default-text-color: var(--docs-default-text-color);
+
+.GettingStarted {
+    padding: 40px 80px;
+    color: $docs-default-text-color;
+
+    p {
+        max-width: 700px;
+        font-size: variables.$font-size-14;
+        font-weight: 300;
+        line-height: 18px;
+    }
+
+    h1,
+    h2 {
+        margin-bottom: 8px;
+        font-size: variables.$font-size-24;
+        font-weight: 800;
+        line-height: variables.$line-height-34;
+
+        &:not(h1:first-child) {
+            margin-top: 32px;
+        }
+    }
+
+    code {
+        color: variables.$primary;
+    }
 }
