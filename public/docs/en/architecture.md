@@ -1,6 +1,6 @@
 # Project Architecture
 
-Steroids provides a unified architecture for your projects. By following these principles and rules, you will be able to quickly create complex applications that will be easy to maintain in the future.
+**Steroids** provides a unified architecture for your projects. By following these principles and rules, you will be able to quickly create complex applications that will be easy to maintain in the future.
 
 ## Application Structure
 
