@@ -1,13 +1,13 @@
+import {PATH_ROUTE_PARAM} from 'constants/routeParams';
 import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import _upperFirst from 'lodash-es/upperFirst';
 import autoDocs from '@steroidsjs/core/docs-autogen-result.json';
 import {useSelector} from '@steroidsjs/core/hooks';
 import {getRouteParam} from '@steroidsjs/core/reducers/router';
-import {PATH_ROUTE_PARAM} from 'constants/routeParams';
 import Title from '@steroidsjs/core/ui/typography/Title';
 import Text from '@steroidsjs/core/ui/typography/Text';
-import {useScrollToTop} from 'hooks/useScrollToTop';
+import {scrollToTop} from 'utils/utils';
 import ApiTable from '../ApiTable';
 
 import './ComponentInfo.scss';
@@ -19,7 +19,9 @@ export default function ComponentInfo() {
     const routeParam = useSelector(state => getRouteParam(state, PATH_ROUTE_PARAM));
     const componentInfo = autoDocs.components[`components/${_upperFirst(routeParam)}Component`];
 
-    useScrollToTop(componentInfo);
+    React.useEffect(() => {
+        scrollToTop();
+    }, [componentInfo]);
 
     if (!routeParam) {
         return null;
