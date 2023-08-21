@@ -5,13 +5,9 @@ import useBem from '@steroidsjs/core/hooks/useBem';
 import {IPropControl} from 'types/IPropControl';
 import Section from 'shared/Section';
 import _unset from 'lodash-es/unset';
-import _isObject from 'lodash-es/isObject';
 import _isArray from 'lodash-es/isArray';
-import _isPlainObject from 'lodash-es/isPlainObject';
 import _get from 'lodash-es/get';
 import _set from 'lodash-es/set';
-import _remove from 'lodash-es/remove';
-import _isEqual from 'lodash-es/isEqual';
 import ComponentNavigation from './views/ComponentNavigation';
 import ComponentPresent from './views/ComponentPresent';
 import ComponentOptions from './views/ComponentOptions';
@@ -35,13 +31,6 @@ const createProps = (selectedControlsIds: number[], componentName: string, contr
     controls?.forEach(currentControl => {
         if (selectedControlsIds.includes(currentControl.id) && !!currentControl.addition) {
             let currentPropState = _get(props, currentControl.addition.path);
-
-            if (_isPlainObject(currentPropState)) {
-                currentPropState = {
-                    ...currentPropState,
-                    [currentControl.addition.extraName]: currentControl.addition.toAddition,
-                };
-            }
 
             if (_isArray(currentPropState)) {
                 currentPropState = [

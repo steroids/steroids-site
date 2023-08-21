@@ -3,6 +3,20 @@
 .ComponentNavigation {
     transform: translateY(44px) translateX(24px);
 
+    &__item {
+      &_isHiddenOnMobile {
+        @media (max-width: 428px) {
+          display: none;
+        }
+      }
+
+      &_isHiddenOnDesktop {
+        @media (max-width: 1300px) {
+          display: none;
+        }
+      }
+    }
+
     @media (max-width: variables.$tablet-width) {
         transform: translateY(-21px) translateX(26px);
     }
