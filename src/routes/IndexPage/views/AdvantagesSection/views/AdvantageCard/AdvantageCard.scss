@@ -12,15 +12,18 @@
     }
 
     @media (max-width: 764px) {
-        width: 132px;
+        width: 136px;
     }
 
-    &__img-wrapper {
+    &__icon-wrapper {
         margin-bottom: 16px;
         height: 240px;
         border-radius: 20px;
         background-color: variables.$custom-background-color-f9;
         overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         @media (max-width: variables.$tablet-width) {
             height: 200px;
@@ -31,13 +34,7 @@
         }
 
         @media (max-width: 764px) {
-            height: 132px;
-        }
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: 136px;
         }
     }
 
@@ -45,5 +42,14 @@
         text-align: center;
         margin-bottom: 0;
         color: variables.$custom-text-decr-color;
+        font-size: variables.$font-size-16;
+        font-weight: variables.$font-weight-sm;
+        line-height: variables.$line-height-22;
+        
+        @media (max-width: 352px){
+            font-size: variables.$font-size-12;
+            font-weight: 300;
+            line-height: variables.$line-height-16;
+        }
     }
 }
