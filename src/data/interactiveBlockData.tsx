@@ -238,7 +238,7 @@ const defaultGridProps = {
             hunger: 35,
             damage: 45,
             mana: 55,
-            pic: '/images/view.webp',
+            pic: '/images/image.webp',
 
         },
         {
@@ -251,7 +251,7 @@ const defaultGridProps = {
             hunger: 35,
             damage: 45,
             mana: 55,
-            pic: '/images/view.webp',
+            pic: '/images/image.webp',
 
         },
     ],
