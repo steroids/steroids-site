@@ -2,10 +2,10 @@ export interface IPropControl {
     id: number,
     label: string,
     enabled: boolean,
-    path?: any,
+    propPath?: any,
     addition?: {
         toAddition?: any,
         extraName?: string,
-        path: any,
+        propPath: any,
     },
 }

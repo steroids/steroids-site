@@ -25,12 +25,12 @@ const createProps = (selectedControlsIds: number[], componentName: string, contr
     const notSelectedControls = controls?.filter(control => !selectedControlsIds.includes(control.id));
 
     notSelectedControls?.forEach(notSelectedControl => {
-        _unset(props, notSelectedControl.path);
+        _unset(props, notSelectedControl.propPath);
     });
 
     controls?.forEach(currentControl => {
         if (selectedControlsIds.includes(currentControl.id) && !!currentControl.addition) {
-            let currentPropState = _get(props, currentControl.addition.path);
+            let currentPropState = _get(props, currentControl.addition.propPath);
 
             if (_isArray(currentPropState)) {
                 currentPropState = [
@@ -38,7 +38,7 @@ const createProps = (selectedControlsIds: number[], componentName: string, contr
                     currentControl.addition?.toAddition,
                 ];
             }
-            _set(props, currentControl.addition.path, currentPropState);
+            _set(props, currentControl.addition.propPath, currentPropState);
         }
     });
 

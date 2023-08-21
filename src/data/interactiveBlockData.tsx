@@ -49,19 +49,19 @@ const inputControls: IPropControl[] = [
         id: 1,
         label: __('Отобразить иконку'),
         enabled: true,
-        path: 'leadIcon',
+        propPath: 'leadIcon',
     },
     {
         id: 2,
         label: __('Отобразить placeholder'),
         enabled: true,
-        path: 'placeholder',
+        propPath: 'placeholder',
     },
     {
         id: 3,
         label: __('Отобразить label'),
         enabled: true,
-        path: 'label',
+        propPath: 'label',
     },
 ];
 
@@ -75,13 +75,13 @@ const buttonControls: IPropControl[] = [
     {
         id: 1,
         label: __('Включить стиль outline'),
-        path: 'outline',
+        propPath: 'outline',
         enabled: false,
     },
     {
         id: 3,
         label: __('Включить состояние загрузки'),
-        path: 'isLoading',
+        propPath: 'isLoading',
         enabled: false,
     },
 ];
@@ -105,13 +105,13 @@ const cardControls: IPropControl[] = [
         id: 1,
         label: __('Отобразить header'),
         enabled: true,
-        path: 'header',
+        propPath: 'header',
     },
     {
         id: 2,
         label: __('Добавить изображение'),
         enabled: false,
-        path: 'cover',
+        propPath: 'cover',
     },
 ];
 
@@ -148,7 +148,7 @@ const formControls: IPropControl[] = [
                     />
                 ),
             },
-            path: 'fields',
+            propPath: 'fields',
         },
     },
     {
@@ -167,7 +167,7 @@ const formControls: IPropControl[] = [
                     />
                 ),
             },
-            path: 'fields',
+            propPath: 'fields',
         },
     },
     {
@@ -186,7 +186,7 @@ const formControls: IPropControl[] = [
                     />
                 ),
             },
-            path: 'fields',
+            propPath: 'fields',
         },
     },
     {
@@ -204,13 +204,13 @@ const formControls: IPropControl[] = [
                     />
                 ),
             },
-            path: 'fields',
+            propPath: 'fields',
         },
     },
     {
         id: 3,
         label: __('Отобразить кнопку отправить'),
-        path: 'submitLabel',
+        propPath: 'submitLabel',
         enabled: true,
     },
 ];
@@ -288,7 +288,7 @@ const gridControls: IPropControl[] = [
                     ],
                 },
             },
-            path: 'columns',
+            propPath: 'columns',
         },
     },
     {
@@ -309,7 +309,7 @@ const gridControls: IPropControl[] = [
                     ],
                 },
             },
-            path: 'columns',
+            propPath: 'columns',
         },
     },
     {
@@ -324,7 +324,7 @@ const gridControls: IPropControl[] = [
                 },
                 valueView: 'ContentColumnView',
             },
-            path: 'columns',
+            propPath: 'columns',
         },
     },
 ];
