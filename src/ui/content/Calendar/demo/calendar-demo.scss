@@ -1,0 +1,38 @@
+@use "style/variables";
+
+.calendar-demo {
+    max-width: 362px;
+    min-width: 296px;
+
+    .DayPicker-WeekdaysRow {
+        width: 100%;
+    }
+
+    .DayPicker-Day {
+        flex-shrink: 0;
+    }
+
+    .DayPicker-WeekdaysRow {
+        @media (max-width: 392px) {
+            column-gap: 10px;
+        }
+        @media (max-width: 370px) {
+            column-gap: 6px;
+        }
+        @media (max-width: 334px) {
+            column-gap: 4px;
+        }
+    }
+
+    .DayPicker-Week {
+        @media (max-width: 392px) {
+            column-gap: 10px;
+        }
+        @media (max-width: 370px) {
+            column-gap: 6px;
+        }
+        @media (max-width: 334px) {
+            column-gap: 4px;
+        }
+    }
+}

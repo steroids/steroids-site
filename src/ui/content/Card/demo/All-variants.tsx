@@ -1,9 +1,10 @@
 /* eslint-disable max-len */
 import * as React from 'react';
 import Card from '@steroidsjs/core/ui/content/Card';
-import {ICardProps} from '@steroidsjs/core/ui/content/Card/Card';
 import {IButtonProps} from '@steroidsjs/core/ui/form/Button/Button';
 import {ILinkProps} from '@steroidsjs/core/ui/nav/Link/Link';
+
+import './card-demo.scss';
 
 const CARD_TITLE = 'Card title';
 const CARD_DESCRIPTION = 'Some quick example text to build on the card title and make up the bulk of the cards content.';
@@ -166,11 +167,11 @@ export default () => (
         {Object.entries(cardsRows).map(([_, cardsRow], cardsRowIndex) => (
             <div
                 key={cardsRowIndex}
-                style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px'}}
+                className='card-demo-all-variants'
             >
                 {cardsRow.map((card, cardIndex) => (
                     <Card
-                        style={{width: '340px'}}
+                        className='card'
                         {...card}
                         key={cardIndex}
                     />

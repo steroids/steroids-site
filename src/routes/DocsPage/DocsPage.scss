@@ -135,4 +135,13 @@ $sidebar-background-color: var(--sidebar-background-color);
     &__content {
         width: 100%;
     }
+
+    //Все адаптивы для демок
+    .DemoCard__content {
+        //Accordion
+        .AccordionItemView {
+            width: 100%;
+            max-width: 480px;
+        }
+    }
 }
