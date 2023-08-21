@@ -8,6 +8,7 @@ import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
 import {syntaxHighlighterStyle} from 'data/syntaxHighlighterStyle';
 
 import './GettingStarted.scss';
+import Link from '@steroidsjs/core/ui/nav/Link';
 
 const CodeBlock = ({className, children}) => {
     let lang = 'text'; // default monospaced text
@@ -49,7 +50,6 @@ export default function GettingStarted() {
                     options={{
                         ...MARKDOWN_OPTIONS,
                     }}
-
                 >
                     {docsContent}
                 </Markdown>
