@@ -6,6 +6,7 @@
     align-items: center;
     margin-bottom: 30px;
     color: variables.$custom-text-color;
+    cursor: pointer;
 
     @media (max-width: variables.$mobile-width-small) {
         margin-bottom: 26px;
@@ -25,7 +26,7 @@
         }
 
         &:last-child {
-            transform: translateX(-4px) translateY(1px);
+            transform: translateX(5px) translateY(0px);
 
             @media (max-width: 384px) {
                 transform: translateX(2px) translateY(2px);
@@ -38,11 +39,12 @@
         }
     }
 
-    &__icon {
-        width: 115px;
-        height: 115px;
+    .AnimatedLogo {
+        width: 93px;
+        height: 40px;
 
-        transform: scale(1.4) translateX(0px) translateY(4px);
+        transform: translateX(5px) translateY(5px);
+
 
         @media (max-width: 384px) {
             width: 60px;
