@@ -6,8 +6,9 @@ stages:
 variables:
   DEV_SSR_DEPLOY_DIR: '/var/www/steroids-steroids-site/www-master'
   DEV_SSR_PROCESS: 'steroids-site-ssr-dev'
-  # PROD_SSR_DEPLOY_DIR: '/var/www/steroids-steroids-site/www-master'
-  # PROD_SSR_PROCESS: 'steroids-site-ssr-prod'
+  PROD_SSR_DEPLOY_DIR: '/var/www/steroids.kozhindev.com/frontend/$CI_COMMIT_REF_NAME-$CI_PIPELINE_ID'
+  PROD_SSR_PROCESS: 'steroids-site-ssr-prod'
+  PROD_SSR_ROOT_DIR: '/var/www/steroids.kozhindev.com/frontend'
 
 lint:
   stage: lint
