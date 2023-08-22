@@ -1,7 +1,7 @@
+import {HEADER_LINKS} from 'constants/links';
 import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import Nav from '@steroidsjs/core/ui/nav/Nav';
-import {HEADER_LINKS} from 'constants/links';
 import ThemesButtons from '../ThemesButtons';
 import HeaderLogo from './views/HeaderLogo';
 import SearchInput from './views/SearchInput';
@@ -19,8 +19,9 @@ export default function Header() {
             <HeaderLogo />
             <Nav
                 items={HEADER_LINKS}
-                layout="link"
                 className={bem.element('nav')}
+                layout='link'
+                onChange={() => console.log('click')}
             />
             <div className={bem.element('controls')}>
                 <SearchInput />
