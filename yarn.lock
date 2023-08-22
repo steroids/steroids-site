@@ -2248,10 +2248,10 @@
   resolved "https://registry.yarnpkg.com/@splidejs/splide/-/splide-4.1.4.tgz#02d029360569e7d75d28357a9727fc48322015a3"
   integrity sha512-5I30evTJcAJQXt6vJ26g2xEkG+l1nXcpEw4xpKh0/FWQ8ozmAeTbtniVtVmz2sH1Es3vgfC4SS8B2X4o5JMptA==
 
-"@steroidsjs/bootstrap@^3.0.0-beta.88":
-  version "3.0.0-beta.88"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.88.tgz#8d759bb1a99426c48b84bff6cace8815595210b4"
-  integrity sha512-uSDC5UtzR5GbsS0ZLsB/5VanSjsQhNcdWpnE4nhnvTUEbsFkVNcoa8KYmayEIISrr4DsL+8KBeMCoUQkeO2E8w==
+"@steroidsjs/bootstrap@^3.0.0-beta.90":
+  version "3.0.0-beta.90"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.90.tgz#9f1deed6bf5cbd8c77297d3b2af384e3c1e41bb8"
+  integrity sha512-6BCy0lDRWoV+DyQhlbDyRoJDWcrpOUwxT87OjnOnkqEXAs7eiTju3t45VdS9kOvVCrkY/0qt9GSWnRn6j/w0Tg==
   dependencies:
     "@ckeditor/ckeditor5-react" "^3.0.2"
     "@splidejs/react-splide" "^0.7.12"
