@@ -3,17 +3,20 @@
 $sidebar-width: 332px;
 
 :root {
-    --sidebar-chevron-url: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlvbGF0aW9uPSJ0cmFuc2xhdGUoMTAgMTApIiBmaWxsPSJub25lIj48cGF0aCBkPSJNMTYgMTBMMTIgMTRMOCAxMCIgc3Ryb2tlPSIjMzIzMjMyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lY2FwLWpvaW49InJvdW5kIj48L3BhdGg+PC9zdmc+");
     --sidebar-background-color: #f1f5f7;
+    --sidebar-bottom-line-color: rgba(0, 0, 0, 0.10);
+    --sidebar-background-color-selected: #DBE2E6;
 }
 
 html[data-theme="dark"] {
-    --sidebar-chevron-url: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9Ikljb25zL0ljb25zMjQmIzIwOTsmIzEzMzsyNC9CbGFjay9hcnJvdy9FeHBhbmRfZG93bl84Ij4KPHBhdGggaWQ9IlZlY3RvciA5IiBkPSJNMTYgMTBMMTIgMTRMOCAxMCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjwvZz4KPC9zdmc+Cg==");
     --sidebar-background-color: #333646;
+    --sidebar-bottom-line-color: rgba(255, 255, 255, 0.10);
+    --sidebar-background-color-selected: #272A37;
 }
 
-$sidebar-chevron-url: var(--sidebar-chevron-url);
 $sidebar-background-color: var(--sidebar-background-color);
+$sidebar-bottom-line-color: var(--sidebar-bottom-line-color);
+$sidebar-background-color-selected: var(--sidebar-background-color-selected);
 
 .DocsPage {
     display: flex;
@@ -49,68 +52,34 @@ $sidebar-background-color: var(--sidebar-background-color);
         }
 
         .TreeView__item {
-            .ButtonView {
+            //Тоже самое что и .ButtonView
+            &-label {
                 background-color: transparent;
-                position: relative;
-                padding: 12px !important;
-                border-radius: 40px;
+                margin: 0;
+                padding: 8px 12px !important;
+
+                &:before {
+                    display: none;
+                }
             }
 
-            &_has-items .ButtonView::before {
-                content: "";
-                position: absolute;
-                left: auto;
-                top: 50%;
-                right: 12px;
-                transform: translateY(-50%) rotate(-90deg);
-                transition: transform 150ms ease-in-out;
-
-                width: 24px;
-                height: 24px;
-                background-image: $sidebar-chevron-url;
-            }
-
-            &_opened .ButtonView::before {
-                transform: translateY(-50%) rotate(0deg);
-            }
-
-            &_selected:not(.TreeView__item_has-items) .ButtonView {
-                background-color: variables.$primary-light;
+            //Стили для родительского элемента
+            &_has-items .TreeView__item-label {
+                border-bottom: 1px solid $sidebar-bottom-line-color;
+                border-radius: 0;
+                .ButtonView__link .ButtonView__text {
+                    color: variables.$custom-text-color-base;
+                }
             }
         }
 
-        .TreeView__item_has-items.TreeView__item_opened .ButtonView {
-            background-color: variables.$gray;
-        }
-        .TreeView__item:not(.TreeView__item_has-items) .ButtonView::before {
-            display: none;
-        }
-
-        .TreeView__item_has-items {
-            width: 280px;
-
-            @media (max-width: 1442px) {
-                width: 250px;
-            }
-
-            @media (max-width: variables.$tablet-width) {
-                width: 240px;
-            }
-
-            @media (max-width: variables.$tablet-width-small) {
-                width: 200px;
-            }
-        }
         .TreeView__item:not(.TreeView__item_has-items) {
-            width: 260px;
+            border-radius: variables.$radius-small;
+            transition: background-color 350ms ease-in-out;
+        }
 
-            @media (max-width: 1442px) {
-                width: 200px;
-            }
-
-            @media (max-width: variables.$tablet-width-small) {
-                width: 160px;
-            }
+        .TreeView__item:not(.TreeView__item_has-items).TreeView__item_selected { 
+            background-color: $sidebar-background-color-selected;
         }
 
         .ButtonView .ButtonView__link .ButtonView__text {
@@ -125,10 +94,6 @@ $sidebar-background-color: var(--sidebar-background-color);
             @media (max-width: variables.$tablet-width-small) {
                 width: 147px;
             }
-        }
-
-        .ButtonView {
-            margin: 0;
         }
     }
 

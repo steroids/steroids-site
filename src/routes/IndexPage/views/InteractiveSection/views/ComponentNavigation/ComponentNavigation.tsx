@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
-import CustomNavigation from 'shared/CustomNaviagtion';
+import CustomNavigation from 'shared/CustomNavigation';
 import {useScreen} from '@steroidsjs/core/hooks';
 import {components} from '../../../../../../data/interactiveBlockData';
 

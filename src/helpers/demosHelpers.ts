@@ -1,12 +1,12 @@
+import {CATEGORY_UI} from 'constants/categories';
+import {ROUTE_DOCS} from 'constants/routes';
+import {GITHUB_URL_TO_UI_FOLDER} from 'constants/githubUrl';
+import {CATEGORY_ROUTE_PARAM, LANGUAGE_ROUTE_PARAM} from 'constants/routeParams';
 import _upperFirst from 'lodash-es/upperFirst';
 import _set from 'lodash-es/set';
 import _get from 'lodash-es/get';
 import _last from 'lodash-es/last';
 import __toLower from 'lodash-es/toLower';
-import {CATEGORY_UI} from 'constants/categories';
-import {ROUTE_DOCS} from 'constants/routes';
-import {GITHUB_URL_TO_UI_FOLDER} from 'constants/githubUrl';
-import {CATEGORY_ROUTE_PARAM, LANGUAGE_ROUTE_PARAM} from 'constants/routeParams';
 
 const FOLDER_SEPARATOR = '-';
 
