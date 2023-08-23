@@ -55,12 +55,12 @@ function AnimatedIcons(_, heroSectionRef) {
 
         const handleMouseOut = () => icons.forEach((icon) => inanimateIcon(icon));
 
-        heroSectionRef?.current.addEventListener('mousemove', handleMouseMove);
-        heroSectionRef?.current.addEventListener('mouseout', handleMouseOut);
+        heroSectionRef?.current?.addEventListener('mousemove', handleMouseMove);
+        heroSectionRef?.current?.addEventListener('mouseout', handleMouseOut);
 
         return () => {
-            heroSectionRef?.current.removeEventListener('mousemove', handleMouseMove);
-            heroSectionRef?.current.removeEventListener('mouseout', handleMouseOut);
+            heroSectionRef?.current?.removeEventListener('mousemove', handleMouseMove);
+            heroSectionRef?.current?.removeEventListener('mouseout', handleMouseOut);
         };
     }, [bem, heroSectionRef]);
 
