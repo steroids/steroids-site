@@ -6,26 +6,15 @@ import ButtonGroup from '@steroidsjs/core/ui/nav/ButtonGroup';
 import {getChildrenItemsByCategory, getClassSelector, getIdSelector, scrollToElement, scrollToTop} from 'utils/utils';
 import {useCollision} from 'hooks/useCollision';
 import {useUIComponentInfo} from 'hooks/useUIComponentInfo';
-import ComponentInfoTabs from 'enums/tabs';
+import ComponentInfoTabs from 'enums/ComponentInfoTabs';
 import {useDocsPageData} from 'hooks/useDocsPageData';
-import Link from '@steroidsjs/core/ui/nav/Link';
 import ComponentPropsInfo from './views/ComponentPropsInfo';
 import Banner from './views/Banner';
 import ComponentDescription from './views/ComponentDescription';
 import TabGroupView from './views/TabGroupView';
 
 import './UiComponentInfo.scss';
-
-const TABS_ITEMS = [
-    {
-        id: ComponentInfoTabs.DESCRIPTION,
-        label: 'bookmark',
-    },
-    {
-        id: ComponentInfoTabs.PROPERTIES,
-        label: 'file',
-    },
-];
+import Link from '@steroidsjs/core/ui/nav/Link';
 
 interface IUiComponentInfoProps {
     demosComponents: any;
@@ -87,8 +76,8 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
                     />
                     <ButtonGroup
                         view={TabGroupView}
-                        items={TABS_ITEMS}
-                        onClick={(newTab: ComponentInfoTabs) => setTab(newTab)}
+                        items={ComponentInfoTabs}
+                        onClick={setTab}
                         className={bem.element('tabs')}
                     />
                     <div className={bem.element('content')}>

@@ -2,7 +2,7 @@ import React from 'react';
 import {useBem} from '@steroidsjs/core/hooks';
 import {Button} from '@steroidsjs/core/ui/form';
 import {IButtonGroupViewProps} from '@steroidsjs/core/ui/nav/ButtonGroup/ButtonGroup';
-import __upperFirst from 'lodash-es/upperFirst';
+import _upperFirst from 'lodash-es/upperFirst';
 
 import './TabGroupView.scss';
 
@@ -29,7 +29,7 @@ export default function TabGroupBView(props: IButtonGroupViewProps) {
                                 default: !isActive,
                                 active: isActive,
                             })}
-                            label={__upperFirst(item.id)}
+                            label={_upperFirst(item.id)}
                             onClick={() => props.onClick(item.id)}
                             icon={item.label}
                             {...props.buttonProps}
