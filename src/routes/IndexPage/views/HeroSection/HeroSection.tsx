@@ -1,8 +1,8 @@
 /* eslint-disable no-multi-str */
+import {ROUTE_DOCS} from 'constants/routes';
 import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import {Button} from '@steroidsjs/core/ui/form';
-import {ROUTE_DOCS} from 'constants/routes';
 import Section from 'shared/Section';
 import {Text} from '@steroidsjs/core/ui/typography';
 import {useScreen} from '@steroidsjs/core/hooks';
@@ -15,9 +15,13 @@ import './HeroSection.scss';
 export default function HeroSection() {
     const bem = useBem('HeroSection');
     const {isPhone} = useScreen();
+    const heroSectionRef = React.useRef<HTMLElement>(null);
 
     return (
-        <Section className={bem.block()}>
+        <Section
+            className={bem.block()}
+            ref={heroSectionRef}
+        >
             <HeroTitle />
             <div className={bem.element('buttons')}>
                 <Button
@@ -35,7 +39,7 @@ export default function HeroSection() {
                 content={heroDescription}
                 className={bem.element('description')}
             />
-            <AnimatedIcons />
+            <AnimatedIcons ref={heroSectionRef} />
         </Section>
     );
 }

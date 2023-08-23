@@ -15,7 +15,7 @@ interface ISectionProps {
     isGray?: boolean;
 }
 
-export default function Section(props: ISectionProps) {
+function Section(props: ISectionProps, ref) {
     const bem = useBem('Section');
 
     const renderTitle = React.useCallback((title: string) => {
@@ -40,12 +40,14 @@ export default function Section(props: ISectionProps) {
     }, [bem]);
 
     return (
-        <section className={bem(
-            bem.block({
-                isGray: props.isGray,
-            }),
-            props.className,
-        )}
+        <section
+            className={bem(
+                bem.block({
+                    isGray: props.isGray,
+                }),
+                props.className,
+            )}
+            ref={ref}
         >
             <h3 className={bem.element('title')}>
                 {renderTitle(props.title)}
@@ -58,3 +60,5 @@ export default function Section(props: ISectionProps) {
         </section>
     );
 }
+
+export default React.forwardRef<HTMLElement, ISectionProps>(Section);

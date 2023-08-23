@@ -1,8 +1,8 @@
 import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
+import {Icon} from '@steroidsjs/core/ui/content';
 
 import './AnimatedLogo.scss';
-import {Icon} from '@steroidsjs/core/ui/content';
 
 interface IAnimatedLogoProps {
     className?: string;

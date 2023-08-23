@@ -4,25 +4,24 @@ import {ROUTE_ROOT} from 'constants/routes';
 import {LANGUAGE_ROUTE_PARAM} from 'constants/routeParams';
 import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
-import {Icon} from '@steroidsjs/core/ui/content';
 import Link from '@steroidsjs/core/ui/nav/Link';
 import {useComponents} from '@steroidsjs/core/hooks';
+import AnimatedLogo from 'shared/AnimatedLogo';
+import {useToggleAnimation} from 'hooks/useHoverAnimation';
 
 import './HeaderLogo.scss';
-import AnimatedLogo from 'shared/AnimatedLogo';
-
-const ANIMATION_TOGGLED_BY_DEFAULT = false;
 
 export default function HeaderLogo() {
     const bem = useBem('HeaderLogo');
     const {locale} = useComponents();
-    const [isToggled, setIsToggled] = React.useState(ANIMATION_TOGGLED_BY_DEFAULT);
+
+    const {isAnimationToggled, onMouseEnter, onMouseLeave} = useToggleAnimation();
 
     return (
         <div
             className={bem.block()}
-            onMouseEnter={() => setIsToggled(true)}
-            onMouseLeave={() => setIsToggled(false)}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
         >
             <Link
                 toRoute={ROUTE_ROOT}
@@ -32,7 +31,7 @@ export default function HeaderLogo() {
                 className={bem.element('link')}
             >
                 <AnimatedLogo
-                    isToggled={isToggled}
+                    isToggled={isAnimationToggled}
                     className={bem.element('icon')}
                 />
                 <p className={bem.element('title')}>
