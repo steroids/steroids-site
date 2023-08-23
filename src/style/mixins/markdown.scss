@@ -90,6 +90,11 @@ $markdown-code-color: var(--markdown-code-color);
         }
     }
 
+    ul.NavLinkView__list { 
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
     a {
         text-decoration: underline;
         color: $markdown-code-color;

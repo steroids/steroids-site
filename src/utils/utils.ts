@@ -39,14 +39,14 @@ export const scrollToTop = () => {
     }
 };
 
-export const getChildrenItemsByCategory = (categoryItems: INavItem[], category: string, extraDepth = false) => {
-    const items: INavItem[] = _get(
-        categoryItems.filter(categoryItem => categoryItem.id === category), CHILDREN_ITEMS_PATH,
+export const getChildrenItemsByCategory = (allItems: INavItem[], category: string, extraDepth = false) => {
+    const childrenItemsByCategory: INavItem[] = _get(
+        allItems.filter(categoryItem => categoryItem.id === category), CHILDREN_ITEMS_PATH,
     );
 
-    if (!extraDepth) {
-        return items;
+    if (extraDepth) {
+        return childrenItemsByCategory?.map(item => item.items).flat(CHILDREN_EXTRA_DEPTH);
     }
 
-    return items?.map(item => item.items).flat(CHILDREN_EXTRA_DEPTH);
+    return childrenItemsByCategory;
 };

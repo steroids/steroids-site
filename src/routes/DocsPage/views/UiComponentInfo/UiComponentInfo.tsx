@@ -15,6 +15,8 @@ import ComponentDescription from './views/ComponentDescription';
 import TabGroupView from './views/TabGroupView';
 
 import './UiComponentInfo.scss';
+import {Title} from '@steroidsjs/core/ui/typography';
+import Nav from '@steroidsjs/core/ui/nav/Nav';
 
 interface IUiComponentInfoProps {
     demosComponents: any;
@@ -53,17 +55,11 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
 
     const renderDefaultUiComponentInfo = () => (
         <div className={bem.element('default')}>
-            <h2>{__('Сводка документации:')}</h2>
-            <ul>
-                {getChildrenItemsByCategory(treeItems, CATEGORY_UI, true)?.map((gettingStartedItem, gettingStartedItemIndex) => (
-                    <li key={gettingStartedItemIndex}>
-                        <Link
-                            {...gettingStartedItem}
-                            label={__(gettingStartedItem.label)}
-                        />
-                    </li>
-                ))}
-            </ul>
+            <Title content={__('Сводка документации:')} />
+            <Nav
+                layout='link'
+                items={getChildrenItemsByCategory(treeItems, CATEGORY_UI, true)}
+            />
         </div>
     );
 

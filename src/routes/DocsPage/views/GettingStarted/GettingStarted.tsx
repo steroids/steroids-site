@@ -12,6 +12,8 @@ import {useDocsPageData} from 'hooks/useDocsPageData';
 import {getChildrenItemsByCategory} from 'utils/utils';
 
 import './GettingStarted.scss';
+import {Title} from '@steroidsjs/core/ui/typography';
+import Nav from '@steroidsjs/core/ui/nav/Nav';
 
 const CodeBlock = ({className, children}) => {
     let lang = 'text'; // default monospaced text
@@ -49,17 +51,11 @@ export default function GettingStarted() {
 
     const renderDefaultGettingStarted = () => (
         <div className={bem.element('default')}>
-            <h2>{__('Сводка статей:')}</h2>
-            <ul>
-                {getChildrenItemsByCategory(treeItems, CATEGORY_GETTING_STARTED)?.map((gettingStartedItem, gettingStartedItemIndex) => (
-                    <li key={gettingStartedItemIndex}>
-                        <Link
-                            {...gettingStartedItem}
-                            label={__(gettingStartedItem.label)}
-                        />
-                    </li>
-                ))}
-            </ul>
+            <Title content={__('Сводка статей:')} />
+            <Nav
+                layout='link'
+                items={getChildrenItemsByCategory(treeItems, CATEGORY_GETTING_STARTED)}
+            />
         </div>
     );
 

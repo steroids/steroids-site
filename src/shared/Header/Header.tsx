@@ -21,7 +21,6 @@ export default function Header() {
                 items={HEADER_LINKS}
                 className={bem.element('nav')}
                 layout='link'
-                onChange={() => console.log('click')}
             />
             <div className={bem.element('controls')}>
                 <SearchInput />
