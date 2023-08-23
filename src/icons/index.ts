@@ -18,4 +18,8 @@ export const icons = {
     'banner-frame': require('./svgs/banner-frame.svg'),
     bookmark: require('./svgs/bookmark.svg'),
     file: require('./svgs/file.svg'),
+    architecture: require('./svgs/architecture.svg'),
+    split: require('./svgs/split.svg'),
+    figma: require('./svgs/figma.svg'),
+    library: require('./svgs/library.svg'),
 };

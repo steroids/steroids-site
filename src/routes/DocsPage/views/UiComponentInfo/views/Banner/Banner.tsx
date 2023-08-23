@@ -24,7 +24,7 @@ function Banner(props: IBannerProps) {
             <div className={bem.element('picture')}>
                 <img
                     className={bem.element('picture-img')}
-                    src={`/images/banners/${theme}/${props.componentName}.webp`}
+                    src={`/images/banners/${theme}/${props.componentName.toLowerCase()}.webp`}
                     alt="component demos"
                 />
             </div>

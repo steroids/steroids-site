@@ -11,8 +11,8 @@
         padding-top: 40px;
         padding-bottom: 80px;
     }
-    @media (max-width: variables.$mobile-width-small){
-        padding-top: 24px;      
+    @media (max-width: 352px) {
+        padding-top: 24px;
         padding-bottom: 24px;
     }
 
@@ -23,11 +23,57 @@
         flex-flow: row nowrap;
 
         @media (max-width: 612px) {
-            flex-flow: row wrap;
-            align-items: center;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             padding: 0 16px;
             gap: 24px;
+        }
+
+        @media (max-width: 352px) {
+            padding: 0 12px;
+        }
+
+        .AdvantageCard {
+            &:nth-child(1) svg {
+                @media (max-width: variables.$tablet-width) {
+                    width: 96px;
+                    height: 109px;
+                }
+                @media (max-width: variables.$tablet-width-small) {
+                    width: 76px;
+                    height: 87px;
+                }
+            }
+            &:nth-child(2) svg {
+                @media (max-width: variables.$tablet-width) {
+                    width: 135px;
+                    height: 70px;
+                }
+                @media (max-width: variables.$tablet-width-small) {
+                    width: 108px;
+                    height: 56px;
+                }
+            }
+            &:nth-child(3) svg {
+                @media (max-width: variables.$tablet-width) {
+                    width: 135px;
+                    height: 85px;
+                }
+                @media (max-width: variables.$tablet-width-small) {
+                    width: 108px;
+                    height: 68px;
+                }
+            }
+            &:nth-child(4) svg {
+                @media (max-width: variables.$tablet-width) {
+                    width: 99px;
+                    height: 110px;
+                }
+                @media (max-width: variables.$tablet-width-small) {
+                    width: 79px;
+                    height: 88px;
+                }
+            }
         }
     }
 }

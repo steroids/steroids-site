@@ -5,9 +5,10 @@ import useBem from '@steroidsjs/core/hooks/useBem';
 import Markdown from 'markdown-to-jsx';
 import {useDocsMarkdown} from 'hooks/useDocsMarkdown';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
-import {darcula as CodeStyle} from 'react-syntax-highlighter/dist/esm/styles/prism';
-//atomDark cb coldarkDark darcula dracula materialDark nord oneDark oneLight
+import {syntaxHighlighterStyle} from 'data/syntaxHighlighterStyle';
+
 import './GettingStarted.scss';
+import Link from '@steroidsjs/core/ui/nav/Link';
 
 const CodeBlock = ({className, children}) => {
     let lang = 'text'; // default monospaced text
@@ -17,7 +18,7 @@ const CodeBlock = ({className, children}) => {
     return (
         <SyntaxHighlighter
             language={lang}
-            style={CodeStyle}
+            style={syntaxHighlighterStyle}
         >
             {children}
         </SyntaxHighlighter>
@@ -40,18 +41,17 @@ const MARKDOWN_OPTIONS = {
 
 export default function GettingStarted() {
     const bem = useBem('GettingStarted');
-    const {markdownContent} = useDocsMarkdown();
+    const {docsContent} = useDocsMarkdown();
 
     return (
         <article className={bem.block()}>
-            {markdownContent && (
+            {docsContent && (
                 <Markdown
                     options={{
                         ...MARKDOWN_OPTIONS,
                     }}
-
                 >
-                    {markdownContent}
+                    {docsContent}
                 </Markdown>
             )}
         </article>

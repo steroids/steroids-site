@@ -7,6 +7,9 @@
     "scripts": {
         "watch": "node webpack",
         "build": "node webpack production",
+        "server": "node public/server.js",
+        "build-ssr": "node webpack production ssr",
+        "ssr": "npm run build ssr && npm run server",
         "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src"
     },
     "dependencies": {
@@ -15,19 +18,21 @@
         "@splidejs/splide": "^4.1.4",
         "@splidejs/splide-extension-auto-scroll": "^0.5.3",
         "@steroidsjs/bootstrap": "^3.0.0-beta.89",
-        "@steroidsjs/core": "^3.0.0-beta.69",
+        "@steroidsjs/core": "^3.0.0-beta.71",
+        "@steroidsjs/ssr": "^2.0.3",
         "@steroidsjs/webpack": "^3.0 || >=3.0.0-beta.4",
         "@storybook/react": "~6.3.13",
-        "axios": "^1.4.0",
         "connected-react-router": "^6.9.1",
         "gsap": "^3.12.2",
         "lodash": "^4.17.21",
         "lodash-es": "^4.17.21",
         "markdown-to-jsx": "^7.3.2",
         "react": "^18.2.0",
+        "react-day-picker": "^7.4.10",
         "react-dom": "^18.2.0",
         "react-syntax-highlighter": "^15.5.0",
-        "react-use": "^17.4.0"
+        "react-use": "^17.4.0",
+        "webpack-node-externals": "^3.0.0"
     },
     "devDependencies": {
         "@steroidsjs/eslint-config": "^2.1.4",

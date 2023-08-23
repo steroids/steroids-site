@@ -7,14 +7,16 @@ import ModalPortal from '@steroidsjs/core/ui/modal/ModalPortal';
 
 import {Notifications} from '@steroidsjs/core/ui/layout';
 import Header from 'shared/Header';
+import Footer from 'shared/Footer';
 
 import './Layout.scss';
-import Footer from 'shared/Footer';
+
+export const initAction = (params, dispatch, components) => new Promise((resolve) => resolve(1));
 
 export default function Layout(props: React.PropsWithChildren<any>) {
     const bem = useBem('Layout');
 
-    const {status} = useLayout();
+    const {status} = useLayout(initAction);
 
     if (status !== STATUS_OK) {
         return status !== STATUS_LOADING ? status : null;
@@ -27,7 +29,11 @@ export default function Layout(props: React.PropsWithChildren<any>) {
                 <Notifications />
                 {props.children}
                 <ModalPortal />
-                <Portal />
+                {
+                    process.env.IS_SSR
+                        ? null
+                        : <Portal />
+                }
             </main>
             <Footer />
         </div>
