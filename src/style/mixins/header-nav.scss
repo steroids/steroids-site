@@ -1,0 +1,39 @@
+@use "style/variables";
+
+@mixin header-nav() { 
+    .NavLinkView__list {
+        display: flex;
+        gap: 90px;
+
+        @media (max-width: variables.$tablet-width) {
+            gap: 60px;
+        }
+
+        @media (max-width: 824px) {
+            gap: 30px;
+        }
+
+        @media (max-width: variables.$tablet-width-small) {
+            gap: 24px;
+        }
+
+        &-item {
+            .ButtonView__text {
+                font-size: variables.$font-size-16;
+                font-weight: variables.$font-weight-sm;
+                line-height: variables.$line-height-22;
+                color: variables.$custom-text-color;
+            }
+
+            .ButtonView__link {
+                pointer-events: none;
+            }
+        }
+    }
+
+    &-hidden {
+        opacity: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+}

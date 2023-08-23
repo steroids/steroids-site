@@ -10,10 +10,9 @@ import {useDocsPageData} from 'hooks/useDocsPageData';
 import ComponentInfo from './views/ComponentInfo';
 import UiComponentInfo from './views/UiComponentInfo';
 import GettingStarted from './views/GettingStarted';
+import CustomTree from '../../shared/CustomTree';
 
 import './DocsPage.scss';
-
-const DOCS_TREE = 'docs-tree';
 
 export default function DocsPage() {
     const bem = useBem('DocsPage');
@@ -35,8 +34,8 @@ export default function DocsPage() {
         <div className={bem.block()}>
             <div className={bem.element('sidebar')}>
                 <Tree
+                    view={CustomTree}
                     items={treeItems}
-                    id={DOCS_TREE}
                     alwaysOpened
                 />
             </div>
