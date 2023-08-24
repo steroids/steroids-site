@@ -1,10 +1,7 @@
 import React from 'react';
+import {getClassSelector} from 'utils/utils';
 
-const HEADER_WRAPPER_CLASS = 'Header__wrapper';
-
-export function useHideScroll(isHideScroll) {
-    const headerWrapper: HTMLDivElement = process.env.IS_SSR ? null : document.querySelector(`.${HEADER_WRAPPER_CLASS}`);
-
+export function useHideScroll(isHideScroll: boolean) {
     React.useEffect(() => {
         if (process.env.IS_SSR) {
             return () => { };
@@ -19,5 +16,5 @@ export function useHideScroll(isHideScroll) {
         return () => {
             document.body.style.overflow = 'auto';
         };
-    }, [headerWrapper, isHideScroll]);
+    }, [isHideScroll]);
 }
