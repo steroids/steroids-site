@@ -4,20 +4,20 @@ import {CATEGORY_UI} from 'constants/categories';
 import React from 'react';
 import {useBem} from '@steroidsjs/core/hooks';
 import ButtonGroup from '@steroidsjs/core/ui/nav/ButtonGroup';
-import {getChildrenItemsByCategory, getClassSelector, getIdSelector, scrollToElement, scrollToTop} from 'utils/utils';
+import {getChildrenItemsByCategory, getClassSelector, getIdSelector, scrollToElement} from 'utils/utils';
 
 import {useCollision} from 'hooks/useCollision';
 import {useUIComponentInfo} from 'hooks/useUIComponentInfo';
 import ComponentInfoTabs from 'enums/ComponentInfoTabs';
 import {useDocsPageData} from 'hooks/useDocsPageData';
+import {Title} from '@steroidsjs/core/ui/typography';
+import Nav from '@steroidsjs/core/ui/nav/Nav';
 import ComponentPropsInfo from './views/ComponentPropsInfo';
 import Banner from './views/Banner';
 import ComponentDescription from './views/ComponentDescription';
 import TabGroupView from './views/TabGroupView';
 
 import './UiComponentInfo.scss';
-import {Title} from '@steroidsjs/core/ui/typography';
-import Nav from '@steroidsjs/core/ui/nav/Nav';
 
 interface IUiComponentInfoProps {
     demosComponents: any;
@@ -36,10 +36,6 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
         demos,
         componentInfo,
     } = useUIComponentInfo(props.demosComponents);
-
-    React.useEffect(() => {
-        scrollToTop();
-    }, [componentInfo]);
 
     const {toggleOffCollision} = useCollision(
         triggerElementRef,
