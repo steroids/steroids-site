@@ -1,5 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
+import {INavItem} from '@steroidsjs/core/ui/nav/Nav/Nav';
 import {gsap} from 'gsap';
+import _get from 'lodash-es/get';
+
+const CHILDREN_ITEMS_PATH = '[0].items';
+const CHILDREN_EXTRA_DEPTH = 1;
 
 export const scrollToElement = (elementQuery: string) => {
     if (process.env.IS_SSR) {
@@ -32,4 +37,16 @@ export const scrollToTop = () => {
             },
         });
     }
+};
+
+export const getChildrenItemsByCategory = (allItems: INavItem[], category: string, extraDepth = false) => {
+    const childrenItemsByCategory: INavItem[] = _get(
+        allItems.filter(categoryItem => categoryItem.id === category), CHILDREN_ITEMS_PATH,
+    );
+
+    if (extraDepth) {
+        return childrenItemsByCategory?.map(item => item.items).flat(CHILDREN_EXTRA_DEPTH);
+    }
+
+    return childrenItemsByCategory;
 };

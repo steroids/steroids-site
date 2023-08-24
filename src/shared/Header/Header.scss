@@ -51,6 +51,11 @@ $control-background-color: var(--control-background-color);
                     line-height: variables.$line-height-22;
                     color: variables.$custom-text-color;
                 }
+
+                .ButtonView__link { 
+                    pointer-events: none;
+                }
+                
             }
         }
     }

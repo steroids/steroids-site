@@ -1,0 +1,125 @@
+
+@use "style/variables";
+
+:root { 
+    --markdown-code-color: #651FFF;
+}
+
+html[data-theme="dark"] { 
+    --markdown-code-color: #B898FF;
+}
+
+$markdown-code-color: var(--markdown-code-color);
+
+@mixin markdown() {
+    $block-max-width: 700px;
+
+    %text-template {
+        font-size: variables.$font-size-14;
+        font-weight: 300;
+        line-height: 18px;
+    
+        @media (max-width: variables.$mobile-width-small) {
+            font-size: variables.$font-size-12;
+            line-height: variables.$line-height-16;
+        }
+    }
+    
+    
+    padding: 40px 80px;
+
+    @media (max-width: variables.$tablet-width) {
+        padding: 40px 24px;
+    }
+
+    @media (max-width: variables.$tablet-width-small) {
+        padding: 24px 12px;
+    }
+
+    @media (max-width: variables.$mobile-width-small) {
+        padding: 12px;
+    }
+
+    color: variables.$custom-text-color;
+
+    p {
+        max-width: $block-max-width;
+        @extend %text-template;
+    }
+
+    h1,
+    h2 {
+        margin-bottom: 8px;
+        font-size: variables.$font-size-24;
+        line-height: variables.$line-height-34;
+        font-weight: 800;
+
+        @media (max-width: variables.$mobile-width-small) {
+            font-size: variables.$font-size-14;
+            line-height: variables.$line-height-18;
+        }
+
+        &:not(h1:first-child) {
+            margin-top: 32px;
+
+            @media (max-width: variables.$tablet-width-small) {
+                margin-top: 24px;
+            }
+        }
+    }
+
+    code {
+        color: $markdown-code-color;
+    }
+
+    ul {
+        max-width: $block-max-width;
+        li {
+            @extend %text-template;
+            &:before {
+                position: relative;
+                content: "–";
+                display: inline-block;
+                color: variables.$custom-text-color;
+                width: 7px;
+                height: 1px;
+                top: 0;
+                left: 0;
+                margin-right: 12.5px;
+            }
+        }
+    }
+
+    ul.NavLinkView__list { 
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    a {
+        text-decoration: underline;
+        color: $markdown-code-color;
+
+        &:hover {
+            color: variables.$primary-dark;
+        }
+    }
+
+    pre {
+        max-width: 1200px;
+        border-radius: 20px;
+        margin: 24px 0px !important;
+        padding: 24px !important;
+
+        @media (max-width: variables.$mobile-width-small) {
+            margin: 16px 0px !important;
+        }
+
+        @media (max-width: variables.$tablet-width-small) {
+            padding: 12px !important;
+        }
+
+        code {
+            @extend %text-template;
+        }
+    }
+}
