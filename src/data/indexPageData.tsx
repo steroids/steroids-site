@@ -1,17 +1,22 @@
 /* eslint-disable max-len */
+
+import {CATEGORY_GETTING_STARTED} from 'constants/categories';
+import {CATEGORY_ROUTE_PARAM} from 'constants/routeParams';
+import {ROUTE_DOCS} from 'constants/routes';
+
 /* eslint-disable no-multi-str */
 export const githubLink = 'https://github.com/steroids/react';
 export const featureCards = [
     {
         title: __('Более 70 компонентов'),
         description: __('Создавайте сложные интерфейсы в библиотеке с более 70 различных UI компонентов, с настраиваемым цветом, размером и другими характеристиками'),
-        img: 'https://i.ibb.co/rfkrhr9/1.jpg',
+        img: '/images/features/light.webp',
 
     },
     {
         title: __('Тёмная тема'),
         description: __('И как же без darkmode в современных интерфейсах'),
-        img: 'https://i.ibb.co/2SLXsnh/image.jpg',
+        img: '/images/features/dark.webp',
         isDark: true,
     },
 ];
@@ -42,16 +47,24 @@ export const resourcesCards = [
         img: 'https://i.ibb.co/6JQcWrX/Frame-338670.jpg',
         title: __('На старт'),
         description: __('Открытый код и документация, библиотека компонентов, открытый код, React, Vue'),
+        toRoute: ROUTE_DOCS,
+        toRouteParams: {
+            [CATEGORY_ROUTE_PARAM]: CATEGORY_GETTING_STARTED,
+        },
     },
     {
         img: 'https://i.ibb.co/YjFYxBr/Frame-338670-1.jpg',
         title: 'Figma Design Kit',
         description: __('Набор инструментов для создания интерфейсов для дизайнера'),
+        url: 'https://www.figma.com/file/TjkRTOYiKAXlig7keXng38/Steroids-New-v2.2?type=design&node-id=2%3A1746&mode=design&t=dpI2074nD288gtUa-1',
+        target: '_blank',
     },
     {
         img: 'https://i.ibb.co/PDtcKXy/Frame-338670-2.jpg',
         title: 'GitHub',
         description: __('Открытый код и документация, библиотека компонентов, открытый код, React, Vue'),
+        url: 'https://github.com/steroids',
+        target: '_blank',
     },
 ];
 
@@ -59,15 +72,15 @@ export const resourcesDescription = __('Наш Open-Source фреймворк St
 export const examplesCards = [
     {
         label: __('Датапикер'),
-        img: '/images/calendar.webp',
+        img: 'calendar.png',
     },
     {
         label: __('Карточка'),
-        img: '/images/card.webp',
+        img: 'card.png',
     },
     {
         label: __('Пароль'),
-        img: '/images/password.webp',
+        img: 'password.png',
     },
     {
         label: '',
