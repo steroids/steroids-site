@@ -72,15 +72,15 @@ export const resourcesDescription = __('Наш Open-Source фреймворк St
 export const examplesCards = [
     {
         label: __('Датапикер'),
-        img: 'calendar.png',
+        img: 'calendar',
     },
     {
         label: __('Карточка'),
-        img: 'card.png',
+        img: 'card',
     },
     {
         label: __('Пароль'),
-        img: 'password.png',
+        img: 'password',
     },
     {
         label: '',

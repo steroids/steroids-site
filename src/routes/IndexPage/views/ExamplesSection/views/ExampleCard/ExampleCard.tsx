@@ -49,9 +49,12 @@ export default function ExampleCard(props: IExampleCardProps) {
                 className={bem.element('title')}
             />
 
-            <div className={bem.element('img-wrapper')}>
+            <div className={bem.element('img-wrapper', {
+                [props.img]: !!props.img,
+            })}
+            >
                 <img
-                    src={`/images/examples/${theme}/${props.img}`}
+                    src={`/images/examples/${theme}/${props.img}.png`}
                     alt="example card"
                 />
             </div>

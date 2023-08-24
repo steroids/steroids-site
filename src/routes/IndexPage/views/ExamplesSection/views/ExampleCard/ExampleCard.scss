@@ -53,6 +53,10 @@
 
             transform: scale(0.9);
         }
+
+        &_password { 
+            max-width: 300px;
+        }
     }
 
     &__more {
