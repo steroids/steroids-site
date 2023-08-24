@@ -67,14 +67,6 @@ $resource-background-color: var(--resource-background-color);
             font-size: variables.$font-size-18;
             line-height: variables.$line-height-24;
         }
-
-        &-postscript:before {
-            @media (max-width: 410px) {
-                transform: translateY(16px) translateX(-10px);
-                height: 1px;
-                width: 36px;
-            }
-        }
     }
 
     .Section__description {

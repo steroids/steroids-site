@@ -5,7 +5,7 @@ import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import {Text, Title} from '@steroidsjs/core/ui/typography';
 import {Button} from '@steroidsjs/core/ui/form';
-import {useComponents} from '@steroidsjs/core/hooks';
+import {useComponents, useTheme} from '@steroidsjs/core/hooks';
 
 import './ExampleCard.scss';
 
@@ -18,6 +18,7 @@ interface IExampleCardProps {
 export default function ExampleCard(props: IExampleCardProps) {
     const bem = useBem('ExampleCard');
     const {locale} = useComponents();
+    const {theme} = useTheme();
 
     if (props.isMoreCard) {
         return (
@@ -48,9 +49,12 @@ export default function ExampleCard(props: IExampleCardProps) {
                 className={bem.element('title')}
             />
 
-            <div className={bem.element('img-wrapper')}>
+            <div className={bem.element('img-wrapper', {
+                [props.img]: !!props.img,
+            })}
+            >
                 <img
-                    src={props.img}
+                    src={`/images/examples/${theme}/${props.img}.png`}
                     alt="example card"
                 />
             </div>
