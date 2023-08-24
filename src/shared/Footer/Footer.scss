@@ -46,10 +46,14 @@ $footer-separator-color: var(--footer-separator-color);
         @extend %fontTemplate;
     }
 
-    &__link {
-        .ButtonView__text {
-            @extend %fontTemplate;
-            white-space: nowrap;
+    .ButtonView__text {
+        @extend %fontTemplate;
+        white-space: nowrap;
+        transition: opacity variables.$transition-duration;
+
+        &:hover {
+          @extend %fontTemplate;
+          opacity: 0.5;
         }
     }
 
@@ -68,70 +72,32 @@ $footer-separator-color: var(--footer-separator-color);
         }
 
         &-left {
-            width: 43.0729vw;
             display: flex;
             flex-flow: row nowrap;
+            column-gap: 160px;
 
-            @media (max-width: variables.$tablet-width) {
-                width: 61.71875vw;
-                column-gap: 16px;
+            @media (max-width: 1150px) {
+                column-gap: 50px;
             }
 
-            @media (max-width: 808px) {
-                display: grid;
-                grid-template-columns: repeat(2, 26.0416vw);
+            @media (max-width: 800px) {
                 row-gap: 12px;
-                grid-template-areas:
-                    "a c"
-                    "b b";
+                column-gap: 0;
+                flex-direction: column;
             }
 
             @media (max-width: 538px) {
-                width: 100%;
                 row-gap: 8px;
-                grid-template-columns: repeat(2, 129px);
-                column-gap: 65px;
             }
 
-            #{$root}__column {
+            .NavListView__list {
                 display: flex;
                 flex-flow: column nowrap;
                 row-gap: 12px;
-                width: 19.53125vw;
+                max-width: 217px;
 
                 @media (max-width: 538px) {
                     row-gap: 8px;
-                }
-
-                @media (max-width: 538px) {
-                    width: auto;
-                }
-
-                &:nth-child(1) {
-                    margin-right: 8.3333vw;
-
-                    @media (max-width: variables.$tablet-width) {
-                        margin-right: 0;
-                    }
-
-                    @media (max-width: 808px) {
-                        grid-area: a;
-                    }
-                }
-                &:nth-child(2) {
-                    margin-right: 12.1875vw;
-                    @media (max-width: variables.$tablet-width) {
-                        margin-right: 0;
-                    }
-
-                    @media (max-width: 808px) {
-                        grid-area: b;
-                    }
-                }
-                &:nth-child(3) {
-                    @media (max-width: 808px) {
-                        grid-area: c;
-                    }
                 }
             }
         }
