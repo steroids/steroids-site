@@ -2,7 +2,7 @@
 
 To get started with the Steroids framework, follow the simple steps below:
 
-1. **Clone the Repository:**
+##  1. Clone the Repository:
 
 First, clone the Steroids React Boilerplate repository to your computer. Use the following command:
 
@@ -12,7 +12,7 @@ git clone https://github.com/steroids/boilerplate-react.git my-steroids-app
 
 Here, `my-steroids-app` is the name of your project. You can choose any other name that suits your preferences.
 
-2. **Navigate to Project Folder:**
+##  2. Navigate to Project Folder:
 
 Navigate to the folder containing the cloned repository:
 
@@ -20,7 +20,7 @@ Navigate to the folder containing the cloned repository:
 cd my-steroids-app
 ```
 
-3. **Install Dependencies:**
+## 3. Install Dependencies:
 
 Now, to install all the necessary dependencies for your project to function, execute the command:
 
@@ -30,7 +30,7 @@ npm install
 
 This command will download and install all the packages and libraries required for the Steroids framework to work.
 
-4. **Start the Development Server:**
+## 4. Start the Development Server:
 
 After successfully installing the dependencies, start the development server with the following command:
 

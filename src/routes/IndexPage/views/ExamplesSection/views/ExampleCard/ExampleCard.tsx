@@ -1,8 +1,11 @@
+import {CATEGORY_UI} from 'constants/categories';
+import {CATEGORY_ROUTE_PARAM, LANGUAGE_ROUTE_PARAM} from 'constants/routeParams';
+import {ROUTE_DOCS} from 'constants/routes';
 import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import {Text, Title} from '@steroidsjs/core/ui/typography';
 import {Button} from '@steroidsjs/core/ui/form';
-import {ROUTE_DOCS} from 'constants/routes';
+import {useComponents, useTheme} from '@steroidsjs/core/hooks';
 
 import './ExampleCard.scss';
 
@@ -14,6 +17,8 @@ interface IExampleCardProps {
 
 export default function ExampleCard(props: IExampleCardProps) {
     const bem = useBem('ExampleCard');
+    const {locale} = useComponents();
+    const {theme} = useTheme();
 
     if (props.isMoreCard) {
         return (
@@ -25,6 +30,10 @@ export default function ExampleCard(props: IExampleCardProps) {
                     />
                     <Button
                         toRoute={ROUTE_DOCS}
+                        toRouteParams={{
+                            [LANGUAGE_ROUTE_PARAM]: locale.language,
+                            [CATEGORY_ROUTE_PARAM]: CATEGORY_UI,
+                        }}
                         label={__('Здесь')}
                         size='lg'
                     />
@@ -40,9 +49,12 @@ export default function ExampleCard(props: IExampleCardProps) {
                 className={bem.element('title')}
             />
 
-            <div className={bem.element('img-wrapper')}>
+            <div className={bem.element('img-wrapper', {
+                [props.img]: !!props.img,
+            })}
+            >
                 <img
-                    src={props.img}
+                    src={`/images/examples/${theme}/${props.img}.png`}
                     alt="example card"
                 />
             </div>

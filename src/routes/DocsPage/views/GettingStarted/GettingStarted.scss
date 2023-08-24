@@ -1,3 +1,5 @@
-.GettingStarted {
+@use "style/mixins";
 
+.GettingStarted {
+    @include mixins.markdown();
 }

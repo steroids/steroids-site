@@ -1,8 +1,10 @@
+import {FOOTER_LINKS_COLUMNS, KOZHINDEV_LINK} from 'constants/links';
 import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import Link from '@steroidsjs/core/ui/nav/Link';
 import {footerCredits} from 'data/indexPageData';
-import {designEmail, footerColumns} from '../../data/footerData';
+import Nav from '@steroidsjs/core/ui/nav/Nav';
+import {designEmail} from '../../data/footerData';
 
 import './Footer.scss';
 
@@ -14,19 +16,12 @@ export default function Footer() {
             <div className={bem.element('top')}>
                 <div className={bem.element('top-left')}>
                     {
-                        footerColumns.map((column, columnIndex) => (
-                            <div
-                                key={columnIndex}
-                                className={bem.element('column')}
-                            >
-                                {column.map((columnItem, columnItemIndex) => (
-                                    <Link
-                                        className={bem.element('link')}
-                                        key={columnItemIndex}
-                                        label={columnItem.label}
-                                    />
-                                ))}
-                            </div>
+                        FOOTER_LINKS_COLUMNS.map((footerLinkColumn, footerLinkColumnIndex) => (
+                            <Nav
+                                key={footerLinkColumnIndex}
+                                layout='list'
+                                items={footerLinkColumn}
+                            />
                         ))
                     }
                 </div>
@@ -40,13 +35,17 @@ export default function Footer() {
                     <small>
                         {footerCredits}
                     </small>
-                    <Link className={bem.element('link')}>
+                    {/* <Link className={bem.element('link')}>
                         {__('Политика конфиденциальности')}
-                    </Link>
+                    </Link> */}
                 </div>
-                <div className={bem.element('bottom-right')}>
+                <Link
+                    className={bem.element('bottom-right')}
+                    url={KOZHINDEV_LINK}
+                    target='blank'
+                >
                     {__('Сделано в KozhinDev')}
-                </div>
+                </Link>
             </div>
         </footer>
     );

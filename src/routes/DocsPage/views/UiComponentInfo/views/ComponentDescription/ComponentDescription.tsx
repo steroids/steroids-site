@@ -1,7 +1,8 @@
+/* eslint-disable no-console */
 import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import {Text, Title} from '@steroidsjs/core/ui/typography';
-import CustomNavigation from 'shared/CustomNaviagtion';
+import CustomNavigation from 'shared/CustomNavigation';
 import {IEntityInfo} from 'types/IEntityInfo';
 import {IDemo} from 'types/IDemo';
 import Demos from '../Demos';
@@ -17,6 +18,17 @@ interface IComponentDescriptionProps {
     className?: string;
 }
 
+const translateComponentDescription = (componentName: string, description: string) => {
+    let translatedDescription;
+    try {
+        translatedDescription = __(description);
+    } catch (error) {
+        console.error('Provided componentName/description ', componentName, '+', description, 'Error: ', error);
+    }
+
+    return translatedDescription;
+};
+
 export default function ComponentDescription(props: IComponentDescriptionProps) {
     const bem = useBem('ComponentDescription');
 
@@ -30,7 +42,7 @@ export default function ComponentDescription(props: IComponentDescriptionProps) 
                 <Title content={props.componentName} />
                 <Text
                     className={bem.element('text')}
-                    content={__(props.componentInfo?.description)}
+                    content={translateComponentDescription(props.componentName, props.componentInfo?.description)}
                 />
                 <Demos demos={props.demos} />
             </div>

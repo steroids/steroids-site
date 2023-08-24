@@ -3,10 +3,11 @@ import useBem from '@steroidsjs/core/hooks/useBem';
 import {Text} from '@steroidsjs/core/ui/typography';
 
 import './AdvantageCard.scss';
+import {Icon} from '@steroidsjs/core/ui/content';
 
 interface IAdvantageCardProps {
     description: string;
-    img: string;
+    icon: string;
 }
 
 export default function AdvantageCard(props: IAdvantageCardProps) {
@@ -14,11 +15,8 @@ export default function AdvantageCard(props: IAdvantageCardProps) {
 
     return (
         <div className={bem.block()}>
-            <div className={bem.element('img-wrapper')}>
-                <img
-                    src={props.img}
-                    alt="advantage"
-                />
+            <div className={bem.element('icon-wrapper')}>
+                <Icon name={props.icon} />
             </div>
             <Text
                 className={bem.element('description')}
