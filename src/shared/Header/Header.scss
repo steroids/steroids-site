@@ -1,14 +1,6 @@
 @use "style/variables";
+@use "style/mixins";
 
-:root {
-    --control-background-color: #f1f5f7;
-}
-
-html[data-theme="dark"] {
-    --control-background-color: #333646;
-}
-
-$control-background-color: var(--control-background-color);
 
 .Header {
     padding: 0 16px;
@@ -28,41 +20,22 @@ $control-background-color: var(--control-background-color);
     }
 
     &__nav {
-        .NavLinkView__list {
-            display: flex;
-            gap: 90px;
-
-            @media (max-width: variables.$tablet-width) {
-                gap: 60px;
-            }
-
-            @media (max-width: variables.$tablet-width-small) {
-                gap: 30px;
-            }
-
-            @media (max-width: 767px) {
-                display: none;
-            }
-
-            &-item {
-                .ButtonView__text {
-                    font-size: variables.$font-size-16;
-                    font-weight: variables.$font-weight-sm;
-                    line-height: variables.$line-height-22;
-                    color: variables.$custom-text-color;
-                }
-
-                .ButtonView__link { 
-                    pointer-events: none;
-                }
-                
-            }
+        @media (max-width: 748px) {
+            display: none;
         }
+
+        @include mixins.header-nav()
     }
 
     &__controls {
         display: flex;
         align-items: center;
+        gap: 8px;
+        transition: opacity 150ms ease-in-out;
+
+        @media (max-width: 748px) {
+            display: none;
+        }
 
         .FieldLayoutView {
             margin-bottom: 0;
@@ -74,49 +47,17 @@ $control-background-color: var(--control-background-color);
         }
 
         &-input {
-            width: 100%;
-            height: 100%;
-            margin-right: 16px;
-
-            .IconView.InputFieldView__lead-icon {
-                left: auto;
-                top: 50%;
-                right: 12px;
-                transform: translateY(-50%);
-                svg {
-                    path,
-                    circle {
-                        stroke: variables.$custom-icon-color;
-                    }
-                }
-            }
-
             .InputFieldView__input {
-                padding-left: 12px;
-                background-color: $control-background-color;
-                border: none;
+                background-color: variables.$header-control-background-color !important;
             }
         }
 
         &-themes {
-            margin-right: 4px;
-            background-color: $control-background-color;
-
-            .ButtonGroupView__button:not(.ButtonGroupView__button_active) .IconView svg path,
-            rect,
-            circle {
-                stroke: variables.$custom-icon-color;
-            }
-
-            .ButtonGroupView__button_active .IconView svg path,
-            rect,
-            circle {
-                stroke: variables.$custom-icon-active;
-            }
+           @include mixins.header-themes();
         }
 
-        @media (max-width: 767px) {
-            display: none;
+        &-languages {
+            background-color: variables.$header-control-background-color;
         }
     }
 }

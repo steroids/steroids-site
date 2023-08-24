@@ -9,35 +9,59 @@ import './SearchInput.scss';
 
 const EMPTY_VALUE = '';
 const SET_VALUE_DELAY = 500;
+const HEADER_NAV_CLASS = 'Header__nav';
+const HEADER_HIDE_BREAKPOINT = 1340;
+const STOP_ANIMATION_BREAKPOINT = 748;
+const NAV_HIDE_BREAKPOINT = 768;
+export interface ISearchInputProps {
+    className?: string;
+    placeholder?: string;
+}
 
-export default function SearchInput() {
+export default function SearchInput(props: ISearchInputProps) {
     const bem = useBem('SearchInput');
-    const {isTablet} = useScreen();
+    const {width} = useScreen();
 
     const [prevValue, setPrevValue] = React.useState('');
     const fieldRef = React.useRef<HTMLInputElement>(null);
     const inputRef = React.useRef<HTMLInputElement>(null);
 
     const handleInputAnimation = React.useCallback((state: 'focus' | 'blur') => {
-        if (state === 'focus') {
-            gsap.to(fieldRef.current, {width: isTablet() ? '380px' : '480px', duration: 0.5, ease: 'power2.inOut'});
+        const headerNav = document.querySelector(`.${HEADER_NAV_CLASS}`);
 
-            setTimeout(() => {
-                inputRef.current.value = prevValue;
-            }, SET_VALUE_DELAY);
-            return;
+        if (width > STOP_ANIMATION_BREAKPOINT) {
+            if (state === 'focus') {
+                gsap.to(fieldRef.current, {width: width <= NAV_HIDE_BREAKPOINT ? '380px' : '480px', duration: 0.5, ease: 'power2.inOut'});
+
+                if (width <= HEADER_HIDE_BREAKPOINT) {
+                    headerNav.classList.toggle(`${HEADER_NAV_CLASS}-hidden`);
+                }
+
+                setTimeout(() => {
+                    inputRef.current.value = prevValue;
+                }, SET_VALUE_DELAY);
+                return;
+            }
+
+            gsap.to(fieldRef.current, {width: '48px', duration: 0.5, ease: 'power2.inOut'});
+            setPrevValue(inputRef.current.value);
+            inputRef.current.value = EMPTY_VALUE;
+
+            if (width <= HEADER_HIDE_BREAKPOINT) {
+                setTimeout(() => headerNav.classList.toggle(`${HEADER_NAV_CLASS}-hidden`), SET_VALUE_DELAY);
+            }
         }
-
-        gsap.to(fieldRef.current, {width: '48px', duration: 0.5, ease: 'power2.inOut'});
-        setPrevValue(inputRef.current.value);
-        inputRef.current.value = EMPTY_VALUE;
-    }, [isTablet, prevValue]);
+    }, [prevValue, width]);
 
     return (
         <InputField
             leadIcon="searchAlt"
             size='sm'
-            className={bem.block()}
+            placeholder={props.placeholder}
+            className={bem(
+                bem.block(),
+                props.className,
+            )}
             viewProps={{
                 onFocus: () => handleInputAnimation('focus'),
                 onBlur: () => handleInputAnimation('blur'),
