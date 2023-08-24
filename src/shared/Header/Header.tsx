@@ -19,8 +19,8 @@ export default function Header() {
             <HeaderLogo />
             <Nav
                 items={HEADER_LINKS}
-                layout="link"
                 className={bem.element('nav')}
+                layout='link'
             />
             <div className={bem.element('controls')}>
                 <SearchInput />
