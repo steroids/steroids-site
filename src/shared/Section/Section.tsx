@@ -13,9 +13,10 @@ interface ISectionProps {
     children?: any;
     className?: string;
     isGray?: boolean;
+    sectionRef?: React.MutableRefObject<HTMLElement>;
 }
 
-export default function Section(props: ISectionProps) {
+function Section(props: ISectionProps) {
     const bem = useBem('Section');
 
     const renderTitle = React.useCallback((title: string) => {
@@ -40,12 +41,14 @@ export default function Section(props: ISectionProps) {
     }, [bem]);
 
     return (
-        <section className={bem(
-            bem.block({
-                isGray: props.isGray,
-            }),
-            props.className,
-        )}
+        <section
+            className={bem(
+                bem.block({
+                    isGray: props.isGray,
+                }),
+                props.className,
+            )}
+            ref={props.sectionRef}
         >
             <h3 className={bem.element('title')}>
                 {renderTitle(props.title)}
@@ -58,3 +61,5 @@ export default function Section(props: ISectionProps) {
         </section>
     );
 }
+
+export default Section;
