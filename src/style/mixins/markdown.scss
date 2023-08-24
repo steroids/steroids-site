@@ -1,5 +1,14 @@
-
 @use "style/variables";
+
+:root { 
+    --markdown-code-color: #651FFF;
+}
+
+html[data-theme="dark"] { 
+    --markdown-code-color: #B898FF;
+}
+
+$markdown-code-color: var(--markdown-code-color);
 
 @mixin markdown() {
     $block-max-width: 700px;
@@ -59,7 +68,7 @@
     }
 
     code {
-        color: variables.$primary;
+        color: $markdown-code-color;
     }
 
     ul {
@@ -80,9 +89,14 @@
         }
     }
 
+    ul.NavLinkView__list { 
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
     a {
         text-decoration: underline;
-        color: variables.$primary;
+        color: $markdown-code-color;
 
         &:hover {
             color: variables.$primary-dark;

@@ -7,9 +7,10 @@ import Markdown from 'markdown-to-jsx';
 import {useDocsMarkdown} from 'hooks/useDocsMarkdown';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
 import {syntaxHighlighterStyle} from 'data/syntaxHighlighterStyle';
-import Link from '@steroidsjs/core/ui/nav/Link';
 import {useDocsPageData} from 'hooks/useDocsPageData';
 import {getChildrenItemsByCategory} from 'utils/utils';
+import {Title} from '@steroidsjs/core/ui/typography';
+import Nav from '@steroidsjs/core/ui/nav/Nav';
 
 import './GettingStarted.scss';
 
@@ -49,17 +50,11 @@ export default function GettingStarted() {
 
     const renderDefaultGettingStarted = () => (
         <div className={bem.element('default')}>
-            <h2>{__('Сводка статей:')}</h2>
-            <ul>
-                {getChildrenItemsByCategory(treeItems, CATEGORY_GETTING_STARTED)?.map((gettingStartedItem, gettingStartedItemIndex) => (
-                    <li key={gettingStartedItemIndex}>
-                        <Link
-                            {...gettingStartedItem}
-                            label={__(gettingStartedItem.label)}
-                        />
-                    </li>
-                ))}
-            </ul>
+            <Title content={__('Сводка статей:')} />
+            <Nav
+                layout='link'
+                items={getChildrenItemsByCategory(treeItems, CATEGORY_GETTING_STARTED)}
+            />
         </div>
     );
 

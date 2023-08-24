@@ -1,9 +1,11 @@
 import {ELEMENT_TO_OBSERVE_CLASS_NAME} from 'constants/classNames';
 import {CATEGORY_UI} from 'constants/categories';
+
 import React from 'react';
 import {useBem} from '@steroidsjs/core/hooks';
 import ButtonGroup from '@steroidsjs/core/ui/nav/ButtonGroup';
 import {getChildrenItemsByCategory, getClassSelector, getIdSelector, scrollToElement, scrollToTop} from 'utils/utils';
+
 import {useCollision} from 'hooks/useCollision';
 import {useUIComponentInfo} from 'hooks/useUIComponentInfo';
 import ComponentInfoTabs from 'enums/ComponentInfoTabs';
@@ -14,7 +16,8 @@ import ComponentDescription from './views/ComponentDescription';
 import TabGroupView from './views/TabGroupView';
 
 import './UiComponentInfo.scss';
-import Link from '@steroidsjs/core/ui/nav/Link';
+import {Title} from '@steroidsjs/core/ui/typography';
+import Nav from '@steroidsjs/core/ui/nav/Nav';
 
 interface IUiComponentInfoProps {
     demosComponents: any;
@@ -53,17 +56,11 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
 
     const renderDefaultUiComponentInfo = () => (
         <div className={bem.element('default')}>
-            <h2>{__('Сводка документации:')}</h2>
-            <ul>
-                {getChildrenItemsByCategory(treeItems, CATEGORY_UI, true)?.map((gettingStartedItem, gettingStartedItemIndex) => (
-                    <li key={gettingStartedItemIndex}>
-                        <Link
-                            {...gettingStartedItem}
-                            label={__(gettingStartedItem.label)}
-                        />
-                    </li>
-                ))}
-            </ul>
+            <Title content={__('Сводка документации:')} />
+            <Nav
+                layout='link'
+                items={getChildrenItemsByCategory(treeItems, CATEGORY_UI, true)}
+            />
         </div>
     );
 
@@ -77,7 +74,7 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
                     <ButtonGroup
                         view={TabGroupView}
                         items={ComponentInfoTabs}
-                        onClick={setTab}
+                        onClick={(newTab: ComponentInfoTabs) => setTab(newTab)}
                         className={bem.element('tabs')}
                     />
                     <div className={bem.element('content')}>
