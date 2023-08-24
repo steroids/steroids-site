@@ -4,6 +4,10 @@
     width: 155px;
     height: 65px;
 
+    @media (max-width: variables.$mobile-width-small) {
+        transform: translateX(-20px);
+    }
+
     .ButtonView__link {
         display: block;
         width: 100% !important;
@@ -17,32 +21,52 @@
         flex-flow: row nowrap;
         align-items: center;
         gap: 16px;
+
+        @media (max-width: variables.$mobile-width-small) {
+            gap: 8px;
+        }
     }
 
     @media (max-width: variables.$mobile-width-small) {
         height: 64px;
         gap: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     &__icon {
+        display: block;
         width: 65px;
         height: 28px;
         transform: translateY(3px);
-
-        @media (max-width: variables.$mobile-width-small) {
-            width: 40px;
-            height: 40px;
-            transform: scale(1.45);
-        }
 
         svg {
             width: 100%;
             height: 100%;
         }
 
+        @media (max-width: variables.$mobile-width-small) {
+            width: 42px;
+            height: 18px;
+            transform: none;
+        }
+
         .AnimatedLogo__icon_foreground {
             width: 42px;
             height: 28px;
+
+            @media (max-width: variables.$mobile-width-small) {
+                width: 27px;
+                height: 18px;
+            }
+        }
+
+        .AnimatedLogo__icon_background {
+            @media (max-width: variables.$mobile-width-small) {
+                width: 42px;
+                height: 18px;
+            }
         }
     }
 
@@ -58,6 +82,7 @@
             font-size: variables.$font-size-18;
             font-weight: variables.$font-weight-sm;
             line-height: variables.$line-height-24;
+            transform: translateY(-1.5px);
         }
     }
 }

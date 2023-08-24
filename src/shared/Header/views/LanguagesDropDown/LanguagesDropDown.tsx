@@ -8,7 +8,11 @@ import LanguagesDropDownView from './views/LanguagesDropDownView';
 
 import './LanguagesDropDown.scss';
 
-export default function LanguagesDropDown() {
+interface ILanguagesDropDownProps {
+    className?: string;
+}
+
+export default function LanguagesDropDown(props: ILanguagesDropDownProps) {
     const bem = useBem('LanguagesDropDown');
     const {setLanguage} = useAppLanguage();
     const {locale} = useComponents();
@@ -16,7 +20,10 @@ export default function LanguagesDropDown() {
     return (
         <DropDownField
             view={LanguagesDropDownView}
-            className={bem.block()}
+            className={bem(
+                bem.block(),
+                props.className,
+            )}
             items={LanguageEnum}
             selectedIds={[locale.language]}
             onChange={language => setLanguage(language)}

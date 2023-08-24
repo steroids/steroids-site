@@ -8,7 +8,6 @@
 
     width: 100%;
     height: 100%;
-    margin-right: 16px;
 
     .IconView.InputFieldView__lead-icon {
         left: auto;
@@ -25,7 +24,6 @@
 
     .InputFieldView__input {
         padding-left: 12px;
-        background-color: variables.$control-background-color;
         border: none;
     }
 }

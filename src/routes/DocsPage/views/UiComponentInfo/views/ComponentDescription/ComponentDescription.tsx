@@ -2,7 +2,7 @@
 import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import {Text, Title} from '@steroidsjs/core/ui/typography';
-import CustomNavigation from 'shared/CustomNaviagtion';
+import CustomNavigation from 'shared/CustomNavigation';
 import {IEntityInfo} from 'types/IEntityInfo';
 import {IDemo} from 'types/IDemo';
 import Demos from '../Demos';
