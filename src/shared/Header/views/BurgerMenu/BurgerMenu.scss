@@ -1,25 +1,151 @@
 @use "style/variables";
+@use "style/mixins";
+
+:root {
+    --burger-icon-stroke-color: #323232;
+    --burger-separator-color: rgba(0, 0, 0, 0.1);
+    --burger-search-background-color: #f1f5f7;
+}
+
+html[data-theme="dark"] {
+    --burger-icon-stroke-color: #ffffff;
+    --burger-separator-color: rgba(255, 255, 255, 0.1);
+    --burger-search-background-color: rgba(255, 255, 255, 0.1);
+}
+
+$burger-icon-stroke-color: var(--burger-icon-stroke-color);
+$burger-separator-color: var(--burger-separator-color);
+$burger-search-background-color: var(--burger-search-background-color);
+
+%burger-menu-text {
+    font-size: variables.$font-size-18 !important;
+    font-weight: variables.$font-weight-sm !important;
+    line-height: variables.$line-height-24 !important;
+}
 
 .BurgerMenu {
-  display: none;
+    $root: &;
+    display: none;
 
-  &__wrapper {
-      width: 32px;
-      height: 32px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-  
-  &__button {
-    display: block;
-    width: 24px;
-    height: 24px;
-    background-color: variables.$control-background-color;
-    border-radius: variables.$radius-large;
-  }
+    @media (max-width: 748px) {
+        display: block;
+    }
 
-  @media (max-width: 767px) {
-    display: block;
-  }
+    &__icon {
+        #{$root}__wrapper {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            svg path {
+                stroke: $burger-icon-stroke-color;
+            }
+        }
+
+        #{$root}__button {
+            display: block;
+            width: 24px;
+            height: 24px;
+            background-color: variables.$control-background-color;
+            border-radius: variables.$radius-large;
+        }
+    }
+
+    &__burger-menu {
+        z-index: 13;
+        width: 100vw;
+        overflow: hidden;
+        height: calc(100% - 64px);
+        position: absolute;
+        pointer-events: none;
+        top: 64px;
+        left: 0;
+        opacity: 0;
+        background-color: variables.$custom-background-color;
+        border-top: 1px solid variables.$custom-text-color-base;
+        transition: opacity 150ms ease-in-out;
+
+        &_visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        #{$root}__nav {
+            @include mixins.header-nav();
+            padding: 16px;
+
+            .NavLinkView__list {
+                @media (max-width: 748px) {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    gap: 0;
+                }
+
+                &-item .ButtonView .ButtonView__link .ButtonView__text {
+                    padding: 12px;
+                
+                    @extend %burger-menu-text;
+                }
+
+                &-item:last-child {
+                    border-bottom: 1px solid $burger-separator-color;
+                }
+            }
+        }
+
+        #{$root}__controls {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            padding: 0 12px;
+
+            &-themes {
+                @include mixins.header-themes();
+            }
+
+            &-languages {
+                background: variables.$header-control-background-color;
+            }
+
+            border-bottom: 1px solid $burger-separator-color;
+        }
+
+        #{$root}__search {
+            padding: 12px;
+
+            #{$root}__input {
+                height: 48px;
+
+                input {
+                    border-radius: variables.$radius-large;
+                    background-color: $burger-search-background-color;
+                    padding-left: 48px;
+
+                    @extend %burger-menu-text
+                }
+
+                .InputFieldView__lead-icon {
+                    right: auto;
+                    left: 12px;
+                }
+            }
+        }
+
+        #{$root}__tree { 
+            @include mixins.sidebar(calc(100vh - 406px));
+            width: 100% !important;
+            padding-top: 0;
+            padding-right: 16px;
+
+            background-color: variables.$custom-background-color;
+
+            .ButtonView .ButtonView__link .ButtonView__text {
+                @extend %burger-menu-text
+            }
+        }
+    }
 }

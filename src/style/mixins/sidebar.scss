@@ -1,0 +1,100 @@
+@use "style/variables";
+
+
+$sidebar-width: 332px;
+
+:root {
+    --sidebar-background-color: #f1f5f7;
+    --sidebar-bottom-line-color: rgba(0, 0, 0, 0.1);
+    --sidebar-background-color-selected: #dbe2e6;
+    --sidebar-scroll-thumb-color: #cbd5db;
+    --sidebar-scroll-track-color: rgba(0, 0, 0, 0.04);
+}
+
+html[data-theme="dark"] {
+    --sidebar-background-color: #333646;
+    --sidebar-bottom-line-color: rgba(255, 255, 255, 0.1);
+    --sidebar-background-color-selected: #272a37;
+    --sidebar-scroll-thumb-color: #272A37;
+    --sidebar-scroll-track-color: rgba(255, 255, 255, 0.10);
+}
+
+$sidebar-background-color: var(--sidebar-background-color);
+$sidebar-bottom-line-color: var(--sidebar-bottom-line-color);
+$sidebar-background-color-selected: var(--sidebar-background-color-selected);
+$sidebar-scroll-thumb-color: var(--sidebar-scroll-thumb-color);
+$sidebar-scroll-track-color: var(--sidebar-scroll-track-color);
+
+
+@mixin sidebar($max-height) {
+    top: 0;
+    position: sticky;
+    padding: 16px;
+    width: $sidebar-width;
+    min-width: $sidebar-width;
+    background-color: $sidebar-background-color;
+    overflow-y: scroll;
+
+    @include variables.scrollWrapper(#{$max-height}, 0, $sidebar-scroll-thumb-color, $sidebar-scroll-track-color);
+
+    &::-webkit-scrollbar { 
+        width: 8px;
+    } 
+
+    .TreeView {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    .TreeView__item {
+        //Тоже самое что и .ButtonView
+        &-label {
+            background-color: transparent;
+            margin: 0;
+            padding: 8px 12px !important;
+
+            &:before {
+                display: none;
+            }
+        }
+
+        //Категория
+        &_has-items:not(.TreeView__item_level_1) .TreeView__item-label {
+            .ButtonView__link .ButtonView__text {
+                font-size: variables.$font-size-16;
+                font-weight: variables.$font-weight-lg;
+                line-height: variables.$line-height-22;
+                letter-spacing: 1.6px;
+                text-transform: uppercase;
+            }
+        }
+
+        //Подкатегория
+        &_has-items.TreeView__item_level_1 {
+            border-bottom: 1px solid $sidebar-bottom-line-color;
+            border-radius: 0;
+            .ButtonView__link .ButtonView__text {
+                color: variables.$custom-text-color-base;
+            }
+        }
+    }
+
+    .TreeView__item:not(.TreeView__item_has-items) {
+        border-radius: variables.$radius-small;
+        transition: background-color 350ms ease-in-out;
+    }
+
+    .TreeView__item:not(.TreeView__item_has-items).TreeView__item_selected {
+        background-color: $sidebar-background-color-selected;
+    }
+
+    .ButtonView .ButtonView__link .ButtonView__text {
+        font-size: variables.$font-size-16;
+        font-weight: variables.$font-weight-sm;
+        line-height: variables.$line-height-22;
+
+        white-space: nowrap; /* Запретить перенос текста */
+        overflow: hidden; /* Скрыть содержимое, выходящее за границы ячейки */
+        text-overflow: ellipsis; /* Добавить многоточие, если текст обрезается */
+    }
+}

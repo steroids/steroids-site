@@ -1,8 +1,9 @@
 @use "style/variables";
 
 .LanguagesDropDown {
-    width: 59px !important;
+    width: 63px !important;
     min-width: auto;
+    height: 48px;
     border-radius: 12px;
 
     &::before {
@@ -10,7 +11,7 @@
     }
 
     .DropDownFieldView__selected-items {
-        padding: 5px 6px;
+        padding: 12px 8px;
         padding-right: 0;
 
         span {

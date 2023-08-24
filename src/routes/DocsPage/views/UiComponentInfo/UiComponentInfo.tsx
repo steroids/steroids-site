@@ -1,14 +1,15 @@
 import {ELEMENT_TO_OBSERVE_CLASS_NAME} from 'constants/classNames';
 import {CATEGORY_UI} from 'constants/categories';
+
 import React from 'react';
 import {useBem} from '@steroidsjs/core/hooks';
 import ButtonGroup from '@steroidsjs/core/ui/nav/ButtonGroup';
 import {getChildrenItemsByCategory, getClassSelector, getIdSelector, scrollToElement} from 'utils/utils';
+
 import {useCollision} from 'hooks/useCollision';
 import {useUIComponentInfo} from 'hooks/useUIComponentInfo';
 import ComponentInfoTabs from 'enums/ComponentInfoTabs';
 import {useDocsPageData} from 'hooks/useDocsPageData';
-import Link from '@steroidsjs/core/ui/nav/Link';
 import {Title} from '@steroidsjs/core/ui/typography';
 import Nav from '@steroidsjs/core/ui/nav/Nav';
 import ComponentPropsInfo from './views/ComponentPropsInfo';

@@ -11,6 +11,7 @@ import {scrollToTop} from 'utils/utils';
 import ComponentInfo from './views/ComponentInfo';
 import UiComponentInfo from './views/UiComponentInfo';
 import GettingStarted from './views/GettingStarted';
+import CustomTree from '../../shared/CustomTree';
 
 import './DocsPage.scss';
 
@@ -39,7 +40,11 @@ export default function DocsPage() {
     return (
         <div className={bem.block()}>
             <div className={bem.element('sidebar')}>
-                <Tree items={treeItems} />
+                <Tree
+                    view={CustomTree}
+                    items={treeItems}
+                    alwaysOpened
+                />
             </div>
             <div className={bem.element('content')}>
                 {category === CATEGORY_UI && (

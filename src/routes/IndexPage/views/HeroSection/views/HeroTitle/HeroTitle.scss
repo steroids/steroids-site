@@ -40,6 +40,7 @@
     }
 
     .AnimatedLogo {
+        $root: &;
         width: 93px;
         height: 40px;
 
@@ -48,8 +49,12 @@
 
         @media (max-width: 384px) {
             width: 60px;
-            height: 60px;
-            transform: scale(1.45) translateY(6px);
+            transform: translateX(-1px) translateY(14px);
+            
+            &__icon_foreground {
+                width: 40px;
+                height: 26px;
+            }  
         }
 
         svg {

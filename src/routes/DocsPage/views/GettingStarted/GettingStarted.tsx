@@ -7,13 +7,12 @@ import Markdown from 'markdown-to-jsx';
 import {useDocsMarkdown} from 'hooks/useDocsMarkdown';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
 import {syntaxHighlighterStyle} from 'data/syntaxHighlighterStyle';
-import Link from '@steroidsjs/core/ui/nav/Link';
 import {useDocsPageData} from 'hooks/useDocsPageData';
 import {getChildrenItemsByCategory} from 'utils/utils';
-
-import './GettingStarted.scss';
 import {Title} from '@steroidsjs/core/ui/typography';
 import Nav from '@steroidsjs/core/ui/nav/Nav';
+
+import './GettingStarted.scss';
 
 const CodeBlock = ({className, children}) => {
     let lang = 'text'; // default monospaced text
