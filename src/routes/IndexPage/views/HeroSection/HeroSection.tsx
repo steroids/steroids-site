@@ -17,10 +17,14 @@ import './HeroSection.scss';
 export default function HeroSection() {
     const bem = useBem('HeroSection');
     const {isPhone} = useScreen();
+    const heroSectionRef = React.useRef<HTMLElement>(null);
     const {locale} = useComponents();
 
     return (
-        <Section className={bem.block()}>
+        <Section
+            className={bem.block()}
+            sectionRef={heroSectionRef}
+        >
             <HeroTitle />
             <div className={bem.element('buttons')}>
                 <Button
@@ -42,7 +46,7 @@ export default function HeroSection() {
                 content={heroDescription}
                 className={bem.element('description')}
             />
-            <AnimatedIcons />
+            <AnimatedIcons heroSectionRef={heroSectionRef} />
         </Section>
     );
 }

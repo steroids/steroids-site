@@ -22,4 +22,6 @@ export const icons = {
     split: require('./svgs/split.svg'),
     figma: require('./svgs/figma.svg'),
     library: require('./svgs/library.svg'),
+    'logo-background': require('./svgs/logo-background.svg'),
+    'logo-foreground': require('./svgs/logo-foreground.svg'),
 };
