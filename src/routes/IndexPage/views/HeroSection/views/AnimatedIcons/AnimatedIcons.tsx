@@ -23,10 +23,10 @@ const ANIMATION_DURATION_SECONDS = 0.5;
 const ANIMATION_EASE_TYPE = 'power2.out';
 const OFFSET_DIVIDER = 10;
 
-const animateIcon = (e, icon) => {
+const animateIcon = (event, icon) => {
     const rect = icon.getBoundingClientRect();
-    const offsetX = (e.clientX - rect.left) / OFFSET_DIVIDER;
-    const offsetY = (e.clientY - rect.top) / OFFSET_DIVIDER;
+    const offsetX = (event.clientX - rect.left) / OFFSET_DIVIDER;
+    const offsetY = (event.clientY - rect.top) / OFFSET_DIVIDER;
 
     gsap.to(icon, {
         x: offsetX,
@@ -45,24 +45,28 @@ const inanimateIcon = (icon) => {
     });
 };
 
-function AnimatedIcons(_, heroSectionRef) {
+interface IAnimatedIconsProps {
+    heroSectionRef?: React.MutableRefObject<HTMLElement>;
+}
+
+function AnimatedIcons(props: IAnimatedIconsProps) {
     const bem = useBem('AnimatedIcons');
 
     React.useEffect(() => {
-        const icons = heroSectionRef?.current?.querySelectorAll(getClassSelector(ICON_ELEMENT_CLASS_NAME));
+        const icons = props.heroSectionRef?.current?.querySelectorAll(getClassSelector(ICON_ELEMENT_CLASS_NAME));
 
         const handleMouseMove = (e) => icons.forEach((icon) => animateIcon(e, icon));
 
         const handleMouseOut = () => icons.forEach((icon) => inanimateIcon(icon));
 
-        heroSectionRef?.current?.addEventListener('mousemove', handleMouseMove);
-        heroSectionRef?.current?.addEventListener('mouseout', handleMouseOut);
+        props.heroSectionRef?.current?.addEventListener('mousemove', handleMouseMove);
+        props.heroSectionRef?.current?.addEventListener('mouseout', handleMouseOut);
 
         return () => {
-            heroSectionRef?.current?.removeEventListener('mousemove', handleMouseMove);
-            heroSectionRef?.current?.removeEventListener('mouseout', handleMouseOut);
+            props.heroSectionRef?.current?.removeEventListener('mousemove', handleMouseMove);
+            props.heroSectionRef?.current?.removeEventListener('mouseout', handleMouseOut);
         };
-    }, [bem, heroSectionRef]);
+    }, [bem, props.heroSectionRef]);
 
     return (
         <div className={bem.block()}>
@@ -77,4 +81,4 @@ function AnimatedIcons(_, heroSectionRef) {
     );
 }
 
-export default React.forwardRef<HTMLElement, any>(AnimatedIcons);
+export default AnimatedIcons;

@@ -20,7 +20,7 @@ export default function HeroSection() {
     return (
         <Section
             className={bem.block()}
-            ref={heroSectionRef}
+            sectionRef={heroSectionRef}
         >
             <HeroTitle />
             <div className={bem.element('buttons')}>
@@ -39,7 +39,7 @@ export default function HeroSection() {
                 content={heroDescription}
                 className={bem.element('description')}
             />
-            <AnimatedIcons ref={heroSectionRef} />
+            <AnimatedIcons heroSectionRef={heroSectionRef} />
         </Section>
     );
 }

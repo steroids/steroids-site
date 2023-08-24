@@ -13,9 +13,10 @@ interface ISectionProps {
     children?: any;
     className?: string;
     isGray?: boolean;
+    sectionRef?: React.MutableRefObject<HTMLElement>;
 }
 
-function Section(props: ISectionProps, ref) {
+function Section(props: ISectionProps) {
     const bem = useBem('Section');
 
     const renderTitle = React.useCallback((title: string) => {
@@ -47,7 +48,7 @@ function Section(props: ISectionProps, ref) {
                 }),
                 props.className,
             )}
-            ref={ref}
+            ref={props.sectionRef}
         >
             <h3 className={bem.element('title')}>
                 {renderTitle(props.title)}
@@ -61,4 +62,4 @@ function Section(props: ISectionProps, ref) {
     );
 }
 
-export default React.forwardRef<HTMLElement, ISectionProps>(Section);
+export default Section;

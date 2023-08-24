@@ -7,7 +7,7 @@ import useBem from '@steroidsjs/core/hooks/useBem';
 import Link from '@steroidsjs/core/ui/nav/Link';
 import {useComponents} from '@steroidsjs/core/hooks';
 import AnimatedLogo from 'shared/AnimatedLogo';
-import {useToggleAnimation} from 'hooks/useHoverAnimation';
+import {useToggleAnimation} from 'hooks/useToggleAnimation';
 
 import './HeaderLogo.scss';
 
