@@ -85,6 +85,10 @@ $present-checkbox-border-color: var(--present-checkbox-border-color);
             border-color: $present-checkbox-border-color;
         }
     }
+    
+    &__component.InputFieldView { 
+        margin-top: 0;
+    }
 
     &__component.FormView {
         
