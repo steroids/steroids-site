@@ -47,6 +47,7 @@
         }
 
         &-input {
+            display: none;
             .InputFieldView__input {
                 background-color: variables.$header-control-background-color !important;
             }
