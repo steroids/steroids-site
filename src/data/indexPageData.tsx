@@ -40,7 +40,7 @@ export const advantagesCards = [
     },
 ];
 
-export const advantagesDescription = __('Фреймворк Steroids сделает шаблонные задачи за вас, \n это в разы сократит время и стоимость \n разработки продукта');
+export const advantagesDescription = __('Фреймворк Steroids сделает шаблонные задачи за вас \n и сократит время разработки продукта');
 
 export const resourcesCards = [
     {
