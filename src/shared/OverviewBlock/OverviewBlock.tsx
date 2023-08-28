@@ -19,7 +19,10 @@ export default function OverviewBlock(props: IOverviewBlockProps) {
 
     return (
         <div className={bem(bem.block(), props.className)}>
-            <Title content={props.title} />
+            <Title
+                className={bem.element('title')}
+                content={props.title}
+            />
             <Text
                 className={bem.element('description')}
                 content={props.description}

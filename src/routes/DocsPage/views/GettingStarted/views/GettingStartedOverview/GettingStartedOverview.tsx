@@ -30,7 +30,7 @@ export default function GettingStartedOverview() {
             className={bem.block()}
             listId={GETTING_STARTED_LIST_ID}
             items={gettingStartedItems}
-            title={__('Статьи о Steroids')}
+            title={__('Начало работы')}
             description={GETTING_STARTED_DESCRIPTION}
         />
     );
