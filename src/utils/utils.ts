@@ -50,3 +50,8 @@ export const getChildrenItemsByCategory = (allItems: INavItem[], category: strin
 
     return childrenItemsByCategory;
 };
+
+export const getUiComponentBannerPathByTheme = (
+    componentName: string,
+    theme: string,
+) => `/images/banners/${theme}/${componentName.toLowerCase()}.webp`;

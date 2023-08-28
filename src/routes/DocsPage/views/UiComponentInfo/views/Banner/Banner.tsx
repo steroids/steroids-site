@@ -4,6 +4,7 @@ import {Title} from '@steroidsjs/core/ui/typography';
 
 import './Banner.scss';
 import {useTheme} from '@steroidsjs/core/hooks';
+import {getUiComponentBannerPathByTheme} from 'utils/utils';
 
 interface IBannerProps {
     componentName: string,
@@ -24,7 +25,7 @@ function Banner(props: IBannerProps) {
             <div className={bem.element('picture')}>
                 <img
                     className={bem.element('picture-img')}
-                    src={`/images/banners/${theme}/${props.componentName.toLowerCase()}.webp`}
+                    src={getUiComponentBannerPathByTheme(props.componentName, theme)}
                     alt="component demos"
                 />
             </div>
