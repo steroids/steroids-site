@@ -81,7 +81,7 @@ const FOOTER_LINKS_COLUMN_3: INavItem[] = [
 export const FOOTER_LINKS_COLUMNS = [
     FOOTER_LINKS_COLUMN_1,
     FOOTER_LINKS_COLUMN_2,
-    FOOTER_LINKS_COLUMN_3,
+    // FOOTER_LINKS_COLUMN_3,
 ];
 
 export const KOZHINDEV_LINK = 'https://kozhindev.com';
