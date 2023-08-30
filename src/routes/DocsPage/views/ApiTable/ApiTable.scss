@@ -21,4 +21,8 @@
     .ButtonView__link:hover {
         text-decoration: underline;
     }
+
+    &__grid-wrapper { 
+        overflow-x: auto;
+    }
 }

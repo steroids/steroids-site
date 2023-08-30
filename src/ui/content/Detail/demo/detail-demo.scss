@@ -1,0 +1,7 @@
+.detail-demo {
+    @media (max-width: 1064px) {
+        .DetailView__table-container {
+            overflow-x: scroll;
+        }
+    }
+}

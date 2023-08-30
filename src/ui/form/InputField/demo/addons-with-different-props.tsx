@@ -9,7 +9,7 @@ import InputField from '@steroidsjs/core/ui/form/InputField/InputField';
  */
 
 export default () => (
-    <div style={{display: 'flex', flexFlow: 'row nowrap', columnGap: '30px'}}>
+    <div style={{display: 'flex', flexFlow: 'row wrap', columnGap: '30px'}}>
         <InputField
             placeholder='Placeholder'
             addonBefore="https://"

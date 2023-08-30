@@ -8,7 +8,7 @@ import * as React from 'react';
  */
 
 export default () => (
-    <div style={{minWidth: '500px'}}>
+    <div>
         <FileField
             backendUrl="/api/v1/file/upload-photo"
         />

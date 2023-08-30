@@ -22,18 +22,6 @@ const items = [
         id: 3,
         label: 'Third',
     },
-    {
-        id: 4,
-        label: 'Fourth',
-    },
-    {
-        id: 5,
-        label: 'Five',
-    },
-    {
-        id: 6,
-        label: 'Six',
-    },
 ];
 
 export default () => {

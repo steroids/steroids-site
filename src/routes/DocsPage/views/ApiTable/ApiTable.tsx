@@ -58,32 +58,34 @@ export default function ApiTable(props: IApiTableProps) {
                 className={bem.element('title')}
                 {...props.titleProps}
             />
-            <Grid
-                listId={props.listId}
-                items={props.entityInfo.properties}
-                columns={[
-                    {
-                        className: bem.element('name'),
-                        label: 'Property',
-                        valueView: ({item}) => item.name + (item.required ? '*' : ''),
-                    },
-                    {
-                        className: bem.element('type'),
-                        label: 'Type',
-                        valueView: ({item}) => <code>{checkAndCreateTypeLink(item.type, onLinkClick)}</code>,
-                    },
-                    {
-                        className: bem.element('default'),
-                        label: 'Example',
-                        valueView: ({item}) => <code>{item.example}</code>,
-                    },
-                    {
-                        className: bem.element('descr'),
-                        valueView: ({item}) => __(item.description),
-                        label: 'Description',
-                    },
-                ]}
-            />
+            <div className={bem.element('grid-wrapper')}>
+                <Grid
+                    listId={props.listId}
+                    items={props.entityInfo.properties}
+                    columns={[
+                        {
+                            className: bem.element('name'),
+                            label: 'Property',
+                            valueView: ({item}) => item.name + (item.required ? '*' : ''),
+                        },
+                        {
+                            className: bem.element('type'),
+                            label: 'Type',
+                            valueView: ({item}) => <code>{checkAndCreateTypeLink(item.type, onLinkClick)}</code>,
+                        },
+                        {
+                            className: bem.element('default'),
+                            label: 'Example',
+                            valueView: ({item}) => <code>{item.example}</code>,
+                        },
+                        {
+                            className: bem.element('descr'),
+                            valueView: ({item}) => __(item.description),
+                            label: 'Description',
+                        },
+                    ]}
+                />
+            </div>
         </div>
     );
 }

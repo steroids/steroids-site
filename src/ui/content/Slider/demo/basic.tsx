@@ -1,6 +1,8 @@
 import * as React from 'react';
 import Slider from '@steroidsjs/core/ui/content/Slider/Slider';
 
+import './slider-demo.scss';
+
 export const items = [
     {
         img: 'https://img1.goodfon.ru/original/1920x1080/b/79/england-sheffield-park-lake.jpg',
@@ -35,7 +37,7 @@ export const itemView = (props) => (
 export default () => (
     <>
         <Slider
-            style={{width: '400px'}}
+            className='slider-demo'
             sliderOptions={{
                 type: 'loop',
                 hasTrack: true,

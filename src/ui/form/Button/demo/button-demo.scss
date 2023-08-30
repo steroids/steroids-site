@@ -1,0 +1,9 @@
+.button-colors {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+
+    &:first-child {
+        margin-bottom: 10px;
+    }
+}

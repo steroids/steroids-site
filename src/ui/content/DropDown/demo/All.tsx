@@ -1,7 +1,7 @@
 import React from 'react';
 import {DropDown} from '@steroidsjs/core/ui/content';
 
-import './All.scss';
+import './dropdown-demo.scss';
 
 const examples = {
     row1: {

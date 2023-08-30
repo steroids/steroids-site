@@ -23,7 +23,7 @@ const circle = (
     </svg>
 );
 export default () => (
-    <div style={{display: 'flex', flexFlow: 'row nowrap', columnGap: '30px'}}>
+    <div style={{display: 'flex', flexFlow: 'row wrap', columnGap: '30px'}}>
         <InputField
             label="Custom lead icon"
             showClear

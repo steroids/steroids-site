@@ -1,6 +1,8 @@
 import * as React from 'react';
 import Header from '@steroidsjs/core/ui/layout/Header';
 
+import './header-demo.scss';
+
 /**
  * Обычный пример использования Header.
  * @order 1
@@ -35,6 +37,7 @@ export default () => (
     <>
         {Object.entries(sizes).map(([size], label) => (
             <Header
+                className='header-size'
                 key={label}
                 label={label}
                 size={size}

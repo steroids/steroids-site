@@ -16,7 +16,7 @@ const types = {
 };
 
 export default () => (
-    <div style={{display: 'flex', flexFlow: 'row nowrap', columnGap: '30px'}}>
+    <div style={{display: 'flex', flexFlow: 'row wrap', columnGap: '30px'}}>
         {Object.keys(types).map(type => (
             <div
                 className='col'

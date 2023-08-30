@@ -2,6 +2,8 @@ import * as React from 'react';
 
 import Button from '@steroidsjs/core/ui/form/Button/Button';
 
+import './button-demo.scss';
+
 const colors = {
     basic: 'Basic',
     primary: 'Primary',
@@ -20,7 +22,7 @@ const colors = {
 
 export default () => (
     <>
-        <div style={{display: 'flex', gridGap: '10px', marginBottom: '10px'}}>
+        <div className='button-colors'>
             {Object.keys(colors).map(color => (
                 <Button
                     key={color}
@@ -29,7 +31,7 @@ export default () => (
                 />
             ))}
         </div>
-        <div style={{display: 'flex', gridGap: '10px'}}>
+        <div className='button-colors'>
             {Object.keys(colors).map(color => (
                 <Button
                     key={color}

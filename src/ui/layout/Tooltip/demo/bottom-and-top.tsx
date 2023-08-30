@@ -27,6 +27,7 @@ export default () => (
                 key={examplesRow}
                 style={{
                     display: 'flex',
+                    flexFlow: 'row wrap',
                     alignItems: 'center',
                     gridGap: '30px',
                     padding: '0px 30px 60px 30px',

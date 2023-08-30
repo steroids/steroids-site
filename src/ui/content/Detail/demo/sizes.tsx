@@ -1,6 +1,8 @@
 import * as React from 'react';
 import {Detail, DetailItem} from '@steroidsjs/core/ui/content/Detail/';
 
+import './detail-demo.scss';
+
 const sizes = {
     sm: 'Small',
     md: 'Middle',
@@ -23,6 +25,7 @@ export default () => (
                     title={sizes[size]}
                     size={size}
                     responsive={false}
+                    className='detail-demo'
                 >
                     <DetailItem label="Product">Cloud Database</DetailItem>
                     <DetailItem label="Billing Mode">Prepaid</DetailItem>

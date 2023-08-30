@@ -43,7 +43,7 @@ function DemoModal(props: IModalProps) {
 export default () => {
     const dispatch = useDispatch();
     return (
-        <div style={{display: 'flex', columnGap: '20px'}}>
+        <div style={{display: 'flex', flexFlow: 'row wrap', gap: '20px'}}>
             {Object.entries(sizes).map(([size, label]) => (
                 <Button
                     key={size}
