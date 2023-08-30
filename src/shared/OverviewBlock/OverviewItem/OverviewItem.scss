@@ -1,0 +1,25 @@
+@use 'style/variables';
+
+.OverviewItem {
+  &__card {
+    width: 300px;
+    height: 300px;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.2);
+    }
+  }
+
+  img {
+    transition: transform .3s ease-in-out;
+  }
+
+  .CardView__title {
+    margin-bottom: 0;
+  }
+  .CardView__content {
+    padding: 24px 16px;
+  }
+}

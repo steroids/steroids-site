@@ -1,23 +1,20 @@
 import {ELEMENT_TO_OBSERVE_CLASS_NAME} from 'constants/classNames';
-import {CATEGORY_UI} from 'constants/categories';
 
 import React from 'react';
 import {useBem} from '@steroidsjs/core/hooks';
 import ButtonGroup from '@steroidsjs/core/ui/nav/ButtonGroup';
-import {getChildrenItemsByCategory, getClassSelector, getIdSelector, scrollToElement} from 'utils/utils';
+import {getClassSelector, getIdSelector, scrollToElement} from 'utils/utils';
 
 import {useCollision} from 'hooks/useCollision';
 import {useUIComponentInfo} from 'hooks/useUIComponentInfo';
 import ComponentInfoTabs from 'enums/ComponentInfoTabs';
-import {useDocsPageData} from 'hooks/useDocsPageData';
-import {Title} from '@steroidsjs/core/ui/typography';
-import Nav from '@steroidsjs/core/ui/nav/Nav';
 import ComponentPropsInfo from './views/ComponentPropsInfo';
 import Banner from './views/Banner';
 import ComponentDescription from './views/ComponentDescription';
 import TabGroupView from './views/TabGroupView';
 
 import './UiComponentInfo.scss';
+import UiComponentsOverview from './views/UiComponentsOverview';
 
 interface IUiComponentInfoProps {
     demosComponents: any;
@@ -27,7 +24,6 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
     const bem = useBem('UiComponentInfo');
     const triggerElementRef = React.useRef(null);
     const [tab, setTab] = React.useState<ComponentInfoTabs>(ComponentInfoTabs.DESCRIPTION);
-    const {treeItems} = useDocsPageData();
 
     const {
         selectedDemo,
@@ -51,16 +47,6 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
         setSelectedDemo(id);
         scrollToElement(getIdSelector(id));
     }, [setSelectedDemo, toggleOffCollision]);
-
-    const renderDefaultUiComponentInfo = () => (
-        <div className={bem.element('default')}>
-            <Title content={__('Сводка документации:')} />
-            <Nav
-                layout='link'
-                items={getChildrenItemsByCategory(treeItems, CATEGORY_UI, true)}
-            />
-        </div>
-    );
 
     return (
         <div className={bem.block()}>
@@ -97,7 +83,7 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
                     />
                 </>
             )}
-            {!hasContent && renderDefaultUiComponentInfo()}
+            {!hasContent && <UiComponentsOverview />}
         </div>
     );
 }

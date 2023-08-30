@@ -66,6 +66,7 @@
         line-height: variables.$line-height-22;
         margin-bottom: 64px;
         color: variables.$custom-text-decr-color;
+        white-space: pre-line;
 
         @media (max-width: variables.$tablet-width) {
             width: 70.1171vw;

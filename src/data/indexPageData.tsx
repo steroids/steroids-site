@@ -40,7 +40,7 @@ export const advantagesCards = [
     },
 ];
 
-export const advantagesDescription = __('Наш Open-Source фреймворк Steroids \n это экосистема на основе React и Redux \n с большим набором готовых компонентов, \n уникальной архитектурой, UI Kit и SSR.');
+export const advantagesDescription = __('Фреймворк Steroids сделает шаблонные задачи за вас \n и сократит время разработки продукта');
 
 export const resourcesCards = [
     {
@@ -68,7 +68,7 @@ export const resourcesCards = [
     },
 ];
 
-export const resourcesDescription = __('Наш Open-Source фреймворк Steroids \n это экосистема на основе React и Redux \n с большим набором готовых компонентов, \n уникальной архитектурой, UI Kit и SSR.');
+export const resourcesDescription = __('Наш фреймворк - подходящее решение для задач вашего бизнеса');
 export const examplesCards = [
     {
         label: __('Датапикер'),
@@ -89,6 +89,6 @@ export const examplesCards = [
     },
 ];
 
-export const heroDescription = __('Наш Open-Source фреймворк Steroids \n это экосистема на основе React и Redux \n с большим набором готовых компонентов, \n уникальной архитектурой, UI Kit и SSR.');
+export const heroDescription = __('Наш Open-Source фреймворк Steroids это экосистема на основе React и Redux с большим набором готовых компонентов, уникальной архитектурой, UI Kit и SSR.');
 
 export const footerCredits = '© Steroids 2023';
