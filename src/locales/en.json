@@ -58,5 +58,10 @@
     "Сводка статей:": "Articles overview:",
     "Сводка документации:": "Documentation overview:",
     "Статьи": "Articles",
-    "Найти компонент": "Find component"
+    "Найти компонент": "Find component",
+    "Фреймворк Steroids сделает шаблонные задачи за вас \n и сократит время разработки продукта": "The Steroids framework will do boilerplate tasks for you \n and reduce product development time",
+    "Наш фреймворк - подходящее решение для задач вашего бизнеса": "Our framework is the right solution for your business needs",
+    "О Steroids": "About Steroids",
+    "Мы собрали здесь всю полезную информацию о начале работы со Steroids, \n чтобы помочь вам быстрее освоить фреймворк": "We've compiled all the useful information here about getting started with Steroids,\n to help you get up to speed quickly.",
+    "Фреймворк Steroids предоставляет большой набор UI-компонентов для ваших web-приложений. Отличительная особенность UI-компонентов в стероидах - возможность кастомизировать отображение компонента, не изменяя его логику.": "The Steroids framework provides a large set of UI components for your web applications. A distinctive feature of UI components in steroids is the ability to customize the display of the component without changing its logic."
 }
