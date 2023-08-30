@@ -46,17 +46,19 @@ export default function GettingStarted() {
     const {treeItems} = useDocsPageData();
 
     return (
-        <article className={bem.block()}>
+        <div className={bem.block()}>
             {docsContent && (
-                <Markdown
-                    options={{
-                        ...MARKDOWN_OPTIONS,
-                    }}
-                >
-                    {docsContent}
-                </Markdown>
+                <div className={bem.element('article')}>
+                    <Markdown
+                        options={{
+                            ...MARKDOWN_OPTIONS,
+                        }}
+                    >
+                        {docsContent}
+                    </Markdown>
+                </div>
             )}
             {!docsContent && <GettingStartedOverview />}
-        </article>
+        </div>
     );
 }

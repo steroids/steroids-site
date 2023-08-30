@@ -1,5 +1,7 @@
 @use "style/mixins";
 
 .GettingStarted {
-    @include mixins.markdown();
+    &__article {
+        @include mixins.markdown();
+    }
 }

@@ -33,7 +33,7 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
         componentInfo,
     } = useUIComponentInfo(props.demosComponents);
 
-    const hasContent = React.useMemo(() => !!(componentInfo || demos), [componentInfo, demos]);
+    const hasContent = React.useMemo(() => !!(componentInfo || demos.length), [componentInfo, demos]);
 
     const {toggleOffCollision} = useCollision(
         triggerElementRef,
