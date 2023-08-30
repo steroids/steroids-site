@@ -1,6 +1,8 @@
 import * as React from 'react';
 import {CheckboxField, InputField, FieldList, Form, NumberField} from '@steroidsjs/core/ui/form';
 
+import './field-list-demo.scss';
+
 /**
  * Выключенный или недоступный для использования.
  * @order 2
@@ -9,7 +11,10 @@ import {CheckboxField, InputField, FieldList, Form, NumberField} from '@steroids
 
 export default () => (
     <>
-        <Form formId='FieldListForm'>
+        <Form
+            formId='FieldListForm'
+            className='field-list-demo'
+        >
             <FieldList
                 showRemove={false}
                 disabled

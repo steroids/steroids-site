@@ -1,6 +1,8 @@
 import * as React from 'react';
 import {Alert} from '@steroidsjs/core/ui/content';
 
+import './alert-demo.scss';
+
 /**
  * Header with icon and without icon
  * @order 1
@@ -8,7 +10,7 @@ import {Alert} from '@steroidsjs/core/ui/content';
  */
 
 export default () => (
-    <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '20px'}}>
+    <div className="alert-demo">
         <div style={{display: 'grid', gridGap: '20px'}}>
             <Alert
                 type='success'

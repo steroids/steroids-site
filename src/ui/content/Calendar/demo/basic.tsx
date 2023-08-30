@@ -1,6 +1,8 @@
 import * as React from 'react';
 import Calendar from '@steroidsjs/core/ui/content/Calendar';
 
+import './calendar-demo.scss';
+
 /**
  * Basic
  * @order 1
@@ -9,6 +11,9 @@ import Calendar from '@steroidsjs/core/ui/content/Calendar';
 
 export default () => (
     <>
-        <Calendar value='2021-10-15' />
+        <Calendar
+            className="calendar-demo"
+            value='2021-10-15'
+        />
     </>
 );

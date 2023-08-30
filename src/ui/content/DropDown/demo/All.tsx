@@ -1,7 +1,7 @@
 import React from 'react';
 import {DropDown} from '@steroidsjs/core/ui/content';
 
-import './All.scss';
+import './dropdown-demo.scss';
 
 const examples = {
     row1: {
@@ -36,11 +36,11 @@ const Content = () => (
 );
 
 export default () => (
-    <div style={{display: 'flex', rowGap: '10px', flexDirection: 'column'}}>
+    <div style={{display: 'flex', gap: '10px', flexDirection: 'column'}}>
         {Object.entries(examples).map(([row, positions]) => (
             <div
                 key={row}
-                style={{display: 'flex', flexWrap: 'wrap', columnGap: '10px'}}
+                style={{display: 'flex', flexWrap: 'wrap', gap: '10px'}}
             >
                 {Object.entries(positions).map(([position, label]) => (
                     <DropDown

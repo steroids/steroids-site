@@ -1,13 +1,15 @@
 import * as React from 'react';
 import Crud from '@steroidsjs/core/ui/crud/Crud';
 
+import './crud-demo.scss';
+
 /**
  * Default
  * @order 1
  * @col 8
  */
 export default () => (
-    <>
+    <div className='crud-demo'>
         <Crud
             grid={{
                 items: [
@@ -52,5 +54,5 @@ export default () => (
                 ],
             }}
         />
-    </>
+    </div>
 );

@@ -1,0 +1,8 @@
+.avatar-group {
+    display: flex;
+    grid-gap: 20px;
+
+    @media (max-width: 792px) {
+        flex-direction: column;
+    }
+}

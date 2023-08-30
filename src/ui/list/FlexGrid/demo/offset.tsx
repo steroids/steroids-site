@@ -32,7 +32,7 @@ const items = [
  * Basic
  */
 export default () => (
-    <div style={{width: '620px'}}>
+    <div style={{maxWidth: '620px'}}>
         <FlexGrid
             items={items}
             wrap

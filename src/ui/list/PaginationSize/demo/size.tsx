@@ -17,7 +17,7 @@ const sizes = {
  */
 export default () => (
     <>
-        <div style={{display: 'flex', columnGap: '24px'}}>
+        <div style={{display: 'flex', flexFlow: 'row wrap', columnGap: '24px'}}>
             {Object.keys(sizes)
                 .map(size => (
                     <div

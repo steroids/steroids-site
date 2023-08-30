@@ -1,6 +1,8 @@
 import * as React from 'react';
 import {Detail, DetailItem} from '@steroidsjs/core/ui/content/Detail/';
 
+import './detail-demo.scss';
+
 /**
  * Basic table with title
  * @order 1
@@ -11,6 +13,7 @@ export default () => (
         <Detail
             title="Users"
             responsive={false}
+            className='detail-demo'
         >
             <DetailItem label="Product">Cloud Database</DetailItem>
             <DetailItem label="Billing Mode">Prepaid</DetailItem>

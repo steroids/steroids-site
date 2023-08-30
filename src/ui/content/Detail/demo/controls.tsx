@@ -1,5 +1,8 @@
 import * as React from 'react';
 import {Detail, DetailItem} from '@steroidsjs/core/ui/content/Detail/';
+
+import './detail-demo.scss';
+
 /**
  * Table with controls
  * @order 3
@@ -10,6 +13,7 @@ export default () => (
         <Detail
             controls={[{label: 'Edit'}]}
             responsive={false}
+            className='detail-demo'
         >
             <DetailItem label="Product">Cloud Database</DetailItem>
             <DetailItem label="Billing Mode">Prepaid</DetailItem>

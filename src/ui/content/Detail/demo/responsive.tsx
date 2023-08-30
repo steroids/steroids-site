@@ -1,6 +1,8 @@
 import * as React from 'react';
 import {Detail, DetailItem} from '@steroidsjs/core/ui/content/Detail/';
 
+import './detail-demo.scss';
+
 /**
  * When the screen width resizes, the number of columns changes
  * @order 4
@@ -9,6 +11,7 @@ import {Detail, DetailItem} from '@steroidsjs/core/ui/content/Detail/';
 export default () => (
     <>
         <Detail
+            className='detail-demo'
             column={4}
             responsive={{
                 media: [

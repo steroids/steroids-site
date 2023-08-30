@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {CheckboxField, InputField, FieldList, Form, NumberField} from '@steroidsjs/core/ui/form';
 
+import './field-list-demo.scss';
 /**
  * Пример использования FieldList с зеброй.
  * @order 1
@@ -9,7 +10,10 @@ import {CheckboxField, InputField, FieldList, Form, NumberField} from '@steroids
 
 export default () => (
     <>
-        <Form formId='FieldListForm'>
+        <Form
+            formId='FieldListForm'
+            className='field-list-demo'
+        >
             <FieldList
                 hasAlternatingColors
                 attribute='items'

@@ -32,7 +32,7 @@ export default () => (
                     key={examplesColumn}
                     style={{
                         display: 'flex',
-                        flexFlow: 'column',
+                        flexFlow: 'column wrap',
                         gridGap: '60px',
                         padding: '0px 30px',
                     }}

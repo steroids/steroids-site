@@ -1,0 +1,13 @@
+.card-demo-all-variants {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    @media (max-width: 1139px){
+        grid-template-columns: 1fr;      
+    }
+
+    .card {
+        width: 100%;
+    }
+}

@@ -1,0 +1,31 @@
+.header-size {
+    @media (max-width: 1090px) {
+        .HeaderView__nav {
+            display: none;
+        }
+    }
+}
+
+.header-auth {
+    @media (max-width: 900px) {
+        .HeaderView__nav {
+            display: none;
+        }
+    }
+}
+
+.header-burger {
+    @media (max-width: 778px) {
+        .HeaderView__nav {
+            display: none;
+        }
+    }
+}
+
+.header-basic {
+    @media (max-width: 446px) {
+        .HeaderView__nav {
+            display: none;
+        }
+    }
+}

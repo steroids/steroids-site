@@ -2,6 +2,8 @@ import * as React from 'react';
 import Header from '@steroidsjs/core/ui/layout/Header';
 import Modal, {IModalProps} from '@steroidsjs/core/ui/modal/Modal/Modal';
 
+import './header-demo.scss';
+
 function DemoModal(props: IModalProps) {
     return (
         <Modal
@@ -11,7 +13,7 @@ function DemoModal(props: IModalProps) {
             id={props.modalId}
         >
             <div style={{marginBottom: '20px'}}>
-                Try to login here :)
+                Try to login here :
             </div>
         </Modal>
     );
@@ -42,8 +44,9 @@ const navItems = [
  */
 
 export default () => (
-    <div style={{display: 'flex', flexFlow: 'column nowrap', rowGap: 10}}>
+    <div style={{display: 'flex', flexFlow: 'column wrap', rowGap: 10}}>
         <Header
+            className='header-auth'
             logo={{icon: 'kozhinDev', title: 'KozhinDev'}}
             nav={{
                 items: navItems,
@@ -51,11 +54,11 @@ export default () => (
             }}
             authParams={{
                 isAuth: true,
-                toRoute: 'root',
                 modal: DemoModal,
             }}
         />
         <Header
+            className='header-auth'
             logo={{icon: 'kozhinDev', title: 'KozhinDev'}}
             nav={{
                 items: navItems,

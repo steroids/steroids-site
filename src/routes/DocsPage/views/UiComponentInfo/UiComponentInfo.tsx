@@ -33,6 +33,8 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
         componentInfo,
     } = useUIComponentInfo(props.demosComponents);
 
+    const hasContent = React.useMemo(() => !!(componentInfo || demos), [componentInfo, demos]);
+
     const {toggleOffCollision} = useCollision(
         triggerElementRef,
         (el) => setSelectedDemo(el.id),
@@ -48,7 +50,7 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
 
     return (
         <div className={bem.block()}>
-            {componentInfo && (
+            {hasContent && (
                 <>
                     <Banner
                         componentName={componentName}
@@ -81,7 +83,7 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
                     />
                 </>
             )}
-            {!componentInfo && <UiComponentsOverview />}
+            {!hasContent && <UiComponentsOverview />}
         </div>
     );
 }

@@ -1,6 +1,8 @@
 import * as React from 'react';
 import {Avatar, AvatarGroup} from '@steroidsjs/core/ui/content/';
 
+import './avatar-demo.scss';
+
 /**
  * Group of avatars
  * @order 5
@@ -8,7 +10,7 @@ import {Avatar, AvatarGroup} from '@steroidsjs/core/ui/content/';
  */
 
 export default () => (
-    <div style={{display: 'flex', gridGap: '20px'}}>
+    <div className='avatar-group'>
         <AvatarGroup>
             <Avatar
                 size='sm'

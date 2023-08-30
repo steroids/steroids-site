@@ -1,6 +1,8 @@
 import * as React from 'react';
 import Header from '@steroidsjs/core/ui/layout/Header';
 
+import './header-demo.scss';
+
 /**
  * Обычный пример использования Header.
  * @order 1
@@ -25,6 +27,7 @@ const navItems = [
 
 export default () => (
     <Header
+        className='header-basic'
         logo={{icon: 'kozhinDev', title: 'KozhinDev'}}
         nav={{
             items: navItems,

@@ -9,6 +9,7 @@
         @include mixins.sidebar(100vh);
         padding-right: 16px;
 
+
         @media (max-width: 1442px) {
             width: 272px;
             min-width: 272px;
@@ -27,6 +28,16 @@
         }
 
         .TreeView__item {
+            width: 300px;
+
+            @media (max-width: 1442px){
+                width: 240px;
+            }
+
+            @media (max-width: variables.$tablet-width-small){
+                  width: 200px;
+            }
+
             &_has-items:not(.TreeView__item_level_1):not(:first-child) .TreeView__item-label {
                 margin-top: 16px;
             }

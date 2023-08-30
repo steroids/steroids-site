@@ -38,20 +38,23 @@ function ComponentPropsInfo(props: IComponentPropsInfoProps) {
             {!_isEmpty(nestedInterfaces) && (
                 <div className={bem.element('nested-interfaces')}>
                     <Title content='Props interfaces' />
-                    {nestedInterfaces.map((nestedInterface, nestedInterfaceIndex) => (
-                        <ApiTable
-                            key={nestedInterfaceIndex}
-                            entityInfo={nestedInterface}
-                            titleProps={{
-                                content: nestedInterface.name,
-                                type: 'h3',
-                            }}
-                            listId={API_TABLE_ID + nestedInterfaceIndex}
-                        />
-                    ))}
+                    <div className={bem.element('nester-wrapper')}>
+                        {nestedInterfaces.map((nestedInterface, nestedInterfaceIndex) => (
+                            <ApiTable
+                                key={nestedInterfaceIndex}
+                                entityInfo={nestedInterface}
+                                titleProps={{
+                                    content: nestedInterface.name,
+                                    type: 'h3',
+                                }}
+                                listId={API_TABLE_ID + nestedInterfaceIndex}
+                            />
+                        ))}
+                    </div>
                 </div>
             )}
         </div>
+
     );
 }
 

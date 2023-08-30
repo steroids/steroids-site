@@ -14,7 +14,7 @@ const sizes = {
  */
 export default () => (
     <>
-        <div className='row mb-4'>
+        <div>
             {Object.entries(sizes).map(([size, label]) => (
                 <div
                     className='col'

@@ -20,7 +20,7 @@ const layouts = ['button', 'icon', 'link', 'tabs', 'navbar', 'list'];
  * @col 6
  */
 export default () => (
-    <div style={{display: 'flex', flexFlow: 'row nowrap', columnGap: 90}}>
+    <div style={{display: 'flex', flexFlow: 'row wrap', gap: 90}}>
         {layouts.map((layout, index) => (
             <div key={index}>
                 <Text>{_upperFirst(layout)}</Text>

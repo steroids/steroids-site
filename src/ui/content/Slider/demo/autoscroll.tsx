@@ -4,6 +4,8 @@ import Slider from '@steroidsjs/core/ui/content/Slider/Slider';
 import {AutoScroll} from '@splidejs/splide-extension-auto-scroll';
 import {itemView, items} from './basic';
 
+import './slider-demo.scss';
+
 /**
  * Расширение слайдера с помощью autoScroll Slider
  * @order 2
@@ -13,7 +15,7 @@ import {itemView, items} from './basic';
 export default () => (
     <>
         <Slider
-            style={{width: '400px'}}
+            className='slider-demo'
             sliderOptions={{
                 type: 'loop',
                 hasTrack: true,

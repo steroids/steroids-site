@@ -1,0 +1,9 @@
+@use "style/variables";
+
+.slider-demo { 
+    width: 400px; 
+
+    @media (max-width: variables.$mobile-width){
+        width: 300px;      
+    }
+}

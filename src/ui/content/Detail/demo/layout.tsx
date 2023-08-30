@@ -2,6 +2,8 @@ import * as React from 'react';
 import {Detail, DetailItem} from '@steroidsjs/core/ui/content/Detail/';
 import {DetailLayoutEnum} from '@steroidsjs/core/ui/content/Detail/Detail';
 
+import './detail-demo.scss';
+
 /**
  * Table with vertical layout
  * @order 4
@@ -12,6 +14,7 @@ export default () => (
         <Detail
             layout={DetailLayoutEnum.Vertical}
             responsive={false}
+            className='detail-demo'
         >
             <DetailItem label="Product">Cloud Database</DetailItem>
             <DetailItem label="Billing Mode">Prepaid</DetailItem>
