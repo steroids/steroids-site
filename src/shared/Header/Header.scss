@@ -34,7 +34,9 @@
         transition: opacity 150ms ease-in-out;
 
         @media (max-width: 748px) {
-            display: none;
+            &-input, &-languages {
+              display: none;
+            }
         }
 
         .FieldLayoutView {

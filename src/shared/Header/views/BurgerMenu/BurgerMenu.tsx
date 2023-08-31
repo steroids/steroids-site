@@ -58,7 +58,6 @@ export default function BurgerMenu(props: IBurgerMenuProps) {
                 />
                 <div className={bem.element('controls')}>
                     <LanguagesDropDown className={bem.element('controls-languages')} />
-                    <ThemesButtons className={bem.element('controls-themes')} />
                 </div>
                 <div className={bem.element('search')}>
                     <SearchInput
