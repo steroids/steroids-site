@@ -24,14 +24,14 @@ export default function DocsPage() {
     const category = useSelector(state => getRouteParam(state, CATEGORY_ROUTE_PARAM));
     const params = useSelector(state => getRouteParams(state));
 
-    React.useEffect(() => {
-        if (!category) {
-            dispatch(goToRoute(ROUTE_DOCS, {
-                [LANGUAGE_ROUTE_PARAM]: locale.language,
-                [CATEGORY_ROUTE_PARAM]: CATEGORY_GETTING_STARTED,
-            }));
-        }
-    }, [category, dispatch, locale]);
+    // React.useEffect(() => {
+    //     if (!category) {
+    //         dispatch(goToRoute(ROUTE_DOCS, {
+    //             [LANGUAGE_ROUTE_PARAM]: locale.language,
+    //             [CATEGORY_ROUTE_PARAM]: CATEGORY_GETTING_STARTED,
+    //         }));
+    //     }
+    // }, [category, dispatch, locale]);
 
     React.useEffect(() => {
         scrollToTop();
