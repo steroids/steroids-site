@@ -46,6 +46,11 @@
 
         transform: translateX(5px) translateY(5px);
 
+        &__icon_foreground {
+            width: 61px;
+            height: 41px;
+        } 
+
 
         @media (max-width: 384px) {
             width: 60px;
