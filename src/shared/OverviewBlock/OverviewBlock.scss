@@ -3,6 +3,18 @@
 .OverviewBlock {
   padding: 40px 80px;
 
+  @media (max-width: variables.$tablet-width) {
+    padding: 40px 24px;
+  }
+
+  @media (max-width: variables.$tablet-width-small) {
+    padding: 24px 12px;
+  }
+
+  @media (max-width: variables.$mobile-width-small) {
+    padding: 12px;
+  }
+
   &__title {
     margin-top: 0 !important;
   }
@@ -15,6 +27,7 @@
   
   .ListView__content {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     column-gap: 30px;
     row-gap: 30px;
