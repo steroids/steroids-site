@@ -3,6 +3,7 @@ import Header from '@steroidsjs/core/ui/layout/Header';
 import Modal, {IModalProps} from '@steroidsjs/core/ui/modal/Modal/Modal';
 
 import './header-demo.scss';
+import {NAV_ITEMS} from './basic';
 
 function DemoModal(props: IModalProps) {
     return (
@@ -21,20 +22,10 @@ function DemoModal(props: IModalProps) {
 
 const voidFunction = () => { };
 
-const navItems = [
-    {
-        id: 1,
-        label: 'О нас',
-    },
-    {
-        id: 2,
-        label: 'Услуги',
-    },
-    {
-        id: 3,
-        label: 'Контакты',
-        disabled: true,
-    },
+export const HEADER_MENU_ITEMS = [
+    {label: __('Профиль'), icon: 'user', onClick: voidFunction},
+    {label: __('Настройки'), icon: 'setting_line', onClick: voidFunction},
+    {label: __('Выйти'), icon: 'menu_left', onClick: voidFunction},
 ];
 
 /**
@@ -49,7 +40,7 @@ export default () => (
             className='header-auth'
             logo={{icon: 'kozhinDev', title: 'KozhinDev'}}
             nav={{
-                items: navItems,
+                items: NAV_ITEMS,
                 layout: 'navbar',
             }}
             authParams={{
@@ -61,7 +52,7 @@ export default () => (
             className='header-auth'
             logo={{icon: 'kozhinDev', title: 'KozhinDev'}}
             nav={{
-                items: navItems,
+                items: NAV_ITEMS,
                 layout: 'navbar',
             }}
             user={{
@@ -70,11 +61,7 @@ export default () => (
                     title: 'K D',
                 },
                 menu: {
-                    items: [
-                        {label: 'Профиль', icon: 'user', onClick: voidFunction},
-                        {label: 'Настройки', icon: 'setting_line', onClick: voidFunction},
-                        {label: 'Выйти', icon: 'menu_left', onClick: voidFunction},
-                    ],
+                    items: HEADER_MENU_ITEMS,
                     dropDownProps: {
                         position: 'bottom',
                         closeMode: 'click-any',

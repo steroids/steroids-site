@@ -9,27 +9,24 @@ import Button from '@steroidsjs/core/ui/form/Button';
  * @col 6
  */
 
-const times = {
-    1: 1000,
-    3: 3000,
-    5: 5000,
-    10: 10000,
-};
+const times = [1, 3, 5, 10];
 
 export default () => {
     const dispatch = useDispatch();
     return (
         <div style={{display: 'flex', flexFlow: 'column'}}>
-            {Object.values(times).map((time: number) => (
+            {times.map((time: number) => (
                 <Button
                     key={time}
                     color='primary'
-                    label={`Через ${time / 1000} секунд пропадет уведомление`}
+                    label={__('Через {secondsCount} {secondsCount, plural, one{секунду} few{секунды} other{секунд}} пропадет уведомление',
+                        {secondsCount: time})}
                     onClick={() => {
                         dispatch(
                             showNotification(
-                                `${time / 1000} секунд`, 'info',
-                                {position: 'bottom-right', timeOut: time},
+                                __('{secondsCount} {secondsCount, plural, one{секунду} few{секунды} other{секунд}}', {secondsCount: time}),
+                                'info',
+                                {position: 'bottom-right', timeOut: time * 1000},
                             ),
                         );
                     }}

@@ -9,6 +9,36 @@ import './field-list-demo.scss';
  * @col 12
  */
 
+export const FIELD_LIST_ITEMS = [
+    {
+        title: __('Направление подготовки'),
+        attribute: 'name',
+        component: InputField,
+        placeholder: __('Направление подготовки'),
+        size: 'sm',
+    },
+    {
+        title: __('Описание направления подготовки'),
+        attribute: 'descriptions',
+        component: InputField,
+        placeholder: __('Описание направления подготовки'),
+        size: 'sm',
+    },
+    {
+        title: __('Количество мест'),
+        attribute: 'count',
+        component: NumberField,
+        placeholder: '0',
+        size: 'sm',
+    },
+    {
+        title: __('Отправлять в ЕППУ'),
+        attribute: 'needSend',
+        component: CheckboxField,
+        size: 'sm',
+    },
+];
+
 export default () => (
     <>
         <Form
@@ -17,37 +47,9 @@ export default () => (
         >
             <FieldList
                 attribute='items'
-                label='items'
+                label={__('Данные по направлениям')}
                 initialRowsCount={3}
-                items={[
-                    {
-                        title: 'Направление подготовки',
-                        attribute: 'name',
-                        component: InputField,
-                        placeholder: 'Направление подготовки',
-                        size: 'sm',
-                    },
-                    {
-                        title: 'Описание направления подготовки',
-                        attribute: 'descriptions',
-                        component: InputField,
-                        placeholder: 'Описание направления подготовки',
-                        size: 'sm',
-                    },
-                    {
-                        title: 'Количество мест',
-                        attribute: 'count',
-                        component: NumberField,
-                        placeholder: '0',
-                        size: 'sm',
-                    },
-                    {
-                        title: 'Отправлять в ЕППУ',
-                        attribute: 'needSend',
-                        component: CheckboxField,
-                        size: 'sm',
-                    },
-                ]}
+                items={FIELD_LIST_ITEMS}
             />
         </Form>
     </>

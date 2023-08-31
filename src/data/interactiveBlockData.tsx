@@ -260,7 +260,7 @@ const defaultGridProps = {
 const gridControls: IPropControl[] = [
     {
         id: 1,
-        label: __(' Круговые диаграммы'),
+        label: __('Отобразить круговые диаграммы'),
         enabled: false,
         addition: {
             toAddition: {
@@ -293,7 +293,7 @@ const gridControls: IPropControl[] = [
     },
     {
         id: 2,
-        label: __('Горизонтальные диаграммы'),
+        label: __('Отобразить горизонтальные диаграммы'),
         enabled: false,
         addition: {
             toAddition: {
@@ -314,7 +314,7 @@ const gridControls: IPropControl[] = [
     },
     {
         id: 3,
-        label: __('Колонка с изображением'),
+        label: __('Отобразить колонку с изображением'),
         enabled: false,
         addition: {
             toAddition: {

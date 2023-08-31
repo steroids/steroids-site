@@ -24,9 +24,9 @@ export default () => {
                 closeMode: 'click-any',
             },
             items: [
-                {label: 'Профиль', icon: 'user', onClick: voidFunction},
-                {label: 'Настройки', icon: 'setting_line', onClick: voidFunction},
-                {label: 'Выйти', icon: 'menu_left', onClick: voidFunction},
+                {label: __('Профиль'), icon: 'user', onClick: voidFunction},
+                {label: __('Настройки'), icon: 'setting_line', onClick: voidFunction},
+                {label: __('Выйти'), icon: 'menu_left', onClick: voidFunction},
             ],
         },
         footerIcons: [

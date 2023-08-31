@@ -2,30 +2,14 @@ import * as React from 'react';
 import Header from '@steroidsjs/core/ui/layout/Header';
 
 import './header-demo.scss';
+import {NAV_ITEMS} from './basic';
+import {HEADER_MENU_ITEMS} from './auth';
 
 /**
  * Обычный пример использования Header.
  * @order 1
  * @col 6
  */
-
-const navItems = [
-    {
-        id: 1,
-        label: 'О нас',
-    },
-    {
-        id: 2,
-        label: 'Услуги',
-    },
-    {
-        id: 3,
-        label: 'Контакты',
-        disabled: true,
-    },
-];
-
-const voidFunction = () => { };
 
 const sizes = {
     sm: 'small',
@@ -43,7 +27,7 @@ export default () => (
                 size={size}
                 logo={{icon: 'kozhinDev', title: 'KozhinDev'}}
                 nav={{
-                    items: navItems,
+                    items: NAV_ITEMS,
                     layout: 'navbar',
                 }}
                 user={{
@@ -52,11 +36,7 @@ export default () => (
                         title: 'K D',
                     },
                     menu: {
-                        items: [
-                            {label: 'Профиль', icon: 'user', onClick: voidFunction},
-                            {label: 'Настройки', icon: 'setting_line', onClick: voidFunction},
-                            {label: 'Выйти', icon: 'menu_left', onClick: voidFunction},
-                        ],
+                        items: HEADER_MENU_ITEMS,
                         dropDownProps: {
                             position: 'bottom',
                             closeMode: 'click-any',

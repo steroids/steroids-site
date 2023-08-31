@@ -5,6 +5,7 @@ import {Text, Title} from '@steroidsjs/core/ui/typography';
 import CustomNavigation from 'shared/CustomNavigation';
 import {IEntityInfo} from 'types/IEntityInfo';
 import {IDemo} from 'types/IDemo';
+import {translateComponentDescription} from 'utils/utils';
 import Demos from '../Demos';
 
 import './ComponentDescription.scss';
@@ -17,17 +18,6 @@ interface IComponentDescriptionProps {
     componentName: string,
     className?: string;
 }
-
-const translateComponentDescription = (componentName: string, description: string) => {
-    let translatedDescription;
-    try {
-        translatedDescription = __(description);
-    } catch (error) {
-        console.error('Provided componentName/description ', componentName, '+', description, 'Error: ', error);
-    }
-
-    return translatedDescription;
-};
 
 export default function ComponentDescription(props: IComponentDescriptionProps) {
     const bem = useBem('ComponentDescription');

@@ -55,3 +55,14 @@ export const getUiComponentBannerPathByTheme = (
     componentName: string,
     theme: string,
 ) => `/images/banners/${theme}/${componentName.toLowerCase()}.webp`;
+
+export const translateComponentDescription = (componentName: string, description: string) => {
+    let translatedDescription;
+    try {
+        translatedDescription = __(description);
+    } catch (error) {
+        console.error('Provided componentName/description ', componentName, '+', description, 'Error: ', error);
+    }
+
+    return translatedDescription;
+};

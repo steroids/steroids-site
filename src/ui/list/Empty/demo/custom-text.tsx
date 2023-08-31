@@ -10,7 +10,7 @@ import Empty from '@steroidsjs/core/ui/list/Empty';
 export default () => (
     <>
         <Empty
-            text='К сожалению, ничего не найдено'
+            text={__('К сожалению, ничего не найдено')}
         />
     </>
 );

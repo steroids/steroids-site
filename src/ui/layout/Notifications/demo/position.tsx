@@ -24,7 +24,7 @@ export default () => {
                 <Button
                     key={position}
                     color='basic'
-                    label={`Позиция ${position}`}
+                    label={__('Позиция') + ' ' + position}
                     onClick={() => {
                         dispatch(showNotification(position, 'success', {position, timeOut: 1000}));
                     }}

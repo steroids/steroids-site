@@ -9,18 +9,18 @@ import './header-demo.scss';
  * @col 6
  */
 
-const navItems = [
+export const NAV_ITEMS = [
     {
         id: 1,
-        label: 'О нас',
+        label: __('О нас'),
     },
     {
         id: 2,
-        label: 'Услуги',
+        label: __('Услуги'),
     },
     {
         id: 3,
-        label: 'Контакты',
+        label: __('Контакты'),
         disabled: true,
     },
 ];
@@ -30,7 +30,7 @@ export default () => (
         className='header-basic'
         logo={{icon: 'kozhinDev', title: 'KozhinDev'}}
         nav={{
-            items: navItems,
+            items: NAV_ITEMS,
             layout: 'navbar',
         }}
     />

@@ -7,6 +7,7 @@ import {useSelector} from '@steroidsjs/core/hooks';
 import {getRouteParam} from '@steroidsjs/core/reducers/router';
 import Title from '@steroidsjs/core/ui/typography/Title';
 import Text from '@steroidsjs/core/ui/typography/Text';
+import {translateComponentDescription} from 'utils/utils';
 import ApiTable from '../ApiTable';
 
 import './ComponentInfo.scss';
@@ -25,7 +26,7 @@ export default function ComponentInfo() {
     return (
         <div className={bem.block()}>
             <Title content={componentInfo.title || componentInfo.name} />
-            <Text content={componentInfo.description} />
+            <Text content={translateComponentDescription(componentInfo.name, componentInfo.description)} />
             <ApiTable
                 entityInfo={componentInfo}
                 listId={API_TABLE_ID}
