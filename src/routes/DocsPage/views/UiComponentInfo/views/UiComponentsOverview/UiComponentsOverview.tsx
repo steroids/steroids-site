@@ -1,12 +1,14 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import {CATEGORY_UI} from 'constants/categories';
 import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
-
-import './UiComponentsOverview.scss';
 import {useDocsPageData} from 'hooks/useDocsPageData';
 import {getChildrenItemsByCategory, getUiComponentBannerPathByTheme} from 'utils/utils';
-import {CATEGORY_UI} from 'constants/categories';
 import {useTheme} from '@steroidsjs/core/hooks';
 import OverviewBlock from 'shared/OverviewBlock';
+
+import './UiComponentsOverview.scss';
+import {useUpdateEffect} from 'react-use';
 
 const UI_COMPONENTS_LIST_ID = 'UiComponentsOverview';
 // eslint-disable-next-line max-len
@@ -16,20 +18,30 @@ export default function UiComponentsOverview() {
     const bem = useBem('UiComponentsOverview');
     const {treeItems} = useDocsPageData();
     const {theme} = useTheme();
+    const [items, setItems] = React.useState([]);
+    const [isLoading, setIsLoading] = React.useState(true);
 
-    const uiComponentsItems = React.useMemo(
-        () => getChildrenItemsByCategory(treeItems, CATEGORY_UI, true)?.map(uiCategoryItem => ({
-            ...uiCategoryItem,
-            imagePath: getUiComponentBannerPathByTheme(uiCategoryItem.label, theme),
-        })),
-        [theme, treeItems],
-    );
+    React.useEffect(() => {
+        const fetchComponentBannerPaths = async () => {
+            const uiComponents = getChildrenItemsByCategory(treeItems, CATEGORY_UI, true) || [];
+            const bannerPaths = await Promise.all(
+                uiComponents.map(async (uiCategoryItem) => ({
+                    ...uiCategoryItem,
+                    imagePath: await getUiComponentBannerPathByTheme(uiCategoryItem.label, theme),
+                })),
+            );
+            setItems(bannerPaths);
+            setIsLoading(false);
+        };
+
+        fetchComponentBannerPaths();
+    }, [treeItems]);
 
     return (
         <OverviewBlock
             className={bem.block()}
             listId={UI_COMPONENTS_LIST_ID}
-            items={uiComponentsItems}
+            items={items}
             title={__('UI компоненты')}
             description={UI_COMPONENTS_DESCRIPTION}
         />

@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import {INavItem} from '@steroidsjs/core/ui/nav/Nav/Nav';
 import {gsap} from 'gsap';
+import axios from 'axios';
 import _get from 'lodash-es/get';
 
 const CHILDREN_ITEMS_PATH = '[0].items';
@@ -51,10 +52,28 @@ export const getChildrenItemsByCategory = (allItems: INavItem[], category: strin
     return childrenItemsByCategory;
 };
 
-export const getUiComponentBannerPathByTheme = (
+export const checkFileExists = async (filePath) => {
+    try {
+        const response = await axios.get(filePath);
+        return response.status === 200;
+    } catch (error) {
+        return false;
+    }
+};
+
+export const getUiComponentBannerPathByTheme = async (
     componentName: string,
     theme: string,
-) => `/images/banners/${theme}/${componentName.toLowerCase()}.webp`;
+) => {
+    const filePath = `/images/banners/${theme}/${componentName.toLowerCase()}.webp`;
+
+    const fileExists = await checkFileExists(filePath);
+
+    if (fileExists) {
+        return filePath;
+    }
+    return `/images/banners/${theme}/default.webp`;
+};
 
 export const translateComponentDescription = (componentName: string, description: string) => {
     let translatedDescription;
