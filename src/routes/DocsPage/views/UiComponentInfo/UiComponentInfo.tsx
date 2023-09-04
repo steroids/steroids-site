@@ -1,13 +1,14 @@
 import {ELEMENT_TO_OBSERVE_CLASS_NAME} from 'constants/classNames';
 
 import React from 'react';
-import {useBem} from '@steroidsjs/core/hooks';
+import {useBem, useSelector} from '@steroidsjs/core/hooks';
 import ButtonGroup from '@steroidsjs/core/ui/nav/ButtonGroup';
 import {getClassSelector, getIdSelector, scrollToElement} from 'utils/utils';
 
 import {useCollision} from 'hooks/useCollision';
 import {useUIComponentInfo} from 'hooks/useUIComponentInfo';
 import ComponentInfoTabs from 'enums/ComponentInfoTabs';
+import {getRouteParam} from '@steroidsjs/core/reducers/router';
 import ComponentPropsInfo from './views/ComponentPropsInfo';
 import Banner from './views/Banner';
 import ComponentDescription from './views/ComponentDescription';
@@ -15,6 +16,7 @@ import TabGroupView from './views/TabGroupView';
 
 import './UiComponentInfo.scss';
 import UiComponentsOverview from './views/UiComponentsOverview';
+import {PATH_ROUTE_PARAM} from 'constants/routeParams';
 
 interface IUiComponentInfoProps {
     demosComponents: any;
@@ -24,6 +26,7 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
     const bem = useBem('UiComponentInfo');
     const triggerElementRef = React.useRef(null);
     const [tab, setTab] = React.useState<ComponentInfoTabs>(ComponentInfoTabs.DESCRIPTION);
+    const path = useSelector(state => getRouteParam(state, PATH_ROUTE_PARAM));
 
     const {
         selectedDemo,
@@ -48,6 +51,11 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
         scrollToElement(getIdSelector(id));
     }, [setSelectedDemo, toggleOffCollision]);
 
+    React.useEffect(() => {
+        const defaultTab = ComponentInfoTabs.DESCRIPTION;
+        setTab(defaultTab);
+    }, [path]);
+
     return (
         <div className={bem.block()}>
             {hasContent && (
@@ -58,6 +66,7 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
                     <ButtonGroup
                         view={TabGroupView}
                         items={ComponentInfoTabs}
+                        activeButton={tab as string}
                         onClick={(newTab: ComponentInfoTabs) => setTab(newTab)}
                         className={bem.element('tabs')}
                     />

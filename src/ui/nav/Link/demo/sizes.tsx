@@ -20,8 +20,6 @@ export default () => (
                 key={size}
                 size={size}
                 style={{marginRight: '1rem'}}
-                url='https://google.ru'
-                target='_blank'
                 label={sizes[size]}
             />
         ))}

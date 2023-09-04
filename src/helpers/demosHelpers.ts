@@ -51,7 +51,7 @@ export const getDemosAndTreeItems = (demosTree: Record<string, any>, language: s
             }
 
             return {
-                id: demosTreeItemId,
+                id: demosTreeItemId.toLowerCase(),
                 label: _upperFirst(demosTreeItemId),
                 items: demosToItems(item.items),
                 toRoute: !item.items ? ROUTE_DOCS : null,

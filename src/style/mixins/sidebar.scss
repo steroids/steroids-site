@@ -73,6 +73,7 @@ $sidebar-scroll-track-color: var(--sidebar-scroll-track-color);
         &_has-items.TreeView__item_level_1 {
             border-bottom: 1px solid $sidebar-bottom-line-color;
             border-radius: 0;
+            margin-bottom: 8px;
             .ButtonView__link .ButtonView__text {
                 color: variables.$custom-text-color-base;
             }

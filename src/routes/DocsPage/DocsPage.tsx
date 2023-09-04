@@ -8,6 +8,7 @@ import {getRouteParam, getRouteParams} from '@steroidsjs/core/reducers/router';
 import {goToRoute} from '@steroidsjs/core/actions/router';
 import {useDocsPageData} from 'hooks/useDocsPageData';
 import {scrollToTop} from 'utils/utils';
+import {useDefaultSelectedItemId} from 'hooks/useDefaultSelectedItemId';
 import ComponentInfo from './views/ComponentInfo';
 import UiComponentInfo from './views/UiComponentInfo';
 import GettingStarted from './views/GettingStarted';
@@ -17,12 +18,12 @@ import './DocsPage.scss';
 
 export default function DocsPage() {
     const bem = useBem('DocsPage');
-    const {locale} = useComponents();
-    const dispatch = useDispatch();
     const {treeItems, demosComponents} = useDocsPageData();
 
     const category = useSelector(state => getRouteParam(state, CATEGORY_ROUTE_PARAM));
     const params = useSelector(state => getRouteParams(state));
+
+    const defaultSelectedItemId = useDefaultSelectedItemId(params);
 
     // React.useEffect(() => {
     //     if (!category) {
@@ -44,6 +45,7 @@ export default function DocsPage() {
                     view={CustomTree}
                     items={treeItems}
                     alwaysOpened
+                    selectedItemId={defaultSelectedItemId}
                 />
             </div>
             <div className={bem.element('content')}>
