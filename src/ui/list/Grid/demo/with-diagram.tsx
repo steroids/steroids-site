@@ -23,20 +23,7 @@ const items = [
 ];
 
 export const columns = [
-    {
-        label: 'Horizontal',
-        valueView: 'DiagramColumnView',
-        diagram: {
-            type: 'horizontal',
-            items: [
-                {
-                    color: 'secondary',
-                    percentageAttribute: 'percentage',
-                },
-            ],
-        },
-    },
-    {
+    /* {
         label: 'Vertical',
         valueView: 'DiagramColumnView',
         diagram: {
@@ -60,7 +47,7 @@ export const columns = [
                 },
             ],
         },
-    },
+    }, */
     {
         label: 'Circle',
         valueView: 'DiagramColumnView',
@@ -82,6 +69,19 @@ export const columns = [
                 {
                     color: 'secondary',
                     percentageAttribute: 'mana',
+                },
+            ],
+        },
+    },
+    {
+        label: 'Horizontal',
+        valueView: 'DiagramColumnView',
+        diagram: {
+            type: 'horizontal',
+            items: [
+                {
+                    color: 'secondary',
+                    percentageAttribute: 'percentage',
                 },
             ],
         },
@@ -120,7 +120,7 @@ export const columns = [
  * @col 8
  */
 export default () => (
-    <div style={{width: 1000}}>
+    <div>
         <Grid
             listId='GridDiagramDemo'
             items={items}
