@@ -24,4 +24,10 @@ export const icons = {
     library: require('./svgs/library.svg'),
     'logo-background': require('./svgs/logo-background.svg'),
     'logo-foreground': require('./svgs/logo-foreground.svg'),
+    'getting-started-overview': require('./svgs/getting-started-overview.svg'),
+    'getting-started-installation': require('./svgs/getting-started-installation.svg'),
+    'getting-started-architecture': require('./svgs/getting-started-architecture.svg'),
+    'getting-started-ui-architecture': require('./svgs/getting-started-ui-architecture.svg'),
+    'getting-started-ssr': require('./svgs/getting-started-ssr.svg'),
+    'getting-started-routing': require('./svgs/getting-started-routing.svg'),
 };
