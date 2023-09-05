@@ -5,6 +5,10 @@ export default class ComponentInfoTabs extends Enum {
 
     static PROPERTIES = 'properties';
 
+    static getDefaultTab() {
+        return this.DESCRIPTION;
+    }
+
     static getLabels() {
         return {
             [this.DESCRIPTION]: 'bookmark',

@@ -1,5 +1,6 @@
 import {ELEMENT_TO_OBSERVE_CLASS_NAME} from 'constants/classNames';
 
+import {PATH_ROUTE_PARAM} from 'constants/routeParams';
 import React from 'react';
 import {useBem, useSelector} from '@steroidsjs/core/hooks';
 import ButtonGroup from '@steroidsjs/core/ui/nav/ButtonGroup';
@@ -13,10 +14,9 @@ import ComponentPropsInfo from './views/ComponentPropsInfo';
 import Banner from './views/Banner';
 import ComponentDescription from './views/ComponentDescription';
 import TabGroupView from './views/TabGroupView';
+import UiComponentsOverview from './views/UiComponentsOverview';
 
 import './UiComponentInfo.scss';
-import UiComponentsOverview from './views/UiComponentsOverview';
-import {PATH_ROUTE_PARAM} from 'constants/routeParams';
 
 interface IUiComponentInfoProps {
     demosComponents: any;
@@ -25,7 +25,7 @@ interface IUiComponentInfoProps {
 export default function UiComponentInfo(props: IUiComponentInfoProps) {
     const bem = useBem('UiComponentInfo');
     const triggerElementRef = React.useRef(null);
-    const [tab, setTab] = React.useState<ComponentInfoTabs>(ComponentInfoTabs.DESCRIPTION);
+    const [tab, setTab] = React.useState<string>(ComponentInfoTabs.DESCRIPTION);
     const path = useSelector(state => getRouteParam(state, PATH_ROUTE_PARAM));
 
     const {
@@ -52,8 +52,7 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
     }, [setSelectedDemo, toggleOffCollision]);
 
     React.useEffect(() => {
-        const defaultTab = ComponentInfoTabs.DESCRIPTION;
-        setTab(defaultTab);
+        setTab(ComponentInfoTabs.getDefaultTab());
     }, [path]);
 
     return (
@@ -66,8 +65,8 @@ export default function UiComponentInfo(props: IUiComponentInfoProps) {
                     <ButtonGroup
                         view={TabGroupView}
                         items={ComponentInfoTabs}
-                        activeButton={tab as string}
-                        onClick={(newTab: ComponentInfoTabs) => setTab(newTab)}
+                        activeButton={tab}
+                        onClick={(newTab: string) => setTab(newTab)}
                         className={bem.element('tabs')}
                     />
                     <div className={bem.element('content')}>
