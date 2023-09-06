@@ -4,6 +4,7 @@ import useBem from '@steroidsjs/core/hooks/useBem';
 import Link from '@steroidsjs/core/ui/nav/Link';
 import {footerCredits} from 'data/indexPageData';
 import Nav from '@steroidsjs/core/ui/nav/Nav';
+import {useLocaleLinks} from 'hooks/useLocaleLinks';
 import {designEmail} from '../../data/footerData';
 
 import './Footer.scss';
@@ -11,12 +12,14 @@ import './Footer.scss';
 export default function Footer() {
     const bem = useBem('Footer');
 
+    const footerLinks = useLocaleLinks(FOOTER_LINKS_COLUMNS);
+
     return (
         <footer className={bem.block()}>
             <div className={bem.element('top')}>
                 <div className={bem.element('top-left')}>
                     {
-                        FOOTER_LINKS_COLUMNS.map((footerLinkColumn, footerLinkColumnIndex) => (
+                        footerLinks.map((footerLinkColumn, footerLinkColumnIndex) => (
                             <Nav
                                 key={footerLinkColumnIndex}
                                 layout='list'

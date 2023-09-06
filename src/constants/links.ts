@@ -3,7 +3,7 @@ import {INavItem} from '@steroidsjs/core/ui/nav/Nav/Nav';
 import GettingStartedArticles from 'enums/GettingStartedArticles';
 import {ROUTE_DOCS} from './routes';
 import {CATEGORY_COMPONENT, CATEGORY_GETTING_STARTED, CATEGORY_UI} from './categories';
-import {CATEGORY_ROUTE_PARAM, PATH_ROUTE_PARAM} from './routeParams';
+import {CATEGORY_ROUTE_PARAM, LANGUAGE_ROUTE_PARAM, PATH_ROUTE_PARAM} from './routeParams';
 
 export const HEADER_LINKS: INavItem[] = [
     {
