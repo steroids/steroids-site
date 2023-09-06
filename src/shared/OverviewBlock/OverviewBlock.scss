@@ -1,35 +1,34 @@
-@use 'style/variables';
+@use "style/variables";
 
 .OverviewBlock {
-  padding: 40px 80px;
+    padding: 40px 80px;
 
-  @media (max-width: variables.$tablet-width) {
-    padding: 40px 24px;
-  }
+    @media (max-width: variables.$tablet-width) {
+        padding: 40px 24px;
+    }
 
-  @media (max-width: variables.$tablet-width-small) {
-    padding: 24px 12px;
-  }
+    @media (max-width: variables.$tablet-width-small) {
+        padding: 24px 12px;
+    }
 
-  @media (max-width: variables.$mobile-width-small) {
-    padding: 12px;
-  }
+    @media (max-width: variables.$mobile-width-small) {
+        padding: 12px;
+    }
 
-  &__title {
-    margin-top: 0 !important;
-  }
+    &__title {
+        margin-top: 0 !important;
+    }
 
-  &__description {
-    margin-bottom: 40px;
-    max-width: 792px;
-    white-space: pre-line;
-  }
-  
-  .ListView__content {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    column-gap: 30px;
-    row-gap: 30px;
-  }
+    &__description {
+        margin-bottom: 40px;
+        max-width: 792px;
+        white-space: pre-line;
+    }
+
+    .ListView__content {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
 }

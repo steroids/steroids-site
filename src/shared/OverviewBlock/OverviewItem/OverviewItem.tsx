@@ -1,3 +1,4 @@
+/* eslint-disable react/no-children-prop */
 import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import Card from '@steroidsjs/core/ui/content/Card';
@@ -5,6 +6,7 @@ import Link from '@steroidsjs/core/ui/nav/Link';
 import {IListItemViewProps} from '@steroidsjs/core/ui/list/List/List';
 
 import './OverviewItem.scss';
+import {Icon} from '@steroidsjs/core/ui/content';
 
 interface IOverviewItemProps extends IListItemViewProps{
     item: {
@@ -12,6 +14,8 @@ interface IOverviewItemProps extends IListItemViewProps{
         toRouteParams: Record<string, any>,
         label: string,
         imagePath: string,
+        backgroundColor?: string,
+        icon?: string,
     }
 }
 
@@ -27,7 +31,14 @@ export default function OverviewItem(props: IOverviewItemProps) {
             <Card
                 className={bem.element('card')}
                 title={props.item.label}
-                cover={props.item.imagePath}
+                cover={props.item.imagePath || null}
+                style={{backgroundColor: props.item.backgroundColor}}
+                children={props.item.icon && (
+                    <Icon
+                        className={bem.element('icon')}
+                        name={props.item.icon}
+                    />
+                )}
             />
         </Link>
     );
