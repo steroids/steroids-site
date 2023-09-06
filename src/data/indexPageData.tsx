@@ -46,7 +46,7 @@ export const resourcesCards = [
     {
         img: 'https://i.ibb.co/6JQcWrX/Frame-338670.jpg',
         title: __('На старт'),
-        description: __('Открытый код и документация, библиотека компонентов, открытый код, React, Vue'),
+        description: __('Открытый код и документация, библиотека компонентов, React, Vue'),
         toRoute: ROUTE_DOCS,
         toRouteParams: {
             [CATEGORY_ROUTE_PARAM]: CATEGORY_GETTING_STARTED,
@@ -62,7 +62,7 @@ export const resourcesCards = [
     {
         img: 'https://i.ibb.co/PDtcKXy/Frame-338670-2.jpg',
         title: 'GitHub',
-        description: __('Открытый код и документация, библиотека компонентов, открытый код, React, Vue'),
+        description: __('Открытый код и документация, библиотека компонентов, React, Vue'),
         url: 'https://github.com/steroids',
         target: '_blank',
     },
