@@ -1,13 +1,12 @@
 import {CATEGORY_COMPONENT, CATEGORY_GETTING_STARTED, CATEGORY_UI} from 'constants/categories';
 import {CATEGORY_ROUTE_PARAM, LANGUAGE_ROUTE_PARAM} from 'constants/routeParams';
-import {ROUTE_DOCS} from 'constants/routes';
 import * as React from 'react';
 import Tree from '@steroidsjs/core/ui/nav/Tree';
-import {useBem, useComponents, useDispatch, useSelector} from '@steroidsjs/core/hooks';
+import {useBem, useSelector} from '@steroidsjs/core/hooks';
 import {getRouteParam, getRouteParams} from '@steroidsjs/core/reducers/router';
-import {goToRoute} from '@steroidsjs/core/actions/router';
 import {useDocsPageData} from 'hooks/useDocsPageData';
 import {scrollToTop} from 'utils/utils';
+import {useSelectedItemId} from 'hooks/useSelectedItemId';
 import ComponentInfo from './views/ComponentInfo';
 import UiComponentInfo from './views/UiComponentInfo';
 import GettingStarted from './views/GettingStarted';
@@ -17,12 +16,11 @@ import './DocsPage.scss';
 
 export default function DocsPage() {
     const bem = useBem('DocsPage');
-    const {locale} = useComponents();
-    const dispatch = useDispatch();
     const {treeItems, demosComponents} = useDocsPageData();
 
     const category = useSelector(state => getRouteParam(state, CATEGORY_ROUTE_PARAM));
     const params = useSelector(state => getRouteParams(state));
+    const selectedItemId = useSelectedItemId();
 
     // React.useEffect(() => {
     //     if (!category) {
@@ -44,6 +42,7 @@ export default function DocsPage() {
                     view={CustomTree}
                     items={treeItems}
                     alwaysOpened
+                    selectedItemId={selectedItemId}
                 />
             </div>
             <div className={bem.element('content')}>

@@ -1,5 +1,14 @@
 @use "style/variables";
 
+:root {
+    --demo-card-content-background-color: #f8f8f8;
+}
+
+html[data-theme="dark"] {
+    --demo-card-content-background-color: #272a37;
+}
+$demo-card-content-background-color: var(--demo-card-content-background-color);
+
 .DemoCard {
     margin-bottom: 40px;
 
@@ -15,7 +24,13 @@
         margin-bottom: 0;
     }
 
-    &__link { 
+    &__link {
         color: variables.$text-color;
+    }
+
+    &__content { 
+        padding: 16px;
+        border-radius: 20px;
+        background-color: $demo-card-content-background-color;
     }
 }

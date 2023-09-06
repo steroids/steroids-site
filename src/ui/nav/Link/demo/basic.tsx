@@ -9,7 +9,6 @@ import Link from '@steroidsjs/core/ui/nav/Link';
 export default () => (
     <>
         <Link
-            url='https://google.ru'
             target='_blank'
             label={__('Basic')}
         />

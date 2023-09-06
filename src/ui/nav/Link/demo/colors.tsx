@@ -20,8 +20,6 @@ export default () => (
     <>
         {Object.keys(colors).map(color => (
             <Link
-                url='https://google.ru'
-                target='_blank'
                 key={color}
                 color={color}
                 label={colors[color]}

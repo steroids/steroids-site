@@ -8,11 +8,11 @@ import useBem from '@steroidsjs/core/hooks/useBem';
 import {Icon} from '@steroidsjs/core/ui/content';
 import {useDocsPageData} from 'hooks/useDocsPageData';
 import Nav from '@steroidsjs/core/ui/nav/Nav';
-import ThemesButtons from 'shared/ThemesButtons';
 import Tree from '@steroidsjs/core/ui/nav/Tree';
 import CustomTree from 'shared/CustomTree';
 import {useSelector} from '@steroidsjs/core/hooks';
-import {getRouteParam} from '@steroidsjs/core/reducers/router';
+import {getRouteParam, getRouteParams} from '@steroidsjs/core/reducers/router';
+import {useSelectedItemId} from 'hooks/useSelectedItemId';
 import LanguagesDropDown from '../LanguagesDropDown';
 import SearchInput from '../SearchInput';
 
@@ -29,6 +29,9 @@ export default function BurgerMenu(props: IBurgerMenuProps) {
     const {treeItems} = useDocsPageData();
     const category = useSelector(state => getRouteParam(state, CATEGORY_ROUTE_PARAM));
     const path = useSelector(state => getRouteParam(state, PATH_ROUTE_PARAM));
+    const params = useSelector(state => getRouteParams(state));
+
+    const selectedItemId = useSelectedItemId();
 
     React.useEffect(() => {
         props.onSelectInMenu();
@@ -70,6 +73,7 @@ export default function BurgerMenu(props: IBurgerMenuProps) {
                         view={CustomTree}
                         items={treeItems}
                         alwaysOpened
+                        defaultSelectedUniqId={selectedItemId}
                     />
                 </div>
             </div>
