@@ -13,16 +13,6 @@ interface IBannerProps {
 function Banner(props: IBannerProps) {
     const bem = useBem('Banner');
     const {theme} = useTheme();
-    const [bannerSrc, setBannerSrc] = React.useState('');
-
-    React.useEffect(() => {
-        const getBanner = async () => {
-            const banner = await getUiComponentBannerPathByTheme(props.componentName, theme);
-            setBannerSrc(banner);
-        };
-
-        getBanner();
-    }, [props.componentName, theme]);
 
     return (
         <div className={bem.block()}>
@@ -35,7 +25,7 @@ function Banner(props: IBannerProps) {
             <div className={bem.element('picture')}>
                 <img
                     className={bem.element('picture-img')}
-                    src={bannerSrc}
+                    src={getUiComponentBannerPathByTheme(props.componentName, theme)}
                     alt="component demos"
                 />
             </div>
