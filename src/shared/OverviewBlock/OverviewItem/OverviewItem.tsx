@@ -31,7 +31,7 @@ export default function OverviewItem(props: IOverviewItemProps) {
             <Card
                 className={bem.element('card')}
                 title={props.item.label}
-                cover={(props.item.imagePath && !props.item.icon) && props.item.imagePath}
+                cover={props.item.imagePath || null}
                 style={{backgroundColor: props.item.backgroundColor}}
                 children={props.item.icon && (
                     <Icon

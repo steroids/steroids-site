@@ -23,5 +23,4 @@ export const GETTING_STARTED_OVERVIEW_ITEMS = {
         backgroundColor: '#EA8888',
         icon: 'getting-started-ssr',
     },
-
 };
