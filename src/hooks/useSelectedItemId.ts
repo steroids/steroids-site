@@ -6,12 +6,6 @@ const CHAR_MINUS = '-';
 const ITEM_SPLITTED_ID_INDEX = 1;
 const ITEM_DEFAULT_ID_INDEX = 0;
 
-type SelectedItemIdParamsType = {
-    path: string;
-
-    [key: string]: any;
-}
-
 export const useSelectedItemId = () => {
     const params = useSelector(state => getRouteParams(state));
 
