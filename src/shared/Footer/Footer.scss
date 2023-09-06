@@ -52,8 +52,8 @@ $footer-separator-color: var(--footer-separator-color);
         transition: opacity variables.$transition-duration;
 
         &:hover {
-          @extend %fontTemplate;
-          opacity: 0.5;
+            @extend %fontTemplate;
+            opacity: 0.5;
         }
     }
 
@@ -179,9 +179,9 @@ $footer-separator-color: var(--footer-separator-color);
             margin-bottom: 10px;
         }
 
-        @media (max-width: 538px){
-              margin-bottom: 0;
-              bottom: 98px;
+        @media (max-width: 538px) {
+            margin-bottom: 0;
+            bottom: 68px;
         }
     }
 }

@@ -17,12 +17,12 @@ export default () => (
         layout={{
             items: [
                 {
-                    id: 'list',
-                    label: 'List',
-                },
-                {
                     id: 'grid',
                     label: 'Grid',
+                },
+                {
+                    id: 'list',
+                    label: 'List',
                 },
             ],
         }}
