@@ -2369,10 +2369,10 @@
     redux-mock-store "^1.5.4"
     set-cookie-parser "^2.4.8"
 
-"@steroidsjs/core@^3.0.0-beta.78":
-  version "3.0.0-beta.78"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.0-beta.78.tgz#30f0c8855ccc5683fb379c46200f57393e99838a"
-  integrity sha512-VL79nUmzWzpWI6GWUb8abXrKvbLfxHGA3JMXYI4GlVtFJsMp7Qir/cVYUR/ZWeYYinhag7ghvVsIHcNqO/qalw==
+"@steroidsjs/core@^3.0.0-beta.79":
+  version "3.0.0-beta.79"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.0-beta.79.tgz#41b7ee9febe594a57ec978042edb9061c763e4d9"
+  integrity sha512-ZzwNcbLPrjrBl6A87f04HYEl5OMhMgzgKfm2yoDErUoaX0ge/XRP6FonFImzKBmH0s3i3YaKM189KSnWngeEKg==
   dependencies:
     "@maskito/core" "^0.12.1"
     "@maskito/kit" "^0.12.1"
