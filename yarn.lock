@@ -2248,10 +2248,10 @@
   resolved "https://registry.yarnpkg.com/@splidejs/splide/-/splide-4.1.4.tgz#02d029360569e7d75d28357a9727fc48322015a3"
   integrity sha512-5I30evTJcAJQXt6vJ26g2xEkG+l1nXcpEw4xpKh0/FWQ8ozmAeTbtniVtVmz2sH1Es3vgfC4SS8B2X4o5JMptA==
 
-"@steroidsjs/bootstrap@^3.0.0-beta.96":
-  version "3.0.0-beta.96"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.96.tgz#57afaa6df85f71996ee338e6eb031242d3f4792e"
-  integrity sha512-zO30FPhlRfSGscsBrF0zHQkszkCSZlYZlS8paJqWjrszRNXbpvoN9QrODvR6R++lbm7pm/EtBsFAbNYr3eGNuQ==
+"@steroidsjs/bootstrap@^3.0.0-beta.97":
+  version "3.0.0-beta.97"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/bootstrap/-/bootstrap-3.0.0-beta.97.tgz#b6c618a4f4c758e0b285c8b6dbcdb67288c13a14"
+  integrity sha512-6sVxOdFlgzHValgtHkySabkuM3LK3MJW1VkDZ0pQzA33aUY88t6CVu4tRjar04wub8UhIuQ8f+aSvaUABdVEXA==
   dependencies:
     "@ckeditor/ckeditor5-react" "^3.0.2"
     "@splidejs/react-splide" "^0.7.12"
@@ -2369,10 +2369,10 @@
     redux-mock-store "^1.5.4"
     set-cookie-parser "^2.4.8"
 
-"@steroidsjs/core@^3.0.0-beta.76":
-  version "3.0.0-beta.76"
-  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.0-beta.76.tgz#d12c52a590bfd8ce771fa98eb8e4a7c5aa896c7c"
-  integrity sha512-MBy9CjFlbYugb5R4K8dkDs2lbiBpU+AJPJEjwFOwU6myINjRKM9BF+cDN6K6kzVOhB9p8KGQ7zC+Q5rP4Q7Psw==
+"@steroidsjs/core@^3.0.0-beta.79":
+  version "3.0.0-beta.79"
+  resolved "https://registry.yarnpkg.com/@steroidsjs/core/-/core-3.0.0-beta.79.tgz#41b7ee9febe594a57ec978042edb9061c763e4d9"
+  integrity sha512-ZzwNcbLPrjrBl6A87f04HYEl5OMhMgzgKfm2yoDErUoaX0ge/XRP6FonFImzKBmH0s3i3YaKM189KSnWngeEKg==
   dependencies:
     "@maskito/core" "^0.12.1"
     "@maskito/kit" "^0.12.1"

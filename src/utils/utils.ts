@@ -1,4 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
+import {EXISTING_BANNERS} from 'constants/banners';
 import {INavItem} from '@steroidsjs/core/ui/nav/Nav/Nav';
 import {gsap} from 'gsap';
 import axios from 'axios';
@@ -52,24 +53,15 @@ export const getChildrenItemsByCategory = (allItems: INavItem[], category: strin
     return childrenItemsByCategory;
 };
 
-export const checkFileExists = async (filePath) => {
-    try {
-        const response = await axios.get(filePath);
-        return response.status === 200;
-    } catch (error) {
-        return false;
-    }
-};
+const checkBannerExists = (componentName: string) => EXISTING_BANNERS.includes(componentName.toLowerCase());
 
-export const getUiComponentBannerPathByTheme = async (
+export const getUiComponentBannerPathByTheme = (
     componentName: string,
     theme: string,
 ) => {
     const filePath = `/images/banners/${theme}/${componentName.toLowerCase()}.webp`;
 
-    const fileExists = await checkFileExists(filePath);
-
-    if (fileExists) {
+    if (checkBannerExists(componentName)) {
         return filePath;
     }
     return `/images/banners/${theme}/default.webp`;
