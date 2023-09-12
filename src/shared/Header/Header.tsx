@@ -3,6 +3,7 @@ import React from 'react';
 import useBem from '@steroidsjs/core/hooks/useBem';
 import {useHideScroll} from 'hooks/useHideScroll';
 import Nav from '@steroidsjs/core/ui/nav/Nav';
+import {useStickyHeader} from 'hooks/useStickyHeader';
 import {useLocaleLinks} from 'hooks/useLocaleLinks';
 import ThemesButtons from '../ThemesButtons';
 import HeaderLogo from './views/HeaderLogo';
@@ -15,13 +16,18 @@ import './Header.scss';
 export default function Header() {
     const bem = useBem('Header');
     const [isBurgerOpened, setIsBurgerOpened] = React.useState(false);
+    const headerRef = React.useRef(null);
 
     const headerLinks = useLocaleLinks(HEADER_LINKS);
 
+    useStickyHeader(headerRef);
     useHideScroll(isBurgerOpened);
 
     return (
-        <header className={bem.block()}>
+        <header
+            ref={headerRef}
+            className={bem.block()}
+        >
             <HeaderLogo />
             <Nav
                 items={headerLinks}
