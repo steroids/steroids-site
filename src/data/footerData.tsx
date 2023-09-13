@@ -1,1 +1,1 @@
-export const designEmail = 'designsystem@kozhindev.com';
+export const steroidsEmail = 'steroids@kozhindev.com';

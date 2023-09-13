@@ -5,7 +5,7 @@ import Link from '@steroidsjs/core/ui/nav/Link';
 import {footerCredits} from 'data/indexPageData';
 import Nav from '@steroidsjs/core/ui/nav/Nav';
 import {useLocaleLinks} from 'hooks/useLocaleLinks';
-import {designEmail} from '../../data/footerData';
+import {steroidsEmail} from '../../data/footerData';
 
 import './Footer.scss';
 
@@ -29,7 +29,7 @@ export default function Footer() {
                     }
                 </div>
                 <div className={bem.element('top-right')}>
-                    <a href={`mailto:${designEmail}`}>{designEmail}</a>
+                    <a href={`mailto:${steroidsEmail}`}>{steroidsEmail}</a>
                 </div>
             </div>
             <div className={bem.element('separator')} />
