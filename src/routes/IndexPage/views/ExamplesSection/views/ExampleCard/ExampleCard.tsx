@@ -10,9 +10,11 @@ import {useComponents, useTheme} from '@steroidsjs/core/hooks';
 import './ExampleCard.scss';
 
 interface IExampleCardProps {
-    label?: string;
-    img?: string;
-    isMoreCard?: boolean;
+    item: {
+        label ? : string;
+        img ? : string;
+        isMoreCard ? : boolean;
+    }
 }
 
 export default function ExampleCard(props: IExampleCardProps) {
@@ -20,7 +22,9 @@ export default function ExampleCard(props: IExampleCardProps) {
     const {locale} = useComponents();
     const {theme} = useTheme();
 
-    if (props.isMoreCard) {
+    const {isMoreCard, img, label} = props.item;
+
+    if (isMoreCard) {
         return (
             <div className={bem.block()}>
                 <div className={bem.element('more')}>
@@ -45,16 +49,16 @@ export default function ExampleCard(props: IExampleCardProps) {
     return (
         <div className={bem.block()}>
             <Title
-                content={props.label}
+                content={label}
                 className={bem.element('title')}
             />
 
             <div className={bem.element('img-wrapper', {
-                [props.img]: !!props.img,
+                [img]: !!img,
             })}
             >
                 <img
-                    src={`/images/examples/${theme}/${props.img}.png`}
+                    src={`/images/examples/${theme}/${img}.png`}
                     alt="example card"
                 />
             </div>
