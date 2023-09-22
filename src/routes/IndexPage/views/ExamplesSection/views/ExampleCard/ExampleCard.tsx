@@ -22,7 +22,9 @@ export default function ExampleCard(props: IExampleCardProps) {
     const {locale} = useComponents();
     const {theme} = useTheme();
 
-    if (props.item.isMoreCard) {
+    const {isMoreCard, img, label} = props.item;
+
+    if (isMoreCard) {
         return (
             <div className={bem.block()}>
                 <div className={bem.element('more')}>
@@ -47,16 +49,16 @@ export default function ExampleCard(props: IExampleCardProps) {
     return (
         <div className={bem.block()}>
             <Title
-                content={props.item.label}
+                content={label}
                 className={bem.element('title')}
             />
 
             <div className={bem.element('img-wrapper', {
-                [props.item.img]: !!props.item.img,
+                [img]: !!img,
             })}
             >
                 <img
-                    src={`/images/examples/${theme}/${props.item.img}.png`}
+                    src={`/images/examples/${theme}/${img}.png`}
                     alt="example card"
                 />
             </div>
